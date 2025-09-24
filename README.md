@@ -1,9 +1,9 @@
 # DDEX Go
 
-[![Go Reference](https://pkg.go.dev/badge/github.com/alecsavvy/ddex-go.svg)](https://pkg.go.dev/github.com/alecsavvy/ddex-go)
-[![Go Report Card](https://goreportcard.com/badge/github.com/alecsavvy/ddex-go)](https://goreportcard.com/report/github.com/alecsavvy/ddex-go)
+[![Go Reference](https://pkg.go.dev/badge/github.com/OpenAudio/ddex-proto.svg)](https://pkg.go.dev/github.com/OpenAudio/ddex-proto)
+[![Go Report Card](https://goreportcard.com/badge/github.com/OpenAudio/ddex-proto)](https://goreportcard.com/report/github.com/OpenAudio/ddex-proto)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![CI](https://github.com/alecsavvy/ddex-go/workflows/CI/badge.svg)](https://github.com/alecsavvy/ddex-go/actions)
+[![CI](https://github.com/OpenAudio/ddex-proto/workflows/CI/badge.svg)](https://github.com/OpenAudio/ddex-proto/actions)
 
 A comprehensive Go implementation of DDEX (Digital Data Exchange) standards with native XML support and Protocol Buffer/JSON serialization.
 
@@ -31,7 +31,7 @@ This library provides Go structs with Protocol Buffer, JSON, and XML serializati
 ## Installation
 
 ```bash
-go get github.com/alecsavvy/ddex-go@latest
+go get github.com/OpenAudio/ddex-proto@latest
 ```
 
 ## Quick Start
@@ -46,8 +46,8 @@ import (
     "fmt"
     "os"
 
-    "github.com/alecsavvy/ddex-go"
-    ernv432 "github.com/alecsavvy/ddex-go/gen/ddex/ern/v432"
+    "github.com/OpenAudio/ddex-proto"
+    ernv432 "github.com/OpenAudio/ddex-proto/gen/ddex/ern/v432"
 )
 
 func main() {
@@ -92,7 +92,7 @@ import (
     "encoding/json"
     "encoding/xml"
     "fmt"
-    ernv432 "github.com/alecsavvy/ddex-go/gen/ddex/ern/v432"
+    ernv432 "github.com/OpenAudio/ddex-proto/gen/ddex/ern/v432"
     "google.golang.org/protobuf/proto"
 )
 

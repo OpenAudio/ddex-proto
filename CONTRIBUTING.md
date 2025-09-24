@@ -36,8 +36,8 @@ This project adheres to a code of conduct that ensures a welcoming environment f
 
 ```bash
 # Clone the repository
-git clone https://github.com/alecsavvy/ddex-go.git
-cd ddex-go
+git clone https://github.com/OpenAudio/ddex-proto.git
+cd ddex-proto
 
 # Install dependencies
 go mod download
@@ -102,10 +102,10 @@ make help                 # Show all available targets
 
 1. **Fork and Clone**
    ```bash
-   git fork https://github.com/alecsavvy/ddex-go.git
-   git clone https://github.com/yourusername/ddex-go.git
-   cd ddex-go
-   git remote add upstream https://github.com/alecsavvy/ddex-go.git
+   git fork https://github.com/OpenAudio/ddex-proto.git
+   git clone https://github.com/yourusername/ddex-proto.git
+   cd ddex-proto
+   git remote add upstream https://github.com/OpenAudio/ddex-proto.git
    ```
 
 2. **Create Feature Branch**

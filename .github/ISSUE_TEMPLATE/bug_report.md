@@ -25,7 +25,7 @@ A clear and concise description of what you expected to happen.
 package main
 
 import (
-    "github.com/alecsavvy/ddex-go"
+    "github.com/OpenAudio/ddex-proto"
 )
 
 func main() {
@@ -47,7 +47,7 @@ If the bug is related to parsing a specific DDEX file:
 **Environment:**
  - OS: [e.g. macOS, Linux, Windows]
  - Go version: [e.g. 1.25.0]
- - ddex-go version: [e.g. v1.0.0 or commit hash]
+ - ddex-proto version: [e.g. v1.0.0 or commit hash]
  - DDEX specification: [e.g. ERN v4.3.2, MEAD v1.1, PIE v1.0]
 
 **Additional context**

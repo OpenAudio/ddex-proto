@@ -7,7 +7,7 @@
 package v11
 
 import (
-	_ "github.com/alecsavvy/ddex-go/gen/ddex/avs/vlatest"
+	_ "github.com/OpenAudio/ddex-proto/gen/ddex/avs/vlatest"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -12867,8 +12867,8 @@ const file_ddex_mead_v11_v11_proto_rawDesc = "" +
 	"\x06Timing\x12\x1f\n" +
 	"\vstart_point\x18\x01 \x01(\tR\n" +
 	"startPoint\x12#\n" +
-	"\rduration_used\x18\x02 \x01(\tR\fdurationUsedB\xa3\x01\n" +
-	"\x11com.ddex.mead.v11B\bV11ProtoP\x01Z.github.com/alecsavvy/ddex-go/gen/ddex/mead/v11\xa2\x02\x03DMX\xaa\x02\rDdex.Mead.V11\xca\x02\rDdex\\Mead\\V11\xe2\x02\x19Ddex\\Mead\\V11\\GPBMetadata\xea\x02\x0fDdex::Mead::V11b\x06proto3"
+	"\rduration_used\x18\x02 \x01(\tR\fdurationUsedB\xa6\x01\n" +
+	"\x11com.ddex.mead.v11B\bV11ProtoP\x01Z1github.com/OpenAudio/ddex-proto/gen/ddex/mead/v11\xa2\x02\x03DMX\xaa\x02\rDdex.Mead.V11\xca\x02\rDdex\\Mead\\V11\xe2\x02\x19Ddex\\Mead\\V11\\GPBMetadata\xea\x02\x0fDdex::Mead::V11b\x06proto3"
 
 var (
 	file_ddex_mead_v11_v11_proto_rawDescOnce sync.Once

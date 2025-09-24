@@ -1,4 +1,4 @@
-module github.com/alecsavvy/ddex-go
+module github.com/OpenAudio/ddex-proto
 
 go 1.25.0
 

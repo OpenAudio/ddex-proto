@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package ddex.pie.v10;
 
-option go_package = "github.com/alecsavvy/ddex-go/gen/ddex/pie/v10";
+option go_package = "github.com/OpenAudio/ddex-proto/gen/ddex/pie/v10";
 
 // Target namespace: http://ddex.net/xml/pie/10
 

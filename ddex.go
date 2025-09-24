@@ -6,11 +6,11 @@ import (
 	"regexp"
 	"strings"
 
-	ernv383 "github.com/alecsavvy/ddex-go/gen/ddex/ern/v383"
-	ernv43 "github.com/alecsavvy/ddex-go/gen/ddex/ern/v43"
-	ernv432 "github.com/alecsavvy/ddex-go/gen/ddex/ern/v432"
-	meadv11 "github.com/alecsavvy/ddex-go/gen/ddex/mead/v11"
-	piev10 "github.com/alecsavvy/ddex-go/gen/ddex/pie/v10"
+	ernv383 "github.com/OpenAudio/ddex-proto/gen/ddex/ern/v383"
+	ernv43 "github.com/OpenAudio/ddex-proto/gen/ddex/ern/v43"
+	ernv432 "github.com/OpenAudio/ddex-proto/gen/ddex/ern/v432"
+	meadv11 "github.com/OpenAudio/ddex-proto/gen/ddex/mead/v11"
+	piev10 "github.com/OpenAudio/ddex-proto/gen/ddex/pie/v10"
 )
 
 // Versioned type aliases for discoverability of pure XML types
