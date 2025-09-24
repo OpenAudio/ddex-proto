@@ -8,9 +8,9 @@ import (
 	"os"
 	"path/filepath"
 
-	ernv432 "github.com/alecsavvy/ddex-go/gen/ddex/ern/v432"
-	meadv11 "github.com/alecsavvy/ddex-go/gen/ddex/mead/v11"
-	piev10 "github.com/alecsavvy/ddex-go/gen/ddex/pie/v10"
+	ernv432 "github.com/OpenAudio/ddex-proto/gen/ddex/ern/v432"
+	meadv11 "github.com/OpenAudio/ddex-proto/gen/ddex/mead/v11"
+	piev10 "github.com/OpenAudio/ddex-proto/gen/ddex/pie/v10"
 	"github.com/davecgh/go-spew/spew"
 )
 

@@ -7,7 +7,7 @@
 package v383
 
 import (
-	_ "github.com/alecsavvy/ddex-go/gen/ddex/avs/v20200108"
+	_ "github.com/OpenAudio/ddex-proto/gen/ddex/avs/v20200108"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -21253,8 +21253,8 @@ const file_ddex_ern_v383_v383_proto_rawDesc = "" +
 	"\x18language_and_script_code\x18\x02 \x01(\tR\x15languageAndScriptCode*|\n" +
 	"\x19DdexCCurrentTerritoryCode\x12-\n" +
 	")DDEX_C_CURRENT_TERRITORY_CODE_UNSPECIFIED\x10\x00\x120\n" +
-	",DDEX_C_CURRENT_TERRITORY_CODE_IDENTIFIERTYPE\x10\x01B\xa4\x01\n" +
-	"\x11com.ddex.ern.v383B\tV383ProtoP\x01Z.github.com/alecsavvy/ddex-go/gen/ddex/ern/v383\xa2\x02\x03DEX\xaa\x02\rDdex.Ern.V383\xca\x02\rDdex\\Ern\\V383\xe2\x02\x19Ddex\\Ern\\V383\\GPBMetadata\xea\x02\x0fDdex::Ern::V383b\x06proto3"
+	",DDEX_C_CURRENT_TERRITORY_CODE_IDENTIFIERTYPE\x10\x01B\xa7\x01\n" +
+	"\x11com.ddex.ern.v383B\tV383ProtoP\x01Z1github.com/OpenAudio/ddex-proto/gen/ddex/ern/v383\xa2\x02\x03DEX\xaa\x02\rDdex.Ern.V383\xca\x02\rDdex\\Ern\\V383\xe2\x02\x19Ddex\\Ern\\V383\\GPBMetadata\xea\x02\x0fDdex::Ern::V383b\x06proto3"
 
 var (
 	file_ddex_ern_v383_v383_proto_rawDescOnce sync.Once

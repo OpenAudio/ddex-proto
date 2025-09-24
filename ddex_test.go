@@ -8,9 +8,9 @@ import (
 	"testing"
 
 	// Proto-generated implementations
-	ernv432 "github.com/alecsavvy/ddex-go/gen/ddex/ern/v432"
-	meadv11 "github.com/alecsavvy/ddex-go/gen/ddex/mead/v11"
-	piev10 "github.com/alecsavvy/ddex-go/gen/ddex/pie/v10"
+	ernv432 "github.com/OpenAudio/ddex-proto/gen/ddex/ern/v432"
+	meadv11 "github.com/OpenAudio/ddex-proto/gen/ddex/mead/v11"
+	piev10 "github.com/OpenAudio/ddex-proto/gen/ddex/pie/v10"
 )
 
 // Test data maps for each message type
@@ -110,7 +110,6 @@ func TestDDEXConformance(t *testing.T) {
 		}
 	})
 }
-
 
 // TestFieldCompleteness tests that required fields are properly populated
 func TestFieldCompleteness(t *testing.T) {
@@ -394,7 +393,6 @@ func validateRequiredFields(t *testing.T, fields []fieldCheck) {
 		}
 	}
 }
-
 
 func testXMLTags(t *testing.T, xmlPath string, msgType interface{}, msgName string) {
 	xmlData, err := os.ReadFile(xmlPath)

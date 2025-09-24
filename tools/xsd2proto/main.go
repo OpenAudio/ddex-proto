@@ -1206,7 +1206,7 @@ func namespaceToGoPackage(ns string, bundle *NamespaceBundle, spec struct{ name,
 	// Put Go package paths under your repo. Mirror the proto package path as directories.
 	pkg := namespaceToProtoPackage(ns, bundle, spec)
 	path := strings.ReplaceAll(pkg, ".", "/")
-	return "github.com/alecsavvy/ddex-go/gen/" + path
+	return "github.com/OpenAudio/ddex-proto/gen/" + path
 }
 
 func packageToPath(pkg string) string {

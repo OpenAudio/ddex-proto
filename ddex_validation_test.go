@@ -8,8 +8,8 @@ import (
 	"strings"
 	"testing"
 
-	meadv11 "github.com/alecsavvy/ddex-go/gen/ddex/mead/v11"
-	piev10 "github.com/alecsavvy/ddex-go/gen/ddex/pie/v10"
+	meadv11 "github.com/OpenAudio/ddex-proto/gen/ddex/mead/v11"
+	piev10 "github.com/OpenAudio/ddex-proto/gen/ddex/pie/v10"
 	"github.com/beevik/etree"
 )
 
@@ -109,12 +109,12 @@ func TestXMLRoundTripIntegrity(t *testing.T) {
 // performRoundTripValidation does the actual XML → Proto → XML validation
 func performRoundTripValidation(xmlPath string, msgType string) *DOMComparison {
 	comparison := &DOMComparison{
-		MissingElements:   []string{},
-		MissingAttributes: []string{},
-		ValueMismatches:   []string{},
-		ExtraElements:     []string{},
+		MissingElements:    []string{},
+		MissingAttributes:  []string{},
+		ValueMismatches:    []string{},
+		ExtraElements:      []string{},
 		MarshaledParseable: true,
-		Success:           true,
+		Success:            true,
 	}
 
 	// Read original XML

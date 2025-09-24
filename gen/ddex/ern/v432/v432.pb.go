@@ -7,7 +7,7 @@
 package v432
 
 import (
-	_ "github.com/alecsavvy/ddex-go/gen/ddex/avs/vlatest"
+	_ "github.com/OpenAudio/ddex-proto/gen/ddex/avs/vlatest"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -20065,8 +20065,8 @@ const file_ddex_ern_v432_v432_proto_rawDesc = "" +
 	"\x0eproprietary_id\x18\x05 \x03(\v2\x1c.ddex.ern.v432.ProprietaryIdR\rproprietaryId\x12\x15\n" +
 	"\ae_i_d_r\x18\x06 \x03(\tR\x04eIDR\x12\x1f\n" +
 	"\vis_replaced\x18\a \x01(\bR\n" +
-	"isReplacedB\xa4\x01\n" +
-	"\x11com.ddex.ern.v432B\tV432ProtoP\x01Z.github.com/alecsavvy/ddex-go/gen/ddex/ern/v432\xa2\x02\x03DEX\xaa\x02\rDdex.Ern.V432\xca\x02\rDdex\\Ern\\V432\xe2\x02\x19Ddex\\Ern\\V432\\GPBMetadata\xea\x02\x0fDdex::Ern::V432b\x06proto3"
+	"isReplacedB\xa7\x01\n" +
+	"\x11com.ddex.ern.v432B\tV432ProtoP\x01Z1github.com/OpenAudio/ddex-proto/gen/ddex/ern/v432\xa2\x02\x03DEX\xaa\x02\rDdex.Ern.V432\xca\x02\rDdex\\Ern\\V432\xe2\x02\x19Ddex\\Ern\\V432\\GPBMetadata\xea\x02\x0fDdex::Ern::V432b\x06proto3"
 
 var (
 	file_ddex_ern_v432_v432_proto_rawDescOnce sync.Once

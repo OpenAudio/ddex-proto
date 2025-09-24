@@ -21,7 +21,7 @@ linters-settings:
   gocyclo:
     min-complexity: 15
   goimports:
-    local-prefixes: github.com/alecsavvy/ddex-go
+    local-prefixes: github.com/OpenAudio/ddex-proto
   govet:
     check-shadowing: true
     enable-all: true

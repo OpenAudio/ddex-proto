@@ -7,7 +7,7 @@
 package v10
 
 import (
-	_ "github.com/alecsavvy/ddex-go/gen/ddex/avs/vlatest"
+	_ "github.com/OpenAudio/ddex-proto/gen/ddex/avs/vlatest"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -9595,8 +9595,8 @@ const file_ddex_pie_v10_v10_proto_rawDesc = "" +
 	"\x06writer\x18\x03 \x03(\v2..ddex.pie.v10.PartyDescriptorWithPronunciationR\x06writer\"Z\n" +
 	"\tWorkTitle\x12\x14\n" +
 	"\x05value\x18\x01 \x01(\tR\x05value\x127\n" +
-	"\x18language_and_script_code\x18\x02 \x01(\tR\x15languageAndScriptCodeB\x9d\x01\n" +
-	"\x10com.ddex.pie.v10B\bV10ProtoP\x01Z-github.com/alecsavvy/ddex-go/gen/ddex/pie/v10\xa2\x02\x03DPX\xaa\x02\fDdex.Pie.V10\xca\x02\fDdex\\Pie\\V10\xe2\x02\x18Ddex\\Pie\\V10\\GPBMetadata\xea\x02\x0eDdex::Pie::V10b\x06proto3"
+	"\x18language_and_script_code\x18\x02 \x01(\tR\x15languageAndScriptCodeB\xa0\x01\n" +
+	"\x10com.ddex.pie.v10B\bV10ProtoP\x01Z0github.com/OpenAudio/ddex-proto/gen/ddex/pie/v10\xa2\x02\x03DPX\xaa\x02\fDdex.Pie.V10\xca\x02\fDdex\\Pie\\V10\xe2\x02\x18Ddex\\Pie\\V10\\GPBMetadata\xea\x02\x0eDdex::Pie::V10b\x06proto3"
 
 var (
 	file_ddex_pie_v10_v10_proto_rawDescOnce sync.Once
