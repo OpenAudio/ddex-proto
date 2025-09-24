@@ -1,11 +1,11 @@
-# DDEX Go
+# DDEX Proto
 
 [![Go Reference](https://pkg.go.dev/badge/github.com/OpenAudio/ddex-proto.svg)](https://pkg.go.dev/github.com/OpenAudio/ddex-proto)
 [![Go Report Card](https://goreportcard.com/badge/github.com/OpenAudio/ddex-proto)](https://goreportcard.com/report/github.com/OpenAudio/ddex-proto)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![CI](https://github.com/OpenAudio/ddex-proto/workflows/CI/badge.svg)](https://github.com/OpenAudio/ddex-proto/actions)
 
-A comprehensive Go implementation of DDEX (Digital Data Exchange) standards with native XML support and Protocol Buffer/JSON serialization.
+A comprehensive implementation of DDEX (Digital Data Exchange) standards with native XML support and Protocol Buffer/JSON serialization using Go.
 
 ## What is DDEX?
 
