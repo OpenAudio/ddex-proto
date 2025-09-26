@@ -25,6 +25,8 @@ message PieMessage {
   string xmlns_xsi = 7;
   // @gotags: xml:"xsi:schemaLocation,attr"
   string xsi_schema_location = 8;
+  // @gotags: xml:"xmlns:avs,attr"
+  string xmlns_avs = 9;
 }
 
 message PieRequestMessage {
@@ -42,6 +44,8 @@ message PieRequestMessage {
   string xmlns_xsi = 6;
   // @gotags: xml:"xsi:schemaLocation,attr"
   string xsi_schema_location = 7;
+  // @gotags: xml:"xmlns:avs,attr"
+  string xmlns_avs = 8;
 }
 
 message Feed {
@@ -77,6 +81,8 @@ message Feed {
   string xmlns_xsi = 15;
   // @gotags: xml:"xsi:schemaLocation,attr"
   string xsi_schema_location = 16;
+  // @gotags: xml:"xmlns:avs,attr"
+  string xmlns_avs = 17;
 }
 
 message Contribution {

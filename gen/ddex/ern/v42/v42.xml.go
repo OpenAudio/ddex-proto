@@ -10,6 +10,7 @@ const (
 	NamespacePrefix = "ern"
 	SchemaLocation  = "http://ddex.net/xml/ern/42 http://ddex.net/xml/ern/42/release-notification.xsd"
 	NamespaceXSI    = "http://www.w3.org/2001/XMLSchema-instance"
+	NamespaceAVS    = "http://ddex.net/xml/avs/avs"
 )
 
 // MarshalXML implements xml.Marshaler for NewReleaseMessage
@@ -23,6 +24,9 @@ func (m *NewReleaseMessage) MarshalXML(e *xml.Encoder, start xml.StartElement) e
 	}
 	if m.XsiSchemaLocation == "" {
 		m.XsiSchemaLocation = SchemaLocation
+	}
+	if m.XmlnsAvs == "" {
+		m.XmlnsAvs = NamespaceAVS
 	}
 
 	// Set the namespace on the start element
@@ -51,6 +55,9 @@ func (m *PurgeReleaseMessage) MarshalXML(e *xml.Encoder, start xml.StartElement)
 	}
 	if m.XsiSchemaLocation == "" {
 		m.XsiSchemaLocation = SchemaLocation
+	}
+	if m.XmlnsAvs == "" {
+		m.XmlnsAvs = NamespaceAVS
 	}
 
 	// Set the namespace on the start element

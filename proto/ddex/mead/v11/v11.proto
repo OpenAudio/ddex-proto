@@ -31,6 +31,8 @@ message MeadMessage {
   string xmlns_xsi = 10;
   // @gotags: xml:"xsi:schemaLocation,attr"
   string xsi_schema_location = 11;
+  // @gotags: xml:"xmlns:avs,attr"
+  string xmlns_avs = 12;
 }
 
 message Feed {
@@ -66,6 +68,8 @@ message Feed {
   string xmlns_xsi = 15;
   // @gotags: xml:"xsi:schemaLocation,attr"
   string xsi_schema_location = 16;
+  // @gotags: xml:"xmlns:avs,attr"
+  string xmlns_avs = 17;
 }
 
 message AbsolutePitch {

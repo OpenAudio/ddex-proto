@@ -467,7 +467,7 @@ func generateProtoForBundle(
 		if el.ComplexType != nil {
 			name := toProtoMessageName(el.Name)
 			if _, exists := generated[name]; !exists {
-				msg, wrapperTypes, err := generateComplexTypeMessageWithNamespace(el.Name, el.ComplexType, all, b.TargetNamespace, true)
+				msg, wrapperTypes, err := generateComplexTypeMessageWithNamespace(el.Name, el.ComplexType, all, b.TargetNamespace, true, b)
 				if err != nil {
 					return "", err
 				}
@@ -572,10 +572,10 @@ type WrapperType struct {
 }
 
 func generateComplexTypeMessage(name string, complexType *XSDComplexType, allPkgs map[string]protoPkgInfo) (string, []WrapperType, error) {
-	return generateComplexTypeMessageWithNamespace(name, complexType, allPkgs, "", false)
+	return generateComplexTypeMessageWithNamespace(name, complexType, allPkgs, "", false, nil)
 }
 
-func generateComplexTypeMessageWithNamespace(name string, complexType *XSDComplexType, allPkgs map[string]protoPkgInfo, targetNamespace string, isRootElement bool) (string, []WrapperType, error) {
+func generateComplexTypeMessageWithNamespace(name string, complexType *XSDComplexType, allPkgs map[string]protoPkgInfo, targetNamespace string, isRootElement bool, bundle *NamespaceBundle) (string, []WrapperType, error) {
 	var wrapperTypes []WrapperType
 	var builder strings.Builder
 
@@ -665,6 +665,19 @@ func generateComplexTypeMessageWithNamespace(name string, complexType *XSDComple
 		field = fmt.Sprintf("%s\n  string xsi_schema_location = %d;", injectComment, fieldNum)
 		builder.WriteString(field + "\n")
 		fieldNum++
+
+		// Add AVS namespace attribute if this bundle imports AVS
+		if bundle != nil {
+			for importNS := range bundle.Imports {
+				if importNS == "http://ddex.net/xml/avs/avs" || importNS == "http://ddex.net/xml/allowed-value-sets" {
+					injectComment = fmt.Sprintf("  // @gotags: xml:\"xmlns:avs,attr\"")
+					field = fmt.Sprintf("%s\n  string xmlns_avs = %d;", injectComment, fieldNum)
+					builder.WriteString(field + "\n")
+					fieldNum++
+					break
+				}
+			}
+		}
 	}
 
 	builder.WriteString("}")

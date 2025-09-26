@@ -245,6 +245,7 @@ type NamespaceInfo struct {
 	Namespace       string
 	NamespacePrefix string
 	SchemaFile      string
+	ImportsAVS      bool // true if this schema imports AVS namespace
 }
 
 // deriveNamespaceInfo extracts namespace info from package directory path
@@ -295,7 +296,29 @@ func deriveNamespaceInfo(packageDir string) *NamespaceInfo {
 		return nil
 	}
 
+	// Check if the schema imports AVS namespace
+	info.ImportsAVS = checkAVSImport(messageType, versionNumber, info.SchemaFile)
+
 	return info
+}
+
+// checkAVSImport checks if a schema file imports the AVS namespace
+func checkAVSImport(messageType, versionNumber, schemaFile string) bool {
+	// Construct the path to the schema file
+	schemaDir := fmt.Sprintf("xsd/%sv%s", messageType, versionNumber)
+	schemaPath := filepath.Join(schemaDir, schemaFile)
+
+	// Read the schema file
+	content, err := os.ReadFile(schemaPath)
+	if err != nil {
+		// If we can't read the file, assume no AVS import
+		return false
+	}
+
+	// Check for AVS namespace import
+	contentStr := string(content)
+	return strings.Contains(contentStr, "xmlns:avs=\"http://ddex.net/xml/avs/avs\"") ||
+		strings.Contains(contentStr, "namespace=\"http://ddex.net/xml/avs/avs\"")
 }
 
 // generatePackageXMLContent creates the content for a package XML file
@@ -316,6 +339,9 @@ func generatePackageXMLContent(packageDir, packageName string, messages []Messag
 		sb.WriteString(fmt.Sprintf("\tNamespacePrefix = \"%s\"\n", nsInfo.NamespacePrefix))
 		sb.WriteString(fmt.Sprintf("\tSchemaLocation = \"%s %s/%s\"\n", nsInfo.Namespace, nsInfo.Namespace, nsInfo.SchemaFile))
 		sb.WriteString("\tNamespaceXSI = \"http://www.w3.org/2001/XMLSchema-instance\"\n")
+		if nsInfo.ImportsAVS {
+			sb.WriteString("\tNamespaceAVS = \"http://ddex.net/xml/avs/avs\"\n")
+		}
 		sb.WriteString(")\n\n")
 	}
 
@@ -428,7 +454,15 @@ func generateXMLMarshalingMethods(message MessageInfo, nsInfo *NamespaceInfo) st
 
 		sb.WriteString("\tif m.XsiSchemaLocation == \"\" {\n")
 		sb.WriteString("\t\tm.XsiSchemaLocation = SchemaLocation\n")
-		sb.WriteString("\t}\n\n")
+		sb.WriteString("\t}\n")
+
+		// Add AVS namespace if this schema imports it
+		if nsInfo.ImportsAVS {
+			sb.WriteString("\tif m.XmlnsAvs == \"\" {\n")
+			sb.WriteString("\t\tm.XmlnsAvs = NamespaceAVS\n")
+			sb.WriteString("\t}\n")
+		}
+		sb.WriteString("\n")
 	}
 
 	// Set the namespace on the start element for root messages
@@ -456,7 +490,7 @@ func generateXMLMarshalingMethods(message MessageInfo, nsInfo *NamespaceInfo) st
 // isRootMessage determines if a message type is a root message that needs namespace handling
 func isRootMessage(messageName string) bool {
 	switch messageName {
-	case "NewReleaseMessage", "PurgeReleaseMessage", "MeadMessage", "PieMessage", "PieRequestMessage":
+	case "NewReleaseMessage", "PurgeReleaseMessage", "CatalogListMessage", "MeadMessage", "PieMessage", "PieRequestMessage":
 		return true
 	default:
 		return false

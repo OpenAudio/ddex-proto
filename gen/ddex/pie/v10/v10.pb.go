@@ -40,8 +40,10 @@ type PieMessage struct {
 	XmlnsXsi string `protobuf:"bytes,7,opt,name=xmlns_xsi,json=xmlnsXsi,proto3" json:"xmlns_xsi,omitempty" xml:"xmlns:xsi,attr"`
 	// @gotags: xml:"xsi:schemaLocation,attr"
 	XsiSchemaLocation string `protobuf:"bytes,8,opt,name=xsi_schema_location,json=xsiSchemaLocation,proto3" json:"xsi_schema_location,omitempty" xml:"xsi:schemaLocation,attr"`
-	unknownFields     protoimpl.UnknownFields
-	sizeCache         protoimpl.SizeCache
+	// @gotags: xml:"xmlns:avs,attr"
+	XmlnsAvs      string `protobuf:"bytes,9,opt,name=xmlns_avs,json=xmlnsAvs,proto3" json:"xmlns_avs,omitempty" xml:"xmlns:avs,attr"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *PieMessage) Reset() {
@@ -130,6 +132,13 @@ func (x *PieMessage) GetXsiSchemaLocation() string {
 	return ""
 }
 
+func (x *PieMessage) GetXmlnsAvs() string {
+	if x != nil {
+		return x.XmlnsAvs
+	}
+	return ""
+}
+
 type PieRequestMessage struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// @gotags: xml:"MessageHeader"
@@ -146,8 +155,10 @@ type PieRequestMessage struct {
 	XmlnsXsi string `protobuf:"bytes,6,opt,name=xmlns_xsi,json=xmlnsXsi,proto3" json:"xmlns_xsi,omitempty" xml:"xmlns:xsi,attr"`
 	// @gotags: xml:"xsi:schemaLocation,attr"
 	XsiSchemaLocation string `protobuf:"bytes,7,opt,name=xsi_schema_location,json=xsiSchemaLocation,proto3" json:"xsi_schema_location,omitempty" xml:"xsi:schemaLocation,attr"`
-	unknownFields     protoimpl.UnknownFields
-	sizeCache         protoimpl.SizeCache
+	// @gotags: xml:"xmlns:avs,attr"
+	XmlnsAvs      string `protobuf:"bytes,8,opt,name=xmlns_avs,json=xmlnsAvs,proto3" json:"xmlns_avs,omitempty" xml:"xmlns:avs,attr"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *PieRequestMessage) Reset() {
@@ -229,6 +240,13 @@ func (x *PieRequestMessage) GetXsiSchemaLocation() string {
 	return ""
 }
 
+func (x *PieRequestMessage) GetXmlnsAvs() string {
+	if x != nil {
+		return x.XmlnsAvs
+	}
+	return ""
+}
+
 type Feed struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// @gotags: xml:"author"
@@ -263,8 +281,10 @@ type Feed struct {
 	XmlnsXsi string `protobuf:"bytes,15,opt,name=xmlns_xsi,json=xmlnsXsi,proto3" json:"xmlns_xsi,omitempty" xml:"xmlns:xsi,attr"`
 	// @gotags: xml:"xsi:schemaLocation,attr"
 	XsiSchemaLocation string `protobuf:"bytes,16,opt,name=xsi_schema_location,json=xsiSchemaLocation,proto3" json:"xsi_schema_location,omitempty" xml:"xsi:schemaLocation,attr"`
-	unknownFields     protoimpl.UnknownFields
-	sizeCache         protoimpl.SizeCache
+	// @gotags: xml:"xmlns:avs,attr"
+	XmlnsAvs      string `protobuf:"bytes,17,opt,name=xmlns_avs,json=xmlnsAvs,proto3" json:"xmlns_avs,omitempty" xml:"xmlns:avs,attr"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *Feed) Reset() {
@@ -405,6 +425,13 @@ func (x *Feed) GetXmlnsXsi() string {
 func (x *Feed) GetXsiSchemaLocation() string {
 	if x != nil {
 		return x.XsiSchemaLocation
+	}
+	return ""
+}
+
+func (x *Feed) GetXmlnsAvs() string {
+	if x != nil {
+		return x.XmlnsAvs
 	}
 	return ""
 }
@@ -8900,7 +8927,7 @@ var File_ddex_pie_v10_v10_proto protoreflect.FileDescriptor
 
 const file_ddex_pie_v10_v10_proto_rawDesc = "" +
 	"\n" +
-	"\x16ddex/pie/v10/v10.proto\x12\fddex.pie.v10\x1a\x1eddex/avs/vlatest/vlatest.proto\"\xa5\x03\n" +
+	"\x16ddex/pie/v10/v10.proto\x12\fddex.pie.v10\x1a\x1eddex/avs/vlatest/vlatest.proto\"\xc2\x03\n" +
 	"\n" +
 	"PieMessage\x12B\n" +
 	"\x0emessage_header\x18\x01 \x01(\v2\x1b.ddex.pie.v10.MessageHeaderR\rmessageHeader\x12R\n" +
@@ -8911,7 +8938,8 @@ const file_ddex_pie_v10_v10_proto_rawDesc = "" +
 	"\x18language_and_script_code\x18\x05 \x01(\tR\x15languageAndScriptCode\x12\x1b\n" +
 	"\txmlns_pie\x18\x06 \x01(\tR\bxmlnsPie\x12\x1b\n" +
 	"\txmlns_xsi\x18\a \x01(\tR\bxmlnsXsi\x12.\n" +
-	"\x13xsi_schema_location\x18\b \x01(\tR\x11xsiSchemaLocation\"\xe7\x02\n" +
+	"\x13xsi_schema_location\x18\b \x01(\tR\x11xsiSchemaLocation\x12\x1b\n" +
+	"\txmlns_avs\x18\t \x01(\tR\bxmlnsAvs\"\x84\x03\n" +
 	"\x11PieRequestMessage\x12B\n" +
 	"\x0emessage_header\x18\x01 \x01(\v2\x1b.ddex.pie.v10.MessageHeaderR\rmessageHeader\x12E\n" +
 	"\x0frequested_party\x18\x02 \x03(\v2\x1c.ddex.pie.v10.RequestedPartyR\x0erequestedParty\x12$\n" +
@@ -8919,7 +8947,8 @@ const file_ddex_pie_v10_v10_proto_rawDesc = "" +
 	"\x18language_and_script_code\x18\x04 \x01(\tR\x15languageAndScriptCode\x12\x1b\n" +
 	"\txmlns_pie\x18\x05 \x01(\tR\bxmlnsPie\x12\x1b\n" +
 	"\txmlns_xsi\x18\x06 \x01(\tR\bxmlnsXsi\x12.\n" +
-	"\x13xsi_schema_location\x18\a \x01(\tR\x11xsiSchemaLocation\"\xbe\x05\n" +
+	"\x13xsi_schema_location\x18\a \x01(\tR\x11xsiSchemaLocation\x12\x1b\n" +
+	"\txmlns_avs\x18\b \x01(\tR\bxmlnsAvs\"\xdb\x05\n" +
 	"\x04Feed\x12,\n" +
 	"\x06author\x18\x01 \x03(\v2\x14.ddex.pie.v10.PersonR\x06author\x122\n" +
 	"\bcategory\x18\x02 \x03(\v2\x16.ddex.pie.v10.CategoryR\bcategory\x126\n" +
@@ -8937,7 +8966,8 @@ const file_ddex_pie_v10_v10_proto_rawDesc = "" +
 	"\x05entry\x18\r \x03(\v2\x13.ddex.pie.v10.EntryR\x05entry\x12\x1b\n" +
 	"\txmlns_pie\x18\x0e \x01(\tR\bxmlnsPie\x12\x1b\n" +
 	"\txmlns_xsi\x18\x0f \x01(\tR\bxmlnsXsi\x12.\n" +
-	"\x13xsi_schema_location\x18\x10 \x01(\tR\x11xsiSchemaLocation\"\xa6\x02\n" +
+	"\x13xsi_schema_location\x18\x10 \x01(\tR\x11xsiSchemaLocation\x12\x1b\n" +
+	"\txmlns_avs\x18\x11 \x01(\tR\bxmlnsAvs\"\xa6\x02\n" +
 	"\fContribution\x121\n" +
 	"\x04role\x18\x01 \x03(\v2\x1d.ddex.pie.v10.ContributorRoleR\x04role\x12&\n" +
 	"\x0fis_primary_role\x18\x02 \x01(\bR\risPrimaryRole\x12C\n" +

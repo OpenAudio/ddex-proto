@@ -10,6 +10,7 @@ const (
 	NamespacePrefix = "ern"
 	SchemaLocation  = "http://ddex.net/xml/ern/383 http://ddex.net/xml/ern/383/release-notification.xsd"
 	NamespaceXSI    = "http://www.w3.org/2001/XMLSchema-instance"
+	NamespaceAVS    = "http://ddex.net/xml/avs/avs"
 )
 
 // MarshalXML implements xml.Marshaler for NewReleaseMessage
@@ -23,6 +24,9 @@ func (m *NewReleaseMessage) MarshalXML(e *xml.Encoder, start xml.StartElement) e
 	}
 	if m.XsiSchemaLocation == "" {
 		m.XsiSchemaLocation = SchemaLocation
+	}
+	if m.XmlnsAvs == "" {
+		m.XmlnsAvs = NamespaceAVS
 	}
 
 	// Set the namespace on the start element
@@ -42,6 +46,23 @@ func (m *NewReleaseMessage) UnmarshalXML(d *xml.Decoder, start xml.StartElement)
 
 // MarshalXML implements xml.Marshaler for CatalogListMessage
 func (m *CatalogListMessage) MarshalXML(e *xml.Encoder, start xml.StartElement) error {
+	// Set default namespace values if empty
+	if m.XmlnsErn == "" {
+		m.XmlnsErn = Namespace
+	}
+	if m.XmlnsXsi == "" {
+		m.XmlnsXsi = NamespaceXSI
+	}
+	if m.XsiSchemaLocation == "" {
+		m.XsiSchemaLocation = SchemaLocation
+	}
+	if m.XmlnsAvs == "" {
+		m.XmlnsAvs = NamespaceAVS
+	}
+
+	// Set the namespace on the start element
+	start.Name.Space = Namespace
+
 	// Create an alias type to avoid infinite recursion
 	type alias CatalogListMessage
 	return e.EncodeElement((*alias)(m), start)
@@ -65,6 +86,9 @@ func (m *PurgeReleaseMessage) MarshalXML(e *xml.Encoder, start xml.StartElement)
 	}
 	if m.XsiSchemaLocation == "" {
 		m.XsiSchemaLocation = SchemaLocation
+	}
+	if m.XmlnsAvs == "" {
+		m.XmlnsAvs = NamespaceAVS
 	}
 
 	// Set the namespace on the start element

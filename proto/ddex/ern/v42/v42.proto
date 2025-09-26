@@ -39,6 +39,8 @@ message NewReleaseMessage {
   string xmlns_xsi = 14;
   // @gotags: xml:"xsi:schemaLocation,attr"
   string xsi_schema_location = 15;
+  // @gotags: xml:"xmlns:avs,attr"
+  string xmlns_avs = 16;
 }
 
 message PurgeReleaseMessage {
@@ -54,6 +56,8 @@ message PurgeReleaseMessage {
   string xmlns_xsi = 5;
   // @gotags: xml:"xsi:schemaLocation,attr"
   string xsi_schema_location = 6;
+  // @gotags: xml:"xmlns:avs,attr"
+  string xmlns_avs = 7;
 }
 
 message AdditionalTitle {

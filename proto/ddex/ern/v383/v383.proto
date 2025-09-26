@@ -43,6 +43,8 @@ message NewReleaseMessage {
   string xmlns_xsi = 16;
   // @gotags: xml:"xsi:schemaLocation,attr"
   string xsi_schema_location = 17;
+  // @gotags: xml:"xmlns:avs,attr"
+  string xmlns_avs = 18;
 }
 
 message CatalogListMessage {
@@ -66,6 +68,8 @@ message CatalogListMessage {
   string xmlns_xsi = 9;
   // @gotags: xml:"xsi:schemaLocation,attr"
   string xsi_schema_location = 10;
+  // @gotags: xml:"xmlns:avs,attr"
+  string xmlns_avs = 11;
 }
 
 message PurgeReleaseMessage {
@@ -83,6 +87,8 @@ message PurgeReleaseMessage {
   string xmlns_xsi = 6;
   // @gotags: xml:"xsi:schemaLocation,attr"
   string xsi_schema_location = 7;
+  // @gotags: xml:"xmlns:avs,attr"
+  string xmlns_avs = 8;
 }
 
 message CatalogItem {

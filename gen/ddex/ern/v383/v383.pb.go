@@ -104,8 +104,10 @@ type NewReleaseMessage struct {
 	XmlnsXsi string `protobuf:"bytes,16,opt,name=xmlns_xsi,json=xmlnsXsi,proto3" json:"xmlns_xsi,omitempty" xml:"xmlns:xsi,attr"`
 	// @gotags: xml:"xsi:schemaLocation,attr"
 	XsiSchemaLocation string `protobuf:"bytes,17,opt,name=xsi_schema_location,json=xsiSchemaLocation,proto3" json:"xsi_schema_location,omitempty" xml:"xsi:schemaLocation,attr"`
-	unknownFields     protoimpl.UnknownFields
-	sizeCache         protoimpl.SizeCache
+	// @gotags: xml:"xmlns:avs,attr"
+	XmlnsAvs      string `protobuf:"bytes,18,opt,name=xmlns_avs,json=xmlnsAvs,proto3" json:"xmlns_avs,omitempty" xml:"xmlns:avs,attr"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *NewReleaseMessage) Reset() {
@@ -257,6 +259,13 @@ func (x *NewReleaseMessage) GetXsiSchemaLocation() string {
 	return ""
 }
 
+func (x *NewReleaseMessage) GetXmlnsAvs() string {
+	if x != nil {
+		return x.XmlnsAvs
+	}
+	return ""
+}
+
 type CatalogListMessage struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// @gotags: xml:"MessageHeader"
@@ -279,8 +288,10 @@ type CatalogListMessage struct {
 	XmlnsXsi string `protobuf:"bytes,9,opt,name=xmlns_xsi,json=xmlnsXsi,proto3" json:"xmlns_xsi,omitempty" xml:"xmlns:xsi,attr"`
 	// @gotags: xml:"xsi:schemaLocation,attr"
 	XsiSchemaLocation string `protobuf:"bytes,10,opt,name=xsi_schema_location,json=xsiSchemaLocation,proto3" json:"xsi_schema_location,omitempty" xml:"xsi:schemaLocation,attr"`
-	unknownFields     protoimpl.UnknownFields
-	sizeCache         protoimpl.SizeCache
+	// @gotags: xml:"xmlns:avs,attr"
+	XmlnsAvs      string `protobuf:"bytes,11,opt,name=xmlns_avs,json=xmlnsAvs,proto3" json:"xmlns_avs,omitempty" xml:"xmlns:avs,attr"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *CatalogListMessage) Reset() {
@@ -383,6 +394,13 @@ func (x *CatalogListMessage) GetXsiSchemaLocation() string {
 	return ""
 }
 
+func (x *CatalogListMessage) GetXmlnsAvs() string {
+	if x != nil {
+		return x.XmlnsAvs
+	}
+	return ""
+}
+
 type PurgeReleaseMessage struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// @gotags: xml:"MessageHeader"
@@ -399,8 +417,10 @@ type PurgeReleaseMessage struct {
 	XmlnsXsi string `protobuf:"bytes,6,opt,name=xmlns_xsi,json=xmlnsXsi,proto3" json:"xmlns_xsi,omitempty" xml:"xmlns:xsi,attr"`
 	// @gotags: xml:"xsi:schemaLocation,attr"
 	XsiSchemaLocation string `protobuf:"bytes,7,opt,name=xsi_schema_location,json=xsiSchemaLocation,proto3" json:"xsi_schema_location,omitempty" xml:"xsi:schemaLocation,attr"`
-	unknownFields     protoimpl.UnknownFields
-	sizeCache         protoimpl.SizeCache
+	// @gotags: xml:"xmlns:avs,attr"
+	XmlnsAvs      string `protobuf:"bytes,8,opt,name=xmlns_avs,json=xmlnsAvs,proto3" json:"xmlns_avs,omitempty" xml:"xmlns:avs,attr"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *PurgeReleaseMessage) Reset() {
@@ -478,6 +498,13 @@ func (x *PurgeReleaseMessage) GetXmlnsXsi() string {
 func (x *PurgeReleaseMessage) GetXsiSchemaLocation() string {
 	if x != nil {
 		return x.XsiSchemaLocation
+	}
+	return ""
+}
+
+func (x *PurgeReleaseMessage) GetXmlnsAvs() string {
+	if x != nil {
+		return x.XmlnsAvs
 	}
 	return ""
 }
@@ -19566,7 +19593,7 @@ var File_ddex_ern_v383_v383_proto protoreflect.FileDescriptor
 
 const file_ddex_ern_v383_v383_proto_rawDesc = "" +
 	"\n" +
-	"\x18ddex/ern/v383/v383.proto\x12\rddex.ern.v383\x1a\"ddex/avs/v20200108/v20200108.proto\"\xc1\a\n" +
+	"\x18ddex/ern/v383/v383.proto\x12\rddex.ern.v383\x1a\"ddex/avs/v20200108/v20200108.proto\"\xde\a\n" +
 	"\x11NewReleaseMessage\x12C\n" +
 	"\x0emessage_header\x18\x01 \x01(\v2\x1c.ddex.ern.v383.MessageHeaderR\rmessageHeader\x12)\n" +
 	"\x10update_indicator\x18\x02 \x01(\tR\x0fupdateIndicator\x12\x1f\n" +
@@ -19586,7 +19613,8 @@ const file_ddex_ern_v383_v383_proto_rawDesc = "" +
 	"\x18language_and_script_code\x18\x0e \x01(\tR\x15languageAndScriptCode\x12\x1b\n" +
 	"\txmlns_ern\x18\x0f \x01(\tR\bxmlnsErn\x12\x1b\n" +
 	"\txmlns_xsi\x18\x10 \x01(\tR\bxmlnsXsi\x12.\n" +
-	"\x13xsi_schema_location\x18\x11 \x01(\tR\x11xsiSchemaLocation\"\x9d\x04\n" +
+	"\x13xsi_schema_location\x18\x11 \x01(\tR\x11xsiSchemaLocation\x12\x1b\n" +
+	"\txmlns_avs\x18\x12 \x01(\tR\bxmlnsAvs\"\xba\x04\n" +
 	"\x12CatalogListMessage\x12C\n" +
 	"\x0emessage_header\x18\x01 \x01(\v2\x1c.ddex.ern.v383.MessageHeaderR\rmessageHeader\x12)\n" +
 	"\x10publication_date\x18\x02 \x01(\tR\x0fpublicationDate\x12=\n" +
@@ -19598,7 +19626,8 @@ const file_ddex_ern_v383_v383_proto_rawDesc = "" +
 	"\txmlns_ern\x18\b \x01(\tR\bxmlnsErn\x12\x1b\n" +
 	"\txmlns_xsi\x18\t \x01(\tR\bxmlnsXsi\x12.\n" +
 	"\x13xsi_schema_location\x18\n" +
-	" \x01(\tR\x11xsiSchemaLocation\"\xfd\x02\n" +
+	" \x01(\tR\x11xsiSchemaLocation\x12\x1b\n" +
+	"\txmlns_avs\x18\v \x01(\tR\bxmlnsAvs\"\x9a\x03\n" +
 	"\x13PurgeReleaseMessage\x12C\n" +
 	"\x0emessage_header\x18\x01 \x01(\v2\x1c.ddex.ern.v383.MessageHeaderR\rmessageHeader\x12C\n" +
 	"\x0epurged_release\x18\x02 \x01(\v2\x1c.ddex.ern.v383.PurgedReleaseR\rpurgedRelease\x129\n" +
@@ -19606,7 +19635,8 @@ const file_ddex_ern_v383_v383_proto_rawDesc = "" +
 	"\x18language_and_script_code\x18\x04 \x01(\tR\x15languageAndScriptCode\x12\x1b\n" +
 	"\txmlns_ern\x18\x05 \x01(\tR\bxmlnsErn\x12\x1b\n" +
 	"\txmlns_xsi\x18\x06 \x01(\tR\bxmlnsXsi\x12.\n" +
-	"\x13xsi_schema_location\x18\a \x01(\tR\x11xsiSchemaLocation\"\xff\x04\n" +
+	"\x13xsi_schema_location\x18\a \x01(\tR\x11xsiSchemaLocation\x12\x1b\n" +
+	"\txmlns_avs\x18\b \x01(\tR\bxmlnsAvs\"\xff\x04\n" +
 	"\vCatalogItem\x12F\n" +
 	"\x0eterritory_code\x18\x01 \x03(\v2\x1f.ddex.ern.v383.AllTerritoryCodeR\rterritoryCode\x127\n" +
 	"\n" +

@@ -31,6 +31,11 @@ var messageRegistry = map[string]MessageTypeInfo{
 		Namespace:   v383.Namespace,
 		RootElement: "NewReleaseMessage",
 	},
+	"ern/v383/CatalogListMessage": {
+		Type:        reflect.TypeOf(v383.CatalogListMessage{}),
+		Namespace:   v383.Namespace,
+		RootElement: "CatalogListMessage",
+	},
 	"ern/v383/PurgeReleaseMessage": {
 		Type:        reflect.TypeOf(v383.PurgeReleaseMessage{}),
 		Namespace:   v383.Namespace,

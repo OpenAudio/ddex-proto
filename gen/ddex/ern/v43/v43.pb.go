@@ -56,8 +56,10 @@ type NewReleaseMessage struct {
 	XmlnsXsi string `protobuf:"bytes,15,opt,name=xmlns_xsi,json=xmlnsXsi,proto3" json:"xmlns_xsi,omitempty" xml:"xmlns:xsi,attr"`
 	// @gotags: xml:"xsi:schemaLocation,attr"
 	XsiSchemaLocation string `protobuf:"bytes,16,opt,name=xsi_schema_location,json=xsiSchemaLocation,proto3" json:"xsi_schema_location,omitempty" xml:"xsi:schemaLocation,attr"`
-	unknownFields     protoimpl.UnknownFields
-	sizeCache         protoimpl.SizeCache
+	// @gotags: xml:"xmlns:avs,attr"
+	XmlnsAvs      string `protobuf:"bytes,17,opt,name=xmlns_avs,json=xmlnsAvs,proto3" json:"xmlns_avs,omitempty" xml:"xmlns:avs,attr"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *NewReleaseMessage) Reset() {
@@ -202,6 +204,13 @@ func (x *NewReleaseMessage) GetXsiSchemaLocation() string {
 	return ""
 }
 
+func (x *NewReleaseMessage) GetXmlnsAvs() string {
+	if x != nil {
+		return x.XmlnsAvs
+	}
+	return ""
+}
+
 type PurgeReleaseMessage struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// @gotags: xml:"MessageHeader"
@@ -218,8 +227,10 @@ type PurgeReleaseMessage struct {
 	XmlnsXsi string `protobuf:"bytes,6,opt,name=xmlns_xsi,json=xmlnsXsi,proto3" json:"xmlns_xsi,omitempty" xml:"xmlns:xsi,attr"`
 	// @gotags: xml:"xsi:schemaLocation,attr"
 	XsiSchemaLocation string `protobuf:"bytes,7,opt,name=xsi_schema_location,json=xsiSchemaLocation,proto3" json:"xsi_schema_location,omitempty" xml:"xsi:schemaLocation,attr"`
-	unknownFields     protoimpl.UnknownFields
-	sizeCache         protoimpl.SizeCache
+	// @gotags: xml:"xmlns:avs,attr"
+	XmlnsAvs      string `protobuf:"bytes,8,opt,name=xmlns_avs,json=xmlnsAvs,proto3" json:"xmlns_avs,omitempty" xml:"xmlns:avs,attr"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *PurgeReleaseMessage) Reset() {
@@ -297,6 +308,13 @@ func (x *PurgeReleaseMessage) GetXmlnsXsi() string {
 func (x *PurgeReleaseMessage) GetXsiSchemaLocation() string {
 	if x != nil {
 		return x.XsiSchemaLocation
+	}
+	return ""
+}
+
+func (x *PurgeReleaseMessage) GetXmlnsAvs() string {
+	if x != nil {
+		return x.XmlnsAvs
 	}
 	return ""
 }
@@ -18134,7 +18152,7 @@ var File_ddex_ern_v43_v43_proto protoreflect.FileDescriptor
 
 const file_ddex_ern_v43_v43_proto_rawDesc = "" +
 	"\n" +
-	"\x16ddex/ern/v43/v43.proto\x12\fddex.ern.v43\x1a\x1eddex/avs/vlatest/vlatest.proto\"\xbc\a\n" +
+	"\x16ddex/ern/v43/v43.proto\x12\fddex.ern.v43\x1a\x1eddex/avs/vlatest/vlatest.proto\"\xd9\a\n" +
 	"\x11NewReleaseMessage\x12B\n" +
 	"\x0emessage_header\x18\x01 \x01(\v2\x1b.ddex.ern.v43.MessageHeaderR\rmessageHeader\x12?\n" +
 	"\rrelease_admin\x18\x02 \x03(\v2\x1a.ddex.ern.v43.ReleaseAdminR\freleaseAdmin\x126\n" +
@@ -18153,7 +18171,8 @@ const file_ddex_ern_v43_v43_proto_rawDesc = "" +
 	"\x18language_and_script_code\x18\r \x01(\tR\x15languageAndScriptCode\x12\x1b\n" +
 	"\txmlns_ern\x18\x0e \x01(\tR\bxmlnsErn\x12\x1b\n" +
 	"\txmlns_xsi\x18\x0f \x01(\tR\bxmlnsXsi\x12.\n" +
-	"\x13xsi_schema_location\x18\x10 \x01(\tR\x11xsiSchemaLocation\"\xe6\x02\n" +
+	"\x13xsi_schema_location\x18\x10 \x01(\tR\x11xsiSchemaLocation\x12\x1b\n" +
+	"\txmlns_avs\x18\x11 \x01(\tR\bxmlnsAvs\"\x83\x03\n" +
 	"\x13PurgeReleaseMessage\x12B\n" +
 	"\x0emessage_header\x18\x01 \x01(\v2\x1b.ddex.ern.v43.MessageHeaderR\rmessageHeader\x12B\n" +
 	"\x0epurged_release\x18\x02 \x01(\v2\x1b.ddex.ern.v43.PurgedReleaseR\rpurgedRelease\x12$\n" +
@@ -18161,7 +18180,8 @@ const file_ddex_ern_v43_v43_proto_rawDesc = "" +
 	"\x18language_and_script_code\x18\x04 \x01(\tR\x15languageAndScriptCode\x12\x1b\n" +
 	"\txmlns_ern\x18\x05 \x01(\tR\bxmlnsErn\x12\x1b\n" +
 	"\txmlns_xsi\x18\x06 \x01(\tR\bxmlnsXsi\x12.\n" +
-	"\x13xsi_schema_location\x18\a \x01(\tR\x11xsiSchemaLocation\"\xa2\x03\n" +
+	"\x13xsi_schema_location\x18\a \x01(\tR\x11xsiSchemaLocation\x12\x1b\n" +
+	"\txmlns_avs\x18\b \x01(\tR\bxmlnsAvs\"\xa2\x03\n" +
 	"\x0fAdditionalTitle\x12\x1d\n" +
 	"\n" +
 	"title_text\x18\x01 \x01(\tR\ttitleText\x12:\n" +
