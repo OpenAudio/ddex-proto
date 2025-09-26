@@ -22,6 +22,7 @@ type (
 	// ERN v3.8.3 - Main message types
 	NewReleaseMessageV383   = ernv383.NewReleaseMessage
 	PurgeReleaseMessageV383 = ernv383.PurgeReleaseMessage
+	CatalogListMessageV383  = ernv383.CatalogListMessage
 
 	// ERN v4.3.2 - Main message types
 	NewReleaseMessageV432   = ernv432.NewReleaseMessage

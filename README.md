@@ -16,6 +16,8 @@ DDEX is a consortium of leading media companies, music licensing organizations, 
 This library provides Go structs with Protocol Buffer, JSON, and XML serialization support for:
 
 - **ERN v4.3.2** (Electronic Release Notification) - For communicating music release information
+- **ERN v4.3** (Electronic Release Notification) - For communicating music release information
+- **ERN v3.8.3** (Electronic Release Notification) - For communicating music release information
 - **MEAD v1.1** (Media Enrichment and Description) - For enriching media metadata
 - **PIE v1.0** (Party Identification and Enrichment) - For party/artist information and awards
 
@@ -143,7 +145,16 @@ func main() {
 - `NewReleaseMessage` - New music releases
 - `PurgeReleaseMessage` - Release removal notifications
 
-### MEAD (Media Enrichment and Description) v1.1  
+### ERN (Electronic Release Notification) v4.3
+- `NewReleaseMessage` - New music releases
+- `PurgeReleaseMessage` - Release removal notifications
+
+### ERN (Electronic Release Notification) v3.8.3
+- `NewReleaseMessage` - New music releases
+- `PurgeReleaseMessage` - Release removal notifications
+- `CatalogListMessage` - Catalog list messages
+
+### MEAD (Media Enrichment and Description) v1.1
 - `MeadMessage` - Media metadata enrichment
 
 ### PIE (Party Identification and Enrichment) v1.0
@@ -158,6 +169,15 @@ For convenience, the main package exports versioned type aliases:
 // ERN v4.3.2 - Main message types
 type NewReleaseMessageV432   = ernv432.NewReleaseMessage
 type PurgeReleaseMessageV432 = ernv432.PurgeReleaseMessage
+
+// ERN v4.3 - Main message types
+type NewReleaseMessageV43   = ernv43.NewReleaseMessage
+type PurgeReleaseMessageV43 = ernv43.PurgeReleaseMessage
+
+// ERN v3.8.3 - Main message types (including CatalogListMessage)
+type NewReleaseMessageV383   = ernv383.NewReleaseMessage
+type PurgeReleaseMessageV383 = ernv383.PurgeReleaseMessage
+type CatalogListMessageV383  = ernv383.CatalogListMessage
 
 // MEAD v1.1 types
 type MeadMessageV11 = meadv11.MeadMessage
@@ -174,14 +194,16 @@ type PieRequestMessageV10 = piev10.PieRequestMessage
 The `examples/proto/` directory contains a comprehensive tool for parsing and validating DDEX files:
 
 ```bash
-# Parse any DDEX file - automatically detects message type
+# Parse any DDEX file - automatically detects message type and version
 go run examples/proto/main.go -file path/to/your/ddex-file.xml
 
-# Examples with different message types
+# Examples with different message types (ERN v4.3)
 go run examples/proto/main.go -file testdata/ernv432/Samples43/1\ Audio.xml
 go run examples/proto/main.go -file testdata/meadv11/mead_award_example.xml
 go run examples/proto/main.go -file testdata/piev10/pie_award_example.xml
 ```
+
+**Note:** The ERN test files in `testdata/ernv432/Samples43/` are actually ERN v4.3 files (despite the directory name). ERN v3.8.3 and v4.3.2 are supported but test files need to be added.
 
 For safely storing real DDEX files for testing, create a `test-files/` or `ddex-samples/` directory (gitignored):
 
