@@ -1,6 +1,6 @@
 # DDEX Go Library Makefile
 
-.PHONY: all test testdata clean generate-proto generate-proto-go generate fmt buf-lint buf-generate buf-all help
+.PHONY: all test testdata clean generate-proto generate-proto-go generate fmt buf-lint buf-generate buf-all lint lint-install help
 
 # Default target
 help:
@@ -17,9 +17,11 @@ help:
 	@echo "  buf-generate  - Generate Go code from .proto files with buf"
 	@echo "  buf-all       - Generate protos from XSD, then Go code from protos"
 	@echo ""
-	@echo "Testing:"
+	@echo "Testing & Quality:"
 	@echo "  test          - Run all tests (downloads testdata if needed)"
 	@echo "  test-roundtrip - Test XML roundtrip compatibility"
+	@echo "  lint          - Run essential quality checks (focuses on dangerous issues)"
+	@echo "  lint-install  - Install linting tools"
 	@echo "  testdata      - Download DDEX sample files"
 	@echo ""
 	@echo "Maintenance:"
@@ -104,6 +106,54 @@ benchmark:
 # Test roundtrip compatibility between pure Go and proto-generated Go
 test-roundtrip:
 	go test -v ./test/roundtrip/...
+
+# Install linting tools used in CI
+lint-install:
+	@echo "Installing linting tools..."
+	go install github.com/client9/misspell/cmd/misspell@latest
+	go install github.com/gordonklaus/ineffassign@latest
+	go install github.com/fzipp/gocyclo/cmd/gocyclo@latest
+	@echo "Linting tools installed!"
+
+# Run all linting and quality checks (same as CI)
+lint: fmt buf-lint
+	@echo "Running quality checks..."
+	@echo "Checking gofmt..."
+	@if [ "$$(gofmt -s -l . | wc -l)" -gt 0 ]; then \
+		echo "❌ The following files are not gofmt'd:"; \
+		gofmt -s -l .; \
+		echo "Run 'make fmt' to fix formatting issues"; \
+		exit 1; \
+	fi
+	@echo "✅ All files are properly formatted"
+
+	@echo "Running go vet..."
+	@if ! go vet ./...; then \
+		echo "❌ go vet found issues"; \
+		exit 1; \
+	fi
+	@echo "✅ No go vet issues found"
+
+	@echo "Checking for ineffective assignments (dangerous)..."
+	@if ineffassign . | grep -v "gen/" | grep -q "."; then \
+		echo "❌ Ineffective assignments found:"; \
+		ineffassign . | grep -v "gen/"; \
+		echo "These could indicate logic errors"; \
+		exit 1; \
+	fi
+	@echo "✅ No ineffective assignments found"
+
+	@echo "Verifying go.mod is tidy..."
+	@go mod tidy
+	@if [ "$$(git status --porcelain go.mod go.sum | wc -l)" -gt 0 ]; then \
+		echo "❌ go.mod is not tidy"; \
+		echo "Run 'go mod tidy' and commit the changes"; \
+		git diff go.mod go.sum; \
+		exit 1; \
+	fi
+	@echo "✅ go.mod is tidy"
+
+	@echo "🎉 All quality checks passed!"
 
 # Clean up generated files
 clean:

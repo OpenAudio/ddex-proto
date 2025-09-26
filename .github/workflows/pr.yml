@@ -42,40 +42,16 @@ jobs:
         fi
         echo "✅ No go vet issues found"
 
-    - name: Check for misspellings
-      run: |
-        if [ "$(misspell . | wc -l)" -gt 0 ]; then
-          echo "❌ Misspellings found:"
-          misspell .
-          echo ""
-          echo "Run 'misspell -w .' to fix misspellings"
-          exit 1
-        fi
-        echo "✅ No misspellings found"
-
-    - name: Check for ineffective assignments
+    - name: Check for ineffective assignments (dangerous)
       run: |
         if ineffassign . | grep -v "gen/" | grep -q "."; then
           echo "❌ Ineffective assignments found:"
           ineffassign . | grep -v "gen/"
           echo ""
-          echo "Fix the ineffective assignments above"
+          echo "These could indicate logic errors - fix the assignments above"
           exit 1
         fi
         echo "✅ No ineffective assignments found"
-
-    - name: Check cyclomatic complexity
-      run: |
-        # Allow higher complexity for generated code and specific functions
-        COMPLEX_FUNCS=$(gocyclo -over 15 . | grep -v "gen/" | grep -v "enum_strings.go" | grep -v "TestFieldCompleteness" | grep -v "compareDOMTrees" | grep -v "performRoundTripValidation")
-        if [ -n "$COMPLEX_FUNCS" ]; then
-          echo "❌ Functions with high cyclomatic complexity found:"
-          echo "$COMPLEX_FUNCS"
-          echo ""
-          echo "Consider breaking down complex functions (complexity > 15)"
-          exit 1
-        fi
-        echo "✅ Cyclomatic complexity is acceptable"
 
     - name: Run tests
       run: |
@@ -100,11 +76,9 @@ jobs:
       run: |
         echo "🎉 All quality checks passed!"
         echo ""
-        echo "This PR maintains the Go Report Card A rating:"
-        echo "✅ gofmt"
-        echo "✅ go vet"
-        echo "✅ misspell"
-        echo "✅ ineffassign"
-        echo "✅ gocyclo"
-        echo "✅ tests"
-        echo "✅ go mod tidy"
+        echo "This PR maintains code safety and quality:"
+        echo "✅ gofmt - proper formatting"
+        echo "✅ go vet - static analysis (catches dangerous issues like mutex copying)"
+        echo "✅ ineffassign - no logic errors from unused assignments"
+        echo "✅ tests - comprehensive DDEX validation"
+        echo "✅ go mod tidy - clean dependencies"

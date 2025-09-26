@@ -476,7 +476,7 @@ func generateXMLMarshalingMethods(message MessageInfo, nsInfo *NamespaceInfo) st
 		sb.WriteString("\t// Add namespace attributes to the element, avoiding duplicates\n")
 		sb.WriteString("\t// Use reflection to find which attributes are already handled by struct fields\n")
 		sb.WriteString("\texistingAttrs := make(map[string]bool)\n")
-		sb.WriteString("\tv := reflect.ValueOf(*m)\n")
+		sb.WriteString("\tv := reflect.ValueOf(m).Elem()\n")
 		sb.WriteString("\tt := v.Type()\n")
 		sb.WriteString("\tfor i := 0; i < v.NumField(); i++ {\n")
 		sb.WriteString("\t\tfield := t.Field(i)\n")

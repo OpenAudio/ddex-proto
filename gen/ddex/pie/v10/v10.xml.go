@@ -27,7 +27,7 @@ func (m *PieMessage) MarshalXML(e *xml.Encoder, start xml.StartElement) error {
 	// Add namespace attributes to the element, avoiding duplicates
 	// Use reflection to find which attributes are already handled by struct fields
 	existingAttrs := make(map[string]bool)
-	v := reflect.ValueOf(*m)
+	v := reflect.ValueOf(m).Elem()
 	t := v.Type()
 	for i := 0; i < v.NumField(); i++ {
 		field := t.Field(i)
@@ -102,7 +102,7 @@ func (m *PieRequestMessage) MarshalXML(e *xml.Encoder, start xml.StartElement) e
 	// Add namespace attributes to the element, avoiding duplicates
 	// Use reflection to find which attributes are already handled by struct fields
 	existingAttrs := make(map[string]bool)
-	v := reflect.ValueOf(*m)
+	v := reflect.ValueOf(m).Elem()
 	t := v.Type()
 	for i := 0; i < v.NumField(); i++ {
 		field := t.Field(i)
