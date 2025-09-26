@@ -26,6 +26,7 @@ var specs = []struct {
 	{"avs", "latest", "allowed-value-sets.xsd"},
 	{"avs", "20200108", "avs_20200108.xsd"},
 	{"avs", "20200518", "avs20200518.xsd"},
+	{"avs", "20161006", "avs_20161006.xsd"},
 	// Then process the main specs
 	{"ern", "42", "release-notification.xsd"},
 	{"ern", "43", "release-notification.xsd"},
@@ -33,6 +34,7 @@ var specs = []struct {
 	{"mead", "11", "media-enrichment-and-description.xsd"},
 	{"pie", "10", "party-identification-and-enrichment.xsd"},
 	{"ern", "383", "release-notification.xsd"},
+	{"ern", "381", "release-notification.xsd"},
 }
 
 //

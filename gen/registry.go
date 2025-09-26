@@ -9,6 +9,7 @@ import (
 	"strings"
 
 	// Auto-generated imports for all DDEX message types
+	v381 "github.com/OpenAudio/ddex-proto/gen/ddex/ern/v381"
 	v383 "github.com/OpenAudio/ddex-proto/gen/ddex/ern/v383"
 	v42 "github.com/OpenAudio/ddex-proto/gen/ddex/ern/v42"
 	v43 "github.com/OpenAudio/ddex-proto/gen/ddex/ern/v43"
@@ -26,6 +27,21 @@ type MessageTypeInfo struct {
 
 // messageRegistry maps "messageType/version" to MessageTypeInfo
 var messageRegistry = map[string]MessageTypeInfo{
+	"ern/v381/NewReleaseMessage": {
+		Type:        reflect.TypeOf(v381.NewReleaseMessage{}),
+		Namespace:   v381.Namespace,
+		RootElement: "NewReleaseMessage",
+	},
+	"ern/v381/CatalogListMessage": {
+		Type:        reflect.TypeOf(v381.CatalogListMessage{}),
+		Namespace:   v381.Namespace,
+		RootElement: "CatalogListMessage",
+	},
+	"ern/v381/PurgeReleaseMessage": {
+		Type:        reflect.TypeOf(v381.PurgeReleaseMessage{}),
+		Namespace:   v381.Namespace,
+		RootElement: "PurgeReleaseMessage",
+	},
 	"ern/v383/NewReleaseMessage": {
 		Type:        reflect.TypeOf(v383.NewReleaseMessage{}),
 		Namespace:   v383.Namespace,
