@@ -1,0 +1,1289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ernm:NewReleaseMessage xmlns:ernm="http://ddex.net/xml/ern/383" LanguageAndScriptCode="en"
+	ReleaseProfileVersionId="ClassicalAudioAlbum"
+	xmlns:avs="http://ddex.net/xml/avs/avs" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://ddex.net/xml/ern/383 http://ddex.net/xml/ern/383/release-notification.xsd" MessageSchemaVersionId="ern/383">
+	<MessageHeader>
+		<MessageThreadId>1</MessageThreadId>
+		<MessageId>1</MessageId>
+		<MessageSender>
+			<PartyId>PADPIDA67890</PartyId>
+			<PartyName>
+				<FullName>TestLabel</FullName>
+			</PartyName>
+		</MessageSender>
+		<MessageRecipient>
+			<PartyId>PADPIDA12345</PartyId>
+			<PartyName>
+				<FullName>Testpartner</FullName>
+			</PartyName>
+		</MessageRecipient>
+		<MessageCreatedDateTime>2021-12-01T13:50:36.567Z</MessageCreatedDateTime>
+		<MessageControlType>TestMessage</MessageControlType>
+	</MessageHeader>
+
+	<ResourceList>
+		<SoundRecording>
+			<SoundRecordingType>MusicalWorkSoundRecording</SoundRecordingType>
+			<SoundRecordingId>
+				<ISRC>DEF058400331</ISRC>
+			</SoundRecordingId>
+			<ResourceReference>A1</ResourceReference>
+
+			<ReferenceTitle>
+				<TitleText>Mozart: Symphony No. 40 in G Minor, K. 550 - I. Molto allegro</TitleText>
+				<SubTitle>Live at Grosser Saal, Musikverein, Wien / 1984</SubTitle>
+			</ReferenceTitle>
+			<Duration>PT8M28S</Duration>
+
+			<SoundRecordingDetailsByTerritory>
+				<TerritoryCode>Worldwide</TerritoryCode>
+
+				<Title TitleType="DisplayTitle" LanguageAndScriptCode="it">
+					<TitleText>Mozart: Symphony No. 40 in G Minor, K. 550 - I. Molto allegro</TitleText>
+					<SubTitle>Live at Grosser Saal, Musikverein, Wien / 1984</SubTitle>
+				</Title>
+				<Title TitleType="DisplayTitle" LanguageAndScriptCode="ja-hrkt">
+					<TitleText>Mozart: コウキョウキョクダイヨンジュウバントタンチョウケッヘルゴヒャクゴジュウ - ダイイチガクショウモルトアレグロ</TitleText>
+				</Title>
+				<Title TitleType="DisplayTitle" LanguageAndScriptCode="ja-jpan">
+					<TitleText>Mozart: 交響曲 第40番 ト短調 K.550 - 第1楽章: Molto allegro</TitleText>
+				</Title>
+				<Title LanguageAndScriptCode="it" TitleType="FormalTitle">
+					<TitleText>Mozart: Symphony No. 40 in G Minor, K. 550 - I. Molto allegro</TitleText>
+					<SubTitle>Live at Grosser Saal, Musikverein, Wien / 1984</SubTitle>
+				</Title>
+				<Title LanguageAndScriptCode="it" TitleType="GroupingTitle">
+					<TitleText>Symphony No. 40 in G Minor, K. 550</TitleText>
+				</Title>
+				<Title LanguageAndScriptCode="ja-hrkt" TitleType="GroupingTitle">
+					<TitleText>コウキョウキョクダイヨンジュウバントタンチョウケッヘルゴヒャクゴジュウ</TitleText>
+				</Title>
+				<Title LanguageAndScriptCode="ja-jpan" TitleType="GroupingTitle">
+					<TitleText>交響曲 第40番 ト短調 K.550</TitleText>
+				</Title>
+
+				<DisplayArtist SequenceNumber="1">
+					<PartyName>
+						<FullName>Wiener Philharmoniker</FullName>
+					</PartyName>
+					<ArtistRole>MainArtist</ArtistRole>
+					<ArtistRole>Orchestra</ArtistRole>
+				</DisplayArtist>
+				<DisplayArtist SequenceNumber="2">
+					<PartyName>
+						<FullName>Leonard Bernstein</FullName>
+					</PartyName>
+					<ArtistRole>MainArtist</ArtistRole>
+					<ArtistRole>Conductor</ArtistRole>
+				</DisplayArtist>
+
+				<ResourceContributor SequenceNumber="1">
+					<PartyName LanguageAndScriptCode="it">
+						<FullName>Hanno Rinke</FullName>
+						<NamesBeforeKeyName>Hanno</NamesBeforeKeyName>
+						<KeyName>Rinke</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-hrkt">
+						<FullName>ハンノリンケ</FullName>
+						<KeyName>ハンノリンケ</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-jpan">
+						<FullName>ハンノ・リンケ</FullName>
+						<KeyName>ハンノ・リンケ</KeyName>
+					</PartyName>
+					<ResourceContributorRole>Producer</ResourceContributorRole>
+				</ResourceContributor>
+
+				<ResourceContributor SequenceNumber="2">
+					<PartyName LanguageAndScriptCode="it">
+						<FullName>Hans Weber</FullName>
+						<NamesBeforeKeyName>Hans</NamesBeforeKeyName>
+						<KeyName>Weber</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-hrkt">
+						<FullName>ＨａｎｓＷｅｂｅｒ</FullName>
+						<KeyName>ＨａｎｓＷｅｂｅｒ</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-jpan">
+						<FullName>Hans Weber</FullName>
+						<KeyName>Hans Weber</KeyName>
+					</PartyName>
+					<ResourceContributorRole>Producer</ResourceContributorRole>
+				</ResourceContributor>
+
+				<ResourceContributor SequenceNumber="3">
+					<PartyName LanguageAndScriptCode="it">
+						<FullName>Klaus Scheibe</FullName>
+						<NamesBeforeKeyName>Klaus</NamesBeforeKeyName>
+						<KeyName>Scheibe</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-hrkt">
+						<FullName>ＫｌａｕｓＳｃｈｅｉｂｅ</FullName>
+						<KeyName>ＫｌａｕｓＳｃｈｅｉｂｅ</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-jpan">
+						<FullName>KLAUS SCHEIBE</FullName>
+						<KeyName>KLAUS SCHEIBE</KeyName>
+					</PartyName>
+					<ResourceContributorRole Namespace="PADPIDA2013042401U" UserDefinedValue="Balance Engineer">Engineer</ResourceContributorRole>
+				</ResourceContributor>
+				<ResourceContributor SequenceNumber="4">
+					<PartyName LanguageAndScriptCode="it">
+						<FullName>Jobst Eberhardt</FullName>
+						<NamesBeforeKeyName>Jobst</NamesBeforeKeyName>
+						<KeyName>Eberhardt</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-hrkt">
+						<FullName>エバーハルト</FullName>
+						<KeyName>エバーハルト</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-jpan">
+						<FullName>Jobst Eberhardt</FullName>
+						<KeyName>Jobst Eberhardt</KeyName>
+					</PartyName>
+					<ResourceContributorRole>RecordingEngineer</ResourceContributorRole>
+				</ResourceContributor>
+				<ResourceContributor SequenceNumber="5">
+					<PartyName LanguageAndScriptCode="it">
+						<FullName>Joachim Niss</FullName>
+						<NamesBeforeKeyName>Joachim</NamesBeforeKeyName>
+						<KeyName>Niss</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-hrkt">
+						<FullName>Ｊｏａｃｈｉｍ　Ｎｉｓｓ</FullName>
+						<KeyName>Ｊｏａｃｈｉｍ　Ｎｉｓｓ</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-jpan">
+						<FullName>Joachim Niss</FullName>
+						<KeyName>Joachim Niss</KeyName>
+					</PartyName>
+					<ResourceContributorRole>RecordingEngineer</ResourceContributorRole>
+				</ResourceContributor>
+				<ResourceContributor SequenceNumber="6">
+					<PartyName LanguageAndScriptCode="it">
+						<FullName>Klaus Behrens</FullName>
+						<NamesBeforeKeyName>Klaus</NamesBeforeKeyName>
+						<KeyName>Behrens</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-hrkt">
+						<FullName>ベーレンス</FullName>
+						<KeyName>ベーレンス</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-jpan">
+						<FullName>クラウス・ベーレンス</FullName>
+						<KeyName>クラウス・ベーレンス</KeyName>
+					</PartyName>
+					<ResourceContributorRole Namespace="PADPIDA2013042401U" UserDefinedValue="Editor">UserDefined</ResourceContributorRole>
+				</ResourceContributor>
+				<IndirectResourceContributor SequenceNumber="7">
+					<PartyName LanguageAndScriptCode="it">
+						<FullName>Wolfgang Amadeus Mozart</FullName>
+						<NamesBeforeKeyName>Wolfgang Amadeus</NamesBeforeKeyName>
+						<KeyName>Mozart</KeyName>
+					</PartyName>
+					<IndirectResourceContributorRole>Composer</IndirectResourceContributorRole>
+				</IndirectResourceContributor>
+				<DisplayArtistName>Wiener Philharmoniker and Leonard Bernstein</DisplayArtistName>
+				<PLine>
+					<Year>1984</Year>
+					<PLineCompany>Deutsche Grammophon GmbH, Berlin</PLineCompany>
+					<PLineText>℗ 1984 Deutsche Grammophon GmbH, Berlin</PLineText>
+				</PLine>
+				<!--
+				Cannot be communicated in ERN-3
+				<CreationDate ApplicableTerritoryCode="AT" LocationDescription="Grosser Saal, Musikverein, Wien">1984-01-31</CreationDate>
+				-->
+				<ParentalWarningType>NotExplicit</ParentalWarningType>
+
+			</SoundRecordingDetailsByTerritory>
+		</SoundRecording>
+		<SoundRecording>
+			<SoundRecordingType>MusicalWorkSoundRecording</SoundRecordingType>
+			<SoundRecordingId>
+				<ISRC>DEF058400332</ISRC>
+			</SoundRecordingId>
+			<ResourceReference>A2</ResourceReference>
+
+			<ReferenceTitle LanguageAndScriptCode="it">
+				<TitleText>Mozart: Symphony No. 40 in G Minor, K. 550 - II. Andante</TitleText>
+				<SubTitle>Live at Grosser Saal, Musikverein, Wien / 1984</SubTitle>
+			</ReferenceTitle>
+			<Duration>PT8M12S</Duration>
+
+			<SoundRecordingDetailsByTerritory>
+				<TerritoryCode>Worldwide</TerritoryCode>
+
+				<Title TitleType="DisplayTitle" LanguageAndScriptCode="it">
+					<TitleText>Mozart: Symphony No. 40 in G Minor, K. 550 - II. Andante</TitleText>
+					<SubTitle>Live at Grosser Saal, Musikverein, Wien / 1984</SubTitle>
+				</Title>
+				<Title TitleType="DisplayTitle" LanguageAndScriptCode="ja-hrkt">
+					<TitleText>Mozart: コウキョウキョクダイ４０バン - ダイニガクショウ：アンダンテ</TitleText>
+				</Title>
+				<Title TitleType="DisplayTitle" LanguageAndScriptCode="ja-jpan">
+					<TitleText>Mozart: 交響曲 第40番 ト短調 K.550 - 第2楽章: Andante</TitleText>
+				</Title>
+				<Title LanguageAndScriptCode="it" TitleType="FormalTitle">
+					<TitleText>Mozart: Symphony No. 40 in G Minor, K. 550 - II. Andante</TitleText>
+					<SubTitle>Live at Grosser Saal, Musikverein, Wien / 1984</SubTitle>
+				</Title>
+				<Title LanguageAndScriptCode="it" TitleType="GroupingTitle">
+					<TitleText>Symphony No. 40 in G Minor, K. 550</TitleText>
+				</Title>
+				<Title LanguageAndScriptCode="ja-hrkt" TitleType="GroupingTitle">
+					<TitleText>コウキョウキョクダイ４０バン</TitleText>
+				</Title>
+				<Title LanguageAndScriptCode="ja-jpan" TitleType="GroupingTitle">
+					<TitleText>交響曲 第40番 ト短調 K.550</TitleText>
+				</Title>
+
+				<DisplayArtist SequenceNumber="1">
+					<PartyName LanguageAndScriptCode="it">
+						<FullName>Wiener Philharmoniker</FullName>
+						<KeyName>Wiener Philharmoniker</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-hrkt">
+						<FullName>ウィーンフィルハーモニーカンゲンガクダン</FullName>
+						<KeyName>ウィーンフィルハーモニーカンゲンガクダン</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-jpan">
+						<FullName>ウィーン・フィルハーモニー管弦楽団</FullName>
+						<KeyName>ウィーン・フィルハーモニー管弦楽団</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ko-kor">
+						<FullName>빈 필하모닉 오케스트라</FullName>
+						<KeyName>빈 필하모닉 오케스트라</KeyName>
+					</PartyName>
+					<ArtistRole>Orchestra</ArtistRole>
+				</DisplayArtist>
+				<DisplayArtist SequenceNumber="2">
+					<PartyName LanguageAndScriptCode="it">
+						<FullName>Leonard Bernstein</FullName>
+						<NamesBeforeKeyName>Leonard</NamesBeforeKeyName>
+						<KeyName>Bernstein</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-hrkt">
+						<FullName>レナードバーンスタイン</FullName>
+						<KeyName>レナードバーンスタイン</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-jpan">
+						<FullName>レナード・バーンスタイン</FullName>
+						<KeyName>レナード・バーンスタイン</KeyName>
+					</PartyName>
+					<ArtistRole>Conductor</ArtistRole>
+				</DisplayArtist>
+
+				<ResourceContributor SequenceNumber="1">
+					<PartyName LanguageAndScriptCode="it">
+						<FullName>Hanno Rinke</FullName>
+						<NamesBeforeKeyName>Hanno</NamesBeforeKeyName>
+						<KeyName>Rinke</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-hrkt">
+						<FullName>ハンノリンケ</FullName>
+						<KeyName>ハンノリンケ</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-jpan">
+						<FullName>ハンノ・リンケ</FullName>
+						<KeyName>ハンノ・リンケ</KeyName>
+					</PartyName>
+					<ResourceContributorRole>StudioProducer</ResourceContributorRole>
+				</ResourceContributor>
+
+				<ResourceContributor SequenceNumber="2">
+					<PartyName LanguageAndScriptCode="it">
+						<FullName>Hans Weber</FullName>
+						<NamesBeforeKeyName>Hans</NamesBeforeKeyName>
+						<KeyName>Weber</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-hrkt">
+						<FullName>ＨａｎｓＷｅｂｅｒ</FullName>
+						<KeyName>ＨａｎｓＷｅｂｅｒ</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-jpan">
+						<FullName>Hans Weber</FullName>
+						<KeyName>Hans Weber</KeyName>
+					</PartyName>
+					<ResourceContributorRole Namespace="PADPIDA2013042401U" UserDefinedValue="Producer">StudioProducer</ResourceContributorRole>
+				</ResourceContributor>
+				<ResourceContributor SequenceNumber="3">
+					<PartyName LanguageAndScriptCode="it">
+						<FullName>Klaus Scheibe</FullName>
+						<NamesBeforeKeyName>Klaus</NamesBeforeKeyName>
+						<KeyName>Scheibe</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-hrkt">
+						<FullName>ＫｌａｕｓＳｃｈｅｉｂｅ</FullName>
+						<KeyName>ＫｌａｕｓＳｃｈｅｉｂｅ</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-jpan">
+						<FullName>KLAUS SCHEIBE</FullName>
+						<KeyName>KLAUS SCHEIBE</KeyName>
+					</PartyName>
+					<ResourceContributorRole Namespace="PADPIDA2013042401U" UserDefinedValue="Balance Engineer">Engineer</ResourceContributorRole>
+				</ResourceContributor>
+				<ResourceContributor SequenceNumber="4">
+					<PartyName LanguageAndScriptCode="it">
+						<FullName>Jobst Eberhardt</FullName>
+						<NamesBeforeKeyName>Jobst</NamesBeforeKeyName>
+						<KeyName>Eberhardt</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-hrkt">
+						<FullName>エバーハルト</FullName>
+						<KeyName>エバーハルト</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-jpan">
+						<FullName>Jobst Eberhardt</FullName>
+						<KeyName>Jobst Eberhardt</KeyName>
+					</PartyName>
+					<ResourceContributorRole>RecordingEngineer</ResourceContributorRole>
+				</ResourceContributor>
+				<ResourceContributor SequenceNumber="5">
+					<PartyName LanguageAndScriptCode="it">
+						<FullName>Joachim Niss</FullName>
+						<NamesBeforeKeyName>Joachim</NamesBeforeKeyName>
+						<KeyName>Niss</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-hrkt">
+						<FullName>Ｊｏａｃｈｉｍ　Ｎｉｓｓ</FullName>
+						<KeyName>Ｊｏａｃｈｉｍ　Ｎｉｓｓ</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-jpan">
+						<FullName>Joachim Niss</FullName>
+						<KeyName>Joachim Niss</KeyName>
+					</PartyName>
+					<ResourceContributorRole>RecordingEngineer</ResourceContributorRole>
+				</ResourceContributor>
+				<ResourceContributor SequenceNumber="6">
+					<PartyName LanguageAndScriptCode="it">
+						<FullName>Klaus Behrens</FullName>
+						<NamesBeforeKeyName>Klaus</NamesBeforeKeyName>
+						<KeyName>Behrens</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-hrkt">
+						<FullName>ベーレンス</FullName>
+						<KeyName>ベーレンス</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-jpan">
+						<FullName>クラウス・ベーレンス</FullName>
+						<KeyName>クラウス・ベーレンス</KeyName>
+					</PartyName>
+					<ResourceContributorRole>Editor</ResourceContributorRole>
+				</ResourceContributor>
+				<IndirectResourceContributor SequenceNumber="7">
+					<PartyName LanguageAndScriptCode="it">
+						<FullName>Wolfgang Amadeus Mozart</FullName>
+						<NamesBeforeKeyName>Wolfgang Amadeus</NamesBeforeKeyName>
+						<KeyName>Mozart</KeyName>
+					</PartyName>
+					<IndirectResourceContributorRole>Composer</IndirectResourceContributorRole>
+				</IndirectResourceContributor>
+
+				<DisplayArtistName>Wiener Philharmoniker and Leonard Bernstein</DisplayArtistName>
+
+				<PLine>
+					<Year>1984</Year>
+					<PLineCompany>Deutsche Grammophon GmbH, Berlin</PLineCompany>
+					<PLineText>℗ 1984 Deutsche Grammophon GmbH, Berlin</PLineText>
+				</PLine>
+				<!--
+				Cannot be communicated in ERN-3
+				<CreationDate ApplicableTerritoryCode="AT" LocationDescription="Grosser Saal, Musikverein, Wien">1984-01-31</CreationDate>
+				-->
+				<ParentalWarningType>NotExplicit</ParentalWarningType>
+
+			</SoundRecordingDetailsByTerritory>
+
+		</SoundRecording>
+		<SoundRecording>
+			<SoundRecordingType>MusicalWorkSoundRecording</SoundRecordingType>
+			<SoundRecordingId>
+				<ISRC>DEF058400333</ISRC>
+			</SoundRecordingId>
+			<ResourceReference>A3</ResourceReference>
+
+			<ReferenceTitle LanguageAndScriptCode="it">
+				<TitleText>Mozart: Symphony No. 40 in G Minor, K. 550 - III. Menuetto (Allegretto) -
+					Trio</TitleText>
+				<SubTitle>Live at Grosser Saal, Musikverein, Wien / 1984</SubTitle>
+			</ReferenceTitle>
+
+			<Duration>PT4M50S</Duration>
+
+			<SoundRecordingDetailsByTerritory>
+				<TerritoryCode>Worldwide</TerritoryCode>
+
+				<Title TitleType="DisplayTitle" LanguageAndScriptCode="ja-hrkt">
+					<TitleText>Mozart: コウキョウキョクダイ４０バン - ダイサンガクショウ：メヌエット</TitleText>
+				</Title>
+				<Title TitleType="DisplayTitle" LanguageAndScriptCode="ja-jpan">
+					<TitleText>Mozart: 交響曲 第40番 ト短調 K.550 - 第3楽章: Menuetto (Allegretto) -
+						Trio</TitleText>
+				</Title>
+				<Title LanguageAndScriptCode="it" TitleType="FormalTitle">
+					<TitleText>Mozart: Symphony No. 40 in G Minor, K. 550 - II. Menuetto (Allegretto) - Trio</TitleText>
+					<SubTitle>Live at Grosser Saal, Musikverein, Wien / 1984</SubTitle>
+				</Title>
+				<Title LanguageAndScriptCode="it" TitleType="GroupingTitle">
+					<TitleText>Symphony No. 40 in G Minor, K. 550</TitleText>
+				</Title>
+				<Title LanguageAndScriptCode="ja-hrkt" TitleType="GroupingTitle">
+					<TitleText>コウキョウキョクダイ４０バン</TitleText>
+				</Title>
+				<Title LanguageAndScriptCode="ja-jpan" TitleType="GroupingTitle">
+					<TitleText>交響曲 第40番 ト短調 K.550</TitleText>
+				</Title>
+
+				<DisplayArtist SequenceNumber="1">
+					<PartyName LanguageAndScriptCode="it">
+						<FullName>Wiener Philharmoniker</FullName>
+						<KeyName>Wiener Philharmoniker</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-hrkt">
+						<FullName>ウィーンフィルハーモニーカンゲンガクダン</FullName>
+						<KeyName>ウィーンフィルハーモニーカンゲンガクダン</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-jpan">
+						<FullName>ウィーン・フィルハーモニー管弦楽団</FullName>
+						<KeyName>ウィーン・フィルハーモニー管弦楽団</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ko-kor">
+						<FullName>빈 필하모닉 오케스트라</FullName>
+						<KeyName>빈 필하모닉 오케스트라</KeyName>
+					</PartyName>
+					<ArtistRole>MainArtist</ArtistRole>
+					<ArtistRole>Orchestra</ArtistRole>
+				</DisplayArtist>
+				<DisplayArtist SequenceNumber="2">
+					<PartyName LanguageAndScriptCode="it">
+						<FullName>Leonard Bernstein</FullName>
+						<NamesBeforeKeyName>Leonard</NamesBeforeKeyName>
+						<KeyName>Bernstein</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-hrkt">
+						<FullName>レナードバーンスタイン</FullName>
+						<KeyName>レナードバーンスタイン</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-jpan">
+						<FullName>レナード・バーンスタイン</FullName>
+						<KeyName>レナード・バーンスタイン</KeyName>
+					</PartyName>
+					<ArtistRole>MainArtist</ArtistRole>
+					<ArtistRole>Conductor</ArtistRole>
+				</DisplayArtist>
+
+				<ResourceContributor SequenceNumber="1">
+					<PartyName LanguageAndScriptCode="it">
+						<FullName>Hanno Rinke</FullName>
+						<NamesBeforeKeyName>Hanno</NamesBeforeKeyName>
+						<KeyName>Rinke</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-hrkt">
+						<FullName>ハンノリンケ</FullName>
+						<KeyName>ハンノリンケ</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-jpan">
+						<FullName>ハンノ・リンケ</FullName>
+						<KeyName>ハンノ・リンケ</KeyName>
+					</PartyName>
+					<ResourceContributorRole>StudioProducer</ResourceContributorRole>
+				</ResourceContributor>
+				<ResourceContributor SequenceNumber="2">
+					<PartyName LanguageAndScriptCode="it">
+						<FullName>Hans Weber</FullName>
+						<NamesBeforeKeyName>Hans</NamesBeforeKeyName>
+						<KeyName>Weber</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-hrkt">
+						<FullName>ＨａｎｓＷｅｂｅｒ</FullName>
+						<KeyName>ＨａｎｓＷｅｂｅｒ</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-jpan">
+						<FullName>Hans Weber</FullName>
+						<KeyName>Hans Weber</KeyName>
+					</PartyName>
+					<ResourceContributorRole Namespace="PADPIDA2013042401U" UserDefinedValue="Recording Producer">StudioProducer</ResourceContributorRole>
+				</ResourceContributor>
+				<ResourceContributor SequenceNumber="3">
+					<PartyName LanguageAndScriptCode="it">
+						<FullName>Klaus Scheibe</FullName>
+						<NamesBeforeKeyName>Klaus</NamesBeforeKeyName>
+						<KeyName>Scheibe</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-hrkt">
+						<FullName>ＫｌａｕｓＳｃｈｅｉｂｅ</FullName>
+						<KeyName>ＫｌａｕｓＳｃｈｅｉｂｅ</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-jpan">
+						<FullName>KLAUS SCHEIBE</FullName>
+						<KeyName>KLAUS SCHEIBE</KeyName>
+					</PartyName>
+					<ResourceContributorRole Namespace="PADPIDA2013042401U" UserDefinedValue="Balance Engineer">Engineer</ResourceContributorRole>
+				</ResourceContributor>
+				<ResourceContributor SequenceNumber="4">
+					<PartyName LanguageAndScriptCode="it">
+						<FullName>Jobst Eberhardt</FullName>
+						<NamesBeforeKeyName>Jobst</NamesBeforeKeyName>
+						<KeyName>Eberhardt</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-hrkt">
+						<FullName>エバーハルト</FullName>
+						<KeyName>エバーハルト</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-jpan">
+						<FullName>Jobst Eberhardt</FullName>
+						<KeyName>Jobst Eberhardt</KeyName>
+					</PartyName>
+					<ResourceContributorRole>RecordingEngineer</ResourceContributorRole>
+				</ResourceContributor>
+				<ResourceContributor SequenceNumber="5">
+					<PartyName LanguageAndScriptCode="it">
+						<FullName>Joachim Niss</FullName>
+						<NamesBeforeKeyName>Joachim</NamesBeforeKeyName>
+						<KeyName>Niss</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-hrkt">
+						<FullName>Ｊｏａｃｈｉｍ　Ｎｉｓｓ</FullName>
+						<KeyName>Ｊｏａｃｈｉｍ　Ｎｉｓｓ</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-jpan">
+						<FullName>Joachim Niss</FullName>
+						<KeyName>Joachim Niss</KeyName>
+					</PartyName>
+					<ResourceContributorRole>RecordingEngineer</ResourceContributorRole>
+				</ResourceContributor>
+				<ResourceContributor SequenceNumber="6">
+					<PartyName LanguageAndScriptCode="it">
+						<FullName>Klaus Behrens</FullName>
+						<NamesBeforeKeyName>Klaus</NamesBeforeKeyName>
+						<KeyName>Behrens</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-hrkt">
+						<FullName>ベーレンス</FullName>
+						<KeyName>ベーレンス</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-jpan">
+						<FullName>クラウス・ベーレンス</FullName>
+						<KeyName>クラウス・ベーレンス</KeyName>
+					</PartyName>
+					<ResourceContributorRole>Editor</ResourceContributorRole>
+				</ResourceContributor>
+				<IndirectResourceContributor SequenceNumber="7">
+					<PartyName LanguageAndScriptCode="it">
+						<FullName>Wolfgang Amadeus Mozart</FullName>
+						<NamesBeforeKeyName>Wolfgang Amadeus</NamesBeforeKeyName>
+						<KeyName>Mozart</KeyName>
+					</PartyName>
+					<IndirectResourceContributorRole>Composer</IndirectResourceContributorRole>
+				</IndirectResourceContributor>
+
+				<DisplayArtistName>Wiener Philharmoniker and Leonard Bernstein</DisplayArtistName>
+
+				<PLine>
+					<Year>1984</Year>
+					<PLineCompany>Deutsche Grammophon GmbH, Berlin</PLineCompany>
+					<PLineText>℗ 1984 Deutsche Grammophon GmbH, Berlin</PLineText>
+				</PLine>
+				<!--  
+				  <CreationDate ApplicableTerritoryCode="AT" LocationDescription="Grosser Saal, Musikverein, Wien">1984-01-31</CreationDate>
+				-->
+				<ParentalWarningType>NotExplicit</ParentalWarningType>
+
+			</SoundRecordingDetailsByTerritory>
+		</SoundRecording>
+		<SoundRecording>
+			<SoundRecordingType>MusicalWorkSoundRecording</SoundRecordingType>
+			<SoundRecordingId>
+				<ISRC>DEF058400334</ISRC>
+			</SoundRecordingId>
+			<ResourceReference>A4</ResourceReference>
+
+			<ReferenceTitle LanguageAndScriptCode="it">
+				<TitleText>Mozart: Symphony No. 40 in G Minor, K. 550 - IV. Finale (Allegro
+					assai)</TitleText>
+				<SubTitle>Live at Grosser Saal, Musikverein, Wien / 1984</SubTitle>
+			</ReferenceTitle>
+
+			<Duration>PT9M12S</Duration>
+
+			<SoundRecordingDetailsByTerritory>
+				<TerritoryCode>Worldwide</TerritoryCode>
+
+				<Title TitleType="DisplayTitle" LanguageAndScriptCode="ja-hrkt">
+					<TitleText>Mozart: コウキョウキョクダイ４０バン - ダイヨンガクショウ：フィナーレ　アレグロアッサイ</TitleText>
+				</Title>
+				<Title TitleType="DisplayTitle" LanguageAndScriptCode="ja-jpan">
+					<TitleText>Mozart: 交響曲 第40番 ト短調 K.550 - 第4楽章: Finale (Allegro assai)</TitleText>
+				</Title>
+				<Title LanguageAndScriptCode="it" TitleType="FormalTitle">
+					<TitleText>Mozart: Symphony No. 40 in G Minor, K. 550 - IV. Finale (Allegro assai)</TitleText>
+					<SubTitle>Live at Grosser Saal, Musikverein, Wien / 1984</SubTitle>
+				</Title>
+				<Title LanguageAndScriptCode="it" TitleType="GroupingTitle">
+					<TitleText>Symphony No. 40 in G Minor, K. 550</TitleText>
+				</Title>
+				<Title LanguageAndScriptCode="ja-hrkt" TitleType="GroupingTitle">
+					<TitleText>コウキョウキョクダイ４０バン</TitleText>
+				</Title>
+				<Title LanguageAndScriptCode="ja-jpan" TitleType="GroupingTitle">
+					<TitleText>交響曲 第40番 ト短調 K.550</TitleText>
+				</Title>
+
+				<DisplayArtist SequenceNumber="1">
+					<PartyName LanguageAndScriptCode="it">
+						<FullName>Wiener Philharmoniker</FullName>
+						<KeyName>Wiener Philharmoniker</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-hrkt">
+						<FullName>ウィーンフィルハーモニーカンゲンガクダン</FullName>
+						<KeyName>ウィーンフィルハーモニーカンゲンガクダン</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-jpan">
+						<FullName>ウィーン・フィルハーモニー管弦楽団</FullName>
+						<KeyName>ウィーン・フィルハーモニー管弦楽団</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ko-kor">
+						<FullName>빈 필하모닉 오케스트라</FullName>
+						<KeyName>빈 필하모닉 오케스트라</KeyName>
+					</PartyName>
+					<ArtistRole>Orchestra</ArtistRole>
+					<ArtistRole>MainArtist</ArtistRole>
+				</DisplayArtist>
+				<DisplayArtist SequenceNumber="2">
+					<PartyName LanguageAndScriptCode="it">
+						<FullName>Leonard Bernstein</FullName>
+						<NamesBeforeKeyName>Leonard</NamesBeforeKeyName>
+						<KeyName>Bernstein</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-hrkt">
+						<FullName>レナードバーンスタイン</FullName>
+						<KeyName>レナードバーンスタイン</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-jpan">
+						<FullName>レナード・バーンスタイン</FullName>
+						<KeyName>レナード・バーンスタイン</KeyName>
+					</PartyName>
+					<ArtistRole>Conductor</ArtistRole>
+					<ArtistRole>MainArtist</ArtistRole>
+				</DisplayArtist>
+
+				<ResourceContributor SequenceNumber="1">
+					<PartyName LanguageAndScriptCode="it">
+						<FullName>Hanno Rinke</FullName>
+						<NamesBeforeKeyName>Hanno</NamesBeforeKeyName>
+						<KeyName>Rinke</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-hrkt">
+						<FullName>ハンノリンケ</FullName>
+						<KeyName>ハンノリンケ</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-jpan">
+						<FullName>ハンノ・リンケ</FullName>
+						<KeyName>ハンノ・リンケ</KeyName>
+					</PartyName>
+					<ResourceContributorRole>StudioProducer</ResourceContributorRole>
+				</ResourceContributor>
+				<ResourceContributor SequenceNumber="2">
+					<PartyName LanguageAndScriptCode="it">
+						<FullName>Hans Weber</FullName>
+						<NamesBeforeKeyName>Hans</NamesBeforeKeyName>
+						<KeyName>Weber</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-hrkt">
+						<FullName>ＨａｎｓＷｅｂｅｒ</FullName>
+						<KeyName>ＨａｎｓＷｅｂｅｒ</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-jpan">
+						<FullName>Hans Weber</FullName>
+						<KeyName>Hans Weber</KeyName>
+					</PartyName>
+					<ResourceContributorRole Namespace="PADPIDA2013042401U" UserDefinedValue="Recording Producer">StudioProducer</ResourceContributorRole>
+				</ResourceContributor>
+				<ResourceContributor SequenceNumber="3">
+					<PartyName LanguageAndScriptCode="it">
+						<FullName>Klaus Scheibe</FullName>
+						<NamesBeforeKeyName>Klaus</NamesBeforeKeyName>
+						<KeyName>Scheibe</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-hrkt">
+						<FullName>ＫｌａｕｓＳｃｈｅｉｂｅ</FullName>
+						<KeyName>ＫｌａｕｓＳｃｈｅｉｂｅ</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-jpan">
+						<FullName>KLAUS SCHEIBE</FullName>
+						<KeyName>KLAUS SCHEIBE</KeyName>
+					</PartyName>
+					<ResourceContributorRole Namespace="PADPIDA2013042401U" UserDefinedValue="Balance Engineer">Engineer</ResourceContributorRole>
+				</ResourceContributor>
+				<ResourceContributor SequenceNumber="4">
+					<PartyName LanguageAndScriptCode="it">
+						<FullName>Jobst Eberhardt</FullName>
+						<NamesBeforeKeyName>Jobst</NamesBeforeKeyName>
+						<KeyName>Eberhardt</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-hrkt">
+						<FullName>エバーハルト</FullName>
+						<KeyName>エバーハルト</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-jpan">
+						<FullName>Jobst Eberhardt</FullName>
+						<KeyName>Jobst Eberhardt</KeyName>
+					</PartyName>
+					<ResourceContributorRole>RecordingEngineer</ResourceContributorRole>
+				</ResourceContributor>
+				<ResourceContributor SequenceNumber="5">
+					<PartyName LanguageAndScriptCode="it">
+						<FullName>Joachim Niss</FullName>
+						<NamesBeforeKeyName>Joachim</NamesBeforeKeyName>
+						<KeyName>Niss</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-hrkt">
+						<FullName>Ｊｏａｃｈｉｍ　Ｎｉｓｓ</FullName>
+						<KeyName>Ｊｏａｃｈｉｍ　Ｎｉｓｓ</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-jpan">
+						<FullName>Joachim Niss</FullName>
+						<KeyName>Joachim Niss</KeyName>
+					</PartyName>
+					<ResourceContributorRole>RecordingEngineer</ResourceContributorRole>
+				</ResourceContributor>
+				<ResourceContributor SequenceNumber="6">
+					<PartyName LanguageAndScriptCode="it">
+						<FullName>Klaus Behrens</FullName>
+						<NamesBeforeKeyName>Klaus</NamesBeforeKeyName>
+						<KeyName>Behrens</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-hrkt">
+						<FullName>ベーレンス</FullName>
+						<KeyName>ベーレンス</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-jpan">
+						<FullName>クラウス・ベーレンス</FullName>
+						<KeyName>クラウス・ベーレンス</KeyName>
+					</PartyName>
+					<ResourceContributorRole>Editor</ResourceContributorRole>
+				</ResourceContributor>
+				<IndirectResourceContributor SequenceNumber="7">
+					<PartyName LanguageAndScriptCode="it">
+						<FullName>Wolfgang Amadeus Mozart</FullName>
+						<NamesBeforeKeyName>Wolfgang Amadeus</NamesBeforeKeyName>
+						<KeyName>Mozart</KeyName>
+					</PartyName>
+					<IndirectResourceContributorRole>Composer</IndirectResourceContributorRole>
+				</IndirectResourceContributor>
+
+				<DisplayArtistName>Wiener Philharmoniker and Leonard Bernstein</DisplayArtistName>
+
+				<PLine>
+					<Year>1984</Year>
+					<PLineCompany>Deutsche Grammophon GmbH, Berlin</PLineCompany>
+					<PLineText>℗ 1984 Deutsche Grammophon GmbH, Berlin</PLineText>
+				</PLine>
+				<!--  
+					<CreationDate ApplicableTerritoryCode="AT" LocationDescription="Grosser Saal, Musikverein, Wien">1984-01-31</CreationDate>
+				-->
+				<ParentalWarningType>NotExplicit</ParentalWarningType>
+			</SoundRecordingDetailsByTerritory>
+		</SoundRecording>
+		<Image>
+			<ImageType>FrontCoverImage</ImageType>
+			<ImageId>
+				<ProprietaryId Namespace="PADPIDA2013042401U">09UMGIM12352</ProprietaryId>
+			</ImageId>
+			<ResourceReference>A5</ResourceReference>
+
+			<Title LanguageAndScriptCode="en" TitleType="DisplayTitle">
+				<TitleText>Mozart: Symphony No. 40</TitleText>
+			</Title>
+			<Title LanguageAndScriptCode="en" TitleType="FormalTitle">
+				<TitleText>Mozart: Symphony No. 40</TitleText>
+			</Title>
+
+			<ImageDetailsByTerritory>
+				<TerritoryCode>Worldwide</TerritoryCode>
+				<ResourceContributor SequenceNumber="1">
+					<PartyName>
+						<FullName>Wiener Philharmoniker</FullName>
+						<KeyName>Wiener Philharmoniker</KeyName>
+					</PartyName>
+					<ResourceContributorRole>Orchestra</ResourceContributorRole>
+				</ResourceContributor>
+				<ResourceContributor SequenceNumber="2">
+					<PartyName>
+						<FullName>Leonard Bernstein</FullName>
+						<NamesBeforeKeyName>Leonard</NamesBeforeKeyName>
+						<KeyName>Bernstein</KeyName>
+					</PartyName>
+					<ResourceContributorRole>Conductor</ResourceContributorRole>
+				</ResourceContributor>
+				<CLine>
+					<Year>2009</Year>
+					<CLineCompany>Deutsche Grammophon GmbH, Berlin</CLineCompany>
+					<CLineText>© 2009 Deutsche Grammophon GmbH, Berlin</CLineText>
+				</CLine>
+				<ParentalWarningType>NotExplicit</ParentalWarningType>
+			</ImageDetailsByTerritory>
+
+		</Image>
+	</ResourceList>
+	<ReleaseList>
+		<Release IsMainRelease="true">
+			<ReleaseId>
+				<ICPN>00028948386765</ICPN>
+			</ReleaseId>
+			<ReleaseReference>R0</ReleaseReference>
+
+			<ReferenceTitle LanguageAndScriptCode="en">
+				<TitleText>Mozart: Symphony No. 40 in G Minor, K. 550</TitleText>
+			</ReferenceTitle>
+			
+			<ReleaseResourceReferenceList>
+				<ReleaseResourceReference>A1</ReleaseResourceReference>
+				<ReleaseResourceReference>A2</ReleaseResourceReference>
+				<ReleaseResourceReference>A3</ReleaseResourceReference>
+				<ReleaseResourceReference>A4</ReleaseResourceReference>															
+			</ReleaseResourceReferenceList>
+			
+			<ReleaseDetailsByTerritory>
+				<TerritoryCode>Worldwide</TerritoryCode>
+
+				<DisplayArtistName>Wiener Philharmoniker and Leonard Bernstein</DisplayArtistName>
+
+				<LabelName>Deutsche Grammophon (DG)</LabelName>
+
+				<Title LanguageAndScriptCode="en" TitleType="DisplayTitle">
+					<TitleText>Mozart: Symphony No. 40 in G Minor, K. 550</TitleText>
+				</Title>
+
+				<DisplayArtist SequenceNumber="1">
+					<PartyName>
+						<FullName>Wiener Philharmoniker</FullName>
+						<KeyName>Wiener Philharmoniker</KeyName>
+					</PartyName>
+					<ArtistRole>MainArtist</ArtistRole>
+					<ArtistRole>Orchestra</ArtistRole>
+				</DisplayArtist>
+				<DisplayArtist SequenceNumber="2">
+					<PartyName>
+						<FullName>Leonard Bernstein</FullName>
+						<NamesBeforeKeyName>Leonard</NamesBeforeKeyName>
+						<KeyName>Bernstein</KeyName>
+					</PartyName>
+					<ArtistRole>MainArtist</ArtistRole>
+					<ArtistRole>Conductor</ArtistRole>
+				</DisplayArtist>
+
+				<IsMultiArtistCompilation>false</IsMultiArtistCompilation>
+				<ReleaseType>ClassicalAlbum</ReleaseType>
+				<ParentalWarningType>NotExplicit</ParentalWarningType>
+
+				<ResourceGroup>
+					<ResourceGroup>
+						<SequenceNumber>1</SequenceNumber>
+						<ResourceGroup>
+							<Title TitleType="GroupingTitle">
+								<TitleText>Symphony No.40 in G minor, K.550</TitleText>
+							</Title>
+							<ResourceGroupContentItem>
+								<SequenceNumber>1</SequenceNumber>
+								<ReleaseResourceReference ReleaseResourceType="PrimaryResource">A1</ReleaseResourceReference>
+								<IsInstantGratificationResource>false</IsInstantGratificationResource>
+								<IsPreOrderIncentiveResource>false</IsPreOrderIncentiveResource>
+							</ResourceGroupContentItem>
+							<ResourceGroupContentItem>
+								<SequenceNumber>2</SequenceNumber>
+								<ReleaseResourceReference ReleaseResourceType="PrimaryResource">A2</ReleaseResourceReference>
+								<IsInstantGratificationResource>false</IsInstantGratificationResource>
+								<IsPreOrderIncentiveResource>false</IsPreOrderIncentiveResource>
+							</ResourceGroupContentItem>
+							<ResourceGroupContentItem>
+								<SequenceNumber>3</SequenceNumber>
+								<ReleaseResourceReference ReleaseResourceType="PrimaryResource">A3</ReleaseResourceReference>
+								<IsInstantGratificationResource>false</IsInstantGratificationResource>
+								<IsPreOrderIncentiveResource>false</IsPreOrderIncentiveResource>
+							</ResourceGroupContentItem>
+							<ResourceGroupContentItem>
+								<SequenceNumber>4</SequenceNumber>
+								<ReleaseResourceReference ReleaseResourceType="PrimaryResource">A4</ReleaseResourceReference>
+								<IsInstantGratificationResource>false</IsInstantGratificationResource>
+								<IsPreOrderIncentiveResource>false</IsPreOrderIncentiveResource>
+							</ResourceGroupContentItem>
+						</ResourceGroup>
+					</ResourceGroup>
+					<ResourceGroupContentItem>
+						<ReleaseResourceReference ReleaseResourceType="SecondaryResource">A2</ReleaseResourceReference>
+					</ResourceGroupContentItem>
+				</ResourceGroup>
+
+				<Genre>
+					<GenreText>Classical</GenreText>
+				</Genre>
+				<ReleaseDate>2020-02-07</ReleaseDate>
+
+			</ReleaseDetailsByTerritory>
+
+			<Duration>PT30M55S</Duration>
+			<PLine>
+				<Year>2009</Year>
+				<PLineCompany>Deutsche Grammophon GmbH, Berlin</PLineCompany>
+				<PLineText>℗ 2009 Deutsche Grammophon GmbH, Berlin</PLineText>
+			</PLine>
+			<CLine>
+				<Year>2020</Year>
+				<CLineCompany>Deutsche Grammophon GmbH, Berlin</CLineCompany>
+				<CLineText>© 2020 Deutsche Grammophon GmbH, Berlin</CLineText>
+			</CLine>
+			<GlobalOriginalReleaseDate>2009-01-01</GlobalOriginalReleaseDate>
+
+		</Release>
+				
+		<Release IsMainRelease="false">
+			<ReleaseId>
+				<ICPN>00028948386765_DEF058400331_R1</ICPN>
+			</ReleaseId>
+			<ReleaseReference>R1</ReleaseReference>
+			
+			<ReferenceTitle LanguageAndScriptCode="en">
+				<TitleText>Mozart: Movement 1: Molto allegro</TitleText>
+			</ReferenceTitle>
+			
+			<ReleaseResourceReferenceList>
+				<ReleaseResourceReference>A1</ReleaseResourceReference>
+			</ReleaseResourceReferenceList>
+			
+			<ReleaseDetailsByTerritory>
+				<TerritoryCode>Worldwide</TerritoryCode>
+				
+				<DisplayArtistName>Wiener Philharmoniker and Leonard Bernstein</DisplayArtistName>
+				
+				<LabelName>Deutsche Grammophon (DG)</LabelName>
+				
+				<Title LanguageAndScriptCode="en" TitleType="DisplayTitle">
+					<TitleText>Mozart: Movement 1: Molto allegro</TitleText>
+				</Title>
+				
+				<DisplayArtist SequenceNumber="1">
+					<PartyName>
+						<FullName>Wiener Philharmoniker</FullName>
+						<KeyName>Wiener Philharmoniker</KeyName>
+					</PartyName>
+					<ArtistRole>MainArtist</ArtistRole>
+					<ArtistRole>Orchestra</ArtistRole>
+				</DisplayArtist>
+				<DisplayArtist SequenceNumber="2">
+					<PartyName>
+						<FullName>Leonard Bernstein</FullName>
+						<NamesBeforeKeyName>Leonard</NamesBeforeKeyName>
+						<KeyName>Bernstein</KeyName>
+					</PartyName>
+					<ArtistRole>MainArtist</ArtistRole>
+					<ArtistRole>Conductor</ArtistRole>
+				</DisplayArtist>
+				
+				<IsMultiArtistCompilation>false</IsMultiArtistCompilation>
+				<ReleaseType>TrackRelease</ReleaseType>
+				<ParentalWarningType>NotExplicit</ParentalWarningType>
+				
+				<ResourceGroup>
+					<ResourceGroup>
+						<SequenceNumber>1</SequenceNumber>
+						<ResourceGroup>
+							<Title TitleType="GroupingTitle">
+								<TitleText>Symphony No.40 in G minor, K.550</TitleText>
+							</Title>
+							<ResourceGroupContentItem>
+								<SequenceNumber>1</SequenceNumber>
+								<ReleaseResourceReference ReleaseResourceType="PrimaryResource">A1</ReleaseResourceReference>
+								<IsInstantGratificationResource>false</IsInstantGratificationResource>
+								<IsPreOrderIncentiveResource>false</IsPreOrderIncentiveResource>
+							</ResourceGroupContentItem>
+						</ResourceGroup>
+					</ResourceGroup>
+				</ResourceGroup>
+				
+				<Genre>
+					<GenreText>Classical</GenreText>
+				</Genre>
+				<ReleaseDate>2020-02-07</ReleaseDate>
+				
+			</ReleaseDetailsByTerritory>
+			
+			<Duration>PT30M55S</Duration>
+			<PLine>
+				<Year>2009</Year>
+				<PLineCompany>Deutsche Grammophon GmbH, Berlin</PLineCompany>
+				<PLineText>℗ 2009 Deutsche Grammophon GmbH, Berlin</PLineText>
+			</PLine>
+			<CLine>
+				<Year>2020</Year>
+				<CLineCompany>Deutsche Grammophon GmbH, Berlin</CLineCompany>
+				<CLineText>© 2020 Deutsche Grammophon GmbH, Berlin</CLineText>
+			</CLine>
+			<GlobalOriginalReleaseDate>2009-01-01</GlobalOriginalReleaseDate>
+			
+		</Release>
+		
+		<Release IsMainRelease="false">
+			<ReleaseId>
+				<ICPN>00028948386765_DEF058400332_R2</ICPN>
+			</ReleaseId>
+			<ReleaseReference>R2</ReleaseReference>
+			
+			<ReferenceTitle LanguageAndScriptCode="en">
+				<TitleText>Mozart: Movement 2: Andante</TitleText>
+			</ReferenceTitle>
+			
+			<ReleaseResourceReferenceList>
+				<ReleaseResourceReference>A1</ReleaseResourceReference>
+			</ReleaseResourceReferenceList>
+			
+			<ReleaseDetailsByTerritory>
+				<TerritoryCode>Worldwide</TerritoryCode>
+				
+				<DisplayArtistName>Wiener Philharmoniker and Leonard Bernstein</DisplayArtistName>
+				
+				<LabelName>Deutsche Grammophon (DG)</LabelName>
+				
+				<Title LanguageAndScriptCode="en" TitleType="DisplayTitle">
+					<TitleText>Mozart: Movement 2: Andante</TitleText>
+				</Title>
+				
+				<DisplayArtist SequenceNumber="1">
+					<PartyName>
+						<FullName>Wiener Philharmoniker</FullName>
+						<KeyName>Wiener Philharmoniker</KeyName>
+					</PartyName>
+					<ArtistRole>MainArtist</ArtistRole>
+					<ArtistRole>Orchestra</ArtistRole>
+				</DisplayArtist>
+				<DisplayArtist SequenceNumber="2">
+					<PartyName>
+						<FullName>Leonard Bernstein</FullName>
+						<NamesBeforeKeyName>Leonard</NamesBeforeKeyName>
+						<KeyName>Bernstein</KeyName>
+					</PartyName>
+					<ArtistRole>MainArtist</ArtistRole>
+					<ArtistRole>Conductor</ArtistRole>
+				</DisplayArtist>
+				
+				<IsMultiArtistCompilation>false</IsMultiArtistCompilation>
+				<ReleaseType>TrackRelease</ReleaseType>
+				<ParentalWarningType>NotExplicit</ParentalWarningType>
+				
+				<ResourceGroup>
+					<ResourceGroup>
+						<SequenceNumber>1</SequenceNumber>
+						<ResourceGroup>
+							<Title TitleType="GroupingTitle">
+								<TitleText>Symphony No.40 in G minor, K.550</TitleText>
+							</Title>
+							<ResourceGroupContentItem>
+								<SequenceNumber>1</SequenceNumber>
+								<ReleaseResourceReference ReleaseResourceType="PrimaryResource">A1</ReleaseResourceReference>
+								<IsInstantGratificationResource>false</IsInstantGratificationResource>
+								<IsPreOrderIncentiveResource>false</IsPreOrderIncentiveResource>
+							</ResourceGroupContentItem>
+						</ResourceGroup>
+					</ResourceGroup>
+				</ResourceGroup>
+				
+				<Genre>
+					<GenreText>Classical</GenreText>
+				</Genre>
+				<ReleaseDate>2020-02-07</ReleaseDate>
+				
+			</ReleaseDetailsByTerritory>
+			
+			<Duration>PT30M55S</Duration>
+			<PLine>
+				<Year>2009</Year>
+				<PLineCompany>Deutsche Grammophon GmbH, Berlin</PLineCompany>
+				<PLineText>℗ 2009 Deutsche Grammophon GmbH, Berlin</PLineText>
+			</PLine>
+			<CLine>
+				<Year>2020</Year>
+				<CLineCompany>Deutsche Grammophon GmbH, Berlin</CLineCompany>
+				<CLineText>© 2020 Deutsche Grammophon GmbH, Berlin</CLineText>
+			</CLine>
+			<GlobalOriginalReleaseDate>2009-01-01</GlobalOriginalReleaseDate>
+			
+		</Release>
+		
+		<Release IsMainRelease="false">
+			<ReleaseId>
+				<ICPN>00028948386765_DEF058400333_R3</ICPN>
+			</ReleaseId>
+			<ReleaseReference>R3</ReleaseReference>
+			
+			<ReferenceTitle LanguageAndScriptCode="en">
+				<TitleText>Mozart: Movement 3: Menuetto - Allegretto</TitleText>
+			</ReferenceTitle>
+			
+			<ReleaseResourceReferenceList>
+				<ReleaseResourceReference>A1</ReleaseResourceReference>
+			</ReleaseResourceReferenceList>
+			
+			<ReleaseDetailsByTerritory>
+				<TerritoryCode>Worldwide</TerritoryCode>
+				
+				<DisplayArtistName>Wiener Philharmoniker and Leonard Bernstein</DisplayArtistName>
+				
+				<LabelName>Deutsche Grammophon (DG)</LabelName>
+				
+				<Title LanguageAndScriptCode="en" TitleType="DisplayTitle">
+					<TitleText>Mozart: Movement 3: Menuetto - Allegretto</TitleText>
+				</Title>
+				
+				<DisplayArtist SequenceNumber="1">
+					<PartyName>
+						<FullName>Wiener Philharmoniker</FullName>
+						<KeyName>Wiener Philharmoniker</KeyName>
+					</PartyName>
+					<ArtistRole>MainArtist</ArtistRole>
+					<ArtistRole>Orchestra</ArtistRole>
+				</DisplayArtist>
+				<DisplayArtist SequenceNumber="2">
+					<PartyName>
+						<FullName>Leonard Bernstein</FullName>
+						<NamesBeforeKeyName>Leonard</NamesBeforeKeyName>
+						<KeyName>Bernstein</KeyName>
+					</PartyName>
+					<ArtistRole>MainArtist</ArtistRole>
+					<ArtistRole>Conductor</ArtistRole>
+				</DisplayArtist>
+				
+				<IsMultiArtistCompilation>false</IsMultiArtistCompilation>
+				<ReleaseType>TrackRelease</ReleaseType>
+				<ParentalWarningType>NotExplicit</ParentalWarningType>
+				
+				<ResourceGroup>
+					<ResourceGroup>
+						<SequenceNumber>1</SequenceNumber>
+						<ResourceGroup>
+							<Title TitleType="GroupingTitle">
+								<TitleText>Symphony No.40 in G minor, K.550</TitleText>
+							</Title>
+							<ResourceGroupContentItem>
+								<SequenceNumber>1</SequenceNumber>
+								<ReleaseResourceReference ReleaseResourceType="PrimaryResource">A1</ReleaseResourceReference>
+								<IsInstantGratificationResource>false</IsInstantGratificationResource>
+								<IsPreOrderIncentiveResource>false</IsPreOrderIncentiveResource>
+							</ResourceGroupContentItem>
+						</ResourceGroup>
+					</ResourceGroup>
+				</ResourceGroup>
+				
+				<Genre>
+					<GenreText>Classical</GenreText>
+				</Genre>
+				<ReleaseDate>2020-02-07</ReleaseDate>
+				
+			</ReleaseDetailsByTerritory>
+			
+			<Duration>PT30M55S</Duration>
+			<PLine>
+				<Year>2009</Year>
+				<PLineCompany>Deutsche Grammophon GmbH, Berlin</PLineCompany>
+				<PLineText>℗ 2009 Deutsche Grammophon GmbH, Berlin</PLineText>
+			</PLine>
+			<CLine>
+				<Year>2020</Year>
+				<CLineCompany>Deutsche Grammophon GmbH, Berlin</CLineCompany>
+				<CLineText>© 2020 Deutsche Grammophon GmbH, Berlin</CLineText>
+			</CLine>
+			<GlobalOriginalReleaseDate>2009-01-01</GlobalOriginalReleaseDate>
+			
+		</Release>
+		
+		<Release IsMainRelease="false">
+			<ReleaseId>
+				<ICPN>00028948386765_DEF058400334_R4</ICPN>
+			</ReleaseId>
+			<ReleaseReference>R4</ReleaseReference>
+			
+			<ReferenceTitle LanguageAndScriptCode="en">
+				<TitleText>Mozart: Movement 4: Finale - Allegro assai</TitleText>
+			</ReferenceTitle>
+			
+			<ReleaseResourceReferenceList>
+				<ReleaseResourceReference>A1</ReleaseResourceReference>
+			</ReleaseResourceReferenceList>
+			
+			<ReleaseDetailsByTerritory>
+				<TerritoryCode>Worldwide</TerritoryCode>
+				
+				<DisplayArtistName>Wiener Philharmoniker and Leonard Bernstein</DisplayArtistName>
+				
+				<LabelName>Deutsche Grammophon (DG)</LabelName>
+				
+				<Title LanguageAndScriptCode="en" TitleType="DisplayTitle">
+					<TitleText>Mozart: Movement 4: Finale - Allegro assai</TitleText>
+				</Title>
+				
+				<DisplayArtist SequenceNumber="1">
+					<PartyName>
+						<FullName>Wiener Philharmoniker</FullName>
+						<KeyName>Wiener Philharmoniker</KeyName>
+					</PartyName>
+					<ArtistRole>MainArtist</ArtistRole>
+					<ArtistRole>Orchestra</ArtistRole>
+				</DisplayArtist>
+				<DisplayArtist SequenceNumber="2">
+					<PartyName>
+						<FullName>Leonard Bernstein</FullName>
+						<NamesBeforeKeyName>Leonard</NamesBeforeKeyName>
+						<KeyName>Bernstein</KeyName>
+					</PartyName>
+					<ArtistRole>MainArtist</ArtistRole>
+					<ArtistRole>Conductor</ArtistRole>
+				</DisplayArtist>
+				
+				<IsMultiArtistCompilation>false</IsMultiArtistCompilation>
+				<ReleaseType>TrackRelease</ReleaseType>
+				<ParentalWarningType>NotExplicit</ParentalWarningType>
+				
+				<ResourceGroup>
+					<ResourceGroup>
+						<SequenceNumber>1</SequenceNumber>
+						<ResourceGroup>
+							<Title TitleType="GroupingTitle">
+								<TitleText>Symphony No.40 in G minor, K.550</TitleText>
+							</Title>
+							<ResourceGroupContentItem>
+								<SequenceNumber>1</SequenceNumber>
+								<ReleaseResourceReference ReleaseResourceType="PrimaryResource">A1</ReleaseResourceReference>
+								<IsInstantGratificationResource>false</IsInstantGratificationResource>
+								<IsPreOrderIncentiveResource>false</IsPreOrderIncentiveResource>
+							</ResourceGroupContentItem>
+						</ResourceGroup>
+						<ResourceGroupContentItem>
+							<ReleaseResourceReference ReleaseResourceType="SecondaryResource">A2</ReleaseResourceReference>
+						</ResourceGroupContentItem>
+					</ResourceGroup>
+				</ResourceGroup>
+				
+				<Genre>
+					<GenreText>Classical</GenreText>
+				</Genre>
+				<ReleaseDate>2020-02-07</ReleaseDate>
+				
+			</ReleaseDetailsByTerritory>
+			
+			<Duration>PT30M55S</Duration>
+			<PLine>
+				<Year>2009</Year>
+				<PLineCompany>Deutsche Grammophon GmbH, Berlin</PLineCompany>
+				<PLineText>℗ 2009 Deutsche Grammophon GmbH, Berlin</PLineText>
+			</PLine>
+			<CLine>
+				<Year>2020</Year>
+				<CLineCompany>Deutsche Grammophon GmbH, Berlin</CLineCompany>
+				<CLineText>© 2020 Deutsche Grammophon GmbH, Berlin</CLineText>
+			</CLine>
+			<GlobalOriginalReleaseDate>2009-01-01</GlobalOriginalReleaseDate>
+			
+		</Release>
+		
+	</ReleaseList>
+</ernm:NewReleaseMessage>

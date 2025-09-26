@@ -2,31 +2,59 @@
 
 package v10
 
-import "encoding/xml"
+import (
+	"encoding/xml"
+	"reflect"
+	"strings"
+)
 
 // Package-level namespace constants
 const (
 	Namespace       = "http://ddex.net/xml/pie/10"
 	NamespacePrefix = "pie"
-	SchemaLocation  = "http://ddex.net/xml/pie/10 http://ddex.net/xml/pie/10/party-identification-and-enrichment.xsd"
 	NamespaceXSI    = "http://www.w3.org/2001/XMLSchema-instance"
 )
 
 // MarshalXML implements xml.Marshaler for PieMessage
 func (m *PieMessage) MarshalXML(e *xml.Encoder, start xml.StartElement) error {
 	// Set default namespace values if empty
-	if m.XmlnsPie == "" {
-		m.XmlnsPie = Namespace
+	if m.NamespaceAttrs == nil {
+		m.NamespaceAttrs = make(map[string]string)
 	}
-	if m.XmlnsXsi == "" {
-		m.XmlnsXsi = NamespaceXSI
-	}
-	if m.XsiSchemaLocation == "" {
-		m.XsiSchemaLocation = SchemaLocation
-	}
-
 	// Set the namespace on the start element
 	start.Name.Space = Namespace
+
+	// Add namespace attributes to the element, avoiding duplicates
+	// Use reflection to find which attributes are already handled by struct fields
+	existingAttrs := make(map[string]bool)
+	v := reflect.ValueOf(*m)
+	t := v.Type()
+	for i := 0; i < v.NumField(); i++ {
+		field := t.Field(i)
+		if xmlTag := field.Tag.Get("xml"); xmlTag != "" && xmlTag != "-" {
+			// Parse the XML tag to get the attribute name
+			if strings.HasSuffix(xmlTag, ",attr") {
+				attrName := strings.TrimSuffix(xmlTag, ",attr")
+				if colonIdx := strings.Index(attrName, ":"); colonIdx >= 0 {
+					// For tags like "xmlns:ern,attr" or "xsi:schemaLocation,attr"
+					existingAttrs[attrName] = true
+				} else if attrName != "" {
+					// For tags like "LanguageAndScriptCode,attr"
+					existingAttrs[attrName] = true
+				}
+			}
+		}
+	}
+
+	// Add attributes from the map that aren't already handled
+	for key, value := range m.NamespaceAttrs {
+		if !existingAttrs[key] {
+			start.Attr = append(start.Attr, xml.Attr{
+				Name:  xml.Name{Local: key},
+				Value: value,
+			})
+		}
+	}
 
 	// Create an alias type to avoid infinite recursion
 	type alias PieMessage
@@ -35,6 +63,28 @@ func (m *PieMessage) MarshalXML(e *xml.Encoder, start xml.StartElement) error {
 
 // UnmarshalXML implements xml.Unmarshaler for PieMessage
 func (m *PieMessage) UnmarshalXML(d *xml.Decoder, start xml.StartElement) error {
+	// Capture all namespace and unhandled attributes
+	if m.NamespaceAttrs == nil {
+		m.NamespaceAttrs = make(map[string]string)
+	}
+	for _, attr := range start.Attr {
+		// Capture all xmlns:* attributes and xsi:schemaLocation
+		if attr.Name.Space == "xmlns" || attr.Name.Local == "xmlns" ||
+			(attr.Name.Space == "http://www.w3.org/2001/XMLSchema-instance" && attr.Name.Local == "schemaLocation") {
+			key := attr.Name.Local
+			if attr.Name.Space == "xmlns" {
+				// For namespace declarations like xmlns:ernm, xmlns:avs
+				key = "xmlns:" + attr.Name.Local
+			} else if attr.Name.Space != "" && attr.Name.Local != "xmlns" {
+				// Preserve the namespace prefix for attributes like xsi:schemaLocation
+				if attr.Name.Space == "http://www.w3.org/2001/XMLSchema-instance" {
+					key = "xsi:" + attr.Name.Local
+				}
+			}
+			m.NamespaceAttrs[key] = attr.Value
+		}
+	}
+
 	// Create an alias type to avoid infinite recursion
 	type alias PieMessage
 	return d.DecodeElement((*alias)(m), &start)
@@ -43,18 +93,43 @@ func (m *PieMessage) UnmarshalXML(d *xml.Decoder, start xml.StartElement) error 
 // MarshalXML implements xml.Marshaler for PieRequestMessage
 func (m *PieRequestMessage) MarshalXML(e *xml.Encoder, start xml.StartElement) error {
 	// Set default namespace values if empty
-	if m.XmlnsPie == "" {
-		m.XmlnsPie = Namespace
+	if m.NamespaceAttrs == nil {
+		m.NamespaceAttrs = make(map[string]string)
 	}
-	if m.XmlnsXsi == "" {
-		m.XmlnsXsi = NamespaceXSI
-	}
-	if m.XsiSchemaLocation == "" {
-		m.XsiSchemaLocation = SchemaLocation
-	}
-
 	// Set the namespace on the start element
 	start.Name.Space = Namespace
+
+	// Add namespace attributes to the element, avoiding duplicates
+	// Use reflection to find which attributes are already handled by struct fields
+	existingAttrs := make(map[string]bool)
+	v := reflect.ValueOf(*m)
+	t := v.Type()
+	for i := 0; i < v.NumField(); i++ {
+		field := t.Field(i)
+		if xmlTag := field.Tag.Get("xml"); xmlTag != "" && xmlTag != "-" {
+			// Parse the XML tag to get the attribute name
+			if strings.HasSuffix(xmlTag, ",attr") {
+				attrName := strings.TrimSuffix(xmlTag, ",attr")
+				if colonIdx := strings.Index(attrName, ":"); colonIdx >= 0 {
+					// For tags like "xmlns:ern,attr" or "xsi:schemaLocation,attr"
+					existingAttrs[attrName] = true
+				} else if attrName != "" {
+					// For tags like "LanguageAndScriptCode,attr"
+					existingAttrs[attrName] = true
+				}
+			}
+		}
+	}
+
+	// Add attributes from the map that aren't already handled
+	for key, value := range m.NamespaceAttrs {
+		if !existingAttrs[key] {
+			start.Attr = append(start.Attr, xml.Attr{
+				Name:  xml.Name{Local: key},
+				Value: value,
+			})
+		}
+	}
 
 	// Create an alias type to avoid infinite recursion
 	type alias PieRequestMessage
@@ -63,6 +138,28 @@ func (m *PieRequestMessage) MarshalXML(e *xml.Encoder, start xml.StartElement) e
 
 // UnmarshalXML implements xml.Unmarshaler for PieRequestMessage
 func (m *PieRequestMessage) UnmarshalXML(d *xml.Decoder, start xml.StartElement) error {
+	// Capture all namespace and unhandled attributes
+	if m.NamespaceAttrs == nil {
+		m.NamespaceAttrs = make(map[string]string)
+	}
+	for _, attr := range start.Attr {
+		// Capture all xmlns:* attributes and xsi:schemaLocation
+		if attr.Name.Space == "xmlns" || attr.Name.Local == "xmlns" ||
+			(attr.Name.Space == "http://www.w3.org/2001/XMLSchema-instance" && attr.Name.Local == "schemaLocation") {
+			key := attr.Name.Local
+			if attr.Name.Space == "xmlns" {
+				// For namespace declarations like xmlns:ernm, xmlns:avs
+				key = "xmlns:" + attr.Name.Local
+			} else if attr.Name.Space != "" && attr.Name.Local != "xmlns" {
+				// Preserve the namespace prefix for attributes like xsi:schemaLocation
+				if attr.Name.Space == "http://www.w3.org/2001/XMLSchema-instance" {
+					key = "xsi:" + attr.Name.Local
+				}
+			}
+			m.NamespaceAttrs[key] = attr.Value
+		}
+	}
+
 	// Create an alias type to avoid infinite recursion
 	type alias PieRequestMessage
 	return d.DecodeElement((*alias)(m), &start)

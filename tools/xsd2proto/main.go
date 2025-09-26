@@ -644,42 +644,12 @@ func generateComplexTypeMessageWithNamespace(name string, complexType *XSDComple
 
 	// Add namespace attributes for root elements
 	if isRootElement && targetNamespace != "" {
-		// Extract namespace prefix from target namespace URL
-		// e.g., "http://ddex.net/xml/ern/43" -> "ern"
-		namespacePrefix := extractNamespacePrefix(targetNamespace)
-
-		if namespacePrefix != "" {
-			// Add the namespace prefix attribute (e.g., xmlns:ern)
-			injectComment := fmt.Sprintf("  // @gotags: xml:\"xmlns:%s,attr\"", namespacePrefix)
-			field := fmt.Sprintf("%s\n  string xmlns_%s = %d;", injectComment, namespacePrefix, fieldNum)
-			builder.WriteString(field + "\n")
-			fieldNum++
-		}
-
-		// Add XSI namespace attribute
-		injectComment := fmt.Sprintf("  // @gotags: xml:\"xmlns:xsi,attr\"")
-		field := fmt.Sprintf("%s\n  string xmlns_xsi = %d;", injectComment, fieldNum)
+		// Add namespace attributes map to capture all xmlns:* attributes
+		// Note: We handle this manually in MarshalXML/UnmarshalXML, so mark it as ignored
+		injectComment := fmt.Sprintf("  // @gotags: xml:\"-\"")
+		field := fmt.Sprintf("%s\n  map<string, string> namespace_attrs = %d;", injectComment, fieldNum)
 		builder.WriteString(field + "\n")
 		fieldNum++
-
-		// Add schema location attribute (this one needs xsi: prefix, not xmlns:)
-		injectComment = fmt.Sprintf("  // @gotags: xml:\"xsi:schemaLocation,attr\"")
-		field = fmt.Sprintf("%s\n  string xsi_schema_location = %d;", injectComment, fieldNum)
-		builder.WriteString(field + "\n")
-		fieldNum++
-
-		// Add AVS namespace attribute if this bundle imports AVS
-		if bundle != nil {
-			for importNS := range bundle.Imports {
-				if importNS == "http://ddex.net/xml/avs/avs" || importNS == "http://ddex.net/xml/allowed-value-sets" {
-					injectComment = fmt.Sprintf("  // @gotags: xml:\"xmlns:avs,attr\"")
-					field = fmt.Sprintf("%s\n  string xmlns_avs = %d;", injectComment, fieldNum)
-					builder.WriteString(field + "\n")
-					fieldNum++
-					break
-				}
-			}
-		}
 	}
 
 	builder.WriteString("}")

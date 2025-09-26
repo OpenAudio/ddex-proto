@@ -19,14 +19,8 @@ message PieMessage {
   string avs_version_id = 4;
   // @gotags: xml:"LanguageAndScriptCode,attr"
   string language_and_script_code = 5;
-  // @gotags: xml:"xmlns:pie,attr"
-  string xmlns_pie = 6;
-  // @gotags: xml:"xmlns:xsi,attr"
-  string xmlns_xsi = 7;
-  // @gotags: xml:"xsi:schemaLocation,attr"
-  string xsi_schema_location = 8;
-  // @gotags: xml:"xmlns:avs,attr"
-  string xmlns_avs = 9;
+  // @gotags: xml:"-"
+  map<string, string> namespace_attrs = 6;
 }
 
 message PieRequestMessage {
@@ -38,14 +32,8 @@ message PieRequestMessage {
   string avs_version_id = 3;
   // @gotags: xml:"LanguageAndScriptCode,attr"
   string language_and_script_code = 4;
-  // @gotags: xml:"xmlns:pie,attr"
-  string xmlns_pie = 5;
-  // @gotags: xml:"xmlns:xsi,attr"
-  string xmlns_xsi = 6;
-  // @gotags: xml:"xsi:schemaLocation,attr"
-  string xsi_schema_location = 7;
-  // @gotags: xml:"xmlns:avs,attr"
-  string xmlns_avs = 8;
+  // @gotags: xml:"-"
+  map<string, string> namespace_attrs = 5;
 }
 
 message Feed {
@@ -75,14 +63,8 @@ message Feed {
   ddex.pie.v10.DateTime updated = 12;
   // @gotags: xml:"entry"
   repeated ddex.pie.v10.Entry entry = 13;
-  // @gotags: xml:"xmlns:pie,attr"
-  string xmlns_pie = 14;
-  // @gotags: xml:"xmlns:xsi,attr"
-  string xmlns_xsi = 15;
-  // @gotags: xml:"xsi:schemaLocation,attr"
-  string xsi_schema_location = 16;
-  // @gotags: xml:"xmlns:avs,attr"
-  string xmlns_avs = 17;
+  // @gotags: xml:"-"
+  map<string, string> namespace_attrs = 14;
 }
 
 message Contribution {

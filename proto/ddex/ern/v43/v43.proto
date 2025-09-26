@@ -35,14 +35,8 @@ message NewReleaseMessage {
   string avs_version_id = 12;
   // @gotags: xml:"LanguageAndScriptCode,attr"
   string language_and_script_code = 13;
-  // @gotags: xml:"xmlns:ern,attr"
-  string xmlns_ern = 14;
-  // @gotags: xml:"xmlns:xsi,attr"
-  string xmlns_xsi = 15;
-  // @gotags: xml:"xsi:schemaLocation,attr"
-  string xsi_schema_location = 16;
-  // @gotags: xml:"xmlns:avs,attr"
-  string xmlns_avs = 17;
+  // @gotags: xml:"-"
+  map<string, string> namespace_attrs = 14;
 }
 
 message PurgeReleaseMessage {
@@ -54,14 +48,8 @@ message PurgeReleaseMessage {
   string avs_version_id = 3;
   // @gotags: xml:"LanguageAndScriptCode,attr"
   string language_and_script_code = 4;
-  // @gotags: xml:"xmlns:ern,attr"
-  string xmlns_ern = 5;
-  // @gotags: xml:"xmlns:xsi,attr"
-  string xmlns_xsi = 6;
-  // @gotags: xml:"xsi:schemaLocation,attr"
-  string xsi_schema_location = 7;
-  // @gotags: xml:"xmlns:avs,attr"
-  string xmlns_avs = 8;
+  // @gotags: xml:"-"
+  map<string, string> namespace_attrs = 5;
 }
 
 message AdditionalTitle {

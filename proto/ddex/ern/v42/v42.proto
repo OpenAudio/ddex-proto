@@ -33,14 +33,8 @@ message NewReleaseMessage {
   string release_profile_variant_version_id = 11;
   // @gotags: xml:"LanguageAndScriptCode,attr"
   string language_and_script_code = 12;
-  // @gotags: xml:"xmlns:ern,attr"
-  string xmlns_ern = 13;
-  // @gotags: xml:"xmlns:xsi,attr"
-  string xmlns_xsi = 14;
-  // @gotags: xml:"xsi:schemaLocation,attr"
-  string xsi_schema_location = 15;
-  // @gotags: xml:"xmlns:avs,attr"
-  string xmlns_avs = 16;
+  // @gotags: xml:"-"
+  map<string, string> namespace_attrs = 13;
 }
 
 message PurgeReleaseMessage {
@@ -50,14 +44,8 @@ message PurgeReleaseMessage {
   ddex.ern.v42.PurgedRelease purged_release = 2;
   // @gotags: xml:"LanguageAndScriptCode,attr"
   string language_and_script_code = 3;
-  // @gotags: xml:"xmlns:ern,attr"
-  string xmlns_ern = 4;
-  // @gotags: xml:"xmlns:xsi,attr"
-  string xmlns_xsi = 5;
-  // @gotags: xml:"xsi:schemaLocation,attr"
-  string xsi_schema_location = 6;
-  // @gotags: xml:"xmlns:avs,attr"
-  string xmlns_avs = 7;
+  // @gotags: xml:"-"
+  map<string, string> namespace_attrs = 4;
 }
 
 message AdditionalTitle {
