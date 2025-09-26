@@ -431,6 +431,12 @@ func generateXMLMarshalingMethods(message MessageInfo, nsInfo *NamespaceInfo) st
 		sb.WriteString("\t}\n\n")
 	}
 
+	// Set the namespace on the start element for root messages
+	if nsInfo != nil && isRootMessage(message.Name) {
+		sb.WriteString("\t// Set the namespace on the start element\n")
+		sb.WriteString("\tstart.Name.Space = Namespace\n\n")
+	}
+
 	sb.WriteString("\t// Create an alias type to avoid infinite recursion\n")
 	sb.WriteString(fmt.Sprintf("\ttype alias %s\n", message.Name))
 	sb.WriteString("\treturn e.EncodeElement((*alias)(m), start)\n")

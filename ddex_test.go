@@ -89,7 +89,6 @@ func TestDDEX(t *testing.T) {
 	}
 }
 
-
 // BenchmarkDDEX runs all benchmarks grouped by message type and version
 func BenchmarkDDEX(b *testing.B) {
 	discovered, err := testdata.DiscoverMessageTypesAndVersions()
@@ -138,4 +137,3 @@ func BenchmarkDDEX(b *testing.B) {
 		}
 	}
 }
-

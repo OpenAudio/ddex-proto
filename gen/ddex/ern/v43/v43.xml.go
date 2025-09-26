@@ -25,6 +25,9 @@ func (m *NewReleaseMessage) MarshalXML(e *xml.Encoder, start xml.StartElement) e
 		m.XsiSchemaLocation = SchemaLocation
 	}
 
+	// Set the namespace on the start element
+	start.Name.Space = Namespace
+
 	// Create an alias type to avoid infinite recursion
 	type alias NewReleaseMessage
 	return e.EncodeElement((*alias)(m), start)
@@ -49,6 +52,9 @@ func (m *PurgeReleaseMessage) MarshalXML(e *xml.Encoder, start xml.StartElement)
 	if m.XsiSchemaLocation == "" {
 		m.XsiSchemaLocation = SchemaLocation
 	}
+
+	// Set the namespace on the start element
+	start.Name.Space = Namespace
 
 	// Create an alias type to avoid infinite recursion
 	type alias PurgeReleaseMessage

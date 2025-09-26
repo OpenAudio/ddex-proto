@@ -8,6 +8,7 @@ import (
 )
 
 // DDEXTestDataFS embeds all DDEX test data files
+//
 //go:embed ddex
 var DDEXTestDataFS embed.FS
 

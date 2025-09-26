@@ -25,6 +25,9 @@ func (m *PieMessage) MarshalXML(e *xml.Encoder, start xml.StartElement) error {
 		m.XsiSchemaLocation = SchemaLocation
 	}
 
+	// Set the namespace on the start element
+	start.Name.Space = Namespace
+
 	// Create an alias type to avoid infinite recursion
 	type alias PieMessage
 	return e.EncodeElement((*alias)(m), start)
@@ -49,6 +52,9 @@ func (m *PieRequestMessage) MarshalXML(e *xml.Encoder, start xml.StartElement) e
 	if m.XsiSchemaLocation == "" {
 		m.XsiSchemaLocation = SchemaLocation
 	}
+
+	// Set the namespace on the start element
+	start.Name.Space = Namespace
 
 	// Create an alias type to avoid infinite recursion
 	type alias PieRequestMessage

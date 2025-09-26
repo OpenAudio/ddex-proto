@@ -25,6 +25,9 @@ func (m *MeadMessage) MarshalXML(e *xml.Encoder, start xml.StartElement) error {
 		m.XsiSchemaLocation = SchemaLocation
 	}
 
+	// Set the namespace on the start element
+	start.Name.Space = Namespace
+
 	// Create an alias type to avoid infinite recursion
 	type alias MeadMessage
 	return e.EncodeElement((*alias)(m), start)
