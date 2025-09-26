@@ -25,12 +25,8 @@ message MeadMessage {
   string avs_version_id = 7;
   // @gotags: xml:"LanguageAndScriptCode,attr"
   string language_and_script_code = 8;
-  // @gotags: xml:"xmlns:mead,attr"
-  string xmlns_mead = 9;
-  // @gotags: xml:"xmlns:xsi,attr"
-  string xmlns_xsi = 10;
-  // @gotags: xml:"xsi:schemaLocation,attr"
-  string xsi_schema_location = 11;
+  // @gotags: xml:"-"
+  map<string, string> namespace_attrs = 9;
 }
 
 message Feed {
@@ -60,12 +56,8 @@ message Feed {
   ddex.mead.v11.DateTime updated = 12;
   // @gotags: xml:"entry"
   repeated ddex.mead.v11.Entry entry = 13;
-  // @gotags: xml:"xmlns:mead,attr"
-  string xmlns_mead = 14;
-  // @gotags: xml:"xmlns:xsi,attr"
-  string xmlns_xsi = 15;
-  // @gotags: xml:"xsi:schemaLocation,attr"
-  string xsi_schema_location = 16;
+  // @gotags: xml:"-"
+  map<string, string> namespace_attrs = 14;
 }
 
 message AbsolutePitch {

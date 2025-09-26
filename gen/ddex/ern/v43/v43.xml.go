@@ -2,27 +2,58 @@
 
 package v43
 
-import "encoding/xml"
+import (
+	"encoding/xml"
+	"reflect"
+	"strings"
+)
 
 // Package-level namespace constants
 const (
 	Namespace       = "http://ddex.net/xml/ern/43"
 	NamespacePrefix = "ern"
-	SchemaLocation  = "http://ddex.net/xml/ern/43 http://ddex.net/xml/ern/43/release-notification.xsd"
 	NamespaceXSI    = "http://www.w3.org/2001/XMLSchema-instance"
 )
 
 // MarshalXML implements xml.Marshaler for NewReleaseMessage
 func (m *NewReleaseMessage) MarshalXML(e *xml.Encoder, start xml.StartElement) error {
 	// Set default namespace values if empty
-	if m.XmlnsErn == "" {
-		m.XmlnsErn = Namespace
+	if m.NamespaceAttrs == nil {
+		m.NamespaceAttrs = make(map[string]string)
 	}
-	if m.XmlnsXsi == "" {
-		m.XmlnsXsi = NamespaceXSI
+	// Set the namespace on the start element
+	start.Name.Space = Namespace
+
+	// Add namespace attributes to the element, avoiding duplicates
+	// Use reflection to find which attributes are already handled by struct fields
+	existingAttrs := make(map[string]bool)
+	v := reflect.ValueOf(m).Elem()
+	t := v.Type()
+	for i := 0; i < v.NumField(); i++ {
+		field := t.Field(i)
+		if xmlTag := field.Tag.Get("xml"); xmlTag != "" && xmlTag != "-" {
+			// Parse the XML tag to get the attribute name
+			if strings.HasSuffix(xmlTag, ",attr") {
+				attrName := strings.TrimSuffix(xmlTag, ",attr")
+				if colonIdx := strings.Index(attrName, ":"); colonIdx >= 0 {
+					// For tags like "xmlns:ern,attr" or "xsi:schemaLocation,attr"
+					existingAttrs[attrName] = true
+				} else if attrName != "" {
+					// For tags like "LanguageAndScriptCode,attr"
+					existingAttrs[attrName] = true
+				}
+			}
+		}
 	}
-	if m.XsiSchemaLocation == "" {
-		m.XsiSchemaLocation = SchemaLocation
+
+	// Add attributes from the map that aren't already handled
+	for key, value := range m.NamespaceAttrs {
+		if !existingAttrs[key] {
+			start.Attr = append(start.Attr, xml.Attr{
+				Name:  xml.Name{Local: key},
+				Value: value,
+			})
+		}
 	}
 
 	// Create an alias type to avoid infinite recursion
@@ -32,6 +63,28 @@ func (m *NewReleaseMessage) MarshalXML(e *xml.Encoder, start xml.StartElement) e
 
 // UnmarshalXML implements xml.Unmarshaler for NewReleaseMessage
 func (m *NewReleaseMessage) UnmarshalXML(d *xml.Decoder, start xml.StartElement) error {
+	// Capture all namespace and unhandled attributes
+	if m.NamespaceAttrs == nil {
+		m.NamespaceAttrs = make(map[string]string)
+	}
+	for _, attr := range start.Attr {
+		// Capture all xmlns:* attributes and xsi:schemaLocation
+		if attr.Name.Space == "xmlns" || attr.Name.Local == "xmlns" ||
+			(attr.Name.Space == "http://www.w3.org/2001/XMLSchema-instance" && attr.Name.Local == "schemaLocation") {
+			key := attr.Name.Local
+			if attr.Name.Space == "xmlns" {
+				// For namespace declarations like xmlns:ernm, xmlns:avs
+				key = "xmlns:" + attr.Name.Local
+			} else if attr.Name.Space != "" && attr.Name.Local != "xmlns" {
+				// Preserve the namespace prefix for attributes like xsi:schemaLocation
+				if attr.Name.Space == "http://www.w3.org/2001/XMLSchema-instance" {
+					key = "xsi:" + attr.Name.Local
+				}
+			}
+			m.NamespaceAttrs[key] = attr.Value
+		}
+	}
+
 	// Create an alias type to avoid infinite recursion
 	type alias NewReleaseMessage
 	return d.DecodeElement((*alias)(m), &start)
@@ -40,14 +93,42 @@ func (m *NewReleaseMessage) UnmarshalXML(d *xml.Decoder, start xml.StartElement)
 // MarshalXML implements xml.Marshaler for PurgeReleaseMessage
 func (m *PurgeReleaseMessage) MarshalXML(e *xml.Encoder, start xml.StartElement) error {
 	// Set default namespace values if empty
-	if m.XmlnsErn == "" {
-		m.XmlnsErn = Namespace
+	if m.NamespaceAttrs == nil {
+		m.NamespaceAttrs = make(map[string]string)
 	}
-	if m.XmlnsXsi == "" {
-		m.XmlnsXsi = NamespaceXSI
+	// Set the namespace on the start element
+	start.Name.Space = Namespace
+
+	// Add namespace attributes to the element, avoiding duplicates
+	// Use reflection to find which attributes are already handled by struct fields
+	existingAttrs := make(map[string]bool)
+	v := reflect.ValueOf(m).Elem()
+	t := v.Type()
+	for i := 0; i < v.NumField(); i++ {
+		field := t.Field(i)
+		if xmlTag := field.Tag.Get("xml"); xmlTag != "" && xmlTag != "-" {
+			// Parse the XML tag to get the attribute name
+			if strings.HasSuffix(xmlTag, ",attr") {
+				attrName := strings.TrimSuffix(xmlTag, ",attr")
+				if colonIdx := strings.Index(attrName, ":"); colonIdx >= 0 {
+					// For tags like "xmlns:ern,attr" or "xsi:schemaLocation,attr"
+					existingAttrs[attrName] = true
+				} else if attrName != "" {
+					// For tags like "LanguageAndScriptCode,attr"
+					existingAttrs[attrName] = true
+				}
+			}
+		}
 	}
-	if m.XsiSchemaLocation == "" {
-		m.XsiSchemaLocation = SchemaLocation
+
+	// Add attributes from the map that aren't already handled
+	for key, value := range m.NamespaceAttrs {
+		if !existingAttrs[key] {
+			start.Attr = append(start.Attr, xml.Attr{
+				Name:  xml.Name{Local: key},
+				Value: value,
+			})
+		}
 	}
 
 	// Create an alias type to avoid infinite recursion
@@ -57,6 +138,28 @@ func (m *PurgeReleaseMessage) MarshalXML(e *xml.Encoder, start xml.StartElement)
 
 // UnmarshalXML implements xml.Unmarshaler for PurgeReleaseMessage
 func (m *PurgeReleaseMessage) UnmarshalXML(d *xml.Decoder, start xml.StartElement) error {
+	// Capture all namespace and unhandled attributes
+	if m.NamespaceAttrs == nil {
+		m.NamespaceAttrs = make(map[string]string)
+	}
+	for _, attr := range start.Attr {
+		// Capture all xmlns:* attributes and xsi:schemaLocation
+		if attr.Name.Space == "xmlns" || attr.Name.Local == "xmlns" ||
+			(attr.Name.Space == "http://www.w3.org/2001/XMLSchema-instance" && attr.Name.Local == "schemaLocation") {
+			key := attr.Name.Local
+			if attr.Name.Space == "xmlns" {
+				// For namespace declarations like xmlns:ernm, xmlns:avs
+				key = "xmlns:" + attr.Name.Local
+			} else if attr.Name.Space != "" && attr.Name.Local != "xmlns" {
+				// Preserve the namespace prefix for attributes like xsi:schemaLocation
+				if attr.Name.Space == "http://www.w3.org/2001/XMLSchema-instance" {
+					key = "xsi:" + attr.Name.Local
+				}
+			}
+			m.NamespaceAttrs[key] = attr.Value
+		}
+	}
+
 	// Create an alias type to avoid infinite recursion
 	type alias PurgeReleaseMessage
 	return d.DecodeElement((*alias)(m), &start)

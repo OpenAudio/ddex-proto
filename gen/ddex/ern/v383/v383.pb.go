@@ -98,14 +98,10 @@ type NewReleaseMessage struct {
 	ReleaseProfileVersionId string `protobuf:"bytes,13,opt,name=release_profile_version_id,json=releaseProfileVersionId,proto3" json:"release_profile_version_id,omitempty" xml:"ReleaseProfileVersionId,attr"`
 	// @gotags: xml:"LanguageAndScriptCode,attr"
 	LanguageAndScriptCode string `protobuf:"bytes,14,opt,name=language_and_script_code,json=languageAndScriptCode,proto3" json:"language_and_script_code,omitempty" xml:"LanguageAndScriptCode,attr"`
-	// @gotags: xml:"xmlns:ern,attr"
-	XmlnsErn string `protobuf:"bytes,15,opt,name=xmlns_ern,json=xmlnsErn,proto3" json:"xmlns_ern,omitempty" xml:"xmlns:ern,attr"`
-	// @gotags: xml:"xmlns:xsi,attr"
-	XmlnsXsi string `protobuf:"bytes,16,opt,name=xmlns_xsi,json=xmlnsXsi,proto3" json:"xmlns_xsi,omitempty" xml:"xmlns:xsi,attr"`
-	// @gotags: xml:"xsi:schemaLocation,attr"
-	XsiSchemaLocation string `protobuf:"bytes,17,opt,name=xsi_schema_location,json=xsiSchemaLocation,proto3" json:"xsi_schema_location,omitempty" xml:"xsi:schemaLocation,attr"`
-	unknownFields     protoimpl.UnknownFields
-	sizeCache         protoimpl.SizeCache
+	// @gotags: xml:"-"
+	NamespaceAttrs map[string]string `protobuf:"bytes,15,rep,name=namespace_attrs,json=namespaceAttrs,proto3" json:"namespace_attrs,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value" xml:"-"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
 }
 
 func (x *NewReleaseMessage) Reset() {
@@ -236,25 +232,11 @@ func (x *NewReleaseMessage) GetLanguageAndScriptCode() string {
 	return ""
 }
 
-func (x *NewReleaseMessage) GetXmlnsErn() string {
+func (x *NewReleaseMessage) GetNamespaceAttrs() map[string]string {
 	if x != nil {
-		return x.XmlnsErn
+		return x.NamespaceAttrs
 	}
-	return ""
-}
-
-func (x *NewReleaseMessage) GetXmlnsXsi() string {
-	if x != nil {
-		return x.XmlnsXsi
-	}
-	return ""
-}
-
-func (x *NewReleaseMessage) GetXsiSchemaLocation() string {
-	if x != nil {
-		return x.XsiSchemaLocation
-	}
-	return ""
+	return nil
 }
 
 type CatalogListMessage struct {
@@ -273,14 +255,10 @@ type CatalogListMessage struct {
 	ReleaseProfileVersionId string `protobuf:"bytes,6,opt,name=release_profile_version_id,json=releaseProfileVersionId,proto3" json:"release_profile_version_id,omitempty" xml:"ReleaseProfileVersionId,attr"`
 	// @gotags: xml:"LanguageAndScriptCode,attr"
 	LanguageAndScriptCode string `protobuf:"bytes,7,opt,name=language_and_script_code,json=languageAndScriptCode,proto3" json:"language_and_script_code,omitempty" xml:"LanguageAndScriptCode,attr"`
-	// @gotags: xml:"xmlns:ern,attr"
-	XmlnsErn string `protobuf:"bytes,8,opt,name=xmlns_ern,json=xmlnsErn,proto3" json:"xmlns_ern,omitempty" xml:"xmlns:ern,attr"`
-	// @gotags: xml:"xmlns:xsi,attr"
-	XmlnsXsi string `protobuf:"bytes,9,opt,name=xmlns_xsi,json=xmlnsXsi,proto3" json:"xmlns_xsi,omitempty" xml:"xmlns:xsi,attr"`
-	// @gotags: xml:"xsi:schemaLocation,attr"
-	XsiSchemaLocation string `protobuf:"bytes,10,opt,name=xsi_schema_location,json=xsiSchemaLocation,proto3" json:"xsi_schema_location,omitempty" xml:"xsi:schemaLocation,attr"`
-	unknownFields     protoimpl.UnknownFields
-	sizeCache         protoimpl.SizeCache
+	// @gotags: xml:"-"
+	NamespaceAttrs map[string]string `protobuf:"bytes,8,rep,name=namespace_attrs,json=namespaceAttrs,proto3" json:"namespace_attrs,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value" xml:"-"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
 }
 
 func (x *CatalogListMessage) Reset() {
@@ -362,25 +340,11 @@ func (x *CatalogListMessage) GetLanguageAndScriptCode() string {
 	return ""
 }
 
-func (x *CatalogListMessage) GetXmlnsErn() string {
+func (x *CatalogListMessage) GetNamespaceAttrs() map[string]string {
 	if x != nil {
-		return x.XmlnsErn
+		return x.NamespaceAttrs
 	}
-	return ""
-}
-
-func (x *CatalogListMessage) GetXmlnsXsi() string {
-	if x != nil {
-		return x.XmlnsXsi
-	}
-	return ""
-}
-
-func (x *CatalogListMessage) GetXsiSchemaLocation() string {
-	if x != nil {
-		return x.XsiSchemaLocation
-	}
-	return ""
+	return nil
 }
 
 type PurgeReleaseMessage struct {
@@ -393,14 +357,10 @@ type PurgeReleaseMessage struct {
 	MessageSchemaVersionId string `protobuf:"bytes,3,opt,name=message_schema_version_id,json=messageSchemaVersionId,proto3" json:"message_schema_version_id,omitempty" xml:"MessageSchemaVersionId,attr"`
 	// @gotags: xml:"LanguageAndScriptCode,attr"
 	LanguageAndScriptCode string `protobuf:"bytes,4,opt,name=language_and_script_code,json=languageAndScriptCode,proto3" json:"language_and_script_code,omitempty" xml:"LanguageAndScriptCode,attr"`
-	// @gotags: xml:"xmlns:ern,attr"
-	XmlnsErn string `protobuf:"bytes,5,opt,name=xmlns_ern,json=xmlnsErn,proto3" json:"xmlns_ern,omitempty" xml:"xmlns:ern,attr"`
-	// @gotags: xml:"xmlns:xsi,attr"
-	XmlnsXsi string `protobuf:"bytes,6,opt,name=xmlns_xsi,json=xmlnsXsi,proto3" json:"xmlns_xsi,omitempty" xml:"xmlns:xsi,attr"`
-	// @gotags: xml:"xsi:schemaLocation,attr"
-	XsiSchemaLocation string `protobuf:"bytes,7,opt,name=xsi_schema_location,json=xsiSchemaLocation,proto3" json:"xsi_schema_location,omitempty" xml:"xsi:schemaLocation,attr"`
-	unknownFields     protoimpl.UnknownFields
-	sizeCache         protoimpl.SizeCache
+	// @gotags: xml:"-"
+	NamespaceAttrs map[string]string `protobuf:"bytes,5,rep,name=namespace_attrs,json=namespaceAttrs,proto3" json:"namespace_attrs,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value" xml:"-"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
 }
 
 func (x *PurgeReleaseMessage) Reset() {
@@ -461,25 +421,11 @@ func (x *PurgeReleaseMessage) GetLanguageAndScriptCode() string {
 	return ""
 }
 
-func (x *PurgeReleaseMessage) GetXmlnsErn() string {
+func (x *PurgeReleaseMessage) GetNamespaceAttrs() map[string]string {
 	if x != nil {
-		return x.XmlnsErn
+		return x.NamespaceAttrs
 	}
-	return ""
-}
-
-func (x *PurgeReleaseMessage) GetXmlnsXsi() string {
-	if x != nil {
-		return x.XmlnsXsi
-	}
-	return ""
-}
-
-func (x *PurgeReleaseMessage) GetXsiSchemaLocation() string {
-	if x != nil {
-		return x.XsiSchemaLocation
-	}
-	return ""
+	return nil
 }
 
 type CatalogItem struct {
@@ -19566,7 +19512,7 @@ var File_ddex_ern_v383_v383_proto protoreflect.FileDescriptor
 
 const file_ddex_ern_v383_v383_proto_rawDesc = "" +
 	"\n" +
-	"\x18ddex/ern/v383/v383.proto\x12\rddex.ern.v383\x1a\"ddex/avs/v20200108/v20200108.proto\"\xc1\a\n" +
+	"\x18ddex/ern/v383/v383.proto\x12\rddex.ern.v383\x1a\"ddex/avs/v20200108/v20200108.proto\"\xf9\a\n" +
 	"\x11NewReleaseMessage\x12C\n" +
 	"\x0emessage_header\x18\x01 \x01(\v2\x1c.ddex.ern.v383.MessageHeaderR\rmessageHeader\x12)\n" +
 	"\x10update_indicator\x18\x02 \x01(\tR\x0fupdateIndicator\x12\x1f\n" +
@@ -19583,10 +19529,11 @@ const file_ddex_ern_v383_v383_proto_rawDesc = "" +
 	"\x19message_schema_version_id\x18\v \x01(\tR\x16messageSchemaVersionId\x12=\n" +
 	"\x1bbusiness_profile_version_id\x18\f \x01(\tR\x18businessProfileVersionId\x12;\n" +
 	"\x1arelease_profile_version_id\x18\r \x01(\tR\x17releaseProfileVersionId\x127\n" +
-	"\x18language_and_script_code\x18\x0e \x01(\tR\x15languageAndScriptCode\x12\x1b\n" +
-	"\txmlns_ern\x18\x0f \x01(\tR\bxmlnsErn\x12\x1b\n" +
-	"\txmlns_xsi\x18\x10 \x01(\tR\bxmlnsXsi\x12.\n" +
-	"\x13xsi_schema_location\x18\x11 \x01(\tR\x11xsiSchemaLocation\"\x9d\x04\n" +
+	"\x18language_and_script_code\x18\x0e \x01(\tR\x15languageAndScriptCode\x12]\n" +
+	"\x0fnamespace_attrs\x18\x0f \x03(\v24.ddex.ern.v383.NewReleaseMessage.NamespaceAttrsEntryR\x0enamespaceAttrs\x1aA\n" +
+	"\x13NamespaceAttrsEntry\x12\x10\n" +
+	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
+	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\"\xd6\x04\n" +
 	"\x12CatalogListMessage\x12C\n" +
 	"\x0emessage_header\x18\x01 \x01(\v2\x1c.ddex.ern.v383.MessageHeaderR\rmessageHeader\x12)\n" +
 	"\x10publication_date\x18\x02 \x01(\tR\x0fpublicationDate\x12=\n" +
@@ -19594,19 +19541,20 @@ const file_ddex_ern_v383_v383_proto_rawDesc = "" +
 	"\x19message_schema_version_id\x18\x04 \x01(\tR\x16messageSchemaVersionId\x12=\n" +
 	"\x1bbusiness_profile_version_id\x18\x05 \x01(\tR\x18businessProfileVersionId\x12;\n" +
 	"\x1arelease_profile_version_id\x18\x06 \x01(\tR\x17releaseProfileVersionId\x127\n" +
-	"\x18language_and_script_code\x18\a \x01(\tR\x15languageAndScriptCode\x12\x1b\n" +
-	"\txmlns_ern\x18\b \x01(\tR\bxmlnsErn\x12\x1b\n" +
-	"\txmlns_xsi\x18\t \x01(\tR\bxmlnsXsi\x12.\n" +
-	"\x13xsi_schema_location\x18\n" +
-	" \x01(\tR\x11xsiSchemaLocation\"\xfd\x02\n" +
+	"\x18language_and_script_code\x18\a \x01(\tR\x15languageAndScriptCode\x12^\n" +
+	"\x0fnamespace_attrs\x18\b \x03(\v25.ddex.ern.v383.CatalogListMessage.NamespaceAttrsEntryR\x0enamespaceAttrs\x1aA\n" +
+	"\x13NamespaceAttrsEntry\x12\x10\n" +
+	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
+	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\"\xb7\x03\n" +
 	"\x13PurgeReleaseMessage\x12C\n" +
 	"\x0emessage_header\x18\x01 \x01(\v2\x1c.ddex.ern.v383.MessageHeaderR\rmessageHeader\x12C\n" +
 	"\x0epurged_release\x18\x02 \x01(\v2\x1c.ddex.ern.v383.PurgedReleaseR\rpurgedRelease\x129\n" +
 	"\x19message_schema_version_id\x18\x03 \x01(\tR\x16messageSchemaVersionId\x127\n" +
-	"\x18language_and_script_code\x18\x04 \x01(\tR\x15languageAndScriptCode\x12\x1b\n" +
-	"\txmlns_ern\x18\x05 \x01(\tR\bxmlnsErn\x12\x1b\n" +
-	"\txmlns_xsi\x18\x06 \x01(\tR\bxmlnsXsi\x12.\n" +
-	"\x13xsi_schema_location\x18\a \x01(\tR\x11xsiSchemaLocation\"\xff\x04\n" +
+	"\x18language_and_script_code\x18\x04 \x01(\tR\x15languageAndScriptCode\x12_\n" +
+	"\x0fnamespace_attrs\x18\x05 \x03(\v26.ddex.ern.v383.PurgeReleaseMessage.NamespaceAttrsEntryR\x0enamespaceAttrs\x1aA\n" +
+	"\x13NamespaceAttrsEntry\x12\x10\n" +
+	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
+	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\"\xff\x04\n" +
 	"\vCatalogItem\x12F\n" +
 	"\x0eterritory_code\x18\x01 \x03(\v2\x1f.ddex.ern.v383.AllTerritoryCodeR\rterritoryCode\x127\n" +
 	"\n" +
@@ -21269,7 +21217,7 @@ func file_ddex_ern_v383_v383_proto_rawDescGZIP() []byte {
 }
 
 var file_ddex_ern_v383_v383_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_ddex_ern_v383_v383_proto_msgTypes = make([]protoimpl.MessageInfo, 212)
+var file_ddex_ern_v383_v383_proto_msgTypes = make([]protoimpl.MessageInfo, 215)
 var file_ddex_ern_v383_v383_proto_goTypes = []any{
 	(DdexCCurrentTerritoryCode)(0),                    // 0: ddex.ern.v383.DdexCCurrentTerritoryCode
 	(*NewReleaseMessage)(nil),                         // 1: ddex.ern.v383.NewReleaseMessage
@@ -21484,6 +21432,9 @@ var file_ddex_ern_v383_v383_proto_goTypes = []any{
 	(*VideoType)(nil),                                 // 210: ddex.ern.v383.VideoType
 	(*WebPage)(nil),                                   // 211: ddex.ern.v383.WebPage
 	(*WorkList)(nil),                                  // 212: ddex.ern.v383.WorkList
+	nil,                                               // 213: ddex.ern.v383.NewReleaseMessage.NamespaceAttrsEntry
+	nil,                                               // 214: ddex.ern.v383.CatalogListMessage.NamespaceAttrsEntry
+	nil,                                               // 215: ddex.ern.v383.PurgeReleaseMessage.NamespaceAttrsEntry
 }
 var file_ddex_ern_v383_v383_proto_depIdxs = []int32{
 	126, // 0: ddex.ern.v383.NewReleaseMessage.message_header:type_name -> ddex.ern.v383.MessageHeader
@@ -21494,669 +21445,672 @@ var file_ddex_ern_v383_v383_proto_depIdxs = []int32{
 	9,   // 5: ddex.ern.v383.NewReleaseMessage.collection_list:type_name -> ddex.ern.v383.CollectionList
 	33,  // 6: ddex.ern.v383.NewReleaseMessage.release_list:type_name -> ddex.ern.v383.ReleaseList
 	16,  // 7: ddex.ern.v383.NewReleaseMessage.deal_list:type_name -> ddex.ern.v383.DealList
-	126, // 8: ddex.ern.v383.CatalogListMessage.message_header:type_name -> ddex.ern.v383.MessageHeader
-	4,   // 9: ddex.ern.v383.CatalogListMessage.catalog_item:type_name -> ddex.ern.v383.CatalogItem
-	126, // 10: ddex.ern.v383.PurgeReleaseMessage.message_header:type_name -> ddex.ern.v383.MessageHeader
-	28,  // 11: ddex.ern.v383.PurgeReleaseMessage.purged_release:type_name -> ddex.ern.v383.PurgedRelease
-	61,  // 12: ddex.ern.v383.CatalogItem.territory_code:type_name -> ddex.ern.v383.AllTerritoryCode
-	158, // 13: ddex.ern.v383.CatalogItem.release_id:type_name -> ddex.ern.v383.ReleaseId
-	199, // 14: ddex.ern.v383.CatalogItem.title:type_name -> ddex.ern.v383.Title
-	135, // 15: ddex.ern.v383.CatalogItem.display_artist_name:type_name -> ddex.ern.v383.Name
-	135, // 16: ddex.ern.v383.CatalogItem.contributor_name:type_name -> ddex.ern.v383.Name
-	154, // 17: ddex.ern.v383.CatalogItem.display_title:type_name -> ddex.ern.v383.ReferenceTitle
-	121, // 18: ddex.ern.v383.CatalogItem.label_name:type_name -> ddex.ern.v383.LabelName
-	111, // 19: ddex.ern.v383.CatalogItem.genre:type_name -> ddex.ern.v383.Genre
-	137, // 20: ddex.ern.v383.CatalogItem.p_line:type_name -> ddex.ern.v383.PLine
-	69,  // 21: ddex.ern.v383.CatalogItem.c_line:type_name -> ddex.ern.v383.CLine
-	101, // 22: ddex.ern.v383.CatalogItem.release_date:type_name -> ddex.ern.v383.EventDate
-	101, // 23: ddex.ern.v383.CatalogTransfer.effective_transfer_date:type_name -> ddex.ern.v383.EventDate
-	5,   // 24: ddex.ern.v383.CatalogTransfer.catalog_release_reference_list:type_name -> ddex.ern.v383.CatalogReleaseReferenceList
-	139, // 25: ddex.ern.v383.CatalogTransfer.transferring_from:type_name -> ddex.ern.v383.PartyDescriptor
-	139, // 26: ddex.ern.v383.CatalogTransfer.transferring_to:type_name -> ddex.ern.v383.PartyDescriptor
-	61,  // 27: ddex.ern.v383.CatalogTransfer.territory_code:type_name -> ddex.ern.v383.AllTerritoryCode
-	61,  // 28: ddex.ern.v383.CatalogTransfer.excluded_territory_code:type_name -> ddex.ern.v383.AllTerritoryCode
-	75,  // 29: ddex.ern.v383.Collection.collection_id:type_name -> ddex.ern.v383.CollectionId
-	76,  // 30: ddex.ern.v383.Collection.collection_type:type_name -> ddex.ern.v383.CollectionType
-	199, // 31: ddex.ern.v383.Collection.title:type_name -> ddex.ern.v383.Title
-	98,  // 32: ddex.ern.v383.Collection.contributor:type_name -> ddex.ern.v383.DetailedResourceContributor
-	72,  // 33: ddex.ern.v383.Collection.character:type_name -> ddex.ern.v383.Character
-	74,  // 34: ddex.ern.v383.Collection.collection_collection_reference_list:type_name -> ddex.ern.v383.CollectionCollectionReferenceList
-	101, // 35: ddex.ern.v383.Collection.creation_date:type_name -> ddex.ern.v383.EventDate
-	101, // 36: ddex.ern.v383.Collection.release_date:type_name -> ddex.ern.v383.EventDate
-	101, // 37: ddex.ern.v383.Collection.original_release_date:type_name -> ddex.ern.v383.EventDate
-	8,   // 38: ddex.ern.v383.Collection.collection_details_by_territory:type_name -> ddex.ern.v383.CollectionDetailsByTerritory
-	11,  // 39: ddex.ern.v383.Collection.collection_resource_reference_list:type_name -> ddex.ern.v383.CollectionResourceReferenceList
-	78,  // 40: ddex.ern.v383.Collection.collection_work_reference_list:type_name -> ddex.ern.v383.CollectionWorkReferenceList
-	137, // 41: ddex.ern.v383.Collection.p_line:type_name -> ddex.ern.v383.PLine
-	69,  // 42: ddex.ern.v383.Collection.c_line:type_name -> ddex.ern.v383.CLine
-	199, // 43: ddex.ern.v383.CollectionDetailsByTerritory.title:type_name -> ddex.ern.v383.Title
-	98,  // 44: ddex.ern.v383.CollectionDetailsByTerritory.contributor:type_name -> ddex.ern.v383.DetailedResourceContributor
-	72,  // 45: ddex.ern.v383.CollectionDetailsByTerritory.character:type_name -> ddex.ern.v383.Character
-	94,  // 46: ddex.ern.v383.CollectionDetailsByTerritory.territory_code:type_name -> ddex.ern.v383.CurrentTerritoryCode
-	94,  // 47: ddex.ern.v383.CollectionDetailsByTerritory.excluded_territory_code:type_name -> ddex.ern.v383.CurrentTerritoryCode
-	7,   // 48: ddex.ern.v383.CollectionList.collection:type_name -> ddex.ern.v383.Collection
-	10,  // 49: ddex.ern.v383.CollectionResourceReferenceList.collection_resource_reference:type_name -> ddex.ern.v383.CollectionResourceReference
-	91,  // 50: ddex.ern.v383.Cue.cue_use_type:type_name -> ddex.ern.v383.CueUseType
-	90,  // 51: ddex.ern.v383.Cue.cue_theme_type:type_name -> ddex.ern.v383.CueThemeType
-	93,  // 52: ddex.ern.v383.Cue.cue_vocal_type:type_name -> ddex.ern.v383.CueVocalType
-	92,  // 53: ddex.ern.v383.Cue.cue_visual_perception_type:type_name -> ddex.ern.v383.CueVisualPerceptionType
-	88,  // 54: ddex.ern.v383.Cue.cue_origin:type_name -> ddex.ern.v383.CueOrigin
-	137, // 55: ddex.ern.v383.Cue.p_line:type_name -> ddex.ern.v383.PLine
-	69,  // 56: ddex.ern.v383.Cue.c_line:type_name -> ddex.ern.v383.CLine
-	87,  // 57: ddex.ern.v383.Cue.cue_creation_reference:type_name -> ddex.ern.v383.CueCreationReference
-	86,  // 58: ddex.ern.v383.Cue.referenced_creation_id:type_name -> ddex.ern.v383.CreationId
-	199, // 59: ddex.ern.v383.Cue.referenced_creation_title:type_name -> ddex.ern.v383.Title
-	98,  // 60: ddex.ern.v383.Cue.referenced_creation_contributor:type_name -> ddex.ern.v383.DetailedResourceContributor
-	130, // 61: ddex.ern.v383.Cue.referenced_indirect_creation_contributor:type_name -> ddex.ern.v383.MusicalWorkContributor
-	72,  // 62: ddex.ern.v383.Cue.referenced_creation_character:type_name -> ddex.ern.v383.Character
-	149, // 63: ddex.ern.v383.CueSheet.cue_sheet_id:type_name -> ddex.ern.v383.ProprietaryId
-	89,  // 64: ddex.ern.v383.CueSheet.cue_sheet_type:type_name -> ddex.ern.v383.CueSheetType
-	12,  // 65: ddex.ern.v383.CueSheet.cue:type_name -> ddex.ern.v383.Cue
-	13,  // 66: ddex.ern.v383.CueSheetList.cue_sheet:type_name -> ddex.ern.v383.CueSheet
-	96,  // 67: ddex.ern.v383.Deal.deal_reference:type_name -> ddex.ern.v383.DealReference
-	19,  // 68: ddex.ern.v383.Deal.deal_terms:type_name -> ddex.ern.v383.DealTerms
-	36,  // 69: ddex.ern.v383.Deal.resource_usage:type_name -> ddex.ern.v383.ResourceUsage
-	18,  // 70: ddex.ern.v383.Deal.deal_technical_resource_details_reference_list:type_name -> ddex.ern.v383.DealTechnicalResourceDetailsReferenceList
-	211, // 71: ddex.ern.v383.Deal.distribution_channel_page:type_name -> ddex.ern.v383.WebPage
-	31,  // 72: ddex.ern.v383.DealList.release_deal:type_name -> ddex.ern.v383.ReleaseDeal
-	144, // 73: ddex.ern.v383.DealResourceReferenceList.period:type_name -> ddex.ern.v383.Period
-	80,  // 74: ddex.ern.v383.DealTerms.commercial_model_type:type_name -> ddex.ern.v383.CommercialModelType
-	27,  // 75: ddex.ern.v383.DealTerms.price_information:type_name -> ddex.ern.v383.PriceInformation
-	144, // 76: ddex.ern.v383.DealTerms.validity_period:type_name -> ddex.ern.v383.Period
-	82,  // 77: ddex.ern.v383.DealTerms.consumer_rental_period:type_name -> ddex.ern.v383.ConsumerRentalPeriod
-	101, // 78: ddex.ern.v383.DealTerms.pre_order_release_date:type_name -> ddex.ern.v383.EventDate
-	17,  // 79: ddex.ern.v383.DealTerms.pre_order_incentive_resource_list:type_name -> ddex.ern.v383.DealResourceReferenceList
-	17,  // 80: ddex.ern.v383.DealTerms.instant_gratification_resource_list:type_name -> ddex.ern.v383.DealResourceReferenceList
-	29,  // 81: ddex.ern.v383.DealTerms.related_release_offer_set:type_name -> ddex.ern.v383.RelatedReleaseOfferSet
-	25,  // 82: ddex.ern.v383.DealTerms.physical_returns:type_name -> ddex.ern.v383.PhysicalReturns
-	177, // 83: ddex.ern.v383.DealTerms.rights_claim_policy:type_name -> ddex.ern.v383.RightsClaimPolicy
-	59,  // 84: ddex.ern.v383.DealTerms.web_policy:type_name -> ddex.ern.v383.WebPolicy
-	202, // 85: ddex.ern.v383.DealTerms.usage:type_name -> ddex.ern.v383.Usage
-	94,  // 86: ddex.ern.v383.DealTerms.territory_code:type_name -> ddex.ern.v383.CurrentTerritoryCode
-	94,  // 87: ddex.ern.v383.DealTerms.excluded_territory_code:type_name -> ddex.ern.v383.CurrentTerritoryCode
-	95,  // 88: ddex.ern.v383.DealTerms.distribution_channel:type_name -> ddex.ern.v383.DSP
-	95,  // 89: ddex.ern.v383.DealTerms.excluded_distribution_channel:type_name -> ddex.ern.v383.DSP
-	148, // 90: ddex.ern.v383.DealTerms.promotional_code:type_name -> ddex.ern.v383.PromotionalCode
-	101, // 91: ddex.ern.v383.DealTerms.pre_order_preview_date:type_name -> ddex.ern.v383.EventDate
-	108, // 92: ddex.ern.v383.Fingerprint.fingerprint_algorithm_type:type_name -> ddex.ern.v383.FingerprintAlgorithmType
-	118, // 93: ddex.ern.v383.Image.image_type:type_name -> ddex.ern.v383.ImageType
-	172, // 94: ddex.ern.v383.Image.image_id:type_name -> ddex.ern.v383.ResourceProprietaryId
-	199, // 95: ddex.ern.v383.Image.title:type_name -> ddex.ern.v383.Title
-	101, // 96: ddex.ern.v383.Image.creation_date:type_name -> ddex.ern.v383.EventDate
-	22,  // 97: ddex.ern.v383.Image.image_details_by_territory:type_name -> ddex.ern.v383.ImageDetailsByTerritory
-	199, // 98: ddex.ern.v383.ImageDetailsByTerritory.title:type_name -> ddex.ern.v383.Title
-	98,  // 99: ddex.ern.v383.ImageDetailsByTerritory.resource_contributor:type_name -> ddex.ern.v383.DetailedResourceContributor
-	119, // 100: ddex.ern.v383.ImageDetailsByTerritory.indirect_resource_contributor:type_name -> ddex.ern.v383.IndirectResourceContributor
-	135, // 101: ddex.ern.v383.ImageDetailsByTerritory.display_artist_name:type_name -> ddex.ern.v383.Name
-	69,  // 102: ddex.ern.v383.ImageDetailsByTerritory.c_line:type_name -> ddex.ern.v383.CLine
-	97,  // 103: ddex.ern.v383.ImageDetailsByTerritory.description:type_name -> ddex.ern.v383.Description
-	85,  // 104: ddex.ern.v383.ImageDetailsByTerritory.courtesy_line:type_name -> ddex.ern.v383.CourtesyLine
-	101, // 105: ddex.ern.v383.ImageDetailsByTerritory.resource_release_date:type_name -> ddex.ern.v383.EventDate
-	101, // 106: ddex.ern.v383.ImageDetailsByTerritory.original_resource_release_date:type_name -> ddex.ern.v383.EventDate
-	110, // 107: ddex.ern.v383.ImageDetailsByTerritory.fulfillment_date:type_name -> ddex.ern.v383.FulfillmentDate
-	120, // 108: ddex.ern.v383.ImageDetailsByTerritory.keywords:type_name -> ddex.ern.v383.Keywords
-	193, // 109: ddex.ern.v383.ImageDetailsByTerritory.synopsis:type_name -> ddex.ern.v383.Synopsis
-	111, // 110: ddex.ern.v383.ImageDetailsByTerritory.genre:type_name -> ddex.ern.v383.Genre
-	138, // 111: ddex.ern.v383.ImageDetailsByTerritory.parental_warning_type:type_name -> ddex.ern.v383.ParentalWarningType
-	44,  // 112: ddex.ern.v383.ImageDetailsByTerritory.technical_image_details:type_name -> ddex.ern.v383.TechnicalImageDetails
-	94,  // 113: ddex.ern.v383.ImageDetailsByTerritory.territory_code:type_name -> ddex.ern.v383.CurrentTerritoryCode
-	94,  // 114: ddex.ern.v383.ImageDetailsByTerritory.excluded_territory_code:type_name -> ddex.ern.v383.CurrentTerritoryCode
-	128, // 115: ddex.ern.v383.MIDI.midi_type:type_name -> ddex.ern.v383.MidiType
-	172, // 116: ddex.ern.v383.MIDI.midi_id:type_name -> ddex.ern.v383.ResourceProprietaryId
-	133, // 117: ddex.ern.v383.MIDI.indirect_midi_id:type_name -> ddex.ern.v383.MusicalWorkId
-	154, // 118: ddex.ern.v383.MIDI.reference_title:type_name -> ddex.ern.v383.ReferenceTitle
-	97,  // 119: ddex.ern.v383.MIDI.instrumentation_description:type_name -> ddex.ern.v383.Description
-	176, // 120: ddex.ern.v383.MIDI.rights_agreement_id:type_name -> ddex.ern.v383.RightsAgreementId
-	170, // 121: ddex.ern.v383.MIDI.resource_musical_work_reference_list:type_name -> ddex.ern.v383.ResourceMusicalWorkReferenceList
-	165, // 122: ddex.ern.v383.MIDI.resource_contained_resource_reference_list:type_name -> ddex.ern.v383.ResourceContainedResourceReferenceList
-	101, // 123: ddex.ern.v383.MIDI.creation_date:type_name -> ddex.ern.v383.EventDate
-	101, // 124: ddex.ern.v383.MIDI.mastered_date:type_name -> ddex.ern.v383.EventDate
-	101, // 125: ddex.ern.v383.MIDI.remastered_date:type_name -> ddex.ern.v383.EventDate
-	24,  // 126: ddex.ern.v383.MIDI.midi_details_by_territory:type_name -> ddex.ern.v383.MidiDetailsByTerritory
-	199, // 127: ddex.ern.v383.MidiDetailsByTerritory.title:type_name -> ddex.ern.v383.Title
-	62,  // 128: ddex.ern.v383.MidiDetailsByTerritory.display_artist:type_name -> ddex.ern.v383.Artist
-	98,  // 129: ddex.ern.v383.MidiDetailsByTerritory.resource_contributor:type_name -> ddex.ern.v383.DetailedResourceContributor
-	119, // 130: ddex.ern.v383.MidiDetailsByTerritory.indirect_resource_contributor:type_name -> ddex.ern.v383.IndirectResourceContributor
-	176, // 131: ddex.ern.v383.MidiDetailsByTerritory.rights_agreement_id:type_name -> ddex.ern.v383.RightsAgreementId
-	135, // 132: ddex.ern.v383.MidiDetailsByTerritory.display_artist_name:type_name -> ddex.ern.v383.Name
-	121, // 133: ddex.ern.v383.MidiDetailsByTerritory.label_name:type_name -> ddex.ern.v383.LabelName
-	54,  // 134: ddex.ern.v383.MidiDetailsByTerritory.rights_controller:type_name -> ddex.ern.v383.TypedRightsController
-	101, // 135: ddex.ern.v383.MidiDetailsByTerritory.remastered_date:type_name -> ddex.ern.v383.EventDate
-	101, // 136: ddex.ern.v383.MidiDetailsByTerritory.resource_release_date:type_name -> ddex.ern.v383.EventDate
-	101, // 137: ddex.ern.v383.MidiDetailsByTerritory.original_resource_release_date:type_name -> ddex.ern.v383.EventDate
-	69,  // 138: ddex.ern.v383.MidiDetailsByTerritory.c_line:type_name -> ddex.ern.v383.CLine
-	85,  // 139: ddex.ern.v383.MidiDetailsByTerritory.courtesy_line:type_name -> ddex.ern.v383.CourtesyLine
-	115, // 140: ddex.ern.v383.MidiDetailsByTerritory.host_sound_carrier:type_name -> ddex.ern.v383.HostSoundCarrier
-	79,  // 141: ddex.ern.v383.MidiDetailsByTerritory.marketing_comment:type_name -> ddex.ern.v383.Comment
-	111, // 142: ddex.ern.v383.MidiDetailsByTerritory.genre:type_name -> ddex.ern.v383.Genre
-	138, // 143: ddex.ern.v383.MidiDetailsByTerritory.parental_warning_type:type_name -> ddex.ern.v383.ParentalWarningType
-	110, // 144: ddex.ern.v383.MidiDetailsByTerritory.fulfillment_date:type_name -> ddex.ern.v383.FulfillmentDate
-	120, // 145: ddex.ern.v383.MidiDetailsByTerritory.keywords:type_name -> ddex.ern.v383.Keywords
-	193, // 146: ddex.ern.v383.MidiDetailsByTerritory.synopsis:type_name -> ddex.ern.v383.Synopsis
-	45,  // 147: ddex.ern.v383.MidiDetailsByTerritory.technical_midi_details:type_name -> ddex.ern.v383.TechnicalMidiDetails
-	94,  // 148: ddex.ern.v383.MidiDetailsByTerritory.territory_code:type_name -> ddex.ern.v383.CurrentTerritoryCode
-	94,  // 149: ddex.ern.v383.MidiDetailsByTerritory.excluded_territory_code:type_name -> ddex.ern.v383.CurrentTerritoryCode
-	97,  // 150: ddex.ern.v383.PreviewDetails.part_type:type_name -> ddex.ern.v383.Description
-	97,  // 151: ddex.ern.v383.PriceInformation.description:type_name -> ddex.ern.v383.Description
-	146, // 152: ddex.ern.v383.PriceInformation.price_range_type:type_name -> ddex.ern.v383.PriceRangeType
-	147, // 153: ddex.ern.v383.PriceInformation.price_type:type_name -> ddex.ern.v383.PriceType
-	145, // 154: ddex.ern.v383.PriceInformation.wholesale_price_per_unit:type_name -> ddex.ern.v383.Price
-	145, // 155: ddex.ern.v383.PriceInformation.bulk_order_wholesale_price_per_unit:type_name -> ddex.ern.v383.Price
-	145, // 156: ddex.ern.v383.PriceInformation.suggested_retail_price:type_name -> ddex.ern.v383.Price
-	158, // 157: ddex.ern.v383.PurgedRelease.release_id:type_name -> ddex.ern.v383.ReleaseId
-	199, // 158: ddex.ern.v383.PurgedRelease.title:type_name -> ddex.ern.v383.Title
-	98,  // 159: ddex.ern.v383.PurgedRelease.resource_contributor:type_name -> ddex.ern.v383.DetailedResourceContributor
-	15,  // 160: ddex.ern.v383.RelatedReleaseOfferSet.deal:type_name -> ddex.ern.v383.Deal
-	158, // 161: ddex.ern.v383.RelatedReleaseOfferSet.release_id:type_name -> ddex.ern.v383.ReleaseId
-	97,  // 162: ddex.ern.v383.RelatedReleaseOfferSet.release_description:type_name -> ddex.ern.v383.Description
-	158, // 163: ddex.ern.v383.Release.release_id:type_name -> ddex.ern.v383.ReleaseId
-	105, // 164: ddex.ern.v383.Release.external_resource_link:type_name -> ddex.ern.v383.ExternalResourceLink
-	180, // 165: ddex.ern.v383.Release.sales_reporting_proxy_release_id:type_name -> ddex.ern.v383.SalesReportingProxyReleaseId
-	154, // 166: ddex.ern.v383.Release.reference_title:type_name -> ddex.ern.v383.ReferenceTitle
-	157, // 167: ddex.ern.v383.Release.release_collection_reference_list:type_name -> ddex.ern.v383.ReleaseCollectionReferenceList
-	163, // 168: ddex.ern.v383.Release.release_type:type_name -> ddex.ern.v383.ReleaseType
-	32,  // 169: ddex.ern.v383.Release.release_details_by_territory:type_name -> ddex.ern.v383.ReleaseDetailsByTerritory
-	176, // 170: ddex.ern.v383.Release.rights_agreement_id:type_name -> ddex.ern.v383.RightsAgreementId
-	137, // 171: ddex.ern.v383.Release.p_line:type_name -> ddex.ern.v383.PLine
-	69,  // 172: ddex.ern.v383.Release.c_line:type_name -> ddex.ern.v383.CLine
-	211, // 173: ddex.ern.v383.Release.artist_profile_page:type_name -> ddex.ern.v383.WebPage
-	101, // 174: ddex.ern.v383.Release.global_release_date:type_name -> ddex.ern.v383.EventDate
-	101, // 175: ddex.ern.v383.Release.global_original_release_date:type_name -> ddex.ern.v383.EventDate
-	161, // 176: ddex.ern.v383.Release.release_resource_reference_list:type_name -> ddex.ern.v383.ReleaseResourceReferenceList
-	171, // 177: ddex.ern.v383.Release.resource_omission_reason:type_name -> ddex.ern.v383.ResourceOmissionReason
-	15,  // 178: ddex.ern.v383.ReleaseDeal.deal:type_name -> ddex.ern.v383.Deal
-	135, // 179: ddex.ern.v383.ReleaseDetailsByTerritory.display_artist_name:type_name -> ddex.ern.v383.Name
-	121, // 180: ddex.ern.v383.ReleaseDetailsByTerritory.label_name:type_name -> ddex.ern.v383.LabelName
-	176, // 181: ddex.ern.v383.ReleaseDetailsByTerritory.rights_agreement_id:type_name -> ddex.ern.v383.RightsAgreementId
-	199, // 182: ddex.ern.v383.ReleaseDetailsByTerritory.title:type_name -> ddex.ern.v383.Title
-	62,  // 183: ddex.ern.v383.ReleaseDetailsByTerritory.display_artist:type_name -> ddex.ern.v383.Artist
-	60,  // 184: ddex.ern.v383.ReleaseDetailsByTerritory.administrating_record_company:type_name -> ddex.ern.v383.AdministratingRecordCompany
-	163, // 185: ddex.ern.v383.ReleaseDetailsByTerritory.release_type:type_name -> ddex.ern.v383.ReleaseType
-	155, // 186: ddex.ern.v383.ReleaseDetailsByTerritory.related_release:type_name -> ddex.ern.v383.RelatedRelease
-	138, // 187: ddex.ern.v383.ReleaseDetailsByTerritory.parental_warning_type:type_name -> ddex.ern.v383.ParentalWarningType
-	67,  // 188: ddex.ern.v383.ReleaseDetailsByTerritory.av_rating:type_name -> ddex.ern.v383.AvRating
-	79,  // 189: ddex.ern.v383.ReleaseDetailsByTerritory.marketing_comment:type_name -> ddex.ern.v383.Comment
-	34,  // 190: ddex.ern.v383.ReleaseDetailsByTerritory.resource_group:type_name -> ddex.ern.v383.ResourceGroup
-	111, // 191: ddex.ern.v383.ReleaseDetailsByTerritory.genre:type_name -> ddex.ern.v383.Genre
-	137, // 192: ddex.ern.v383.ReleaseDetailsByTerritory.p_line:type_name -> ddex.ern.v383.PLine
-	69,  // 193: ddex.ern.v383.ReleaseDetailsByTerritory.c_line:type_name -> ddex.ern.v383.CLine
-	101, // 194: ddex.ern.v383.ReleaseDetailsByTerritory.release_date:type_name -> ddex.ern.v383.EventDate
-	101, // 195: ddex.ern.v383.ReleaseDetailsByTerritory.original_release_date:type_name -> ddex.ern.v383.EventDate
-	101, // 196: ddex.ern.v383.ReleaseDetailsByTerritory.original_digital_release_date:type_name -> ddex.ern.v383.EventDate
-	120, // 197: ddex.ern.v383.ReleaseDetailsByTerritory.keywords:type_name -> ddex.ern.v383.Keywords
-	193, // 198: ddex.ern.v383.ReleaseDetailsByTerritory.synopsis:type_name -> ddex.ern.v383.Synopsis
-	72,  // 199: ddex.ern.v383.ReleaseDetailsByTerritory.character:type_name -> ddex.ern.v383.Character
-	62,  // 200: ddex.ern.v383.ReleaseDetailsByTerritory.display_conductor:type_name -> ddex.ern.v383.Artist
-	94,  // 201: ddex.ern.v383.ReleaseDetailsByTerritory.territory_code:type_name -> ddex.ern.v383.CurrentTerritoryCode
-	94,  // 202: ddex.ern.v383.ReleaseDetailsByTerritory.excluded_territory_code:type_name -> ddex.ern.v383.CurrentTerritoryCode
-	97,  // 203: ddex.ern.v383.ReleaseDetailsByTerritory.file_availability_description:type_name -> ddex.ern.v383.Description
-	107, // 204: ddex.ern.v383.ReleaseDetailsByTerritory.file:type_name -> ddex.ern.v383.File
-	30,  // 205: ddex.ern.v383.ReleaseList.release:type_name -> ddex.ern.v383.Release
-	199, // 206: ddex.ern.v383.ResourceGroup.title:type_name -> ddex.ern.v383.Title
-	62,  // 207: ddex.ern.v383.ResourceGroup.display_artist:type_name -> ddex.ern.v383.Artist
-	62,  // 208: ddex.ern.v383.ResourceGroup.display_conductor:type_name -> ddex.ern.v383.Artist
-	62,  // 209: ddex.ern.v383.ResourceGroup.display_composer:type_name -> ddex.ern.v383.Artist
-	98,  // 210: ddex.ern.v383.ResourceGroup.resource_contributor:type_name -> ddex.ern.v383.DetailedResourceContributor
-	119, // 211: ddex.ern.v383.ResourceGroup.indirect_resource_contributor:type_name -> ddex.ern.v383.IndirectResourceContributor
-	70,  // 212: ddex.ern.v383.ResourceGroup.carrier_type:type_name -> ddex.ern.v383.CarrierType
-	34,  // 213: ddex.ern.v383.ResourceGroup.resource_group:type_name -> ddex.ern.v383.ResourceGroup
-	103, // 214: ddex.ern.v383.ResourceGroup.resource_group_content_item:type_name -> ddex.ern.v383.ExtendedResourceGroupContentItem
-	168, // 215: ddex.ern.v383.ResourceGroup.resource_group_resource_reference_list:type_name -> ddex.ern.v383.ResourceGroupResourceReferenceList
-	158, // 216: ddex.ern.v383.ResourceGroup.release_id:type_name -> ddex.ern.v383.ReleaseId
-	41,  // 217: ddex.ern.v383.ResourceList.sound_recording:type_name -> ddex.ern.v383.SoundRecording
-	23,  // 218: ddex.ern.v383.ResourceList.m_i_d_i:type_name -> ddex.ern.v383.MIDI
-	57,  // 219: ddex.ern.v383.ResourceList.video:type_name -> ddex.ern.v383.Video
-	21,  // 220: ddex.ern.v383.ResourceList.image:type_name -> ddex.ern.v383.Image
-	52,  // 221: ddex.ern.v383.ResourceList.text:type_name -> ddex.ern.v383.Text
-	37,  // 222: ddex.ern.v383.ResourceList.sheet_music:type_name -> ddex.ern.v383.SheetMusic
-	39,  // 223: ddex.ern.v383.ResourceList.software:type_name -> ddex.ern.v383.Software
-	55,  // 224: ddex.ern.v383.ResourceList.user_defined_resource:type_name -> ddex.ern.v383.UserDefinedResource
-	202, // 225: ddex.ern.v383.ResourceUsage.usage:type_name -> ddex.ern.v383.Usage
-	184, // 226: ddex.ern.v383.SheetMusic.sheet_music_type:type_name -> ddex.ern.v383.SheetMusicType
-	183, // 227: ddex.ern.v383.SheetMusic.sheet_music_id:type_name -> ddex.ern.v383.SheetMusicId
-	133, // 228: ddex.ern.v383.SheetMusic.indirect_sheet_music_id:type_name -> ddex.ern.v383.MusicalWorkId
-	176, // 229: ddex.ern.v383.SheetMusic.rights_agreement_id:type_name -> ddex.ern.v383.RightsAgreementId
-	170, // 230: ddex.ern.v383.SheetMusic.resource_musical_work_reference_list:type_name -> ddex.ern.v383.ResourceMusicalWorkReferenceList
-	165, // 231: ddex.ern.v383.SheetMusic.resource_contained_resource_reference_list:type_name -> ddex.ern.v383.ResourceContainedResourceReferenceList
-	154, // 232: ddex.ern.v383.SheetMusic.reference_title:type_name -> ddex.ern.v383.ReferenceTitle
-	101, // 233: ddex.ern.v383.SheetMusic.creation_date:type_name -> ddex.ern.v383.EventDate
-	38,  // 234: ddex.ern.v383.SheetMusic.sheet_music_details_by_territory:type_name -> ddex.ern.v383.SheetMusicDetailsByTerritory
-	199, // 235: ddex.ern.v383.SheetMusicDetailsByTerritory.title:type_name -> ddex.ern.v383.Title
-	98,  // 236: ddex.ern.v383.SheetMusicDetailsByTerritory.resource_contributor:type_name -> ddex.ern.v383.DetailedResourceContributor
-	119, // 237: ddex.ern.v383.SheetMusicDetailsByTerritory.indirect_resource_contributor:type_name -> ddex.ern.v383.IndirectResourceContributor
-	135, // 238: ddex.ern.v383.SheetMusicDetailsByTerritory.display_artist_name:type_name -> ddex.ern.v383.Name
-	69,  // 239: ddex.ern.v383.SheetMusicDetailsByTerritory.c_line:type_name -> ddex.ern.v383.CLine
-	85,  // 240: ddex.ern.v383.SheetMusicDetailsByTerritory.courtesy_line:type_name -> ddex.ern.v383.CourtesyLine
-	101, // 241: ddex.ern.v383.SheetMusicDetailsByTerritory.resource_release_date:type_name -> ddex.ern.v383.EventDate
-	101, // 242: ddex.ern.v383.SheetMusicDetailsByTerritory.original_resource_release_date:type_name -> ddex.ern.v383.EventDate
-	110, // 243: ddex.ern.v383.SheetMusicDetailsByTerritory.fulfillment_date:type_name -> ddex.ern.v383.FulfillmentDate
-	111, // 244: ddex.ern.v383.SheetMusicDetailsByTerritory.genre:type_name -> ddex.ern.v383.Genre
-	138, // 245: ddex.ern.v383.SheetMusicDetailsByTerritory.parental_warning_type:type_name -> ddex.ern.v383.ParentalWarningType
-	46,  // 246: ddex.ern.v383.SheetMusicDetailsByTerritory.technical_sheet_music_details:type_name -> ddex.ern.v383.TechnicalSheetMusicDetails
-	94,  // 247: ddex.ern.v383.SheetMusicDetailsByTerritory.territory_code:type_name -> ddex.ern.v383.CurrentTerritoryCode
-	94,  // 248: ddex.ern.v383.SheetMusicDetailsByTerritory.excluded_territory_code:type_name -> ddex.ern.v383.CurrentTerritoryCode
-	186, // 249: ddex.ern.v383.Software.software_type:type_name -> ddex.ern.v383.SoftwareType
-	172, // 250: ddex.ern.v383.Software.software_id:type_name -> ddex.ern.v383.ResourceProprietaryId
-	133, // 251: ddex.ern.v383.Software.indirect_software_id:type_name -> ddex.ern.v383.MusicalWorkId
-	170, // 252: ddex.ern.v383.Software.resource_musical_work_reference_list:type_name -> ddex.ern.v383.ResourceMusicalWorkReferenceList
-	165, // 253: ddex.ern.v383.Software.resource_contained_resource_reference_list:type_name -> ddex.ern.v383.ResourceContainedResourceReferenceList
-	199, // 254: ddex.ern.v383.Software.title:type_name -> ddex.ern.v383.Title
-	101, // 255: ddex.ern.v383.Software.creation_date:type_name -> ddex.ern.v383.EventDate
-	40,  // 256: ddex.ern.v383.Software.software_details_by_territory:type_name -> ddex.ern.v383.SoftwareDetailsByTerritory
-	199, // 257: ddex.ern.v383.SoftwareDetailsByTerritory.title:type_name -> ddex.ern.v383.Title
-	98,  // 258: ddex.ern.v383.SoftwareDetailsByTerritory.resource_contributor:type_name -> ddex.ern.v383.DetailedResourceContributor
-	119, // 259: ddex.ern.v383.SoftwareDetailsByTerritory.indirect_resource_contributor:type_name -> ddex.ern.v383.IndirectResourceContributor
-	135, // 260: ddex.ern.v383.SoftwareDetailsByTerritory.display_artist_name:type_name -> ddex.ern.v383.Name
-	137, // 261: ddex.ern.v383.SoftwareDetailsByTerritory.p_line:type_name -> ddex.ern.v383.PLine
-	69,  // 262: ddex.ern.v383.SoftwareDetailsByTerritory.c_line:type_name -> ddex.ern.v383.CLine
-	85,  // 263: ddex.ern.v383.SoftwareDetailsByTerritory.courtesy_line:type_name -> ddex.ern.v383.CourtesyLine
-	101, // 264: ddex.ern.v383.SoftwareDetailsByTerritory.resource_release_date:type_name -> ddex.ern.v383.EventDate
-	101, // 265: ddex.ern.v383.SoftwareDetailsByTerritory.original_resource_release_date:type_name -> ddex.ern.v383.EventDate
-	110, // 266: ddex.ern.v383.SoftwareDetailsByTerritory.fulfillment_date:type_name -> ddex.ern.v383.FulfillmentDate
-	120, // 267: ddex.ern.v383.SoftwareDetailsByTerritory.keywords:type_name -> ddex.ern.v383.Keywords
-	193, // 268: ddex.ern.v383.SoftwareDetailsByTerritory.synopsis:type_name -> ddex.ern.v383.Synopsis
-	111, // 269: ddex.ern.v383.SoftwareDetailsByTerritory.genre:type_name -> ddex.ern.v383.Genre
-	138, // 270: ddex.ern.v383.SoftwareDetailsByTerritory.parental_warning_type:type_name -> ddex.ern.v383.ParentalWarningType
-	47,  // 271: ddex.ern.v383.SoftwareDetailsByTerritory.technical_software_details:type_name -> ddex.ern.v383.TechnicalSoftwareDetails
-	94,  // 272: ddex.ern.v383.SoftwareDetailsByTerritory.territory_code:type_name -> ddex.ern.v383.CurrentTerritoryCode
-	94,  // 273: ddex.ern.v383.SoftwareDetailsByTerritory.excluded_territory_code:type_name -> ddex.ern.v383.CurrentTerritoryCode
-	191, // 274: ddex.ern.v383.SoundRecording.sound_recording_type:type_name -> ddex.ern.v383.SoundRecordingType
-	190, // 275: ddex.ern.v383.SoundRecording.sound_recording_id:type_name -> ddex.ern.v383.SoundRecordingId
-	133, // 276: ddex.ern.v383.SoundRecording.indirect_sound_recording_id:type_name -> ddex.ern.v383.MusicalWorkId
-	154, // 277: ddex.ern.v383.SoundRecording.reference_title:type_name -> ddex.ern.v383.ReferenceTitle
-	97,  // 278: ddex.ern.v383.SoundRecording.instrumentation_description:type_name -> ddex.ern.v383.Description
-	176, // 279: ddex.ern.v383.SoundRecording.rights_agreement_id:type_name -> ddex.ern.v383.RightsAgreementId
-	189, // 280: ddex.ern.v383.SoundRecording.sound_recording_collection_reference_list:type_name -> ddex.ern.v383.SoundRecordingCollectionReferenceList
-	170, // 281: ddex.ern.v383.SoundRecording.resource_musical_work_reference_list:type_name -> ddex.ern.v383.ResourceMusicalWorkReferenceList
-	165, // 282: ddex.ern.v383.SoundRecording.resource_contained_resource_reference_list:type_name -> ddex.ern.v383.ResourceContainedResourceReferenceList
-	101, // 283: ddex.ern.v383.SoundRecording.creation_date:type_name -> ddex.ern.v383.EventDate
-	101, // 284: ddex.ern.v383.SoundRecording.mastered_date:type_name -> ddex.ern.v383.EventDate
-	101, // 285: ddex.ern.v383.SoundRecording.remastered_date:type_name -> ddex.ern.v383.EventDate
-	42,  // 286: ddex.ern.v383.SoundRecording.sound_recording_details_by_territory:type_name -> ddex.ern.v383.SoundRecordingDetailsByTerritory
-	61,  // 287: ddex.ern.v383.SoundRecording.territory_of_commissioning:type_name -> ddex.ern.v383.AllTerritoryCode
-	199, // 288: ddex.ern.v383.SoundRecordingDetailsByTerritory.title:type_name -> ddex.ern.v383.Title
-	62,  // 289: ddex.ern.v383.SoundRecordingDetailsByTerritory.display_artist:type_name -> ddex.ern.v383.Artist
-	62,  // 290: ddex.ern.v383.SoundRecordingDetailsByTerritory.display_conductor:type_name -> ddex.ern.v383.Artist
-	98,  // 291: ddex.ern.v383.SoundRecordingDetailsByTerritory.resource_contributor:type_name -> ddex.ern.v383.DetailedResourceContributor
-	119, // 292: ddex.ern.v383.SoundRecordingDetailsByTerritory.indirect_resource_contributor:type_name -> ddex.ern.v383.IndirectResourceContributor
-	176, // 293: ddex.ern.v383.SoundRecordingDetailsByTerritory.rights_agreement_id:type_name -> ddex.ern.v383.RightsAgreementId
-	135, // 294: ddex.ern.v383.SoundRecordingDetailsByTerritory.display_artist_name:type_name -> ddex.ern.v383.Name
-	121, // 295: ddex.ern.v383.SoundRecordingDetailsByTerritory.label_name:type_name -> ddex.ern.v383.LabelName
-	54,  // 296: ddex.ern.v383.SoundRecordingDetailsByTerritory.rights_controller:type_name -> ddex.ern.v383.TypedRightsController
-	101, // 297: ddex.ern.v383.SoundRecordingDetailsByTerritory.remastered_date:type_name -> ddex.ern.v383.EventDate
-	101, // 298: ddex.ern.v383.SoundRecordingDetailsByTerritory.resource_release_date:type_name -> ddex.ern.v383.EventDate
-	101, // 299: ddex.ern.v383.SoundRecordingDetailsByTerritory.original_resource_release_date:type_name -> ddex.ern.v383.EventDate
-	137, // 300: ddex.ern.v383.SoundRecordingDetailsByTerritory.p_line:type_name -> ddex.ern.v383.PLine
-	85,  // 301: ddex.ern.v383.SoundRecordingDetailsByTerritory.courtesy_line:type_name -> ddex.ern.v383.CourtesyLine
-	115, // 302: ddex.ern.v383.SoundRecordingDetailsByTerritory.host_sound_carrier:type_name -> ddex.ern.v383.HostSoundCarrier
-	79,  // 303: ddex.ern.v383.SoundRecordingDetailsByTerritory.marketing_comment:type_name -> ddex.ern.v383.Comment
-	111, // 304: ddex.ern.v383.SoundRecordingDetailsByTerritory.genre:type_name -> ddex.ern.v383.Genre
-	138, // 305: ddex.ern.v383.SoundRecordingDetailsByTerritory.parental_warning_type:type_name -> ddex.ern.v383.ParentalWarningType
-	67,  // 306: ddex.ern.v383.SoundRecordingDetailsByTerritory.av_rating:type_name -> ddex.ern.v383.AvRating
-	48,  // 307: ddex.ern.v383.SoundRecordingDetailsByTerritory.technical_sound_recording_details:type_name -> ddex.ern.v383.TechnicalSoundRecordingDetails
-	110, // 308: ddex.ern.v383.SoundRecordingDetailsByTerritory.fulfillment_date:type_name -> ddex.ern.v383.FulfillmentDate
-	120, // 309: ddex.ern.v383.SoundRecordingDetailsByTerritory.keywords:type_name -> ddex.ern.v383.Keywords
-	193, // 310: ddex.ern.v383.SoundRecordingDetailsByTerritory.synopsis:type_name -> ddex.ern.v383.Synopsis
-	94,  // 311: ddex.ern.v383.SoundRecordingDetailsByTerritory.territory_code:type_name -> ddex.ern.v383.CurrentTerritoryCode
-	94,  // 312: ddex.ern.v383.SoundRecordingDetailsByTerritory.excluded_territory_code:type_name -> ddex.ern.v383.CurrentTerritoryCode
-	97,  // 313: ddex.ern.v383.SoundRecordingPreviewDetails.part_type:type_name -> ddex.ern.v383.Description
-	100, // 314: ddex.ern.v383.TechnicalImageDetails.drm_platform_type:type_name -> ddex.ern.v383.DrmPlatformType
-	84,  // 315: ddex.ern.v383.TechnicalImageDetails.container_format:type_name -> ddex.ern.v383.ContainerFormat
-	117, // 316: ddex.ern.v383.TechnicalImageDetails.image_codec_type:type_name -> ddex.ern.v383.ImageCodecType
-	104, // 317: ddex.ern.v383.TechnicalImageDetails.image_height:type_name -> ddex.ern.v383.Extent
-	104, // 318: ddex.ern.v383.TechnicalImageDetails.image_width:type_name -> ddex.ern.v383.Extent
-	65,  // 319: ddex.ern.v383.TechnicalImageDetails.aspect_ratio:type_name -> ddex.ern.v383.AspectRatio
-	26,  // 320: ddex.ern.v383.TechnicalImageDetails.preview_details:type_name -> ddex.ern.v383.PreviewDetails
-	110, // 321: ddex.ern.v383.TechnicalImageDetails.fulfillment_date:type_name -> ddex.ern.v383.FulfillmentDate
-	110, // 322: ddex.ern.v383.TechnicalImageDetails.consumer_fulfillment_date:type_name -> ddex.ern.v383.FulfillmentDate
-	20,  // 323: ddex.ern.v383.TechnicalImageDetails.fingerprint:type_name -> ddex.ern.v383.Fingerprint
-	97,  // 324: ddex.ern.v383.TechnicalImageDetails.file_availability_description:type_name -> ddex.ern.v383.Description
-	107, // 325: ddex.ern.v383.TechnicalImageDetails.file:type_name -> ddex.ern.v383.File
-	43,  // 326: ddex.ern.v383.TechnicalMidiDetails.preview_details:type_name -> ddex.ern.v383.SoundRecordingPreviewDetails
-	110, // 327: ddex.ern.v383.TechnicalMidiDetails.fulfillment_date:type_name -> ddex.ern.v383.FulfillmentDate
-	110, // 328: ddex.ern.v383.TechnicalMidiDetails.consumer_fulfillment_date:type_name -> ddex.ern.v383.FulfillmentDate
-	187, // 329: ddex.ern.v383.TechnicalMidiDetails.sound_processor_type:type_name -> ddex.ern.v383.SoundProcessorType
-	20,  // 330: ddex.ern.v383.TechnicalMidiDetails.fingerprint:type_name -> ddex.ern.v383.Fingerprint
-	97,  // 331: ddex.ern.v383.TechnicalMidiDetails.file_availability_description:type_name -> ddex.ern.v383.Description
-	107, // 332: ddex.ern.v383.TechnicalMidiDetails.file:type_name -> ddex.ern.v383.File
-	100, // 333: ddex.ern.v383.TechnicalSheetMusicDetails.drm_platform_type:type_name -> ddex.ern.v383.DrmPlatformType
-	84,  // 334: ddex.ern.v383.TechnicalSheetMusicDetails.container_format:type_name -> ddex.ern.v383.ContainerFormat
-	182, // 335: ddex.ern.v383.TechnicalSheetMusicDetails.sheet_music_codec_type:type_name -> ddex.ern.v383.SheetMusicCodecType
-	26,  // 336: ddex.ern.v383.TechnicalSheetMusicDetails.preview_details:type_name -> ddex.ern.v383.PreviewDetails
-	110, // 337: ddex.ern.v383.TechnicalSheetMusicDetails.fulfillment_date:type_name -> ddex.ern.v383.FulfillmentDate
-	110, // 338: ddex.ern.v383.TechnicalSheetMusicDetails.consumer_fulfillment_date:type_name -> ddex.ern.v383.FulfillmentDate
-	20,  // 339: ddex.ern.v383.TechnicalSheetMusicDetails.fingerprint:type_name -> ddex.ern.v383.Fingerprint
-	97,  // 340: ddex.ern.v383.TechnicalSheetMusicDetails.file_availability_description:type_name -> ddex.ern.v383.Description
-	107, // 341: ddex.ern.v383.TechnicalSheetMusicDetails.file:type_name -> ddex.ern.v383.File
-	100, // 342: ddex.ern.v383.TechnicalSoftwareDetails.drm_platform_type:type_name -> ddex.ern.v383.DrmPlatformType
-	136, // 343: ddex.ern.v383.TechnicalSoftwareDetails.operating_system_type:type_name -> ddex.ern.v383.OperatingSystemType
-	26,  // 344: ddex.ern.v383.TechnicalSoftwareDetails.preview_details:type_name -> ddex.ern.v383.PreviewDetails
-	110, // 345: ddex.ern.v383.TechnicalSoftwareDetails.fulfillment_date:type_name -> ddex.ern.v383.FulfillmentDate
-	110, // 346: ddex.ern.v383.TechnicalSoftwareDetails.consumer_fulfillment_date:type_name -> ddex.ern.v383.FulfillmentDate
-	20,  // 347: ddex.ern.v383.TechnicalSoftwareDetails.fingerprint:type_name -> ddex.ern.v383.Fingerprint
-	97,  // 348: ddex.ern.v383.TechnicalSoftwareDetails.file_availability_description:type_name -> ddex.ern.v383.Description
-	107, // 349: ddex.ern.v383.TechnicalSoftwareDetails.file:type_name -> ddex.ern.v383.File
-	100, // 350: ddex.ern.v383.TechnicalSoundRecordingDetails.drm_platform_type:type_name -> ddex.ern.v383.DrmPlatformType
-	84,  // 351: ddex.ern.v383.TechnicalSoundRecordingDetails.container_format:type_name -> ddex.ern.v383.ContainerFormat
-	66,  // 352: ddex.ern.v383.TechnicalSoundRecordingDetails.audio_codec_type:type_name -> ddex.ern.v383.AudioCodecType
-	68,  // 353: ddex.ern.v383.TechnicalSoundRecordingDetails.bit_rate:type_name -> ddex.ern.v383.BitRate
-	181, // 354: ddex.ern.v383.TechnicalSoundRecordingDetails.sampling_rate:type_name -> ddex.ern.v383.SamplingRate
-	43,  // 355: ddex.ern.v383.TechnicalSoundRecordingDetails.preview_details:type_name -> ddex.ern.v383.SoundRecordingPreviewDetails
-	110, // 356: ddex.ern.v383.TechnicalSoundRecordingDetails.fulfillment_date:type_name -> ddex.ern.v383.FulfillmentDate
-	110, // 357: ddex.ern.v383.TechnicalSoundRecordingDetails.consumer_fulfillment_date:type_name -> ddex.ern.v383.FulfillmentDate
-	20,  // 358: ddex.ern.v383.TechnicalSoundRecordingDetails.fingerprint:type_name -> ddex.ern.v383.Fingerprint
-	97,  // 359: ddex.ern.v383.TechnicalSoundRecordingDetails.file_availability_description:type_name -> ddex.ern.v383.Description
-	107, // 360: ddex.ern.v383.TechnicalSoundRecordingDetails.file:type_name -> ddex.ern.v383.File
-	100, // 361: ddex.ern.v383.TechnicalTextDetails.drm_platform_type:type_name -> ddex.ern.v383.DrmPlatformType
-	84,  // 362: ddex.ern.v383.TechnicalTextDetails.container_format:type_name -> ddex.ern.v383.ContainerFormat
-	196, // 363: ddex.ern.v383.TechnicalTextDetails.text_codec_type:type_name -> ddex.ern.v383.TextCodecType
-	26,  // 364: ddex.ern.v383.TechnicalTextDetails.preview_details:type_name -> ddex.ern.v383.PreviewDetails
-	110, // 365: ddex.ern.v383.TechnicalTextDetails.fulfillment_date:type_name -> ddex.ern.v383.FulfillmentDate
-	110, // 366: ddex.ern.v383.TechnicalTextDetails.consumer_fulfillment_date:type_name -> ddex.ern.v383.FulfillmentDate
-	20,  // 367: ddex.ern.v383.TechnicalTextDetails.fingerprint:type_name -> ddex.ern.v383.Fingerprint
-	97,  // 368: ddex.ern.v383.TechnicalTextDetails.file_availability_description:type_name -> ddex.ern.v383.Description
-	107, // 369: ddex.ern.v383.TechnicalTextDetails.file:type_name -> ddex.ern.v383.File
-	205, // 370: ddex.ern.v383.TechnicalUserDefinedResourceDetails.user_defined_value:type_name -> ddex.ern.v383.UserDefinedValue
-	26,  // 371: ddex.ern.v383.TechnicalUserDefinedResourceDetails.preview_details:type_name -> ddex.ern.v383.PreviewDetails
-	110, // 372: ddex.ern.v383.TechnicalUserDefinedResourceDetails.fulfillment_date:type_name -> ddex.ern.v383.FulfillmentDate
-	110, // 373: ddex.ern.v383.TechnicalUserDefinedResourceDetails.consumer_fulfillment_date:type_name -> ddex.ern.v383.FulfillmentDate
-	20,  // 374: ddex.ern.v383.TechnicalUserDefinedResourceDetails.fingerprint:type_name -> ddex.ern.v383.Fingerprint
-	97,  // 375: ddex.ern.v383.TechnicalUserDefinedResourceDetails.file_availability_description:type_name -> ddex.ern.v383.Description
-	107, // 376: ddex.ern.v383.TechnicalUserDefinedResourceDetails.file:type_name -> ddex.ern.v383.File
-	100, // 377: ddex.ern.v383.TechnicalVideoDetails.drm_platform_type:type_name -> ddex.ern.v383.DrmPlatformType
-	68,  // 378: ddex.ern.v383.TechnicalVideoDetails.overall_bit_rate:type_name -> ddex.ern.v383.BitRate
-	84,  // 379: ddex.ern.v383.TechnicalVideoDetails.container_format:type_name -> ddex.ern.v383.ContainerFormat
-	207, // 380: ddex.ern.v383.TechnicalVideoDetails.video_codec_type:type_name -> ddex.ern.v383.VideoCodecType
-	68,  // 381: ddex.ern.v383.TechnicalVideoDetails.video_bit_rate:type_name -> ddex.ern.v383.BitRate
-	109, // 382: ddex.ern.v383.TechnicalVideoDetails.frame_rate:type_name -> ddex.ern.v383.FrameRate
-	104, // 383: ddex.ern.v383.TechnicalVideoDetails.image_height:type_name -> ddex.ern.v383.Extent
-	104, // 384: ddex.ern.v383.TechnicalVideoDetails.image_width:type_name -> ddex.ern.v383.Extent
-	65,  // 385: ddex.ern.v383.TechnicalVideoDetails.aspect_ratio:type_name -> ddex.ern.v383.AspectRatio
-	66,  // 386: ddex.ern.v383.TechnicalVideoDetails.audio_codec_type:type_name -> ddex.ern.v383.AudioCodecType
-	68,  // 387: ddex.ern.v383.TechnicalVideoDetails.audio_bit_rate:type_name -> ddex.ern.v383.BitRate
-	181, // 388: ddex.ern.v383.TechnicalVideoDetails.audio_sampling_rate:type_name -> ddex.ern.v383.SamplingRate
-	43,  // 389: ddex.ern.v383.TechnicalVideoDetails.preview_details:type_name -> ddex.ern.v383.SoundRecordingPreviewDetails
-	110, // 390: ddex.ern.v383.TechnicalVideoDetails.fulfillment_date:type_name -> ddex.ern.v383.FulfillmentDate
-	110, // 391: ddex.ern.v383.TechnicalVideoDetails.consumer_fulfillment_date:type_name -> ddex.ern.v383.FulfillmentDate
-	20,  // 392: ddex.ern.v383.TechnicalVideoDetails.fingerprint:type_name -> ddex.ern.v383.Fingerprint
-	97,  // 393: ddex.ern.v383.TechnicalVideoDetails.file_availability_description:type_name -> ddex.ern.v383.Description
-	107, // 394: ddex.ern.v383.TechnicalVideoDetails.file:type_name -> ddex.ern.v383.File
-	198, // 395: ddex.ern.v383.Text.text_type:type_name -> ddex.ern.v383.TextType
-	197, // 396: ddex.ern.v383.Text.text_id:type_name -> ddex.ern.v383.TextId
-	133, // 397: ddex.ern.v383.Text.indirect_text_id:type_name -> ddex.ern.v383.MusicalWorkId
-	170, // 398: ddex.ern.v383.Text.resource_musical_work_reference_list:type_name -> ddex.ern.v383.ResourceMusicalWorkReferenceList
-	165, // 399: ddex.ern.v383.Text.resource_contained_resource_reference_list:type_name -> ddex.ern.v383.ResourceContainedResourceReferenceList
-	199, // 400: ddex.ern.v383.Text.title:type_name -> ddex.ern.v383.Title
-	101, // 401: ddex.ern.v383.Text.creation_date:type_name -> ddex.ern.v383.EventDate
-	53,  // 402: ddex.ern.v383.Text.text_details_by_territory:type_name -> ddex.ern.v383.TextDetailsByTerritory
-	199, // 403: ddex.ern.v383.TextDetailsByTerritory.title:type_name -> ddex.ern.v383.Title
-	98,  // 404: ddex.ern.v383.TextDetailsByTerritory.resource_contributor:type_name -> ddex.ern.v383.DetailedResourceContributor
-	119, // 405: ddex.ern.v383.TextDetailsByTerritory.indirect_resource_contributor:type_name -> ddex.ern.v383.IndirectResourceContributor
-	135, // 406: ddex.ern.v383.TextDetailsByTerritory.display_artist_name:type_name -> ddex.ern.v383.Name
-	69,  // 407: ddex.ern.v383.TextDetailsByTerritory.c_line:type_name -> ddex.ern.v383.CLine
-	85,  // 408: ddex.ern.v383.TextDetailsByTerritory.courtesy_line:type_name -> ddex.ern.v383.CourtesyLine
-	101, // 409: ddex.ern.v383.TextDetailsByTerritory.resource_release_date:type_name -> ddex.ern.v383.EventDate
-	101, // 410: ddex.ern.v383.TextDetailsByTerritory.original_resource_release_date:type_name -> ddex.ern.v383.EventDate
-	110, // 411: ddex.ern.v383.TextDetailsByTerritory.fulfillment_date:type_name -> ddex.ern.v383.FulfillmentDate
-	120, // 412: ddex.ern.v383.TextDetailsByTerritory.keywords:type_name -> ddex.ern.v383.Keywords
-	193, // 413: ddex.ern.v383.TextDetailsByTerritory.synopsis:type_name -> ddex.ern.v383.Synopsis
-	111, // 414: ddex.ern.v383.TextDetailsByTerritory.genre:type_name -> ddex.ern.v383.Genre
-	138, // 415: ddex.ern.v383.TextDetailsByTerritory.parental_warning_type:type_name -> ddex.ern.v383.ParentalWarningType
-	49,  // 416: ddex.ern.v383.TextDetailsByTerritory.technical_text_details:type_name -> ddex.ern.v383.TechnicalTextDetails
-	94,  // 417: ddex.ern.v383.TextDetailsByTerritory.territory_code:type_name -> ddex.ern.v383.CurrentTerritoryCode
-	94,  // 418: ddex.ern.v383.TextDetailsByTerritory.excluded_territory_code:type_name -> ddex.ern.v383.CurrentTerritoryCode
-	61,  // 419: ddex.ern.v383.TypedRightsController.territory_of_registration:type_name -> ddex.ern.v383.AllTerritoryCode
-	140, // 420: ddex.ern.v383.TypedRightsController.party_id:type_name -> ddex.ern.v383.PartyId
-	141, // 421: ddex.ern.v383.TypedRightsController.party_name:type_name -> ddex.ern.v383.PartyName
-	142, // 422: ddex.ern.v383.TypedRightsController.right_share_percentage:type_name -> ddex.ern.v383.Percentage
-	204, // 423: ddex.ern.v383.UserDefinedResource.user_defined_resource_type:type_name -> ddex.ern.v383.UserDefinedResourceType
-	172, // 424: ddex.ern.v383.UserDefinedResource.user_defined_resource_id:type_name -> ddex.ern.v383.ResourceProprietaryId
-	133, // 425: ddex.ern.v383.UserDefinedResource.indirect_user_defined_resource_id:type_name -> ddex.ern.v383.MusicalWorkId
-	170, // 426: ddex.ern.v383.UserDefinedResource.resource_musical_work_reference_list:type_name -> ddex.ern.v383.ResourceMusicalWorkReferenceList
-	165, // 427: ddex.ern.v383.UserDefinedResource.resource_contained_resource_reference_list:type_name -> ddex.ern.v383.ResourceContainedResourceReferenceList
-	199, // 428: ddex.ern.v383.UserDefinedResource.title:type_name -> ddex.ern.v383.Title
-	205, // 429: ddex.ern.v383.UserDefinedResource.user_defined_value:type_name -> ddex.ern.v383.UserDefinedValue
-	101, // 430: ddex.ern.v383.UserDefinedResource.creation_date:type_name -> ddex.ern.v383.EventDate
-	56,  // 431: ddex.ern.v383.UserDefinedResource.user_defined_resource_details_by_territory:type_name -> ddex.ern.v383.UserDefinedResourceDetailsByTerritory
-	199, // 432: ddex.ern.v383.UserDefinedResourceDetailsByTerritory.title:type_name -> ddex.ern.v383.Title
-	98,  // 433: ddex.ern.v383.UserDefinedResourceDetailsByTerritory.resource_contributor:type_name -> ddex.ern.v383.DetailedResourceContributor
-	119, // 434: ddex.ern.v383.UserDefinedResourceDetailsByTerritory.indirect_resource_contributor:type_name -> ddex.ern.v383.IndirectResourceContributor
-	135, // 435: ddex.ern.v383.UserDefinedResourceDetailsByTerritory.display_artist_name:type_name -> ddex.ern.v383.Name
-	205, // 436: ddex.ern.v383.UserDefinedResourceDetailsByTerritory.user_defined_value:type_name -> ddex.ern.v383.UserDefinedValue
-	137, // 437: ddex.ern.v383.UserDefinedResourceDetailsByTerritory.p_line:type_name -> ddex.ern.v383.PLine
-	69,  // 438: ddex.ern.v383.UserDefinedResourceDetailsByTerritory.c_line:type_name -> ddex.ern.v383.CLine
-	101, // 439: ddex.ern.v383.UserDefinedResourceDetailsByTerritory.resource_release_date:type_name -> ddex.ern.v383.EventDate
-	101, // 440: ddex.ern.v383.UserDefinedResourceDetailsByTerritory.original_resource_release_date:type_name -> ddex.ern.v383.EventDate
-	110, // 441: ddex.ern.v383.UserDefinedResourceDetailsByTerritory.fulfillment_date:type_name -> ddex.ern.v383.FulfillmentDate
-	120, // 442: ddex.ern.v383.UserDefinedResourceDetailsByTerritory.keywords:type_name -> ddex.ern.v383.Keywords
-	193, // 443: ddex.ern.v383.UserDefinedResourceDetailsByTerritory.synopsis:type_name -> ddex.ern.v383.Synopsis
-	111, // 444: ddex.ern.v383.UserDefinedResourceDetailsByTerritory.genre:type_name -> ddex.ern.v383.Genre
-	138, // 445: ddex.ern.v383.UserDefinedResourceDetailsByTerritory.parental_warning_type:type_name -> ddex.ern.v383.ParentalWarningType
-	50,  // 446: ddex.ern.v383.UserDefinedResourceDetailsByTerritory.technical_user_defined_resource_details:type_name -> ddex.ern.v383.TechnicalUserDefinedResourceDetails
-	94,  // 447: ddex.ern.v383.UserDefinedResourceDetailsByTerritory.territory_code:type_name -> ddex.ern.v383.CurrentTerritoryCode
-	94,  // 448: ddex.ern.v383.UserDefinedResourceDetailsByTerritory.excluded_territory_code:type_name -> ddex.ern.v383.CurrentTerritoryCode
-	210, // 449: ddex.ern.v383.Video.video_type:type_name -> ddex.ern.v383.VideoType
-	209, // 450: ddex.ern.v383.Video.video_id:type_name -> ddex.ern.v383.VideoId
-	133, // 451: ddex.ern.v383.Video.indirect_video_id:type_name -> ddex.ern.v383.MusicalWorkId
-	154, // 452: ddex.ern.v383.Video.reference_title:type_name -> ddex.ern.v383.ReferenceTitle
-	199, // 453: ddex.ern.v383.Video.title:type_name -> ddex.ern.v383.Title
-	97,  // 454: ddex.ern.v383.Video.instrumentation_description:type_name -> ddex.ern.v383.Description
-	176, // 455: ddex.ern.v383.Video.rights_agreement_id:type_name -> ddex.ern.v383.RightsAgreementId
-	189, // 456: ddex.ern.v383.Video.video_collection_reference_list:type_name -> ddex.ern.v383.SoundRecordingCollectionReferenceList
-	170, // 457: ddex.ern.v383.Video.resource_musical_work_reference_list:type_name -> ddex.ern.v383.ResourceMusicalWorkReferenceList
-	165, // 458: ddex.ern.v383.Video.resource_contained_resource_reference_list:type_name -> ddex.ern.v383.ResourceContainedResourceReferenceList
-	101, // 459: ddex.ern.v383.Video.creation_date:type_name -> ddex.ern.v383.EventDate
-	101, // 460: ddex.ern.v383.Video.mastered_date:type_name -> ddex.ern.v383.EventDate
-	101, // 461: ddex.ern.v383.Video.remastered_date:type_name -> ddex.ern.v383.EventDate
-	58,  // 462: ddex.ern.v383.Video.video_details_by_territory:type_name -> ddex.ern.v383.VideoDetailsByTerritory
-	61,  // 463: ddex.ern.v383.Video.territory_of_commissioning:type_name -> ddex.ern.v383.AllTerritoryCode
-	208, // 464: ddex.ern.v383.Video.video_cue_sheet_reference:type_name -> ddex.ern.v383.VideoCueSheetReference
-	152, // 465: ddex.ern.v383.Video.reason_for_cue_sheet_absence:type_name -> ddex.ern.v383.Reason
-	199, // 466: ddex.ern.v383.VideoDetailsByTerritory.title:type_name -> ddex.ern.v383.Title
-	62,  // 467: ddex.ern.v383.VideoDetailsByTerritory.display_artist:type_name -> ddex.ern.v383.Artist
-	62,  // 468: ddex.ern.v383.VideoDetailsByTerritory.display_conductor:type_name -> ddex.ern.v383.Artist
-	98,  // 469: ddex.ern.v383.VideoDetailsByTerritory.resource_contributor:type_name -> ddex.ern.v383.DetailedResourceContributor
-	119, // 470: ddex.ern.v383.VideoDetailsByTerritory.indirect_resource_contributor:type_name -> ddex.ern.v383.IndirectResourceContributor
-	176, // 471: ddex.ern.v383.VideoDetailsByTerritory.rights_agreement_id:type_name -> ddex.ern.v383.RightsAgreementId
-	135, // 472: ddex.ern.v383.VideoDetailsByTerritory.display_artist_name:type_name -> ddex.ern.v383.Name
-	121, // 473: ddex.ern.v383.VideoDetailsByTerritory.label_name:type_name -> ddex.ern.v383.LabelName
-	54,  // 474: ddex.ern.v383.VideoDetailsByTerritory.rights_controller:type_name -> ddex.ern.v383.TypedRightsController
-	101, // 475: ddex.ern.v383.VideoDetailsByTerritory.remastered_date:type_name -> ddex.ern.v383.EventDate
-	101, // 476: ddex.ern.v383.VideoDetailsByTerritory.resource_release_date:type_name -> ddex.ern.v383.EventDate
-	101, // 477: ddex.ern.v383.VideoDetailsByTerritory.original_resource_release_date:type_name -> ddex.ern.v383.EventDate
-	137, // 478: ddex.ern.v383.VideoDetailsByTerritory.p_line:type_name -> ddex.ern.v383.PLine
-	85,  // 479: ddex.ern.v383.VideoDetailsByTerritory.courtesy_line:type_name -> ddex.ern.v383.CourtesyLine
-	115, // 480: ddex.ern.v383.VideoDetailsByTerritory.host_sound_carrier:type_name -> ddex.ern.v383.HostSoundCarrier
-	79,  // 481: ddex.ern.v383.VideoDetailsByTerritory.marketing_comment:type_name -> ddex.ern.v383.Comment
-	111, // 482: ddex.ern.v383.VideoDetailsByTerritory.genre:type_name -> ddex.ern.v383.Genre
-	138, // 483: ddex.ern.v383.VideoDetailsByTerritory.parental_warning_type:type_name -> ddex.ern.v383.ParentalWarningType
-	67,  // 484: ddex.ern.v383.VideoDetailsByTerritory.av_rating:type_name -> ddex.ern.v383.AvRating
-	110, // 485: ddex.ern.v383.VideoDetailsByTerritory.fulfillment_date:type_name -> ddex.ern.v383.FulfillmentDate
-	120, // 486: ddex.ern.v383.VideoDetailsByTerritory.keywords:type_name -> ddex.ern.v383.Keywords
-	193, // 487: ddex.ern.v383.VideoDetailsByTerritory.synopsis:type_name -> ddex.ern.v383.Synopsis
-	69,  // 488: ddex.ern.v383.VideoDetailsByTerritory.c_line:type_name -> ddex.ern.v383.CLine
-	51,  // 489: ddex.ern.v383.VideoDetailsByTerritory.technical_video_details:type_name -> ddex.ern.v383.TechnicalVideoDetails
-	72,  // 490: ddex.ern.v383.VideoDetailsByTerritory.character:type_name -> ddex.ern.v383.Character
-	94,  // 491: ddex.ern.v383.VideoDetailsByTerritory.territory_code:type_name -> ddex.ern.v383.CurrentTerritoryCode
-	94,  // 492: ddex.ern.v383.VideoDetailsByTerritory.excluded_territory_code:type_name -> ddex.ern.v383.CurrentTerritoryCode
-	81,  // 493: ddex.ern.v383.WebPolicy.condition:type_name -> ddex.ern.v383.Condition
-	140, // 494: ddex.ern.v383.AdministratingRecordCompany.party_id:type_name -> ddex.ern.v383.PartyId
-	141, // 495: ddex.ern.v383.AdministratingRecordCompany.party_name:type_name -> ddex.ern.v383.PartyName
-	64,  // 496: ddex.ern.v383.Artist.artist_role:type_name -> ddex.ern.v383.ArtistRole
-	61,  // 497: ddex.ern.v383.Artist.nationality:type_name -> ddex.ern.v383.AllTerritoryCode
-	140, // 498: ddex.ern.v383.Artist.party_id:type_name -> ddex.ern.v383.PartyId
-	141, // 499: ddex.ern.v383.Artist.party_name:type_name -> ddex.ern.v383.PartyName
-	203, // 500: ddex.ern.v383.ArtistDelegatedUsageRights.use_type:type_name -> ddex.ern.v383.UseType
-	206, // 501: ddex.ern.v383.ArtistDelegatedUsageRights.user_interface_type:type_name -> ddex.ern.v383.UserInterfaceType
-	144, // 502: ddex.ern.v383.ArtistDelegatedUsageRights.period_of_rights_delegation:type_name -> ddex.ern.v383.Period
-	61,  // 503: ddex.ern.v383.ArtistDelegatedUsageRights.territory_of_rights_delegation:type_name -> ddex.ern.v383.AllTerritoryCode
-	151, // 504: ddex.ern.v383.AvRating.rating_agency:type_name -> ddex.ern.v383.RatingAgency
-	97,  // 505: ddex.ern.v383.AvRating.rating_scheme_description:type_name -> ddex.ern.v383.Description
-	98,  // 506: ddex.ern.v383.Character.resource_contributor:type_name -> ddex.ern.v383.DetailedResourceContributor
-	140, // 507: ddex.ern.v383.Character.party_id:type_name -> ddex.ern.v383.PartyId
-	141, // 508: ddex.ern.v383.Character.party_name:type_name -> ddex.ern.v383.PartyName
-	73,  // 509: ddex.ern.v383.CollectionCollectionReferenceList.collection_collection_reference:type_name -> ddex.ern.v383.CollectionCollectionReference
-	116, // 510: ddex.ern.v383.CollectionId.i_c_p_n:type_name -> ddex.ern.v383.ICPN
-	71,  // 511: ddex.ern.v383.CollectionId.catalog_number:type_name -> ddex.ern.v383.CatalogNumber
-	149, // 512: ddex.ern.v383.CollectionId.proprietary_id:type_name -> ddex.ern.v383.ProprietaryId
-	77,  // 513: ddex.ern.v383.CollectionWorkReferenceList.collection_work_reference:type_name -> ddex.ern.v383.CollectionWorkReference
-	71,  // 514: ddex.ern.v383.CreationId.catalog_number:type_name -> ddex.ern.v383.CatalogNumber
-	149, // 515: ddex.ern.v383.CreationId.proprietary_id:type_name -> ddex.ern.v383.ProprietaryId
-	135, // 516: ddex.ern.v383.DSP.trading_name:type_name -> ddex.ern.v383.Name
-	94,  // 517: ddex.ern.v383.DSP.territory_code:type_name -> ddex.ern.v383.CurrentTerritoryCode
-	140, // 518: ddex.ern.v383.DSP.party_id:type_name -> ddex.ern.v383.PartyId
-	141, // 519: ddex.ern.v383.DSP.party_name:type_name -> ddex.ern.v383.PartyName
-	167, // 520: ddex.ern.v383.DetailedResourceContributor.resource_contributor_role:type_name -> ddex.ern.v383.ResourceContributorRole
-	63,  // 521: ddex.ern.v383.DetailedResourceContributor.artist_delegated_usage_rights:type_name -> ddex.ern.v383.ArtistDelegatedUsageRights
-	61,  // 522: ddex.ern.v383.DetailedResourceContributor.nationality:type_name -> ddex.ern.v383.AllTerritoryCode
-	101, // 523: ddex.ern.v383.DetailedResourceContributor.date_and_place_of_birth:type_name -> ddex.ern.v383.EventDate
-	101, // 524: ddex.ern.v383.DetailedResourceContributor.date_and_place_of_death:type_name -> ddex.ern.v383.EventDate
-	64,  // 525: ddex.ern.v383.DetailedResourceContributor.primary_role:type_name -> ddex.ern.v383.ArtistRole
-	143, // 526: ddex.ern.v383.DetailedResourceContributor.performance:type_name -> ddex.ern.v383.Performance
-	112, // 527: ddex.ern.v383.DetailedResourceContributor.governing_agreement_type:type_name -> ddex.ern.v383.GoverningAgreementType
-	83,  // 528: ddex.ern.v383.DetailedResourceContributor.contact_information:type_name -> ddex.ern.v383.ContactId
-	61,  // 529: ddex.ern.v383.DetailedResourceContributor.territory_of_residency:type_name -> ddex.ern.v383.AllTerritoryCode
-	61,  // 530: ddex.ern.v383.DetailedResourceContributor.citizenship:type_name -> ddex.ern.v383.AllTerritoryCode
-	64,  // 531: ddex.ern.v383.DetailedResourceContributor.additional_roles:type_name -> ddex.ern.v383.ArtistRole
-	111, // 532: ddex.ern.v383.DetailedResourceContributor.genre:type_name -> ddex.ern.v383.Genre
-	123, // 533: ddex.ern.v383.DetailedResourceContributor.membership:type_name -> ddex.ern.v383.Membership
-	140, // 534: ddex.ern.v383.DetailedResourceContributor.party_id:type_name -> ddex.ern.v383.PartyId
-	141, // 535: ddex.ern.v383.DetailedResourceContributor.party_name:type_name -> ddex.ern.v383.PartyName
-	173, // 536: ddex.ern.v383.ExtendedResourceGroupContentItem.resource_type:type_name -> ddex.ern.v383.ResourceType
-	160, // 537: ddex.ern.v383.ExtendedResourceGroupContentItem.release_resource_reference:type_name -> ddex.ern.v383.ReleaseResourceReference
-	122, // 538: ddex.ern.v383.ExtendedResourceGroupContentItem.linked_release_resource_reference:type_name -> ddex.ern.v383.LinkedReleaseResourceReference
-	158, // 539: ddex.ern.v383.ExtendedResourceGroupContentItem.release_id:type_name -> ddex.ern.v383.ReleaseId
-	144, // 540: ddex.ern.v383.ExternalResourceLink.validity_period:type_name -> ddex.ern.v383.Period
-	106, // 541: ddex.ern.v383.ExternalResourceLink.externally_linked_resource_type:type_name -> ddex.ern.v383.ExternallyLinkedResourceType
-	113, // 542: ddex.ern.v383.File.hash_sum:type_name -> ddex.ern.v383.HashSum
-	97,  // 543: ddex.ern.v383.Genre.genre_text:type_name -> ddex.ern.v383.Description
-	97,  // 544: ddex.ern.v383.Genre.sub_genre:type_name -> ddex.ern.v383.Description
-	114, // 545: ddex.ern.v383.HashSum.hash_sum_algorithm_type:type_name -> ddex.ern.v383.HashSumAlgorithmType
-	158, // 546: ddex.ern.v383.HostSoundCarrier.release_id:type_name -> ddex.ern.v383.ReleaseId
-	176, // 547: ddex.ern.v383.HostSoundCarrier.rights_agreement_id:type_name -> ddex.ern.v383.RightsAgreementId
-	199, // 548: ddex.ern.v383.HostSoundCarrier.title:type_name -> ddex.ern.v383.Title
-	62,  // 549: ddex.ern.v383.HostSoundCarrier.display_artist:type_name -> ddex.ern.v383.Artist
-	60,  // 550: ddex.ern.v383.HostSoundCarrier.administrating_record_company:type_name -> ddex.ern.v383.AdministratingRecordCompany
-	131, // 551: ddex.ern.v383.IndirectResourceContributor.indirect_resource_contributor_role:type_name -> ddex.ern.v383.MusicalWorkContributorRole
-	0,   // 552: ddex.ern.v383.IndirectResourceContributor.nationality:type_name -> ddex.ern.v383.DdexCCurrentTerritoryCode
-	140, // 553: ddex.ern.v383.IndirectResourceContributor.party_id:type_name -> ddex.ern.v383.PartyId
-	141, // 554: ddex.ern.v383.IndirectResourceContributor.party_name:type_name -> ddex.ern.v383.PartyName
-	139, // 555: ddex.ern.v383.Membership.organization:type_name -> ddex.ern.v383.PartyDescriptor
-	125, // 556: ddex.ern.v383.MessageAuditTrail.message_audit_trail_event:type_name -> ddex.ern.v383.MessageAuditTrailEvent
-	127, // 557: ddex.ern.v383.MessageAuditTrailEvent.messaging_party_descriptor:type_name -> ddex.ern.v383.MessagingParty
-	127, // 558: ddex.ern.v383.MessageHeader.message_sender:type_name -> ddex.ern.v383.MessagingParty
-	127, // 559: ddex.ern.v383.MessageHeader.sent_on_behalf_of:type_name -> ddex.ern.v383.MessagingParty
-	127, // 560: ddex.ern.v383.MessageHeader.message_recipient:type_name -> ddex.ern.v383.MessagingParty
-	124, // 561: ddex.ern.v383.MessageHeader.message_audit_trail:type_name -> ddex.ern.v383.MessageAuditTrail
-	79,  // 562: ddex.ern.v383.MessageHeader.comment:type_name -> ddex.ern.v383.Comment
-	140, // 563: ddex.ern.v383.MessagingParty.party_id:type_name -> ddex.ern.v383.PartyId
-	141, // 564: ddex.ern.v383.MessagingParty.party_name:type_name -> ddex.ern.v383.PartyName
-	135, // 565: ddex.ern.v383.MessagingParty.trading_name:type_name -> ddex.ern.v383.Name
-	133, // 566: ddex.ern.v383.MusicalWork.musical_work_id:type_name -> ddex.ern.v383.MusicalWorkId
-	154, // 567: ddex.ern.v383.MusicalWork.reference_title:type_name -> ddex.ern.v383.ReferenceTitle
-	176, // 568: ddex.ern.v383.MusicalWork.rights_agreement_id:type_name -> ddex.ern.v383.RightsAgreementId
-	130, // 569: ddex.ern.v383.MusicalWork.musical_work_contributor:type_name -> ddex.ern.v383.MusicalWorkContributor
-	134, // 570: ddex.ern.v383.MusicalWork.musical_work_type:type_name -> ddex.ern.v383.MusicalWorkType
-	174, // 571: ddex.ern.v383.MusicalWork.right_share:type_name -> ddex.ern.v383.RightShare
-	132, // 572: ddex.ern.v383.MusicalWork.musical_work_details_by_territory:type_name -> ddex.ern.v383.MusicalWorkDetailsByTerritory
-	131, // 573: ddex.ern.v383.MusicalWorkContributor.musical_work_contributor_role:type_name -> ddex.ern.v383.MusicalWorkContributorRole
-	185, // 574: ddex.ern.v383.MusicalWorkContributor.society_affiliation:type_name -> ddex.ern.v383.SocietyAffiliation
-	140, // 575: ddex.ern.v383.MusicalWorkContributor.party_id:type_name -> ddex.ern.v383.PartyId
-	141, // 576: ddex.ern.v383.MusicalWorkContributor.party_name:type_name -> ddex.ern.v383.PartyName
-	130, // 577: ddex.ern.v383.MusicalWorkDetailsByTerritory.musical_work_contributor:type_name -> ddex.ern.v383.MusicalWorkContributor
-	135, // 578: ddex.ern.v383.MusicalWorkDetailsByTerritory.display_artist_name:type_name -> ddex.ern.v383.Name
-	94,  // 579: ddex.ern.v383.MusicalWorkDetailsByTerritory.territory_code:type_name -> ddex.ern.v383.CurrentTerritoryCode
-	94,  // 580: ddex.ern.v383.MusicalWorkDetailsByTerritory.excluded_territory_code:type_name -> ddex.ern.v383.CurrentTerritoryCode
-	149, // 581: ddex.ern.v383.MusicalWorkId.proprietary_id:type_name -> ddex.ern.v383.ProprietaryId
-	140, // 582: ddex.ern.v383.PartyDescriptor.party_id:type_name -> ddex.ern.v383.PartyId
-	141, // 583: ddex.ern.v383.PartyDescriptor.party_name:type_name -> ddex.ern.v383.PartyName
-	135, // 584: ddex.ern.v383.PartyName.full_name:type_name -> ddex.ern.v383.Name
-	135, // 585: ddex.ern.v383.PartyName.full_name_indexed:type_name -> ddex.ern.v383.Name
-	135, // 586: ddex.ern.v383.PartyName.names_before_key_name:type_name -> ddex.ern.v383.Name
-	135, // 587: ddex.ern.v383.PartyName.key_name:type_name -> ddex.ern.v383.Name
-	135, // 588: ddex.ern.v383.PartyName.names_after_key_name:type_name -> ddex.ern.v383.Name
-	135, // 589: ddex.ern.v383.PartyName.abbreviated_name:type_name -> ddex.ern.v383.Name
-	61,  // 590: ddex.ern.v383.Performance.territory:type_name -> ddex.ern.v383.AllTerritoryCode
-	101, // 591: ddex.ern.v383.Performance.date:type_name -> ddex.ern.v383.EventDate
-	101, // 592: ddex.ern.v383.Period.start_date:type_name -> ddex.ern.v383.EventDate
-	101, // 593: ddex.ern.v383.Period.end_date:type_name -> ddex.ern.v383.EventDate
-	102, // 594: ddex.ern.v383.Period.start_date_time:type_name -> ddex.ern.v383.EventDateTime
-	102, // 595: ddex.ern.v383.Period.end_date_time:type_name -> ddex.ern.v383.EventDateTime
-	200, // 596: ddex.ern.v383.ReferenceTitle.title_text:type_name -> ddex.ern.v383.TitleText
-	192, // 597: ddex.ern.v383.ReferenceTitle.sub_title:type_name -> ddex.ern.v383.SubTitle
-	158, // 598: ddex.ern.v383.RelatedRelease.release_id:type_name -> ddex.ern.v383.ReleaseId
-	154, // 599: ddex.ern.v383.RelatedRelease.reference_title:type_name -> ddex.ern.v383.ReferenceTitle
-	162, // 600: ddex.ern.v383.RelatedRelease.release_summary_details_by_territory:type_name -> ddex.ern.v383.ReleaseSummaryDetailsByTerritory
-	176, // 601: ddex.ern.v383.RelatedRelease.rights_agreement_id:type_name -> ddex.ern.v383.RightsAgreementId
-	159, // 602: ddex.ern.v383.RelatedRelease.release_relationship_type:type_name -> ddex.ern.v383.ReleaseRelationshipType
-	101, // 603: ddex.ern.v383.RelatedRelease.release_date:type_name -> ddex.ern.v383.EventDate
-	101, // 604: ddex.ern.v383.RelatedRelease.original_release_date:type_name -> ddex.ern.v383.EventDate
-	156, // 605: ddex.ern.v383.ReleaseCollectionReferenceList.release_collection_reference:type_name -> ddex.ern.v383.ReleaseCollectionReference
-	116, // 606: ddex.ern.v383.ReleaseId.i_c_p_n:type_name -> ddex.ern.v383.ICPN
-	71,  // 607: ddex.ern.v383.ReleaseId.catalog_number:type_name -> ddex.ern.v383.CatalogNumber
-	149, // 608: ddex.ern.v383.ReleaseId.proprietary_id:type_name -> ddex.ern.v383.ProprietaryId
-	160, // 609: ddex.ern.v383.ReleaseResourceReferenceList.release_resource_reference:type_name -> ddex.ern.v383.ReleaseResourceReference
-	135, // 610: ddex.ern.v383.ReleaseSummaryDetailsByTerritory.display_artist_name:type_name -> ddex.ern.v383.Name
-	121, // 611: ddex.ern.v383.ReleaseSummaryDetailsByTerritory.label_name:type_name -> ddex.ern.v383.LabelName
-	176, // 612: ddex.ern.v383.ReleaseSummaryDetailsByTerritory.rights_agreement_id:type_name -> ddex.ern.v383.RightsAgreementId
-	94,  // 613: ddex.ern.v383.ReleaseSummaryDetailsByTerritory.territory_code:type_name -> ddex.ern.v383.CurrentTerritoryCode
-	94,  // 614: ddex.ern.v383.ReleaseSummaryDetailsByTerritory.excluded_territory_code:type_name -> ddex.ern.v383.CurrentTerritoryCode
-	150, // 615: ddex.ern.v383.ResourceContainedResourceReference.purpose:type_name -> ddex.ern.v383.Purpose
-	164, // 616: ddex.ern.v383.ResourceContainedResourceReferenceList.resource_contained_resource_reference:type_name -> ddex.ern.v383.ResourceContainedResourceReference
-	167, // 617: ddex.ern.v383.ResourceContributor.resource_contributor_role:type_name -> ddex.ern.v383.ResourceContributorRole
-	140, // 618: ddex.ern.v383.ResourceContributor.party_id:type_name -> ddex.ern.v383.PartyId
-	141, // 619: ddex.ern.v383.ResourceContributor.party_name:type_name -> ddex.ern.v383.PartyName
-	169, // 620: ddex.ern.v383.ResourceMusicalWorkReferenceList.resource_musical_work_reference:type_name -> ddex.ern.v383.ResourceMusicalWorkReference
-	149, // 621: ddex.ern.v383.ResourceProprietaryId.proprietary_id:type_name -> ddex.ern.v383.ProprietaryId
-	176, // 622: ddex.ern.v383.RightShare.right_share_id:type_name -> ddex.ern.v383.RightsAgreementId
-	175, // 623: ddex.ern.v383.RightShare.right_share_creation_reference_list:type_name -> ddex.ern.v383.RightShareCreationReferenceList
-	179, // 624: ddex.ern.v383.RightShare.rights_type:type_name -> ddex.ern.v383.RightsType
-	203, // 625: ddex.ern.v383.RightShare.use_type:type_name -> ddex.ern.v383.UseType
-	206, // 626: ddex.ern.v383.RightShare.user_interface_type:type_name -> ddex.ern.v383.UserInterfaceType
-	99,  // 627: ddex.ern.v383.RightShare.distribution_channel_type:type_name -> ddex.ern.v383.DistributionChannelType
-	70,  // 628: ddex.ern.v383.RightShare.carrier_type:type_name -> ddex.ern.v383.CarrierType
-	80,  // 629: ddex.ern.v383.RightShare.commercial_model_type:type_name -> ddex.ern.v383.CommercialModelType
-	178, // 630: ddex.ern.v383.RightShare.rights_controller:type_name -> ddex.ern.v383.RightsController
-	144, // 631: ddex.ern.v383.RightShare.validity_period:type_name -> ddex.ern.v383.Period
-	194, // 632: ddex.ern.v383.RightShare.tariff_reference:type_name -> ddex.ern.v383.TariffReference
-	61,  // 633: ddex.ern.v383.RightShare.territory_code:type_name -> ddex.ern.v383.AllTerritoryCode
-	61,  // 634: ddex.ern.v383.RightShare.excluded_territory_code:type_name -> ddex.ern.v383.AllTerritoryCode
-	142, // 635: ddex.ern.v383.RightShare.right_share_percentage:type_name -> ddex.ern.v383.Percentage
-	149, // 636: ddex.ern.v383.RightsAgreementId.proprietary_id:type_name -> ddex.ern.v383.ProprietaryId
-	81,  // 637: ddex.ern.v383.RightsClaimPolicy.condition:type_name -> ddex.ern.v383.Condition
-	140, // 638: ddex.ern.v383.RightsController.party_id:type_name -> ddex.ern.v383.PartyId
-	141, // 639: ddex.ern.v383.RightsController.party_name:type_name -> ddex.ern.v383.PartyName
-	142, // 640: ddex.ern.v383.RightsController.right_share_percentage:type_name -> ddex.ern.v383.Percentage
-	158, // 641: ddex.ern.v383.SalesReportingProxyReleaseId.release_id:type_name -> ddex.ern.v383.ReleaseId
-	152, // 642: ddex.ern.v383.SalesReportingProxyReleaseId.reason:type_name -> ddex.ern.v383.Reason
-	153, // 643: ddex.ern.v383.SalesReportingProxyReleaseId.reason_type:type_name -> ddex.ern.v383.ReasonType
-	149, // 644: ddex.ern.v383.SheetMusicId.proprietary_id:type_name -> ddex.ern.v383.ProprietaryId
-	139, // 645: ddex.ern.v383.SocietyAffiliation.music_rights_society:type_name -> ddex.ern.v383.PartyDescriptor
-	61,  // 646: ddex.ern.v383.SocietyAffiliation.territory_code:type_name -> ddex.ern.v383.AllTerritoryCode
-	61,  // 647: ddex.ern.v383.SocietyAffiliation.excluded_territory_code:type_name -> ddex.ern.v383.AllTerritoryCode
-	188, // 648: ddex.ern.v383.SoundRecordingCollectionReferenceList.sound_recording_collection_reference:type_name -> ddex.ern.v383.SoundRecordingCollectionReference
-	71,  // 649: ddex.ern.v383.SoundRecordingId.catalog_number:type_name -> ddex.ern.v383.CatalogNumber
-	149, // 650: ddex.ern.v383.SoundRecordingId.proprietary_id:type_name -> ddex.ern.v383.ProprietaryId
-	68,  // 651: ddex.ern.v383.TechnicalInstantiation.bit_rate:type_name -> ddex.ern.v383.BitRate
-	149, // 652: ddex.ern.v383.TextId.proprietary_id:type_name -> ddex.ern.v383.ProprietaryId
-	200, // 653: ddex.ern.v383.Title.title_text:type_name -> ddex.ern.v383.TitleText
-	201, // 654: ddex.ern.v383.Title.sub_title:type_name -> ddex.ern.v383.TypedSubTitle
-	203, // 655: ddex.ern.v383.Usage.use_type:type_name -> ddex.ern.v383.UseType
-	206, // 656: ddex.ern.v383.Usage.user_interface_type:type_name -> ddex.ern.v383.UserInterfaceType
-	99,  // 657: ddex.ern.v383.Usage.distribution_channel_type:type_name -> ddex.ern.v383.DistributionChannelType
-	70,  // 658: ddex.ern.v383.Usage.carrier_type:type_name -> ddex.ern.v383.CarrierType
-	195, // 659: ddex.ern.v383.Usage.technical_instantiation:type_name -> ddex.ern.v383.TechnicalInstantiation
-	71,  // 660: ddex.ern.v383.VideoId.catalog_number:type_name -> ddex.ern.v383.CatalogNumber
-	149, // 661: ddex.ern.v383.VideoId.proprietary_id:type_name -> ddex.ern.v383.ProprietaryId
-	140, // 662: ddex.ern.v383.WebPage.party_id:type_name -> ddex.ern.v383.PartyId
-	158, // 663: ddex.ern.v383.WebPage.release_id:type_name -> ddex.ern.v383.ReleaseId
-	135, // 664: ddex.ern.v383.WebPage.page_name:type_name -> ddex.ern.v383.Name
-	129, // 665: ddex.ern.v383.WorkList.musical_work:type_name -> ddex.ern.v383.MusicalWork
-	666, // [666:666] is the sub-list for method output_type
-	666, // [666:666] is the sub-list for method input_type
-	666, // [666:666] is the sub-list for extension type_name
-	666, // [666:666] is the sub-list for extension extendee
-	0,   // [0:666] is the sub-list for field type_name
+	213, // 8: ddex.ern.v383.NewReleaseMessage.namespace_attrs:type_name -> ddex.ern.v383.NewReleaseMessage.NamespaceAttrsEntry
+	126, // 9: ddex.ern.v383.CatalogListMessage.message_header:type_name -> ddex.ern.v383.MessageHeader
+	4,   // 10: ddex.ern.v383.CatalogListMessage.catalog_item:type_name -> ddex.ern.v383.CatalogItem
+	214, // 11: ddex.ern.v383.CatalogListMessage.namespace_attrs:type_name -> ddex.ern.v383.CatalogListMessage.NamespaceAttrsEntry
+	126, // 12: ddex.ern.v383.PurgeReleaseMessage.message_header:type_name -> ddex.ern.v383.MessageHeader
+	28,  // 13: ddex.ern.v383.PurgeReleaseMessage.purged_release:type_name -> ddex.ern.v383.PurgedRelease
+	215, // 14: ddex.ern.v383.PurgeReleaseMessage.namespace_attrs:type_name -> ddex.ern.v383.PurgeReleaseMessage.NamespaceAttrsEntry
+	61,  // 15: ddex.ern.v383.CatalogItem.territory_code:type_name -> ddex.ern.v383.AllTerritoryCode
+	158, // 16: ddex.ern.v383.CatalogItem.release_id:type_name -> ddex.ern.v383.ReleaseId
+	199, // 17: ddex.ern.v383.CatalogItem.title:type_name -> ddex.ern.v383.Title
+	135, // 18: ddex.ern.v383.CatalogItem.display_artist_name:type_name -> ddex.ern.v383.Name
+	135, // 19: ddex.ern.v383.CatalogItem.contributor_name:type_name -> ddex.ern.v383.Name
+	154, // 20: ddex.ern.v383.CatalogItem.display_title:type_name -> ddex.ern.v383.ReferenceTitle
+	121, // 21: ddex.ern.v383.CatalogItem.label_name:type_name -> ddex.ern.v383.LabelName
+	111, // 22: ddex.ern.v383.CatalogItem.genre:type_name -> ddex.ern.v383.Genre
+	137, // 23: ddex.ern.v383.CatalogItem.p_line:type_name -> ddex.ern.v383.PLine
+	69,  // 24: ddex.ern.v383.CatalogItem.c_line:type_name -> ddex.ern.v383.CLine
+	101, // 25: ddex.ern.v383.CatalogItem.release_date:type_name -> ddex.ern.v383.EventDate
+	101, // 26: ddex.ern.v383.CatalogTransfer.effective_transfer_date:type_name -> ddex.ern.v383.EventDate
+	5,   // 27: ddex.ern.v383.CatalogTransfer.catalog_release_reference_list:type_name -> ddex.ern.v383.CatalogReleaseReferenceList
+	139, // 28: ddex.ern.v383.CatalogTransfer.transferring_from:type_name -> ddex.ern.v383.PartyDescriptor
+	139, // 29: ddex.ern.v383.CatalogTransfer.transferring_to:type_name -> ddex.ern.v383.PartyDescriptor
+	61,  // 30: ddex.ern.v383.CatalogTransfer.territory_code:type_name -> ddex.ern.v383.AllTerritoryCode
+	61,  // 31: ddex.ern.v383.CatalogTransfer.excluded_territory_code:type_name -> ddex.ern.v383.AllTerritoryCode
+	75,  // 32: ddex.ern.v383.Collection.collection_id:type_name -> ddex.ern.v383.CollectionId
+	76,  // 33: ddex.ern.v383.Collection.collection_type:type_name -> ddex.ern.v383.CollectionType
+	199, // 34: ddex.ern.v383.Collection.title:type_name -> ddex.ern.v383.Title
+	98,  // 35: ddex.ern.v383.Collection.contributor:type_name -> ddex.ern.v383.DetailedResourceContributor
+	72,  // 36: ddex.ern.v383.Collection.character:type_name -> ddex.ern.v383.Character
+	74,  // 37: ddex.ern.v383.Collection.collection_collection_reference_list:type_name -> ddex.ern.v383.CollectionCollectionReferenceList
+	101, // 38: ddex.ern.v383.Collection.creation_date:type_name -> ddex.ern.v383.EventDate
+	101, // 39: ddex.ern.v383.Collection.release_date:type_name -> ddex.ern.v383.EventDate
+	101, // 40: ddex.ern.v383.Collection.original_release_date:type_name -> ddex.ern.v383.EventDate
+	8,   // 41: ddex.ern.v383.Collection.collection_details_by_territory:type_name -> ddex.ern.v383.CollectionDetailsByTerritory
+	11,  // 42: ddex.ern.v383.Collection.collection_resource_reference_list:type_name -> ddex.ern.v383.CollectionResourceReferenceList
+	78,  // 43: ddex.ern.v383.Collection.collection_work_reference_list:type_name -> ddex.ern.v383.CollectionWorkReferenceList
+	137, // 44: ddex.ern.v383.Collection.p_line:type_name -> ddex.ern.v383.PLine
+	69,  // 45: ddex.ern.v383.Collection.c_line:type_name -> ddex.ern.v383.CLine
+	199, // 46: ddex.ern.v383.CollectionDetailsByTerritory.title:type_name -> ddex.ern.v383.Title
+	98,  // 47: ddex.ern.v383.CollectionDetailsByTerritory.contributor:type_name -> ddex.ern.v383.DetailedResourceContributor
+	72,  // 48: ddex.ern.v383.CollectionDetailsByTerritory.character:type_name -> ddex.ern.v383.Character
+	94,  // 49: ddex.ern.v383.CollectionDetailsByTerritory.territory_code:type_name -> ddex.ern.v383.CurrentTerritoryCode
+	94,  // 50: ddex.ern.v383.CollectionDetailsByTerritory.excluded_territory_code:type_name -> ddex.ern.v383.CurrentTerritoryCode
+	7,   // 51: ddex.ern.v383.CollectionList.collection:type_name -> ddex.ern.v383.Collection
+	10,  // 52: ddex.ern.v383.CollectionResourceReferenceList.collection_resource_reference:type_name -> ddex.ern.v383.CollectionResourceReference
+	91,  // 53: ddex.ern.v383.Cue.cue_use_type:type_name -> ddex.ern.v383.CueUseType
+	90,  // 54: ddex.ern.v383.Cue.cue_theme_type:type_name -> ddex.ern.v383.CueThemeType
+	93,  // 55: ddex.ern.v383.Cue.cue_vocal_type:type_name -> ddex.ern.v383.CueVocalType
+	92,  // 56: ddex.ern.v383.Cue.cue_visual_perception_type:type_name -> ddex.ern.v383.CueVisualPerceptionType
+	88,  // 57: ddex.ern.v383.Cue.cue_origin:type_name -> ddex.ern.v383.CueOrigin
+	137, // 58: ddex.ern.v383.Cue.p_line:type_name -> ddex.ern.v383.PLine
+	69,  // 59: ddex.ern.v383.Cue.c_line:type_name -> ddex.ern.v383.CLine
+	87,  // 60: ddex.ern.v383.Cue.cue_creation_reference:type_name -> ddex.ern.v383.CueCreationReference
+	86,  // 61: ddex.ern.v383.Cue.referenced_creation_id:type_name -> ddex.ern.v383.CreationId
+	199, // 62: ddex.ern.v383.Cue.referenced_creation_title:type_name -> ddex.ern.v383.Title
+	98,  // 63: ddex.ern.v383.Cue.referenced_creation_contributor:type_name -> ddex.ern.v383.DetailedResourceContributor
+	130, // 64: ddex.ern.v383.Cue.referenced_indirect_creation_contributor:type_name -> ddex.ern.v383.MusicalWorkContributor
+	72,  // 65: ddex.ern.v383.Cue.referenced_creation_character:type_name -> ddex.ern.v383.Character
+	149, // 66: ddex.ern.v383.CueSheet.cue_sheet_id:type_name -> ddex.ern.v383.ProprietaryId
+	89,  // 67: ddex.ern.v383.CueSheet.cue_sheet_type:type_name -> ddex.ern.v383.CueSheetType
+	12,  // 68: ddex.ern.v383.CueSheet.cue:type_name -> ddex.ern.v383.Cue
+	13,  // 69: ddex.ern.v383.CueSheetList.cue_sheet:type_name -> ddex.ern.v383.CueSheet
+	96,  // 70: ddex.ern.v383.Deal.deal_reference:type_name -> ddex.ern.v383.DealReference
+	19,  // 71: ddex.ern.v383.Deal.deal_terms:type_name -> ddex.ern.v383.DealTerms
+	36,  // 72: ddex.ern.v383.Deal.resource_usage:type_name -> ddex.ern.v383.ResourceUsage
+	18,  // 73: ddex.ern.v383.Deal.deal_technical_resource_details_reference_list:type_name -> ddex.ern.v383.DealTechnicalResourceDetailsReferenceList
+	211, // 74: ddex.ern.v383.Deal.distribution_channel_page:type_name -> ddex.ern.v383.WebPage
+	31,  // 75: ddex.ern.v383.DealList.release_deal:type_name -> ddex.ern.v383.ReleaseDeal
+	144, // 76: ddex.ern.v383.DealResourceReferenceList.period:type_name -> ddex.ern.v383.Period
+	80,  // 77: ddex.ern.v383.DealTerms.commercial_model_type:type_name -> ddex.ern.v383.CommercialModelType
+	27,  // 78: ddex.ern.v383.DealTerms.price_information:type_name -> ddex.ern.v383.PriceInformation
+	144, // 79: ddex.ern.v383.DealTerms.validity_period:type_name -> ddex.ern.v383.Period
+	82,  // 80: ddex.ern.v383.DealTerms.consumer_rental_period:type_name -> ddex.ern.v383.ConsumerRentalPeriod
+	101, // 81: ddex.ern.v383.DealTerms.pre_order_release_date:type_name -> ddex.ern.v383.EventDate
+	17,  // 82: ddex.ern.v383.DealTerms.pre_order_incentive_resource_list:type_name -> ddex.ern.v383.DealResourceReferenceList
+	17,  // 83: ddex.ern.v383.DealTerms.instant_gratification_resource_list:type_name -> ddex.ern.v383.DealResourceReferenceList
+	29,  // 84: ddex.ern.v383.DealTerms.related_release_offer_set:type_name -> ddex.ern.v383.RelatedReleaseOfferSet
+	25,  // 85: ddex.ern.v383.DealTerms.physical_returns:type_name -> ddex.ern.v383.PhysicalReturns
+	177, // 86: ddex.ern.v383.DealTerms.rights_claim_policy:type_name -> ddex.ern.v383.RightsClaimPolicy
+	59,  // 87: ddex.ern.v383.DealTerms.web_policy:type_name -> ddex.ern.v383.WebPolicy
+	202, // 88: ddex.ern.v383.DealTerms.usage:type_name -> ddex.ern.v383.Usage
+	94,  // 89: ddex.ern.v383.DealTerms.territory_code:type_name -> ddex.ern.v383.CurrentTerritoryCode
+	94,  // 90: ddex.ern.v383.DealTerms.excluded_territory_code:type_name -> ddex.ern.v383.CurrentTerritoryCode
+	95,  // 91: ddex.ern.v383.DealTerms.distribution_channel:type_name -> ddex.ern.v383.DSP
+	95,  // 92: ddex.ern.v383.DealTerms.excluded_distribution_channel:type_name -> ddex.ern.v383.DSP
+	148, // 93: ddex.ern.v383.DealTerms.promotional_code:type_name -> ddex.ern.v383.PromotionalCode
+	101, // 94: ddex.ern.v383.DealTerms.pre_order_preview_date:type_name -> ddex.ern.v383.EventDate
+	108, // 95: ddex.ern.v383.Fingerprint.fingerprint_algorithm_type:type_name -> ddex.ern.v383.FingerprintAlgorithmType
+	118, // 96: ddex.ern.v383.Image.image_type:type_name -> ddex.ern.v383.ImageType
+	172, // 97: ddex.ern.v383.Image.image_id:type_name -> ddex.ern.v383.ResourceProprietaryId
+	199, // 98: ddex.ern.v383.Image.title:type_name -> ddex.ern.v383.Title
+	101, // 99: ddex.ern.v383.Image.creation_date:type_name -> ddex.ern.v383.EventDate
+	22,  // 100: ddex.ern.v383.Image.image_details_by_territory:type_name -> ddex.ern.v383.ImageDetailsByTerritory
+	199, // 101: ddex.ern.v383.ImageDetailsByTerritory.title:type_name -> ddex.ern.v383.Title
+	98,  // 102: ddex.ern.v383.ImageDetailsByTerritory.resource_contributor:type_name -> ddex.ern.v383.DetailedResourceContributor
+	119, // 103: ddex.ern.v383.ImageDetailsByTerritory.indirect_resource_contributor:type_name -> ddex.ern.v383.IndirectResourceContributor
+	135, // 104: ddex.ern.v383.ImageDetailsByTerritory.display_artist_name:type_name -> ddex.ern.v383.Name
+	69,  // 105: ddex.ern.v383.ImageDetailsByTerritory.c_line:type_name -> ddex.ern.v383.CLine
+	97,  // 106: ddex.ern.v383.ImageDetailsByTerritory.description:type_name -> ddex.ern.v383.Description
+	85,  // 107: ddex.ern.v383.ImageDetailsByTerritory.courtesy_line:type_name -> ddex.ern.v383.CourtesyLine
+	101, // 108: ddex.ern.v383.ImageDetailsByTerritory.resource_release_date:type_name -> ddex.ern.v383.EventDate
+	101, // 109: ddex.ern.v383.ImageDetailsByTerritory.original_resource_release_date:type_name -> ddex.ern.v383.EventDate
+	110, // 110: ddex.ern.v383.ImageDetailsByTerritory.fulfillment_date:type_name -> ddex.ern.v383.FulfillmentDate
+	120, // 111: ddex.ern.v383.ImageDetailsByTerritory.keywords:type_name -> ddex.ern.v383.Keywords
+	193, // 112: ddex.ern.v383.ImageDetailsByTerritory.synopsis:type_name -> ddex.ern.v383.Synopsis
+	111, // 113: ddex.ern.v383.ImageDetailsByTerritory.genre:type_name -> ddex.ern.v383.Genre
+	138, // 114: ddex.ern.v383.ImageDetailsByTerritory.parental_warning_type:type_name -> ddex.ern.v383.ParentalWarningType
+	44,  // 115: ddex.ern.v383.ImageDetailsByTerritory.technical_image_details:type_name -> ddex.ern.v383.TechnicalImageDetails
+	94,  // 116: ddex.ern.v383.ImageDetailsByTerritory.territory_code:type_name -> ddex.ern.v383.CurrentTerritoryCode
+	94,  // 117: ddex.ern.v383.ImageDetailsByTerritory.excluded_territory_code:type_name -> ddex.ern.v383.CurrentTerritoryCode
+	128, // 118: ddex.ern.v383.MIDI.midi_type:type_name -> ddex.ern.v383.MidiType
+	172, // 119: ddex.ern.v383.MIDI.midi_id:type_name -> ddex.ern.v383.ResourceProprietaryId
+	133, // 120: ddex.ern.v383.MIDI.indirect_midi_id:type_name -> ddex.ern.v383.MusicalWorkId
+	154, // 121: ddex.ern.v383.MIDI.reference_title:type_name -> ddex.ern.v383.ReferenceTitle
+	97,  // 122: ddex.ern.v383.MIDI.instrumentation_description:type_name -> ddex.ern.v383.Description
+	176, // 123: ddex.ern.v383.MIDI.rights_agreement_id:type_name -> ddex.ern.v383.RightsAgreementId
+	170, // 124: ddex.ern.v383.MIDI.resource_musical_work_reference_list:type_name -> ddex.ern.v383.ResourceMusicalWorkReferenceList
+	165, // 125: ddex.ern.v383.MIDI.resource_contained_resource_reference_list:type_name -> ddex.ern.v383.ResourceContainedResourceReferenceList
+	101, // 126: ddex.ern.v383.MIDI.creation_date:type_name -> ddex.ern.v383.EventDate
+	101, // 127: ddex.ern.v383.MIDI.mastered_date:type_name -> ddex.ern.v383.EventDate
+	101, // 128: ddex.ern.v383.MIDI.remastered_date:type_name -> ddex.ern.v383.EventDate
+	24,  // 129: ddex.ern.v383.MIDI.midi_details_by_territory:type_name -> ddex.ern.v383.MidiDetailsByTerritory
+	199, // 130: ddex.ern.v383.MidiDetailsByTerritory.title:type_name -> ddex.ern.v383.Title
+	62,  // 131: ddex.ern.v383.MidiDetailsByTerritory.display_artist:type_name -> ddex.ern.v383.Artist
+	98,  // 132: ddex.ern.v383.MidiDetailsByTerritory.resource_contributor:type_name -> ddex.ern.v383.DetailedResourceContributor
+	119, // 133: ddex.ern.v383.MidiDetailsByTerritory.indirect_resource_contributor:type_name -> ddex.ern.v383.IndirectResourceContributor
+	176, // 134: ddex.ern.v383.MidiDetailsByTerritory.rights_agreement_id:type_name -> ddex.ern.v383.RightsAgreementId
+	135, // 135: ddex.ern.v383.MidiDetailsByTerritory.display_artist_name:type_name -> ddex.ern.v383.Name
+	121, // 136: ddex.ern.v383.MidiDetailsByTerritory.label_name:type_name -> ddex.ern.v383.LabelName
+	54,  // 137: ddex.ern.v383.MidiDetailsByTerritory.rights_controller:type_name -> ddex.ern.v383.TypedRightsController
+	101, // 138: ddex.ern.v383.MidiDetailsByTerritory.remastered_date:type_name -> ddex.ern.v383.EventDate
+	101, // 139: ddex.ern.v383.MidiDetailsByTerritory.resource_release_date:type_name -> ddex.ern.v383.EventDate
+	101, // 140: ddex.ern.v383.MidiDetailsByTerritory.original_resource_release_date:type_name -> ddex.ern.v383.EventDate
+	69,  // 141: ddex.ern.v383.MidiDetailsByTerritory.c_line:type_name -> ddex.ern.v383.CLine
+	85,  // 142: ddex.ern.v383.MidiDetailsByTerritory.courtesy_line:type_name -> ddex.ern.v383.CourtesyLine
+	115, // 143: ddex.ern.v383.MidiDetailsByTerritory.host_sound_carrier:type_name -> ddex.ern.v383.HostSoundCarrier
+	79,  // 144: ddex.ern.v383.MidiDetailsByTerritory.marketing_comment:type_name -> ddex.ern.v383.Comment
+	111, // 145: ddex.ern.v383.MidiDetailsByTerritory.genre:type_name -> ddex.ern.v383.Genre
+	138, // 146: ddex.ern.v383.MidiDetailsByTerritory.parental_warning_type:type_name -> ddex.ern.v383.ParentalWarningType
+	110, // 147: ddex.ern.v383.MidiDetailsByTerritory.fulfillment_date:type_name -> ddex.ern.v383.FulfillmentDate
+	120, // 148: ddex.ern.v383.MidiDetailsByTerritory.keywords:type_name -> ddex.ern.v383.Keywords
+	193, // 149: ddex.ern.v383.MidiDetailsByTerritory.synopsis:type_name -> ddex.ern.v383.Synopsis
+	45,  // 150: ddex.ern.v383.MidiDetailsByTerritory.technical_midi_details:type_name -> ddex.ern.v383.TechnicalMidiDetails
+	94,  // 151: ddex.ern.v383.MidiDetailsByTerritory.territory_code:type_name -> ddex.ern.v383.CurrentTerritoryCode
+	94,  // 152: ddex.ern.v383.MidiDetailsByTerritory.excluded_territory_code:type_name -> ddex.ern.v383.CurrentTerritoryCode
+	97,  // 153: ddex.ern.v383.PreviewDetails.part_type:type_name -> ddex.ern.v383.Description
+	97,  // 154: ddex.ern.v383.PriceInformation.description:type_name -> ddex.ern.v383.Description
+	146, // 155: ddex.ern.v383.PriceInformation.price_range_type:type_name -> ddex.ern.v383.PriceRangeType
+	147, // 156: ddex.ern.v383.PriceInformation.price_type:type_name -> ddex.ern.v383.PriceType
+	145, // 157: ddex.ern.v383.PriceInformation.wholesale_price_per_unit:type_name -> ddex.ern.v383.Price
+	145, // 158: ddex.ern.v383.PriceInformation.bulk_order_wholesale_price_per_unit:type_name -> ddex.ern.v383.Price
+	145, // 159: ddex.ern.v383.PriceInformation.suggested_retail_price:type_name -> ddex.ern.v383.Price
+	158, // 160: ddex.ern.v383.PurgedRelease.release_id:type_name -> ddex.ern.v383.ReleaseId
+	199, // 161: ddex.ern.v383.PurgedRelease.title:type_name -> ddex.ern.v383.Title
+	98,  // 162: ddex.ern.v383.PurgedRelease.resource_contributor:type_name -> ddex.ern.v383.DetailedResourceContributor
+	15,  // 163: ddex.ern.v383.RelatedReleaseOfferSet.deal:type_name -> ddex.ern.v383.Deal
+	158, // 164: ddex.ern.v383.RelatedReleaseOfferSet.release_id:type_name -> ddex.ern.v383.ReleaseId
+	97,  // 165: ddex.ern.v383.RelatedReleaseOfferSet.release_description:type_name -> ddex.ern.v383.Description
+	158, // 166: ddex.ern.v383.Release.release_id:type_name -> ddex.ern.v383.ReleaseId
+	105, // 167: ddex.ern.v383.Release.external_resource_link:type_name -> ddex.ern.v383.ExternalResourceLink
+	180, // 168: ddex.ern.v383.Release.sales_reporting_proxy_release_id:type_name -> ddex.ern.v383.SalesReportingProxyReleaseId
+	154, // 169: ddex.ern.v383.Release.reference_title:type_name -> ddex.ern.v383.ReferenceTitle
+	157, // 170: ddex.ern.v383.Release.release_collection_reference_list:type_name -> ddex.ern.v383.ReleaseCollectionReferenceList
+	163, // 171: ddex.ern.v383.Release.release_type:type_name -> ddex.ern.v383.ReleaseType
+	32,  // 172: ddex.ern.v383.Release.release_details_by_territory:type_name -> ddex.ern.v383.ReleaseDetailsByTerritory
+	176, // 173: ddex.ern.v383.Release.rights_agreement_id:type_name -> ddex.ern.v383.RightsAgreementId
+	137, // 174: ddex.ern.v383.Release.p_line:type_name -> ddex.ern.v383.PLine
+	69,  // 175: ddex.ern.v383.Release.c_line:type_name -> ddex.ern.v383.CLine
+	211, // 176: ddex.ern.v383.Release.artist_profile_page:type_name -> ddex.ern.v383.WebPage
+	101, // 177: ddex.ern.v383.Release.global_release_date:type_name -> ddex.ern.v383.EventDate
+	101, // 178: ddex.ern.v383.Release.global_original_release_date:type_name -> ddex.ern.v383.EventDate
+	161, // 179: ddex.ern.v383.Release.release_resource_reference_list:type_name -> ddex.ern.v383.ReleaseResourceReferenceList
+	171, // 180: ddex.ern.v383.Release.resource_omission_reason:type_name -> ddex.ern.v383.ResourceOmissionReason
+	15,  // 181: ddex.ern.v383.ReleaseDeal.deal:type_name -> ddex.ern.v383.Deal
+	135, // 182: ddex.ern.v383.ReleaseDetailsByTerritory.display_artist_name:type_name -> ddex.ern.v383.Name
+	121, // 183: ddex.ern.v383.ReleaseDetailsByTerritory.label_name:type_name -> ddex.ern.v383.LabelName
+	176, // 184: ddex.ern.v383.ReleaseDetailsByTerritory.rights_agreement_id:type_name -> ddex.ern.v383.RightsAgreementId
+	199, // 185: ddex.ern.v383.ReleaseDetailsByTerritory.title:type_name -> ddex.ern.v383.Title
+	62,  // 186: ddex.ern.v383.ReleaseDetailsByTerritory.display_artist:type_name -> ddex.ern.v383.Artist
+	60,  // 187: ddex.ern.v383.ReleaseDetailsByTerritory.administrating_record_company:type_name -> ddex.ern.v383.AdministratingRecordCompany
+	163, // 188: ddex.ern.v383.ReleaseDetailsByTerritory.release_type:type_name -> ddex.ern.v383.ReleaseType
+	155, // 189: ddex.ern.v383.ReleaseDetailsByTerritory.related_release:type_name -> ddex.ern.v383.RelatedRelease
+	138, // 190: ddex.ern.v383.ReleaseDetailsByTerritory.parental_warning_type:type_name -> ddex.ern.v383.ParentalWarningType
+	67,  // 191: ddex.ern.v383.ReleaseDetailsByTerritory.av_rating:type_name -> ddex.ern.v383.AvRating
+	79,  // 192: ddex.ern.v383.ReleaseDetailsByTerritory.marketing_comment:type_name -> ddex.ern.v383.Comment
+	34,  // 193: ddex.ern.v383.ReleaseDetailsByTerritory.resource_group:type_name -> ddex.ern.v383.ResourceGroup
+	111, // 194: ddex.ern.v383.ReleaseDetailsByTerritory.genre:type_name -> ddex.ern.v383.Genre
+	137, // 195: ddex.ern.v383.ReleaseDetailsByTerritory.p_line:type_name -> ddex.ern.v383.PLine
+	69,  // 196: ddex.ern.v383.ReleaseDetailsByTerritory.c_line:type_name -> ddex.ern.v383.CLine
+	101, // 197: ddex.ern.v383.ReleaseDetailsByTerritory.release_date:type_name -> ddex.ern.v383.EventDate
+	101, // 198: ddex.ern.v383.ReleaseDetailsByTerritory.original_release_date:type_name -> ddex.ern.v383.EventDate
+	101, // 199: ddex.ern.v383.ReleaseDetailsByTerritory.original_digital_release_date:type_name -> ddex.ern.v383.EventDate
+	120, // 200: ddex.ern.v383.ReleaseDetailsByTerritory.keywords:type_name -> ddex.ern.v383.Keywords
+	193, // 201: ddex.ern.v383.ReleaseDetailsByTerritory.synopsis:type_name -> ddex.ern.v383.Synopsis
+	72,  // 202: ddex.ern.v383.ReleaseDetailsByTerritory.character:type_name -> ddex.ern.v383.Character
+	62,  // 203: ddex.ern.v383.ReleaseDetailsByTerritory.display_conductor:type_name -> ddex.ern.v383.Artist
+	94,  // 204: ddex.ern.v383.ReleaseDetailsByTerritory.territory_code:type_name -> ddex.ern.v383.CurrentTerritoryCode
+	94,  // 205: ddex.ern.v383.ReleaseDetailsByTerritory.excluded_territory_code:type_name -> ddex.ern.v383.CurrentTerritoryCode
+	97,  // 206: ddex.ern.v383.ReleaseDetailsByTerritory.file_availability_description:type_name -> ddex.ern.v383.Description
+	107, // 207: ddex.ern.v383.ReleaseDetailsByTerritory.file:type_name -> ddex.ern.v383.File
+	30,  // 208: ddex.ern.v383.ReleaseList.release:type_name -> ddex.ern.v383.Release
+	199, // 209: ddex.ern.v383.ResourceGroup.title:type_name -> ddex.ern.v383.Title
+	62,  // 210: ddex.ern.v383.ResourceGroup.display_artist:type_name -> ddex.ern.v383.Artist
+	62,  // 211: ddex.ern.v383.ResourceGroup.display_conductor:type_name -> ddex.ern.v383.Artist
+	62,  // 212: ddex.ern.v383.ResourceGroup.display_composer:type_name -> ddex.ern.v383.Artist
+	98,  // 213: ddex.ern.v383.ResourceGroup.resource_contributor:type_name -> ddex.ern.v383.DetailedResourceContributor
+	119, // 214: ddex.ern.v383.ResourceGroup.indirect_resource_contributor:type_name -> ddex.ern.v383.IndirectResourceContributor
+	70,  // 215: ddex.ern.v383.ResourceGroup.carrier_type:type_name -> ddex.ern.v383.CarrierType
+	34,  // 216: ddex.ern.v383.ResourceGroup.resource_group:type_name -> ddex.ern.v383.ResourceGroup
+	103, // 217: ddex.ern.v383.ResourceGroup.resource_group_content_item:type_name -> ddex.ern.v383.ExtendedResourceGroupContentItem
+	168, // 218: ddex.ern.v383.ResourceGroup.resource_group_resource_reference_list:type_name -> ddex.ern.v383.ResourceGroupResourceReferenceList
+	158, // 219: ddex.ern.v383.ResourceGroup.release_id:type_name -> ddex.ern.v383.ReleaseId
+	41,  // 220: ddex.ern.v383.ResourceList.sound_recording:type_name -> ddex.ern.v383.SoundRecording
+	23,  // 221: ddex.ern.v383.ResourceList.m_i_d_i:type_name -> ddex.ern.v383.MIDI
+	57,  // 222: ddex.ern.v383.ResourceList.video:type_name -> ddex.ern.v383.Video
+	21,  // 223: ddex.ern.v383.ResourceList.image:type_name -> ddex.ern.v383.Image
+	52,  // 224: ddex.ern.v383.ResourceList.text:type_name -> ddex.ern.v383.Text
+	37,  // 225: ddex.ern.v383.ResourceList.sheet_music:type_name -> ddex.ern.v383.SheetMusic
+	39,  // 226: ddex.ern.v383.ResourceList.software:type_name -> ddex.ern.v383.Software
+	55,  // 227: ddex.ern.v383.ResourceList.user_defined_resource:type_name -> ddex.ern.v383.UserDefinedResource
+	202, // 228: ddex.ern.v383.ResourceUsage.usage:type_name -> ddex.ern.v383.Usage
+	184, // 229: ddex.ern.v383.SheetMusic.sheet_music_type:type_name -> ddex.ern.v383.SheetMusicType
+	183, // 230: ddex.ern.v383.SheetMusic.sheet_music_id:type_name -> ddex.ern.v383.SheetMusicId
+	133, // 231: ddex.ern.v383.SheetMusic.indirect_sheet_music_id:type_name -> ddex.ern.v383.MusicalWorkId
+	176, // 232: ddex.ern.v383.SheetMusic.rights_agreement_id:type_name -> ddex.ern.v383.RightsAgreementId
+	170, // 233: ddex.ern.v383.SheetMusic.resource_musical_work_reference_list:type_name -> ddex.ern.v383.ResourceMusicalWorkReferenceList
+	165, // 234: ddex.ern.v383.SheetMusic.resource_contained_resource_reference_list:type_name -> ddex.ern.v383.ResourceContainedResourceReferenceList
+	154, // 235: ddex.ern.v383.SheetMusic.reference_title:type_name -> ddex.ern.v383.ReferenceTitle
+	101, // 236: ddex.ern.v383.SheetMusic.creation_date:type_name -> ddex.ern.v383.EventDate
+	38,  // 237: ddex.ern.v383.SheetMusic.sheet_music_details_by_territory:type_name -> ddex.ern.v383.SheetMusicDetailsByTerritory
+	199, // 238: ddex.ern.v383.SheetMusicDetailsByTerritory.title:type_name -> ddex.ern.v383.Title
+	98,  // 239: ddex.ern.v383.SheetMusicDetailsByTerritory.resource_contributor:type_name -> ddex.ern.v383.DetailedResourceContributor
+	119, // 240: ddex.ern.v383.SheetMusicDetailsByTerritory.indirect_resource_contributor:type_name -> ddex.ern.v383.IndirectResourceContributor
+	135, // 241: ddex.ern.v383.SheetMusicDetailsByTerritory.display_artist_name:type_name -> ddex.ern.v383.Name
+	69,  // 242: ddex.ern.v383.SheetMusicDetailsByTerritory.c_line:type_name -> ddex.ern.v383.CLine
+	85,  // 243: ddex.ern.v383.SheetMusicDetailsByTerritory.courtesy_line:type_name -> ddex.ern.v383.CourtesyLine
+	101, // 244: ddex.ern.v383.SheetMusicDetailsByTerritory.resource_release_date:type_name -> ddex.ern.v383.EventDate
+	101, // 245: ddex.ern.v383.SheetMusicDetailsByTerritory.original_resource_release_date:type_name -> ddex.ern.v383.EventDate
+	110, // 246: ddex.ern.v383.SheetMusicDetailsByTerritory.fulfillment_date:type_name -> ddex.ern.v383.FulfillmentDate
+	111, // 247: ddex.ern.v383.SheetMusicDetailsByTerritory.genre:type_name -> ddex.ern.v383.Genre
+	138, // 248: ddex.ern.v383.SheetMusicDetailsByTerritory.parental_warning_type:type_name -> ddex.ern.v383.ParentalWarningType
+	46,  // 249: ddex.ern.v383.SheetMusicDetailsByTerritory.technical_sheet_music_details:type_name -> ddex.ern.v383.TechnicalSheetMusicDetails
+	94,  // 250: ddex.ern.v383.SheetMusicDetailsByTerritory.territory_code:type_name -> ddex.ern.v383.CurrentTerritoryCode
+	94,  // 251: ddex.ern.v383.SheetMusicDetailsByTerritory.excluded_territory_code:type_name -> ddex.ern.v383.CurrentTerritoryCode
+	186, // 252: ddex.ern.v383.Software.software_type:type_name -> ddex.ern.v383.SoftwareType
+	172, // 253: ddex.ern.v383.Software.software_id:type_name -> ddex.ern.v383.ResourceProprietaryId
+	133, // 254: ddex.ern.v383.Software.indirect_software_id:type_name -> ddex.ern.v383.MusicalWorkId
+	170, // 255: ddex.ern.v383.Software.resource_musical_work_reference_list:type_name -> ddex.ern.v383.ResourceMusicalWorkReferenceList
+	165, // 256: ddex.ern.v383.Software.resource_contained_resource_reference_list:type_name -> ddex.ern.v383.ResourceContainedResourceReferenceList
+	199, // 257: ddex.ern.v383.Software.title:type_name -> ddex.ern.v383.Title
+	101, // 258: ddex.ern.v383.Software.creation_date:type_name -> ddex.ern.v383.EventDate
+	40,  // 259: ddex.ern.v383.Software.software_details_by_territory:type_name -> ddex.ern.v383.SoftwareDetailsByTerritory
+	199, // 260: ddex.ern.v383.SoftwareDetailsByTerritory.title:type_name -> ddex.ern.v383.Title
+	98,  // 261: ddex.ern.v383.SoftwareDetailsByTerritory.resource_contributor:type_name -> ddex.ern.v383.DetailedResourceContributor
+	119, // 262: ddex.ern.v383.SoftwareDetailsByTerritory.indirect_resource_contributor:type_name -> ddex.ern.v383.IndirectResourceContributor
+	135, // 263: ddex.ern.v383.SoftwareDetailsByTerritory.display_artist_name:type_name -> ddex.ern.v383.Name
+	137, // 264: ddex.ern.v383.SoftwareDetailsByTerritory.p_line:type_name -> ddex.ern.v383.PLine
+	69,  // 265: ddex.ern.v383.SoftwareDetailsByTerritory.c_line:type_name -> ddex.ern.v383.CLine
+	85,  // 266: ddex.ern.v383.SoftwareDetailsByTerritory.courtesy_line:type_name -> ddex.ern.v383.CourtesyLine
+	101, // 267: ddex.ern.v383.SoftwareDetailsByTerritory.resource_release_date:type_name -> ddex.ern.v383.EventDate
+	101, // 268: ddex.ern.v383.SoftwareDetailsByTerritory.original_resource_release_date:type_name -> ddex.ern.v383.EventDate
+	110, // 269: ddex.ern.v383.SoftwareDetailsByTerritory.fulfillment_date:type_name -> ddex.ern.v383.FulfillmentDate
+	120, // 270: ddex.ern.v383.SoftwareDetailsByTerritory.keywords:type_name -> ddex.ern.v383.Keywords
+	193, // 271: ddex.ern.v383.SoftwareDetailsByTerritory.synopsis:type_name -> ddex.ern.v383.Synopsis
+	111, // 272: ddex.ern.v383.SoftwareDetailsByTerritory.genre:type_name -> ddex.ern.v383.Genre
+	138, // 273: ddex.ern.v383.SoftwareDetailsByTerritory.parental_warning_type:type_name -> ddex.ern.v383.ParentalWarningType
+	47,  // 274: ddex.ern.v383.SoftwareDetailsByTerritory.technical_software_details:type_name -> ddex.ern.v383.TechnicalSoftwareDetails
+	94,  // 275: ddex.ern.v383.SoftwareDetailsByTerritory.territory_code:type_name -> ddex.ern.v383.CurrentTerritoryCode
+	94,  // 276: ddex.ern.v383.SoftwareDetailsByTerritory.excluded_territory_code:type_name -> ddex.ern.v383.CurrentTerritoryCode
+	191, // 277: ddex.ern.v383.SoundRecording.sound_recording_type:type_name -> ddex.ern.v383.SoundRecordingType
+	190, // 278: ddex.ern.v383.SoundRecording.sound_recording_id:type_name -> ddex.ern.v383.SoundRecordingId
+	133, // 279: ddex.ern.v383.SoundRecording.indirect_sound_recording_id:type_name -> ddex.ern.v383.MusicalWorkId
+	154, // 280: ddex.ern.v383.SoundRecording.reference_title:type_name -> ddex.ern.v383.ReferenceTitle
+	97,  // 281: ddex.ern.v383.SoundRecording.instrumentation_description:type_name -> ddex.ern.v383.Description
+	176, // 282: ddex.ern.v383.SoundRecording.rights_agreement_id:type_name -> ddex.ern.v383.RightsAgreementId
+	189, // 283: ddex.ern.v383.SoundRecording.sound_recording_collection_reference_list:type_name -> ddex.ern.v383.SoundRecordingCollectionReferenceList
+	170, // 284: ddex.ern.v383.SoundRecording.resource_musical_work_reference_list:type_name -> ddex.ern.v383.ResourceMusicalWorkReferenceList
+	165, // 285: ddex.ern.v383.SoundRecording.resource_contained_resource_reference_list:type_name -> ddex.ern.v383.ResourceContainedResourceReferenceList
+	101, // 286: ddex.ern.v383.SoundRecording.creation_date:type_name -> ddex.ern.v383.EventDate
+	101, // 287: ddex.ern.v383.SoundRecording.mastered_date:type_name -> ddex.ern.v383.EventDate
+	101, // 288: ddex.ern.v383.SoundRecording.remastered_date:type_name -> ddex.ern.v383.EventDate
+	42,  // 289: ddex.ern.v383.SoundRecording.sound_recording_details_by_territory:type_name -> ddex.ern.v383.SoundRecordingDetailsByTerritory
+	61,  // 290: ddex.ern.v383.SoundRecording.territory_of_commissioning:type_name -> ddex.ern.v383.AllTerritoryCode
+	199, // 291: ddex.ern.v383.SoundRecordingDetailsByTerritory.title:type_name -> ddex.ern.v383.Title
+	62,  // 292: ddex.ern.v383.SoundRecordingDetailsByTerritory.display_artist:type_name -> ddex.ern.v383.Artist
+	62,  // 293: ddex.ern.v383.SoundRecordingDetailsByTerritory.display_conductor:type_name -> ddex.ern.v383.Artist
+	98,  // 294: ddex.ern.v383.SoundRecordingDetailsByTerritory.resource_contributor:type_name -> ddex.ern.v383.DetailedResourceContributor
+	119, // 295: ddex.ern.v383.SoundRecordingDetailsByTerritory.indirect_resource_contributor:type_name -> ddex.ern.v383.IndirectResourceContributor
+	176, // 296: ddex.ern.v383.SoundRecordingDetailsByTerritory.rights_agreement_id:type_name -> ddex.ern.v383.RightsAgreementId
+	135, // 297: ddex.ern.v383.SoundRecordingDetailsByTerritory.display_artist_name:type_name -> ddex.ern.v383.Name
+	121, // 298: ddex.ern.v383.SoundRecordingDetailsByTerritory.label_name:type_name -> ddex.ern.v383.LabelName
+	54,  // 299: ddex.ern.v383.SoundRecordingDetailsByTerritory.rights_controller:type_name -> ddex.ern.v383.TypedRightsController
+	101, // 300: ddex.ern.v383.SoundRecordingDetailsByTerritory.remastered_date:type_name -> ddex.ern.v383.EventDate
+	101, // 301: ddex.ern.v383.SoundRecordingDetailsByTerritory.resource_release_date:type_name -> ddex.ern.v383.EventDate
+	101, // 302: ddex.ern.v383.SoundRecordingDetailsByTerritory.original_resource_release_date:type_name -> ddex.ern.v383.EventDate
+	137, // 303: ddex.ern.v383.SoundRecordingDetailsByTerritory.p_line:type_name -> ddex.ern.v383.PLine
+	85,  // 304: ddex.ern.v383.SoundRecordingDetailsByTerritory.courtesy_line:type_name -> ddex.ern.v383.CourtesyLine
+	115, // 305: ddex.ern.v383.SoundRecordingDetailsByTerritory.host_sound_carrier:type_name -> ddex.ern.v383.HostSoundCarrier
+	79,  // 306: ddex.ern.v383.SoundRecordingDetailsByTerritory.marketing_comment:type_name -> ddex.ern.v383.Comment
+	111, // 307: ddex.ern.v383.SoundRecordingDetailsByTerritory.genre:type_name -> ddex.ern.v383.Genre
+	138, // 308: ddex.ern.v383.SoundRecordingDetailsByTerritory.parental_warning_type:type_name -> ddex.ern.v383.ParentalWarningType
+	67,  // 309: ddex.ern.v383.SoundRecordingDetailsByTerritory.av_rating:type_name -> ddex.ern.v383.AvRating
+	48,  // 310: ddex.ern.v383.SoundRecordingDetailsByTerritory.technical_sound_recording_details:type_name -> ddex.ern.v383.TechnicalSoundRecordingDetails
+	110, // 311: ddex.ern.v383.SoundRecordingDetailsByTerritory.fulfillment_date:type_name -> ddex.ern.v383.FulfillmentDate
+	120, // 312: ddex.ern.v383.SoundRecordingDetailsByTerritory.keywords:type_name -> ddex.ern.v383.Keywords
+	193, // 313: ddex.ern.v383.SoundRecordingDetailsByTerritory.synopsis:type_name -> ddex.ern.v383.Synopsis
+	94,  // 314: ddex.ern.v383.SoundRecordingDetailsByTerritory.territory_code:type_name -> ddex.ern.v383.CurrentTerritoryCode
+	94,  // 315: ddex.ern.v383.SoundRecordingDetailsByTerritory.excluded_territory_code:type_name -> ddex.ern.v383.CurrentTerritoryCode
+	97,  // 316: ddex.ern.v383.SoundRecordingPreviewDetails.part_type:type_name -> ddex.ern.v383.Description
+	100, // 317: ddex.ern.v383.TechnicalImageDetails.drm_platform_type:type_name -> ddex.ern.v383.DrmPlatformType
+	84,  // 318: ddex.ern.v383.TechnicalImageDetails.container_format:type_name -> ddex.ern.v383.ContainerFormat
+	117, // 319: ddex.ern.v383.TechnicalImageDetails.image_codec_type:type_name -> ddex.ern.v383.ImageCodecType
+	104, // 320: ddex.ern.v383.TechnicalImageDetails.image_height:type_name -> ddex.ern.v383.Extent
+	104, // 321: ddex.ern.v383.TechnicalImageDetails.image_width:type_name -> ddex.ern.v383.Extent
+	65,  // 322: ddex.ern.v383.TechnicalImageDetails.aspect_ratio:type_name -> ddex.ern.v383.AspectRatio
+	26,  // 323: ddex.ern.v383.TechnicalImageDetails.preview_details:type_name -> ddex.ern.v383.PreviewDetails
+	110, // 324: ddex.ern.v383.TechnicalImageDetails.fulfillment_date:type_name -> ddex.ern.v383.FulfillmentDate
+	110, // 325: ddex.ern.v383.TechnicalImageDetails.consumer_fulfillment_date:type_name -> ddex.ern.v383.FulfillmentDate
+	20,  // 326: ddex.ern.v383.TechnicalImageDetails.fingerprint:type_name -> ddex.ern.v383.Fingerprint
+	97,  // 327: ddex.ern.v383.TechnicalImageDetails.file_availability_description:type_name -> ddex.ern.v383.Description
+	107, // 328: ddex.ern.v383.TechnicalImageDetails.file:type_name -> ddex.ern.v383.File
+	43,  // 329: ddex.ern.v383.TechnicalMidiDetails.preview_details:type_name -> ddex.ern.v383.SoundRecordingPreviewDetails
+	110, // 330: ddex.ern.v383.TechnicalMidiDetails.fulfillment_date:type_name -> ddex.ern.v383.FulfillmentDate
+	110, // 331: ddex.ern.v383.TechnicalMidiDetails.consumer_fulfillment_date:type_name -> ddex.ern.v383.FulfillmentDate
+	187, // 332: ddex.ern.v383.TechnicalMidiDetails.sound_processor_type:type_name -> ddex.ern.v383.SoundProcessorType
+	20,  // 333: ddex.ern.v383.TechnicalMidiDetails.fingerprint:type_name -> ddex.ern.v383.Fingerprint
+	97,  // 334: ddex.ern.v383.TechnicalMidiDetails.file_availability_description:type_name -> ddex.ern.v383.Description
+	107, // 335: ddex.ern.v383.TechnicalMidiDetails.file:type_name -> ddex.ern.v383.File
+	100, // 336: ddex.ern.v383.TechnicalSheetMusicDetails.drm_platform_type:type_name -> ddex.ern.v383.DrmPlatformType
+	84,  // 337: ddex.ern.v383.TechnicalSheetMusicDetails.container_format:type_name -> ddex.ern.v383.ContainerFormat
+	182, // 338: ddex.ern.v383.TechnicalSheetMusicDetails.sheet_music_codec_type:type_name -> ddex.ern.v383.SheetMusicCodecType
+	26,  // 339: ddex.ern.v383.TechnicalSheetMusicDetails.preview_details:type_name -> ddex.ern.v383.PreviewDetails
+	110, // 340: ddex.ern.v383.TechnicalSheetMusicDetails.fulfillment_date:type_name -> ddex.ern.v383.FulfillmentDate
+	110, // 341: ddex.ern.v383.TechnicalSheetMusicDetails.consumer_fulfillment_date:type_name -> ddex.ern.v383.FulfillmentDate
+	20,  // 342: ddex.ern.v383.TechnicalSheetMusicDetails.fingerprint:type_name -> ddex.ern.v383.Fingerprint
+	97,  // 343: ddex.ern.v383.TechnicalSheetMusicDetails.file_availability_description:type_name -> ddex.ern.v383.Description
+	107, // 344: ddex.ern.v383.TechnicalSheetMusicDetails.file:type_name -> ddex.ern.v383.File
+	100, // 345: ddex.ern.v383.TechnicalSoftwareDetails.drm_platform_type:type_name -> ddex.ern.v383.DrmPlatformType
+	136, // 346: ddex.ern.v383.TechnicalSoftwareDetails.operating_system_type:type_name -> ddex.ern.v383.OperatingSystemType
+	26,  // 347: ddex.ern.v383.TechnicalSoftwareDetails.preview_details:type_name -> ddex.ern.v383.PreviewDetails
+	110, // 348: ddex.ern.v383.TechnicalSoftwareDetails.fulfillment_date:type_name -> ddex.ern.v383.FulfillmentDate
+	110, // 349: ddex.ern.v383.TechnicalSoftwareDetails.consumer_fulfillment_date:type_name -> ddex.ern.v383.FulfillmentDate
+	20,  // 350: ddex.ern.v383.TechnicalSoftwareDetails.fingerprint:type_name -> ddex.ern.v383.Fingerprint
+	97,  // 351: ddex.ern.v383.TechnicalSoftwareDetails.file_availability_description:type_name -> ddex.ern.v383.Description
+	107, // 352: ddex.ern.v383.TechnicalSoftwareDetails.file:type_name -> ddex.ern.v383.File
+	100, // 353: ddex.ern.v383.TechnicalSoundRecordingDetails.drm_platform_type:type_name -> ddex.ern.v383.DrmPlatformType
+	84,  // 354: ddex.ern.v383.TechnicalSoundRecordingDetails.container_format:type_name -> ddex.ern.v383.ContainerFormat
+	66,  // 355: ddex.ern.v383.TechnicalSoundRecordingDetails.audio_codec_type:type_name -> ddex.ern.v383.AudioCodecType
+	68,  // 356: ddex.ern.v383.TechnicalSoundRecordingDetails.bit_rate:type_name -> ddex.ern.v383.BitRate
+	181, // 357: ddex.ern.v383.TechnicalSoundRecordingDetails.sampling_rate:type_name -> ddex.ern.v383.SamplingRate
+	43,  // 358: ddex.ern.v383.TechnicalSoundRecordingDetails.preview_details:type_name -> ddex.ern.v383.SoundRecordingPreviewDetails
+	110, // 359: ddex.ern.v383.TechnicalSoundRecordingDetails.fulfillment_date:type_name -> ddex.ern.v383.FulfillmentDate
+	110, // 360: ddex.ern.v383.TechnicalSoundRecordingDetails.consumer_fulfillment_date:type_name -> ddex.ern.v383.FulfillmentDate
+	20,  // 361: ddex.ern.v383.TechnicalSoundRecordingDetails.fingerprint:type_name -> ddex.ern.v383.Fingerprint
+	97,  // 362: ddex.ern.v383.TechnicalSoundRecordingDetails.file_availability_description:type_name -> ddex.ern.v383.Description
+	107, // 363: ddex.ern.v383.TechnicalSoundRecordingDetails.file:type_name -> ddex.ern.v383.File
+	100, // 364: ddex.ern.v383.TechnicalTextDetails.drm_platform_type:type_name -> ddex.ern.v383.DrmPlatformType
+	84,  // 365: ddex.ern.v383.TechnicalTextDetails.container_format:type_name -> ddex.ern.v383.ContainerFormat
+	196, // 366: ddex.ern.v383.TechnicalTextDetails.text_codec_type:type_name -> ddex.ern.v383.TextCodecType
+	26,  // 367: ddex.ern.v383.TechnicalTextDetails.preview_details:type_name -> ddex.ern.v383.PreviewDetails
+	110, // 368: ddex.ern.v383.TechnicalTextDetails.fulfillment_date:type_name -> ddex.ern.v383.FulfillmentDate
+	110, // 369: ddex.ern.v383.TechnicalTextDetails.consumer_fulfillment_date:type_name -> ddex.ern.v383.FulfillmentDate
+	20,  // 370: ddex.ern.v383.TechnicalTextDetails.fingerprint:type_name -> ddex.ern.v383.Fingerprint
+	97,  // 371: ddex.ern.v383.TechnicalTextDetails.file_availability_description:type_name -> ddex.ern.v383.Description
+	107, // 372: ddex.ern.v383.TechnicalTextDetails.file:type_name -> ddex.ern.v383.File
+	205, // 373: ddex.ern.v383.TechnicalUserDefinedResourceDetails.user_defined_value:type_name -> ddex.ern.v383.UserDefinedValue
+	26,  // 374: ddex.ern.v383.TechnicalUserDefinedResourceDetails.preview_details:type_name -> ddex.ern.v383.PreviewDetails
+	110, // 375: ddex.ern.v383.TechnicalUserDefinedResourceDetails.fulfillment_date:type_name -> ddex.ern.v383.FulfillmentDate
+	110, // 376: ddex.ern.v383.TechnicalUserDefinedResourceDetails.consumer_fulfillment_date:type_name -> ddex.ern.v383.FulfillmentDate
+	20,  // 377: ddex.ern.v383.TechnicalUserDefinedResourceDetails.fingerprint:type_name -> ddex.ern.v383.Fingerprint
+	97,  // 378: ddex.ern.v383.TechnicalUserDefinedResourceDetails.file_availability_description:type_name -> ddex.ern.v383.Description
+	107, // 379: ddex.ern.v383.TechnicalUserDefinedResourceDetails.file:type_name -> ddex.ern.v383.File
+	100, // 380: ddex.ern.v383.TechnicalVideoDetails.drm_platform_type:type_name -> ddex.ern.v383.DrmPlatformType
+	68,  // 381: ddex.ern.v383.TechnicalVideoDetails.overall_bit_rate:type_name -> ddex.ern.v383.BitRate
+	84,  // 382: ddex.ern.v383.TechnicalVideoDetails.container_format:type_name -> ddex.ern.v383.ContainerFormat
+	207, // 383: ddex.ern.v383.TechnicalVideoDetails.video_codec_type:type_name -> ddex.ern.v383.VideoCodecType
+	68,  // 384: ddex.ern.v383.TechnicalVideoDetails.video_bit_rate:type_name -> ddex.ern.v383.BitRate
+	109, // 385: ddex.ern.v383.TechnicalVideoDetails.frame_rate:type_name -> ddex.ern.v383.FrameRate
+	104, // 386: ddex.ern.v383.TechnicalVideoDetails.image_height:type_name -> ddex.ern.v383.Extent
+	104, // 387: ddex.ern.v383.TechnicalVideoDetails.image_width:type_name -> ddex.ern.v383.Extent
+	65,  // 388: ddex.ern.v383.TechnicalVideoDetails.aspect_ratio:type_name -> ddex.ern.v383.AspectRatio
+	66,  // 389: ddex.ern.v383.TechnicalVideoDetails.audio_codec_type:type_name -> ddex.ern.v383.AudioCodecType
+	68,  // 390: ddex.ern.v383.TechnicalVideoDetails.audio_bit_rate:type_name -> ddex.ern.v383.BitRate
+	181, // 391: ddex.ern.v383.TechnicalVideoDetails.audio_sampling_rate:type_name -> ddex.ern.v383.SamplingRate
+	43,  // 392: ddex.ern.v383.TechnicalVideoDetails.preview_details:type_name -> ddex.ern.v383.SoundRecordingPreviewDetails
+	110, // 393: ddex.ern.v383.TechnicalVideoDetails.fulfillment_date:type_name -> ddex.ern.v383.FulfillmentDate
+	110, // 394: ddex.ern.v383.TechnicalVideoDetails.consumer_fulfillment_date:type_name -> ddex.ern.v383.FulfillmentDate
+	20,  // 395: ddex.ern.v383.TechnicalVideoDetails.fingerprint:type_name -> ddex.ern.v383.Fingerprint
+	97,  // 396: ddex.ern.v383.TechnicalVideoDetails.file_availability_description:type_name -> ddex.ern.v383.Description
+	107, // 397: ddex.ern.v383.TechnicalVideoDetails.file:type_name -> ddex.ern.v383.File
+	198, // 398: ddex.ern.v383.Text.text_type:type_name -> ddex.ern.v383.TextType
+	197, // 399: ddex.ern.v383.Text.text_id:type_name -> ddex.ern.v383.TextId
+	133, // 400: ddex.ern.v383.Text.indirect_text_id:type_name -> ddex.ern.v383.MusicalWorkId
+	170, // 401: ddex.ern.v383.Text.resource_musical_work_reference_list:type_name -> ddex.ern.v383.ResourceMusicalWorkReferenceList
+	165, // 402: ddex.ern.v383.Text.resource_contained_resource_reference_list:type_name -> ddex.ern.v383.ResourceContainedResourceReferenceList
+	199, // 403: ddex.ern.v383.Text.title:type_name -> ddex.ern.v383.Title
+	101, // 404: ddex.ern.v383.Text.creation_date:type_name -> ddex.ern.v383.EventDate
+	53,  // 405: ddex.ern.v383.Text.text_details_by_territory:type_name -> ddex.ern.v383.TextDetailsByTerritory
+	199, // 406: ddex.ern.v383.TextDetailsByTerritory.title:type_name -> ddex.ern.v383.Title
+	98,  // 407: ddex.ern.v383.TextDetailsByTerritory.resource_contributor:type_name -> ddex.ern.v383.DetailedResourceContributor
+	119, // 408: ddex.ern.v383.TextDetailsByTerritory.indirect_resource_contributor:type_name -> ddex.ern.v383.IndirectResourceContributor
+	135, // 409: ddex.ern.v383.TextDetailsByTerritory.display_artist_name:type_name -> ddex.ern.v383.Name
+	69,  // 410: ddex.ern.v383.TextDetailsByTerritory.c_line:type_name -> ddex.ern.v383.CLine
+	85,  // 411: ddex.ern.v383.TextDetailsByTerritory.courtesy_line:type_name -> ddex.ern.v383.CourtesyLine
+	101, // 412: ddex.ern.v383.TextDetailsByTerritory.resource_release_date:type_name -> ddex.ern.v383.EventDate
+	101, // 413: ddex.ern.v383.TextDetailsByTerritory.original_resource_release_date:type_name -> ddex.ern.v383.EventDate
+	110, // 414: ddex.ern.v383.TextDetailsByTerritory.fulfillment_date:type_name -> ddex.ern.v383.FulfillmentDate
+	120, // 415: ddex.ern.v383.TextDetailsByTerritory.keywords:type_name -> ddex.ern.v383.Keywords
+	193, // 416: ddex.ern.v383.TextDetailsByTerritory.synopsis:type_name -> ddex.ern.v383.Synopsis
+	111, // 417: ddex.ern.v383.TextDetailsByTerritory.genre:type_name -> ddex.ern.v383.Genre
+	138, // 418: ddex.ern.v383.TextDetailsByTerritory.parental_warning_type:type_name -> ddex.ern.v383.ParentalWarningType
+	49,  // 419: ddex.ern.v383.TextDetailsByTerritory.technical_text_details:type_name -> ddex.ern.v383.TechnicalTextDetails
+	94,  // 420: ddex.ern.v383.TextDetailsByTerritory.territory_code:type_name -> ddex.ern.v383.CurrentTerritoryCode
+	94,  // 421: ddex.ern.v383.TextDetailsByTerritory.excluded_territory_code:type_name -> ddex.ern.v383.CurrentTerritoryCode
+	61,  // 422: ddex.ern.v383.TypedRightsController.territory_of_registration:type_name -> ddex.ern.v383.AllTerritoryCode
+	140, // 423: ddex.ern.v383.TypedRightsController.party_id:type_name -> ddex.ern.v383.PartyId
+	141, // 424: ddex.ern.v383.TypedRightsController.party_name:type_name -> ddex.ern.v383.PartyName
+	142, // 425: ddex.ern.v383.TypedRightsController.right_share_percentage:type_name -> ddex.ern.v383.Percentage
+	204, // 426: ddex.ern.v383.UserDefinedResource.user_defined_resource_type:type_name -> ddex.ern.v383.UserDefinedResourceType
+	172, // 427: ddex.ern.v383.UserDefinedResource.user_defined_resource_id:type_name -> ddex.ern.v383.ResourceProprietaryId
+	133, // 428: ddex.ern.v383.UserDefinedResource.indirect_user_defined_resource_id:type_name -> ddex.ern.v383.MusicalWorkId
+	170, // 429: ddex.ern.v383.UserDefinedResource.resource_musical_work_reference_list:type_name -> ddex.ern.v383.ResourceMusicalWorkReferenceList
+	165, // 430: ddex.ern.v383.UserDefinedResource.resource_contained_resource_reference_list:type_name -> ddex.ern.v383.ResourceContainedResourceReferenceList
+	199, // 431: ddex.ern.v383.UserDefinedResource.title:type_name -> ddex.ern.v383.Title
+	205, // 432: ddex.ern.v383.UserDefinedResource.user_defined_value:type_name -> ddex.ern.v383.UserDefinedValue
+	101, // 433: ddex.ern.v383.UserDefinedResource.creation_date:type_name -> ddex.ern.v383.EventDate
+	56,  // 434: ddex.ern.v383.UserDefinedResource.user_defined_resource_details_by_territory:type_name -> ddex.ern.v383.UserDefinedResourceDetailsByTerritory
+	199, // 435: ddex.ern.v383.UserDefinedResourceDetailsByTerritory.title:type_name -> ddex.ern.v383.Title
+	98,  // 436: ddex.ern.v383.UserDefinedResourceDetailsByTerritory.resource_contributor:type_name -> ddex.ern.v383.DetailedResourceContributor
+	119, // 437: ddex.ern.v383.UserDefinedResourceDetailsByTerritory.indirect_resource_contributor:type_name -> ddex.ern.v383.IndirectResourceContributor
+	135, // 438: ddex.ern.v383.UserDefinedResourceDetailsByTerritory.display_artist_name:type_name -> ddex.ern.v383.Name
+	205, // 439: ddex.ern.v383.UserDefinedResourceDetailsByTerritory.user_defined_value:type_name -> ddex.ern.v383.UserDefinedValue
+	137, // 440: ddex.ern.v383.UserDefinedResourceDetailsByTerritory.p_line:type_name -> ddex.ern.v383.PLine
+	69,  // 441: ddex.ern.v383.UserDefinedResourceDetailsByTerritory.c_line:type_name -> ddex.ern.v383.CLine
+	101, // 442: ddex.ern.v383.UserDefinedResourceDetailsByTerritory.resource_release_date:type_name -> ddex.ern.v383.EventDate
+	101, // 443: ddex.ern.v383.UserDefinedResourceDetailsByTerritory.original_resource_release_date:type_name -> ddex.ern.v383.EventDate
+	110, // 444: ddex.ern.v383.UserDefinedResourceDetailsByTerritory.fulfillment_date:type_name -> ddex.ern.v383.FulfillmentDate
+	120, // 445: ddex.ern.v383.UserDefinedResourceDetailsByTerritory.keywords:type_name -> ddex.ern.v383.Keywords
+	193, // 446: ddex.ern.v383.UserDefinedResourceDetailsByTerritory.synopsis:type_name -> ddex.ern.v383.Synopsis
+	111, // 447: ddex.ern.v383.UserDefinedResourceDetailsByTerritory.genre:type_name -> ddex.ern.v383.Genre
+	138, // 448: ddex.ern.v383.UserDefinedResourceDetailsByTerritory.parental_warning_type:type_name -> ddex.ern.v383.ParentalWarningType
+	50,  // 449: ddex.ern.v383.UserDefinedResourceDetailsByTerritory.technical_user_defined_resource_details:type_name -> ddex.ern.v383.TechnicalUserDefinedResourceDetails
+	94,  // 450: ddex.ern.v383.UserDefinedResourceDetailsByTerritory.territory_code:type_name -> ddex.ern.v383.CurrentTerritoryCode
+	94,  // 451: ddex.ern.v383.UserDefinedResourceDetailsByTerritory.excluded_territory_code:type_name -> ddex.ern.v383.CurrentTerritoryCode
+	210, // 452: ddex.ern.v383.Video.video_type:type_name -> ddex.ern.v383.VideoType
+	209, // 453: ddex.ern.v383.Video.video_id:type_name -> ddex.ern.v383.VideoId
+	133, // 454: ddex.ern.v383.Video.indirect_video_id:type_name -> ddex.ern.v383.MusicalWorkId
+	154, // 455: ddex.ern.v383.Video.reference_title:type_name -> ddex.ern.v383.ReferenceTitle
+	199, // 456: ddex.ern.v383.Video.title:type_name -> ddex.ern.v383.Title
+	97,  // 457: ddex.ern.v383.Video.instrumentation_description:type_name -> ddex.ern.v383.Description
+	176, // 458: ddex.ern.v383.Video.rights_agreement_id:type_name -> ddex.ern.v383.RightsAgreementId
+	189, // 459: ddex.ern.v383.Video.video_collection_reference_list:type_name -> ddex.ern.v383.SoundRecordingCollectionReferenceList
+	170, // 460: ddex.ern.v383.Video.resource_musical_work_reference_list:type_name -> ddex.ern.v383.ResourceMusicalWorkReferenceList
+	165, // 461: ddex.ern.v383.Video.resource_contained_resource_reference_list:type_name -> ddex.ern.v383.ResourceContainedResourceReferenceList
+	101, // 462: ddex.ern.v383.Video.creation_date:type_name -> ddex.ern.v383.EventDate
+	101, // 463: ddex.ern.v383.Video.mastered_date:type_name -> ddex.ern.v383.EventDate
+	101, // 464: ddex.ern.v383.Video.remastered_date:type_name -> ddex.ern.v383.EventDate
+	58,  // 465: ddex.ern.v383.Video.video_details_by_territory:type_name -> ddex.ern.v383.VideoDetailsByTerritory
+	61,  // 466: ddex.ern.v383.Video.territory_of_commissioning:type_name -> ddex.ern.v383.AllTerritoryCode
+	208, // 467: ddex.ern.v383.Video.video_cue_sheet_reference:type_name -> ddex.ern.v383.VideoCueSheetReference
+	152, // 468: ddex.ern.v383.Video.reason_for_cue_sheet_absence:type_name -> ddex.ern.v383.Reason
+	199, // 469: ddex.ern.v383.VideoDetailsByTerritory.title:type_name -> ddex.ern.v383.Title
+	62,  // 470: ddex.ern.v383.VideoDetailsByTerritory.display_artist:type_name -> ddex.ern.v383.Artist
+	62,  // 471: ddex.ern.v383.VideoDetailsByTerritory.display_conductor:type_name -> ddex.ern.v383.Artist
+	98,  // 472: ddex.ern.v383.VideoDetailsByTerritory.resource_contributor:type_name -> ddex.ern.v383.DetailedResourceContributor
+	119, // 473: ddex.ern.v383.VideoDetailsByTerritory.indirect_resource_contributor:type_name -> ddex.ern.v383.IndirectResourceContributor
+	176, // 474: ddex.ern.v383.VideoDetailsByTerritory.rights_agreement_id:type_name -> ddex.ern.v383.RightsAgreementId
+	135, // 475: ddex.ern.v383.VideoDetailsByTerritory.display_artist_name:type_name -> ddex.ern.v383.Name
+	121, // 476: ddex.ern.v383.VideoDetailsByTerritory.label_name:type_name -> ddex.ern.v383.LabelName
+	54,  // 477: ddex.ern.v383.VideoDetailsByTerritory.rights_controller:type_name -> ddex.ern.v383.TypedRightsController
+	101, // 478: ddex.ern.v383.VideoDetailsByTerritory.remastered_date:type_name -> ddex.ern.v383.EventDate
+	101, // 479: ddex.ern.v383.VideoDetailsByTerritory.resource_release_date:type_name -> ddex.ern.v383.EventDate
+	101, // 480: ddex.ern.v383.VideoDetailsByTerritory.original_resource_release_date:type_name -> ddex.ern.v383.EventDate
+	137, // 481: ddex.ern.v383.VideoDetailsByTerritory.p_line:type_name -> ddex.ern.v383.PLine
+	85,  // 482: ddex.ern.v383.VideoDetailsByTerritory.courtesy_line:type_name -> ddex.ern.v383.CourtesyLine
+	115, // 483: ddex.ern.v383.VideoDetailsByTerritory.host_sound_carrier:type_name -> ddex.ern.v383.HostSoundCarrier
+	79,  // 484: ddex.ern.v383.VideoDetailsByTerritory.marketing_comment:type_name -> ddex.ern.v383.Comment
+	111, // 485: ddex.ern.v383.VideoDetailsByTerritory.genre:type_name -> ddex.ern.v383.Genre
+	138, // 486: ddex.ern.v383.VideoDetailsByTerritory.parental_warning_type:type_name -> ddex.ern.v383.ParentalWarningType
+	67,  // 487: ddex.ern.v383.VideoDetailsByTerritory.av_rating:type_name -> ddex.ern.v383.AvRating
+	110, // 488: ddex.ern.v383.VideoDetailsByTerritory.fulfillment_date:type_name -> ddex.ern.v383.FulfillmentDate
+	120, // 489: ddex.ern.v383.VideoDetailsByTerritory.keywords:type_name -> ddex.ern.v383.Keywords
+	193, // 490: ddex.ern.v383.VideoDetailsByTerritory.synopsis:type_name -> ddex.ern.v383.Synopsis
+	69,  // 491: ddex.ern.v383.VideoDetailsByTerritory.c_line:type_name -> ddex.ern.v383.CLine
+	51,  // 492: ddex.ern.v383.VideoDetailsByTerritory.technical_video_details:type_name -> ddex.ern.v383.TechnicalVideoDetails
+	72,  // 493: ddex.ern.v383.VideoDetailsByTerritory.character:type_name -> ddex.ern.v383.Character
+	94,  // 494: ddex.ern.v383.VideoDetailsByTerritory.territory_code:type_name -> ddex.ern.v383.CurrentTerritoryCode
+	94,  // 495: ddex.ern.v383.VideoDetailsByTerritory.excluded_territory_code:type_name -> ddex.ern.v383.CurrentTerritoryCode
+	81,  // 496: ddex.ern.v383.WebPolicy.condition:type_name -> ddex.ern.v383.Condition
+	140, // 497: ddex.ern.v383.AdministratingRecordCompany.party_id:type_name -> ddex.ern.v383.PartyId
+	141, // 498: ddex.ern.v383.AdministratingRecordCompany.party_name:type_name -> ddex.ern.v383.PartyName
+	64,  // 499: ddex.ern.v383.Artist.artist_role:type_name -> ddex.ern.v383.ArtistRole
+	61,  // 500: ddex.ern.v383.Artist.nationality:type_name -> ddex.ern.v383.AllTerritoryCode
+	140, // 501: ddex.ern.v383.Artist.party_id:type_name -> ddex.ern.v383.PartyId
+	141, // 502: ddex.ern.v383.Artist.party_name:type_name -> ddex.ern.v383.PartyName
+	203, // 503: ddex.ern.v383.ArtistDelegatedUsageRights.use_type:type_name -> ddex.ern.v383.UseType
+	206, // 504: ddex.ern.v383.ArtistDelegatedUsageRights.user_interface_type:type_name -> ddex.ern.v383.UserInterfaceType
+	144, // 505: ddex.ern.v383.ArtistDelegatedUsageRights.period_of_rights_delegation:type_name -> ddex.ern.v383.Period
+	61,  // 506: ddex.ern.v383.ArtistDelegatedUsageRights.territory_of_rights_delegation:type_name -> ddex.ern.v383.AllTerritoryCode
+	151, // 507: ddex.ern.v383.AvRating.rating_agency:type_name -> ddex.ern.v383.RatingAgency
+	97,  // 508: ddex.ern.v383.AvRating.rating_scheme_description:type_name -> ddex.ern.v383.Description
+	98,  // 509: ddex.ern.v383.Character.resource_contributor:type_name -> ddex.ern.v383.DetailedResourceContributor
+	140, // 510: ddex.ern.v383.Character.party_id:type_name -> ddex.ern.v383.PartyId
+	141, // 511: ddex.ern.v383.Character.party_name:type_name -> ddex.ern.v383.PartyName
+	73,  // 512: ddex.ern.v383.CollectionCollectionReferenceList.collection_collection_reference:type_name -> ddex.ern.v383.CollectionCollectionReference
+	116, // 513: ddex.ern.v383.CollectionId.i_c_p_n:type_name -> ddex.ern.v383.ICPN
+	71,  // 514: ddex.ern.v383.CollectionId.catalog_number:type_name -> ddex.ern.v383.CatalogNumber
+	149, // 515: ddex.ern.v383.CollectionId.proprietary_id:type_name -> ddex.ern.v383.ProprietaryId
+	77,  // 516: ddex.ern.v383.CollectionWorkReferenceList.collection_work_reference:type_name -> ddex.ern.v383.CollectionWorkReference
+	71,  // 517: ddex.ern.v383.CreationId.catalog_number:type_name -> ddex.ern.v383.CatalogNumber
+	149, // 518: ddex.ern.v383.CreationId.proprietary_id:type_name -> ddex.ern.v383.ProprietaryId
+	135, // 519: ddex.ern.v383.DSP.trading_name:type_name -> ddex.ern.v383.Name
+	94,  // 520: ddex.ern.v383.DSP.territory_code:type_name -> ddex.ern.v383.CurrentTerritoryCode
+	140, // 521: ddex.ern.v383.DSP.party_id:type_name -> ddex.ern.v383.PartyId
+	141, // 522: ddex.ern.v383.DSP.party_name:type_name -> ddex.ern.v383.PartyName
+	167, // 523: ddex.ern.v383.DetailedResourceContributor.resource_contributor_role:type_name -> ddex.ern.v383.ResourceContributorRole
+	63,  // 524: ddex.ern.v383.DetailedResourceContributor.artist_delegated_usage_rights:type_name -> ddex.ern.v383.ArtistDelegatedUsageRights
+	61,  // 525: ddex.ern.v383.DetailedResourceContributor.nationality:type_name -> ddex.ern.v383.AllTerritoryCode
+	101, // 526: ddex.ern.v383.DetailedResourceContributor.date_and_place_of_birth:type_name -> ddex.ern.v383.EventDate
+	101, // 527: ddex.ern.v383.DetailedResourceContributor.date_and_place_of_death:type_name -> ddex.ern.v383.EventDate
+	64,  // 528: ddex.ern.v383.DetailedResourceContributor.primary_role:type_name -> ddex.ern.v383.ArtistRole
+	143, // 529: ddex.ern.v383.DetailedResourceContributor.performance:type_name -> ddex.ern.v383.Performance
+	112, // 530: ddex.ern.v383.DetailedResourceContributor.governing_agreement_type:type_name -> ddex.ern.v383.GoverningAgreementType
+	83,  // 531: ddex.ern.v383.DetailedResourceContributor.contact_information:type_name -> ddex.ern.v383.ContactId
+	61,  // 532: ddex.ern.v383.DetailedResourceContributor.territory_of_residency:type_name -> ddex.ern.v383.AllTerritoryCode
+	61,  // 533: ddex.ern.v383.DetailedResourceContributor.citizenship:type_name -> ddex.ern.v383.AllTerritoryCode
+	64,  // 534: ddex.ern.v383.DetailedResourceContributor.additional_roles:type_name -> ddex.ern.v383.ArtistRole
+	111, // 535: ddex.ern.v383.DetailedResourceContributor.genre:type_name -> ddex.ern.v383.Genre
+	123, // 536: ddex.ern.v383.DetailedResourceContributor.membership:type_name -> ddex.ern.v383.Membership
+	140, // 537: ddex.ern.v383.DetailedResourceContributor.party_id:type_name -> ddex.ern.v383.PartyId
+	141, // 538: ddex.ern.v383.DetailedResourceContributor.party_name:type_name -> ddex.ern.v383.PartyName
+	173, // 539: ddex.ern.v383.ExtendedResourceGroupContentItem.resource_type:type_name -> ddex.ern.v383.ResourceType
+	160, // 540: ddex.ern.v383.ExtendedResourceGroupContentItem.release_resource_reference:type_name -> ddex.ern.v383.ReleaseResourceReference
+	122, // 541: ddex.ern.v383.ExtendedResourceGroupContentItem.linked_release_resource_reference:type_name -> ddex.ern.v383.LinkedReleaseResourceReference
+	158, // 542: ddex.ern.v383.ExtendedResourceGroupContentItem.release_id:type_name -> ddex.ern.v383.ReleaseId
+	144, // 543: ddex.ern.v383.ExternalResourceLink.validity_period:type_name -> ddex.ern.v383.Period
+	106, // 544: ddex.ern.v383.ExternalResourceLink.externally_linked_resource_type:type_name -> ddex.ern.v383.ExternallyLinkedResourceType
+	113, // 545: ddex.ern.v383.File.hash_sum:type_name -> ddex.ern.v383.HashSum
+	97,  // 546: ddex.ern.v383.Genre.genre_text:type_name -> ddex.ern.v383.Description
+	97,  // 547: ddex.ern.v383.Genre.sub_genre:type_name -> ddex.ern.v383.Description
+	114, // 548: ddex.ern.v383.HashSum.hash_sum_algorithm_type:type_name -> ddex.ern.v383.HashSumAlgorithmType
+	158, // 549: ddex.ern.v383.HostSoundCarrier.release_id:type_name -> ddex.ern.v383.ReleaseId
+	176, // 550: ddex.ern.v383.HostSoundCarrier.rights_agreement_id:type_name -> ddex.ern.v383.RightsAgreementId
+	199, // 551: ddex.ern.v383.HostSoundCarrier.title:type_name -> ddex.ern.v383.Title
+	62,  // 552: ddex.ern.v383.HostSoundCarrier.display_artist:type_name -> ddex.ern.v383.Artist
+	60,  // 553: ddex.ern.v383.HostSoundCarrier.administrating_record_company:type_name -> ddex.ern.v383.AdministratingRecordCompany
+	131, // 554: ddex.ern.v383.IndirectResourceContributor.indirect_resource_contributor_role:type_name -> ddex.ern.v383.MusicalWorkContributorRole
+	0,   // 555: ddex.ern.v383.IndirectResourceContributor.nationality:type_name -> ddex.ern.v383.DdexCCurrentTerritoryCode
+	140, // 556: ddex.ern.v383.IndirectResourceContributor.party_id:type_name -> ddex.ern.v383.PartyId
+	141, // 557: ddex.ern.v383.IndirectResourceContributor.party_name:type_name -> ddex.ern.v383.PartyName
+	139, // 558: ddex.ern.v383.Membership.organization:type_name -> ddex.ern.v383.PartyDescriptor
+	125, // 559: ddex.ern.v383.MessageAuditTrail.message_audit_trail_event:type_name -> ddex.ern.v383.MessageAuditTrailEvent
+	127, // 560: ddex.ern.v383.MessageAuditTrailEvent.messaging_party_descriptor:type_name -> ddex.ern.v383.MessagingParty
+	127, // 561: ddex.ern.v383.MessageHeader.message_sender:type_name -> ddex.ern.v383.MessagingParty
+	127, // 562: ddex.ern.v383.MessageHeader.sent_on_behalf_of:type_name -> ddex.ern.v383.MessagingParty
+	127, // 563: ddex.ern.v383.MessageHeader.message_recipient:type_name -> ddex.ern.v383.MessagingParty
+	124, // 564: ddex.ern.v383.MessageHeader.message_audit_trail:type_name -> ddex.ern.v383.MessageAuditTrail
+	79,  // 565: ddex.ern.v383.MessageHeader.comment:type_name -> ddex.ern.v383.Comment
+	140, // 566: ddex.ern.v383.MessagingParty.party_id:type_name -> ddex.ern.v383.PartyId
+	141, // 567: ddex.ern.v383.MessagingParty.party_name:type_name -> ddex.ern.v383.PartyName
+	135, // 568: ddex.ern.v383.MessagingParty.trading_name:type_name -> ddex.ern.v383.Name
+	133, // 569: ddex.ern.v383.MusicalWork.musical_work_id:type_name -> ddex.ern.v383.MusicalWorkId
+	154, // 570: ddex.ern.v383.MusicalWork.reference_title:type_name -> ddex.ern.v383.ReferenceTitle
+	176, // 571: ddex.ern.v383.MusicalWork.rights_agreement_id:type_name -> ddex.ern.v383.RightsAgreementId
+	130, // 572: ddex.ern.v383.MusicalWork.musical_work_contributor:type_name -> ddex.ern.v383.MusicalWorkContributor
+	134, // 573: ddex.ern.v383.MusicalWork.musical_work_type:type_name -> ddex.ern.v383.MusicalWorkType
+	174, // 574: ddex.ern.v383.MusicalWork.right_share:type_name -> ddex.ern.v383.RightShare
+	132, // 575: ddex.ern.v383.MusicalWork.musical_work_details_by_territory:type_name -> ddex.ern.v383.MusicalWorkDetailsByTerritory
+	131, // 576: ddex.ern.v383.MusicalWorkContributor.musical_work_contributor_role:type_name -> ddex.ern.v383.MusicalWorkContributorRole
+	185, // 577: ddex.ern.v383.MusicalWorkContributor.society_affiliation:type_name -> ddex.ern.v383.SocietyAffiliation
+	140, // 578: ddex.ern.v383.MusicalWorkContributor.party_id:type_name -> ddex.ern.v383.PartyId
+	141, // 579: ddex.ern.v383.MusicalWorkContributor.party_name:type_name -> ddex.ern.v383.PartyName
+	130, // 580: ddex.ern.v383.MusicalWorkDetailsByTerritory.musical_work_contributor:type_name -> ddex.ern.v383.MusicalWorkContributor
+	135, // 581: ddex.ern.v383.MusicalWorkDetailsByTerritory.display_artist_name:type_name -> ddex.ern.v383.Name
+	94,  // 582: ddex.ern.v383.MusicalWorkDetailsByTerritory.territory_code:type_name -> ddex.ern.v383.CurrentTerritoryCode
+	94,  // 583: ddex.ern.v383.MusicalWorkDetailsByTerritory.excluded_territory_code:type_name -> ddex.ern.v383.CurrentTerritoryCode
+	149, // 584: ddex.ern.v383.MusicalWorkId.proprietary_id:type_name -> ddex.ern.v383.ProprietaryId
+	140, // 585: ddex.ern.v383.PartyDescriptor.party_id:type_name -> ddex.ern.v383.PartyId
+	141, // 586: ddex.ern.v383.PartyDescriptor.party_name:type_name -> ddex.ern.v383.PartyName
+	135, // 587: ddex.ern.v383.PartyName.full_name:type_name -> ddex.ern.v383.Name
+	135, // 588: ddex.ern.v383.PartyName.full_name_indexed:type_name -> ddex.ern.v383.Name
+	135, // 589: ddex.ern.v383.PartyName.names_before_key_name:type_name -> ddex.ern.v383.Name
+	135, // 590: ddex.ern.v383.PartyName.key_name:type_name -> ddex.ern.v383.Name
+	135, // 591: ddex.ern.v383.PartyName.names_after_key_name:type_name -> ddex.ern.v383.Name
+	135, // 592: ddex.ern.v383.PartyName.abbreviated_name:type_name -> ddex.ern.v383.Name
+	61,  // 593: ddex.ern.v383.Performance.territory:type_name -> ddex.ern.v383.AllTerritoryCode
+	101, // 594: ddex.ern.v383.Performance.date:type_name -> ddex.ern.v383.EventDate
+	101, // 595: ddex.ern.v383.Period.start_date:type_name -> ddex.ern.v383.EventDate
+	101, // 596: ddex.ern.v383.Period.end_date:type_name -> ddex.ern.v383.EventDate
+	102, // 597: ddex.ern.v383.Period.start_date_time:type_name -> ddex.ern.v383.EventDateTime
+	102, // 598: ddex.ern.v383.Period.end_date_time:type_name -> ddex.ern.v383.EventDateTime
+	200, // 599: ddex.ern.v383.ReferenceTitle.title_text:type_name -> ddex.ern.v383.TitleText
+	192, // 600: ddex.ern.v383.ReferenceTitle.sub_title:type_name -> ddex.ern.v383.SubTitle
+	158, // 601: ddex.ern.v383.RelatedRelease.release_id:type_name -> ddex.ern.v383.ReleaseId
+	154, // 602: ddex.ern.v383.RelatedRelease.reference_title:type_name -> ddex.ern.v383.ReferenceTitle
+	162, // 603: ddex.ern.v383.RelatedRelease.release_summary_details_by_territory:type_name -> ddex.ern.v383.ReleaseSummaryDetailsByTerritory
+	176, // 604: ddex.ern.v383.RelatedRelease.rights_agreement_id:type_name -> ddex.ern.v383.RightsAgreementId
+	159, // 605: ddex.ern.v383.RelatedRelease.release_relationship_type:type_name -> ddex.ern.v383.ReleaseRelationshipType
+	101, // 606: ddex.ern.v383.RelatedRelease.release_date:type_name -> ddex.ern.v383.EventDate
+	101, // 607: ddex.ern.v383.RelatedRelease.original_release_date:type_name -> ddex.ern.v383.EventDate
+	156, // 608: ddex.ern.v383.ReleaseCollectionReferenceList.release_collection_reference:type_name -> ddex.ern.v383.ReleaseCollectionReference
+	116, // 609: ddex.ern.v383.ReleaseId.i_c_p_n:type_name -> ddex.ern.v383.ICPN
+	71,  // 610: ddex.ern.v383.ReleaseId.catalog_number:type_name -> ddex.ern.v383.CatalogNumber
+	149, // 611: ddex.ern.v383.ReleaseId.proprietary_id:type_name -> ddex.ern.v383.ProprietaryId
+	160, // 612: ddex.ern.v383.ReleaseResourceReferenceList.release_resource_reference:type_name -> ddex.ern.v383.ReleaseResourceReference
+	135, // 613: ddex.ern.v383.ReleaseSummaryDetailsByTerritory.display_artist_name:type_name -> ddex.ern.v383.Name
+	121, // 614: ddex.ern.v383.ReleaseSummaryDetailsByTerritory.label_name:type_name -> ddex.ern.v383.LabelName
+	176, // 615: ddex.ern.v383.ReleaseSummaryDetailsByTerritory.rights_agreement_id:type_name -> ddex.ern.v383.RightsAgreementId
+	94,  // 616: ddex.ern.v383.ReleaseSummaryDetailsByTerritory.territory_code:type_name -> ddex.ern.v383.CurrentTerritoryCode
+	94,  // 617: ddex.ern.v383.ReleaseSummaryDetailsByTerritory.excluded_territory_code:type_name -> ddex.ern.v383.CurrentTerritoryCode
+	150, // 618: ddex.ern.v383.ResourceContainedResourceReference.purpose:type_name -> ddex.ern.v383.Purpose
+	164, // 619: ddex.ern.v383.ResourceContainedResourceReferenceList.resource_contained_resource_reference:type_name -> ddex.ern.v383.ResourceContainedResourceReference
+	167, // 620: ddex.ern.v383.ResourceContributor.resource_contributor_role:type_name -> ddex.ern.v383.ResourceContributorRole
+	140, // 621: ddex.ern.v383.ResourceContributor.party_id:type_name -> ddex.ern.v383.PartyId
+	141, // 622: ddex.ern.v383.ResourceContributor.party_name:type_name -> ddex.ern.v383.PartyName
+	169, // 623: ddex.ern.v383.ResourceMusicalWorkReferenceList.resource_musical_work_reference:type_name -> ddex.ern.v383.ResourceMusicalWorkReference
+	149, // 624: ddex.ern.v383.ResourceProprietaryId.proprietary_id:type_name -> ddex.ern.v383.ProprietaryId
+	176, // 625: ddex.ern.v383.RightShare.right_share_id:type_name -> ddex.ern.v383.RightsAgreementId
+	175, // 626: ddex.ern.v383.RightShare.right_share_creation_reference_list:type_name -> ddex.ern.v383.RightShareCreationReferenceList
+	179, // 627: ddex.ern.v383.RightShare.rights_type:type_name -> ddex.ern.v383.RightsType
+	203, // 628: ddex.ern.v383.RightShare.use_type:type_name -> ddex.ern.v383.UseType
+	206, // 629: ddex.ern.v383.RightShare.user_interface_type:type_name -> ddex.ern.v383.UserInterfaceType
+	99,  // 630: ddex.ern.v383.RightShare.distribution_channel_type:type_name -> ddex.ern.v383.DistributionChannelType
+	70,  // 631: ddex.ern.v383.RightShare.carrier_type:type_name -> ddex.ern.v383.CarrierType
+	80,  // 632: ddex.ern.v383.RightShare.commercial_model_type:type_name -> ddex.ern.v383.CommercialModelType
+	178, // 633: ddex.ern.v383.RightShare.rights_controller:type_name -> ddex.ern.v383.RightsController
+	144, // 634: ddex.ern.v383.RightShare.validity_period:type_name -> ddex.ern.v383.Period
+	194, // 635: ddex.ern.v383.RightShare.tariff_reference:type_name -> ddex.ern.v383.TariffReference
+	61,  // 636: ddex.ern.v383.RightShare.territory_code:type_name -> ddex.ern.v383.AllTerritoryCode
+	61,  // 637: ddex.ern.v383.RightShare.excluded_territory_code:type_name -> ddex.ern.v383.AllTerritoryCode
+	142, // 638: ddex.ern.v383.RightShare.right_share_percentage:type_name -> ddex.ern.v383.Percentage
+	149, // 639: ddex.ern.v383.RightsAgreementId.proprietary_id:type_name -> ddex.ern.v383.ProprietaryId
+	81,  // 640: ddex.ern.v383.RightsClaimPolicy.condition:type_name -> ddex.ern.v383.Condition
+	140, // 641: ddex.ern.v383.RightsController.party_id:type_name -> ddex.ern.v383.PartyId
+	141, // 642: ddex.ern.v383.RightsController.party_name:type_name -> ddex.ern.v383.PartyName
+	142, // 643: ddex.ern.v383.RightsController.right_share_percentage:type_name -> ddex.ern.v383.Percentage
+	158, // 644: ddex.ern.v383.SalesReportingProxyReleaseId.release_id:type_name -> ddex.ern.v383.ReleaseId
+	152, // 645: ddex.ern.v383.SalesReportingProxyReleaseId.reason:type_name -> ddex.ern.v383.Reason
+	153, // 646: ddex.ern.v383.SalesReportingProxyReleaseId.reason_type:type_name -> ddex.ern.v383.ReasonType
+	149, // 647: ddex.ern.v383.SheetMusicId.proprietary_id:type_name -> ddex.ern.v383.ProprietaryId
+	139, // 648: ddex.ern.v383.SocietyAffiliation.music_rights_society:type_name -> ddex.ern.v383.PartyDescriptor
+	61,  // 649: ddex.ern.v383.SocietyAffiliation.territory_code:type_name -> ddex.ern.v383.AllTerritoryCode
+	61,  // 650: ddex.ern.v383.SocietyAffiliation.excluded_territory_code:type_name -> ddex.ern.v383.AllTerritoryCode
+	188, // 651: ddex.ern.v383.SoundRecordingCollectionReferenceList.sound_recording_collection_reference:type_name -> ddex.ern.v383.SoundRecordingCollectionReference
+	71,  // 652: ddex.ern.v383.SoundRecordingId.catalog_number:type_name -> ddex.ern.v383.CatalogNumber
+	149, // 653: ddex.ern.v383.SoundRecordingId.proprietary_id:type_name -> ddex.ern.v383.ProprietaryId
+	68,  // 654: ddex.ern.v383.TechnicalInstantiation.bit_rate:type_name -> ddex.ern.v383.BitRate
+	149, // 655: ddex.ern.v383.TextId.proprietary_id:type_name -> ddex.ern.v383.ProprietaryId
+	200, // 656: ddex.ern.v383.Title.title_text:type_name -> ddex.ern.v383.TitleText
+	201, // 657: ddex.ern.v383.Title.sub_title:type_name -> ddex.ern.v383.TypedSubTitle
+	203, // 658: ddex.ern.v383.Usage.use_type:type_name -> ddex.ern.v383.UseType
+	206, // 659: ddex.ern.v383.Usage.user_interface_type:type_name -> ddex.ern.v383.UserInterfaceType
+	99,  // 660: ddex.ern.v383.Usage.distribution_channel_type:type_name -> ddex.ern.v383.DistributionChannelType
+	70,  // 661: ddex.ern.v383.Usage.carrier_type:type_name -> ddex.ern.v383.CarrierType
+	195, // 662: ddex.ern.v383.Usage.technical_instantiation:type_name -> ddex.ern.v383.TechnicalInstantiation
+	71,  // 663: ddex.ern.v383.VideoId.catalog_number:type_name -> ddex.ern.v383.CatalogNumber
+	149, // 664: ddex.ern.v383.VideoId.proprietary_id:type_name -> ddex.ern.v383.ProprietaryId
+	140, // 665: ddex.ern.v383.WebPage.party_id:type_name -> ddex.ern.v383.PartyId
+	158, // 666: ddex.ern.v383.WebPage.release_id:type_name -> ddex.ern.v383.ReleaseId
+	135, // 667: ddex.ern.v383.WebPage.page_name:type_name -> ddex.ern.v383.Name
+	129, // 668: ddex.ern.v383.WorkList.musical_work:type_name -> ddex.ern.v383.MusicalWork
+	669, // [669:669] is the sub-list for method output_type
+	669, // [669:669] is the sub-list for method input_type
+	669, // [669:669] is the sub-list for extension type_name
+	669, // [669:669] is the sub-list for extension extendee
+	0,   // [0:669] is the sub-list for field type_name
 }
 
 func init() { file_ddex_ern_v383_v383_proto_init() }
@@ -22170,7 +22124,7 @@ func file_ddex_ern_v383_v383_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_ddex_ern_v383_v383_proto_rawDesc), len(file_ddex_ern_v383_v383_proto_rawDesc)),
 			NumEnums:      1,
-			NumMessages:   212,
+			NumMessages:   215,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

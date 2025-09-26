@@ -25,12 +25,16 @@ var specs = []struct {
 	// Process AVS versions first so they're available for imports
 	{"avs", "latest", "allowed-value-sets.xsd"},
 	{"avs", "20200108", "avs_20200108.xsd"},
+	{"avs", "20200518", "avs20200518.xsd"},
+	{"avs", "20161006", "avs_20161006.xsd"},
 	// Then process the main specs
+	{"ern", "42", "release-notification.xsd"},
 	{"ern", "43", "release-notification.xsd"},
 	{"ern", "432", "release-notification.xsd"},
 	{"mead", "11", "media-enrichment-and-description.xsd"},
 	{"pie", "10", "party-identification-and-enrichment.xsd"},
 	{"ern", "383", "release-notification.xsd"},
+	{"ern", "381", "release-notification.xsd"},
 }
 
 //
@@ -465,7 +469,7 @@ func generateProtoForBundle(
 		if el.ComplexType != nil {
 			name := toProtoMessageName(el.Name)
 			if _, exists := generated[name]; !exists {
-				msg, wrapperTypes, err := generateComplexTypeMessageWithNamespace(el.Name, el.ComplexType, all, b.TargetNamespace, true)
+				msg, wrapperTypes, err := generateComplexTypeMessageWithNamespace(el.Name, el.ComplexType, all, b.TargetNamespace, true, b)
 				if err != nil {
 					return "", err
 				}
@@ -570,10 +574,10 @@ type WrapperType struct {
 }
 
 func generateComplexTypeMessage(name string, complexType *XSDComplexType, allPkgs map[string]protoPkgInfo) (string, []WrapperType, error) {
-	return generateComplexTypeMessageWithNamespace(name, complexType, allPkgs, "", false)
+	return generateComplexTypeMessageWithNamespace(name, complexType, allPkgs, "", false, nil)
 }
 
-func generateComplexTypeMessageWithNamespace(name string, complexType *XSDComplexType, allPkgs map[string]protoPkgInfo, targetNamespace string, isRootElement bool) (string, []WrapperType, error) {
+func generateComplexTypeMessageWithNamespace(name string, complexType *XSDComplexType, allPkgs map[string]protoPkgInfo, targetNamespace string, isRootElement bool, bundle *NamespaceBundle) (string, []WrapperType, error) {
 	var wrapperTypes []WrapperType
 	var builder strings.Builder
 
@@ -640,27 +644,10 @@ func generateComplexTypeMessageWithNamespace(name string, complexType *XSDComple
 
 	// Add namespace attributes for root elements
 	if isRootElement && targetNamespace != "" {
-		// Extract namespace prefix from target namespace URL
-		// e.g., "http://ddex.net/xml/ern/43" -> "ern"
-		namespacePrefix := extractNamespacePrefix(targetNamespace)
-
-		if namespacePrefix != "" {
-			// Add the namespace prefix attribute (e.g., xmlns:ern)
-			injectComment := fmt.Sprintf("  // @gotags: xml:\"xmlns:%s,attr\"", namespacePrefix)
-			field := fmt.Sprintf("%s\n  string xmlns_%s = %d;", injectComment, namespacePrefix, fieldNum)
-			builder.WriteString(field + "\n")
-			fieldNum++
-		}
-
-		// Add XSI namespace attribute
-		injectComment := fmt.Sprintf("  // @gotags: xml:\"xmlns:xsi,attr\"")
-		field := fmt.Sprintf("%s\n  string xmlns_xsi = %d;", injectComment, fieldNum)
-		builder.WriteString(field + "\n")
-		fieldNum++
-
-		// Add schema location attribute (this one needs xsi: prefix, not xmlns:)
-		injectComment = fmt.Sprintf("  // @gotags: xml:\"xsi:schemaLocation,attr\"")
-		field = fmt.Sprintf("%s\n  string xsi_schema_location = %d;", injectComment, fieldNum)
+		// Add namespace attributes map to capture all xmlns:* attributes
+		// Note: We handle this manually in MarshalXML/UnmarshalXML, so mark it as ignored
+		injectComment := fmt.Sprintf("  // @gotags: xml:\"-\"")
+		field := fmt.Sprintf("%s\n  map<string, string> namespace_attrs = %d;", injectComment, fieldNum)
 		builder.WriteString(field + "\n")
 		fieldNum++
 	}

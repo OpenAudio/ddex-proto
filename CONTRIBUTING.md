@@ -170,6 +170,8 @@ All contributions must include appropriate tests:
 3. **Conformance Tests**: Validate against official DDEX samples
 4. **Roundtrip Tests**: Ensure XML ↔ protobuf ↔ JSON integrity
 
+**Note**: The test framework now automatically discovers and validates all message types and versions from the `testdata/ddex/` directory structure.
+
 ### Test Guidelines
 
 - **100% test coverage** for new functionality
@@ -185,7 +187,7 @@ All contributions must include appropriate tests:
 make test
 
 # Specific test categories
-go test -v -run TestDDEXConformance ./...
+go test -v -run TestDDEX ./...                    # Auto-discovered message types
 go test -v -run TestXMLRoundTripIntegrity ./...
 go test -v -run TestFieldCompleteness ./...
 
@@ -270,6 +272,19 @@ go tool cover -html=coverage.out
 - **Schema compatibility**: New versions should be backwards compatible
 - **Official samples**: Test against real DDEX consortium samples
 - **Data integrity**: Zero tolerance for data loss during conversions
+- **Automatic testing**: New DDEX versions get comprehensive testing automatically
+
+### Adding New DDEX Versions
+
+Supporting new DDEX versions is now streamlined:
+
+1. **Add XSD schemas** to appropriate `xsd/` directory
+2. **Add test files** to `testdata/ddex/{type}/{version}/`
+3. **Update generation config** in `tools/xsd2proto/main.go`
+4. **Run generation** with `make generate`
+5. **Verify tests pass** with `make test`
+
+The test framework automatically discovers and validates new versions without code changes.
 
 ### Breaking Changes
 

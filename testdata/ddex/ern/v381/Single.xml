@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ernm:NewReleaseMessage xmlns:ernm="http://ddex.net/xml/ern/383" LanguageAndScriptCode="en"
+	ReleaseProfileVersionId="ClassicalAudioAlbum"
+	xmlns:avs="http://ddex.net/xml/avs/avs" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://ddex.net/xml/ern/383 http://ddex.net/xml/ern/383/release-notification.xsd" MessageSchemaVersionId="ern/383">
+
+	<MessageHeader>
+		<MessageThreadId>1</MessageThreadId>
+		<MessageId>1</MessageId>
+		<MessageSender>
+			<PartyId>PADPIDA67890</PartyId>
+			<PartyName>
+				<FullName>TestLabel</FullName>
+			</PartyName>
+		</MessageSender>
+		<MessageRecipient>
+			<PartyId>PADPIDA12345</PartyId>
+			<PartyName>
+				<FullName>Testpartner</FullName>
+			</PartyName>
+		</MessageRecipient>
+		<MessageCreatedDateTime>2022-04-22T01:06:36.729Z</MessageCreatedDateTime>
+		<MessageControlType>TestMessage</MessageControlType>
+	</MessageHeader>
+
+	<ResourceList>
+		<SoundRecording>
+			<SoundRecordingType>MusicalWorkSoundRecording</SoundRecordingType>
+			<SoundRecordingId>
+				<ISRC>GBBBC2200191</ISRC>
+			</SoundRecordingId>
+			<ResourceReference>A1</ResourceReference>
+			<ReferenceTitle LanguageAndScriptCode="en">
+				<TitleText>Mozart: Lucio Silla, K. 135 - Overture</TitleText>
+			</ReferenceTitle>
+			<Duration>PT7M49S</Duration>
+			<SoundRecordingDetailsByTerritory>
+				<TerritoryCode>Worldwide</TerritoryCode>
+
+				<Title LanguageAndScriptCode="en" TitleType="FormalTitle">
+					<TitleText>Mozart: Lucio Silla, K. 135 - Overture</TitleText>
+				</Title>
+				<Title LanguageAndScriptCode="en" TitleType="GroupingTitle">
+					<TitleText>Lucio Silla, K. 135</TitleText>
+				</Title>
+
+				<DisplayArtist SequenceNumber="1">
+					<PartyName LanguageAndScriptCode="it">
+						<FullName>Wiener Philharmoniker</FullName>
+						<KeyName>Wiener Philharmoniker</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-hrkt">
+						<FullName>ウィーンフィルハーモニーカンゲンガクダン</FullName>
+						<KeyName>ウィーンフィルハーモニーカンゲンガクダン</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-jpan">
+						<FullName>ウィーン・フィルハーモニー管弦楽団</FullName>
+						<KeyName>ウィーン・フィルハーモニー管弦楽団</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ko-kor">
+						<FullName>빈 필하모닉 오케스트라</FullName>
+						<KeyName>빈 필하모닉 오케스트라</KeyName>
+					</PartyName>
+					<ArtistRole>MainArtist</ArtistRole>
+					<ArtistRole>Orchestra</ArtistRole>
+				</DisplayArtist>
+				<DisplayArtist SequenceNumber="2">
+					<PartyName LanguageAndScriptCode="it">
+						<FullName>Leonard Bernstein</FullName>
+						<NamesBeforeKeyName>Leonard</NamesBeforeKeyName>
+						<KeyName>Bernstein</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-hrkt">
+						<FullName>レナードバーンスタイン</FullName>
+						<KeyName>レナードバーンスタイン</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-jpan">
+						<FullName>レナード・バーンスタイン</FullName>
+						<KeyName>レナード・バーンスタイン</KeyName>
+					</PartyName>
+					<ArtistRole>MainArtist</ArtistRole>
+					<ArtistRole>Conductor</ArtistRole>
+				</DisplayArtist>
+
+				<ResourceContributor SequenceNumber="1">
+					<PartyName LanguageAndScriptCode="it">
+						<FullName>Wiener Philharmoniker</FullName>
+						<KeyName>Wiener Philharmoniker</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-hrkt">
+						<FullName>ウィーンフィルハーモニーカンゲンガクダン</FullName>
+						<KeyName>ウィーンフィルハーモニーカンゲンガクダン</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-jpan">
+						<FullName>ウィーン・フィルハーモニー管弦楽団</FullName>
+						<KeyName>ウィーン・フィルハーモニー管弦楽団</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ko-kor">
+						<FullName>빈 필하모닉 오케스트라</FullName>
+						<KeyName>빈 필하모닉 오케스트라</KeyName>
+					</PartyName>
+					<ResourceContributorRole>Orchestra</ResourceContributorRole>
+				</ResourceContributor>
+				<ResourceContributor SequenceNumber="2">
+					<PartyName LanguageAndScriptCode="it">
+						<FullName>Leonard Bernstein</FullName>
+						<NamesBeforeKeyName>Leonard</NamesBeforeKeyName>
+						<KeyName>Bernstein</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-hrkt">
+						<FullName>レナードバーンスタイン</FullName>
+						<KeyName>レナードバーンスタイン</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-jpan">
+						<FullName>レナード・バーンスタイン</FullName>
+						<KeyName>レナード・バーンスタイン</KeyName>
+					</PartyName>
+					<ResourceContributorRole>Conductor</ResourceContributorRole>
+				</ResourceContributor>
+				<ResourceContributor SequenceNumber="3">
+					<PartyName LanguageAndScriptCode="it">
+						<FullName>Hanno Rinke</FullName>
+						<NamesBeforeKeyName>Hanno</NamesBeforeKeyName>
+						<KeyName>Rinke</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-hrkt">
+						<FullName>ハンノリンケ</FullName>
+						<KeyName>ハンノリンケ</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-jpan">
+						<FullName>ハンノ・リンケ</FullName>
+						<KeyName>ハンノ・リンケ</KeyName>
+					</PartyName>
+					<ResourceContributorRole>ExecutiveProducer</ResourceContributorRole>
+				</ResourceContributor>
+				<ResourceContributor SequenceNumber="4">
+					<PartyName LanguageAndScriptCode="it">
+						<FullName>Hans Weber</FullName>
+						<NamesBeforeKeyName>Hans</NamesBeforeKeyName>
+						<KeyName>Weber</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-hrkt">
+						<FullName>ＨａｎｓＷｅｂｅｒ</FullName>
+						<KeyName>ＨａｎｓＷｅｂｅｒ</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-jpan">
+						<FullName>Hans Weber</FullName>
+						<KeyName>Hans Weber</KeyName>
+					</PartyName>
+					<ResourceContributorRole Namespace="PADPIDA2013042401U" UserDefinedValue="Recording Producer">StudioProducer</ResourceContributorRole>
+				</ResourceContributor>
+				<ResourceContributor SequenceNumber="5">
+					<PartyName LanguageAndScriptCode="it">
+						<FullName>Klaus Scheibe</FullName>
+						<NamesBeforeKeyName>Klaus</NamesBeforeKeyName>
+						<KeyName>Scheibe</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-hrkt">
+						<FullName>ＫｌａｕｓＳｃｈｅｉｂｅ</FullName>
+						<KeyName>ＫｌａｕｓＳｃｈｅｉｂｅ</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-jpan">
+						<FullName>KLAUS SCHEIBE</FullName>
+						<KeyName>KLAUS SCHEIBE</KeyName>
+					</PartyName>
+					<ResourceContributorRole>RecordingEngineer</ResourceContributorRole>
+				</ResourceContributor>
+				<ResourceContributor SequenceNumber="6">
+					<PartyName LanguageAndScriptCode="it">
+						<FullName>Jobst Eberhardt</FullName>
+						<NamesBeforeKeyName>Jobst</NamesBeforeKeyName>
+						<KeyName>Eberhardt</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-hrkt">
+						<FullName>エバーハルト</FullName>
+						<KeyName>エバーハルト</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-jpan">
+						<FullName>Jobst Eberhardt</FullName>
+						<KeyName>Jobst Eberhardt</KeyName>
+					</PartyName>
+					<ResourceContributorRole>Editor</ResourceContributorRole>
+				</ResourceContributor>
+				<IndirectResourceContributor SequenceNumber="7">
+					<PartyName LanguageAndScriptCode="it">
+						<FullName>Joachim Niss</FullName>
+						<NamesBeforeKeyName>Joachim</NamesBeforeKeyName>
+						<KeyName>Niss</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-hrkt">
+						<FullName>Ｊｏａｃｈｉｍ　Ｎｉｓｓ</FullName>
+						<KeyName>Ｊｏａｃｈｉｍ　Ｎｉｓｓ</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-jpan">
+						<FullName>Joachim Niss</FullName>
+						<KeyName>Joachim Niss</KeyName>
+					</PartyName>
+					<IndirectResourceContributorRole>Composer</IndirectResourceContributorRole>
+				</IndirectResourceContributor>
+				<IndirectResourceContributor SequenceNumber="8">
+					<PartyName LanguageAndScriptCode="it">
+						<FullName>Klaus Behrens</FullName>
+						<NamesBeforeKeyName>Klaus</NamesBeforeKeyName>
+						<KeyName>Behrens</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-hrkt">
+						<FullName>ベーレンス</FullName>
+						<KeyName>ベーレンス</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-jpan">
+						<FullName>クラウス・ベーレンス</FullName>
+						<KeyName>クラウス・ベーレンス</KeyName>
+					</PartyName>
+					<IndirectResourceContributorRole>Author</IndirectResourceContributorRole>
+				</IndirectResourceContributor>
+				<DisplayArtistName>Filarmonica della Scala and Riccardo Chailly</DisplayArtistName>
+				<PLine>
+					<Year>2022</Year>
+					<PLineCompany>Universal Music Operations Limited</PLineCompany>
+					<PLineText>℗ 2022 Universal Music Operations Limited</PLineText>
+				</PLine>
+				<CourtesyLine>A Decca Classics Recording</CourtesyLine>
+				<ParentalWarningType>NotExplicit</ParentalWarningType>
+
+				<TechnicalSoundRecordingDetails>
+					<TechnicalResourceDetailsReference>T3</TechnicalResourceDetailsReference>
+					<AudioCodecType>MP3</AudioCodecType>
+					<BitRate UnitOfMeasure="kbps">320</BitRate>
+					<NumberOfChannels>2</NumberOfChannels>
+					<SamplingRate UnitOfMeasure="kHz">44.1</SamplingRate>
+					<Duration>PT0H0M30.041S</Duration>
+					<IsPreview>true</IsPreview>
+					<PreviewDetails>
+						<StartPoint>48</StartPoint>
+						<Duration>PT0H0M30.041S</Duration>
+						<ExpressionType>Informative</ExpressionType>
+					</PreviewDetails>
+					<File>
+						<URL>00028948530434_T3_audtrk.mp3</URL>
+						<HashSum>
+							<HashSum>64b722e08bdf2e155d1cde98ca598dbf</HashSum>
+							<HashSumAlgorithmType>MD5</HashSumAlgorithmType>
+						</HashSum>
+					</File>
+				</TechnicalSoundRecordingDetails>
+				<TechnicalSoundRecordingDetails>
+					<TechnicalResourceDetailsReference>T2</TechnicalResourceDetailsReference>
+					<AudioCodecType>MP3</AudioCodecType>
+					<BitRate UnitOfMeasure="kbps">320</BitRate>
+					<NumberOfChannels>2</NumberOfChannels>
+					<SamplingRate UnitOfMeasure="kHz">44.1</SamplingRate>
+					<Duration>PT0H7M48.924S</Duration>
+					<IsPreview>false</IsPreview>
+					<File>
+						<URL>00028948530434_T2_audtrk.mp3</URL>
+						<HashSum>
+							<HashSum>0e771a50ae6b803e91100b6ce461a9bc</HashSum>
+							<HashSumAlgorithmType>MD5</HashSumAlgorithmType>
+						</HashSum>
+					</File>
+				</TechnicalSoundRecordingDetails>
+			</SoundRecordingDetailsByTerritory>
+
+			<!--
+				Cannot be communicated in ERN-3
+			   <CreationDate ApplicableTerritoryCode="IT" LocationDescription="Teatro Alla Scala">2021-06-06</CreationDate>
+			-->
+
+		</SoundRecording>
+		<Image>
+			<ImageType>FrontCoverImage</ImageType>
+			<ImageId>
+				<ProprietaryId Namespace="PADPIDA2013042401U">22UMGIM16162</ProprietaryId>
+			</ImageId>
+			<ResourceReference>A2</ResourceReference>
+
+			<Title LanguageAndScriptCode="en">
+				<TitleText>Musa Italiana</TitleText>
+			</Title>
+
+			<ImageDetailsByTerritory>
+				<TerritoryCode>Worldwide</TerritoryCode>
+
+				<ResourceContributor SequenceNumber="1">
+					<PartyName>
+						<FullName>Leonard Bernstein</FullName>
+						<NamesBeforeKeyName>Leonard</NamesBeforeKeyName>
+						<KeyName>Bernstein</KeyName>
+					</PartyName>
+					<ResourceContributorRole>Conductor</ResourceContributorRole>
+				</ResourceContributor>
+				<ResourceContributor SequenceNumber="2">
+					<PartyName>
+						<FullName>Wiener Philharmoniker</FullName>
+						<KeyName>Wiener Philharmoniker</KeyName>
+					</PartyName>
+					<ResourceContributorRole>Orchestra</ResourceContributorRole>
+				</ResourceContributor>
+				<CLine>
+					<Year>2022</Year>
+					<CLineCompany>Universal Music Operations Limited</CLineCompany>
+					<CLineText>© 2022 Universal Music Operations Limited</CLineText>
+				</CLine>
+				<CourtesyLine>Decca Classics</CourtesyLine>
+				<ParentalWarningType>NotExplicit</ParentalWarningType>
+				<TechnicalImageDetails>
+					<TechnicalResourceDetailsReference>T1</TechnicalResourceDetailsReference>
+					<ImageCodecType>JPEG</ImageCodecType>
+					<ImageHeight UnitOfMeasure="Pixel">600</ImageHeight>
+					<ImageWidth UnitOfMeasure="Pixel">600</ImageWidth>
+					<File>
+						<URL>22UMGIM16162_T1_cvrart.jpg</URL>
+						<HashSum>
+							<HashSum>7a98e47ed2c3c42c6bc314feeb4466e8</HashSum>
+							<HashSumAlgorithmType>MD5</HashSumAlgorithmType>
+						</HashSum>
+					</File>
+				</TechnicalImageDetails>
+			</ImageDetailsByTerritory>
+		</Image>
+	</ResourceList>
+	<ReleaseList>
+		<Release IsMainRelease="true">
+			<ReleaseId>
+				<ICPN>00028948530434</ICPN>
+			</ReleaseId>
+			<ReleaseReference>R0</ReleaseReference>
+			<ReferenceTitle LanguageAndScriptCode="en">
+				<TitleText>Mozart: Lucio Silla, K. 135: Overture</TitleText>
+			</ReferenceTitle>
+			<ReleaseResourceReferenceList>
+				<ReleaseResourceReference>A1</ReleaseResourceReference>
+			</ReleaseResourceReferenceList>
+			<ReleaseDetailsByTerritory>
+				<TerritoryCode>Worldwide</TerritoryCode>
+				<DisplayArtistName>Riccardo Chailly and Filarmonica della Scala</DisplayArtistName>
+				<LabelName>Deutsche Grammophon (DG)</LabelName>
+
+				<Title LanguageAndScriptCode="en" TitleType="FormalTitle">
+					<TitleText>Mozart: Lucio Silla, K. 135: Overture</TitleText>
+				</Title>
+
+				<DisplayArtist SequenceNumber="1">
+					<PartyName LanguageAndScriptCode="it">
+						<FullName>Leonard Bernstein</FullName>
+						<NamesBeforeKeyName>Leonard</NamesBeforeKeyName>
+						<KeyName>Bernstein</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-hrkt">
+						<FullName>レナードバーンスタイン</FullName>
+						<KeyName>レナードバーンスタイン</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-jpan">
+						<FullName>レナード・バーンスタイン</FullName>
+						<KeyName>レナード・バーンスタイン</KeyName>
+					</PartyName>
+					<ArtistRole>MainArtist</ArtistRole>
+					<ArtistRole>Conductor</ArtistRole>
+				</DisplayArtist>
+				<DisplayArtist SequenceNumber="2">
+					<PartyName LanguageAndScriptCode="it">
+						<FullName>Wiener Philharmoniker</FullName>
+						<KeyName>Wiener Philharmoniker</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-hrkt">
+						<FullName>ウィーンフィルハーモニーカンゲンガクダン</FullName>
+						<KeyName>ウィーンフィルハーモニーカンゲンガクダン</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ja-jpan">
+						<FullName>ウィーン・フィルハーモニー管弦楽団</FullName>
+						<KeyName>ウィーン・フィルハーモニー管弦楽団</KeyName>
+					</PartyName>
+					<PartyName LanguageAndScriptCode="ko-kor">
+						<FullName>빈 필하모닉 오케스트라</FullName>
+						<KeyName>빈 필하모닉 오케스트라</KeyName>
+					</PartyName>
+					<ArtistRole>MainArtist</ArtistRole>
+					<ArtistRole>Orchestra</ArtistRole>
+				</DisplayArtist>
+				<IsMultiArtistCompilation>false</IsMultiArtistCompilation>
+				<ReleaseType>ClassicalAlbum</ReleaseType>
+				<ParentalWarningType>NotExplicit</ParentalWarningType>
+
+				<!-- 
+					Not in ERN-3:
+					<CourtesyLine IsDefault="true">A Decca Classics Release</CourtesyLine>
+				-->
+
+				<ResourceGroup>
+					<!-- 
+						Even if this Release contains just one SoundRecording, it needs the same ResourceGroup structure as an album.
+						This is because albums and singles are *structurally* the same
+					-->
+					<ResourceGroup>
+						<SequenceNumber>1</SequenceNumber>
+						<ResourceGroupContentItem>
+							<SequenceNumber>1</SequenceNumber>
+							<ReleaseResourceReference ReleaseResourceType="PrimaryResource"
+								>A1</ReleaseResourceReference>
+							<IsInstantGratificationResource>false</IsInstantGratificationResource>
+							<IsPreOrderIncentiveResource>false</IsPreOrderIncentiveResource>
+						</ResourceGroupContentItem>
+					</ResourceGroup>
+					<ResourceGroupContentItem>
+						<ReleaseResourceReference ReleaseResourceType="SecondaryResource"
+							>A2</ReleaseResourceReference>
+					</ResourceGroupContentItem>
+				</ResourceGroup>
+				<Genre>
+					<GenreText>Classical</GenreText>
+				</Genre>
+				<ReleaseDate>2022-04-22</ReleaseDate>
+			</ReleaseDetailsByTerritory>
+			<PLine>
+				<Year>2022</Year>
+				<PLineCompany>Universal Music Operations Limited</PLineCompany>
+				<PLineText>℗ 2022 Universal Music Operations Limited</PLineText>
+			</PLine>
+			<CLine>
+				<Year>2022</Year>
+				<CLineCompany>Universal Music Operations Limited</CLineCompany>
+				<CLineText>© 2022 Universal Music Operations Limited</CLineText>
+			</CLine>
+			<GlobalOriginalReleaseDate>2022-04-22</GlobalOriginalReleaseDate>
+		</Release>
+
+		<Release>
+			<ReleaseId>
+				<ISRC>GBBBC2200191</ISRC>
+				<ProprietaryId Namespace="PADPIDA2013042401U">00028948530434_GBBBC2200191_R1</ProprietaryId>
+			</ReleaseId>
+			<ReleaseReference>R1</ReleaseReference>
+			<ReferenceTitle LanguageAndScriptCode="en">
+				<TitleText>Mozart: Lucio Silla, K. 135 - Overture</TitleText>
+			</ReferenceTitle>
+			<ReleaseResourceReferenceList>
+				<ReleaseResourceReference>A1</ReleaseResourceReference>
+			</ReleaseResourceReferenceList>
+			<ReleaseDetailsByTerritory>
+				<TerritoryCode>Worldwide</TerritoryCode>
+				<LabelName>Deutsche Grammophon (DG)</LabelName>
+				<Title LanguageAndScriptCode="en" TitleType="FormalTitle">
+					<TitleText>Overture</TitleText>
+				</Title>
+				<Title LanguageAndScriptCode="en" TitleType="GroupingTitle">
+					<TitleText>Lucio Silla, K. 135</TitleText>
+				</Title>
+				<Genre>
+					<GenreText>Classical</GenreText>
+				</Genre>
+			</ReleaseDetailsByTerritory>
+		</Release>
+	</ReleaseList>
+</ernm:NewReleaseMessage>

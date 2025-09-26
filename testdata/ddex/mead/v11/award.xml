@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mead:MeadMessage xmlns:mead="http://ddex.net/xml/mead/11"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://ddex.net/xml/mead/11 http://ddex.net/xml/mead/11/media-enrichment-and-description.xsd"
+    AvsVersionId="3" LanguageAndScriptCode="en">
+    <MessageHeader>
+        <MessageId>1234</MessageId>
+        <MessageSender>
+            <PartyId>PADPIDA1234567890</PartyId>
+        </MessageSender>
+        <MessageRecipient>
+            <PartyId>PADPIDA0987654321</PartyId>
+        </MessageRecipient>
+        <MessageCreatedDateTime>2022-10-11T15:19:00+01:00</MessageCreatedDateTime>
+    </MessageHeader>
+     
+    <ReleaseInformationList>
+        <ReleaseInformation>
+            <ReleaseSummary>
+                <ReleaseId/>
+                <DisplayTitle>
+                    <TitleText>
+                        <Title>We're All Alone in This Together</Title>
+                    </TitleText>
+                </DisplayTitle>
+                <DisplayArtistName>
+                    <Name>Dave</Name>
+                </DisplayArtistName>
+            </ReleaseSummary>
+             
+            <Award>
+                <AwardingBody>
+                    <PartyName>
+                        <FullName>
+                            <Name>MOBO</Name>
+                        </FullName>
+                    </PartyName>
+                </AwardingBody>
+                <AwardedParty>
+                    <PartyName>
+                        <FullName>
+                            <Name>Dave</Name>
+                        </FullName>
+                    </PartyName>
+                    <PartyId>
+                        <ISNI>0000000467436124</ISNI>
+                    </PartyId>
+                </AwardedParty>              
+                <AwardName>
+                    <Name>Best Album</Name>
+                </AwardName>
+                <Date>2021</Date>
+                <IsWinner>true</IsWinner>
+            </Award>        
+        </ReleaseInformation>  
+    </ReleaseInformationList>
+</mead:MeadMessage>

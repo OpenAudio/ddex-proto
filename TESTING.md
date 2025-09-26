@@ -17,10 +17,14 @@ The test suite validates three critical aspects of the DDEX Go library:
 **What it proves**: The library can correctly parse real-world DDEX XML files from the official DDEX consortium.
 
 **Test data**: Official DDEX sample files for each specification:
-- **ERN v4.3.2**: 9 official sample files covering different content types
+- **ERN v4.3.2**: Official sample files covering different content types
+- **ERN v4.3**: Official sample files with comprehensive content types
   - Audio Album, Video Album, Mixed Media Bundle
   - Simple Audio/Video Singles, Ringtones, DJ Mixes
   - Classical variants and longform musical works
+- **ERN v4.2**: Official sample files covering different content types
+- **ERN v3.8.3**: Official sample files with catalog list support
+- **ERN v3.8.1**: Official sample files with catalog list support
 - **MEAD v1.1**: Award metadata examples
 - **PIE v1.0**: Party identification and award examples
 
@@ -136,13 +140,19 @@ Field Coverage Report:
 ## Test Data
 
 ### Official DDEX Samples (High Confidence)
-- **ERN**: Official DDEX consortium sample files - complete accuracy guarantee
+- **ERN**: Official DDEX consortium sample files for all supported versions - complete accuracy guarantee
 - Real-world complexity with nested structures, optional fields, and edge cases
+- Comprehensive coverage across ERN v3.8.1, v3.8.3, v4.2, v4.3, and v4.3.2
 
 ### Created Examples (Representative)
 - **MEAD/PIE**: Manually created but representative examples
 - Covers core functionality and common use cases
 - Based on official DDEX specification patterns
+
+### Automatic Test Discovery
+- **Dynamic test generation**: Tests automatically discover all message types and versions from testdata
+- **Registry-based parsing**: Uses auto-generated registry for type-safe unmarshaling
+- **Universal validation**: Single test framework validates all DDEX specifications
 
 ## What the Tests Prove Collectively
 
@@ -176,7 +186,7 @@ make test-roundtrip     # XML bidirectional conversion tests
 make benchmark          # Performance benchmarks
 
 # Individual test suites
-go test -v -run TestDDEXConformance ./...
+go test -v -run TestDDEX ./...                    # Auto-discovered message type tests
 go test -v -run TestXMLRoundTripIntegrity ./...
 go test -v -run TestFieldCompleteness ./...
 ```
@@ -189,5 +199,44 @@ The test suite follows a **zero-tolerance approach** to data integrity:
 - **Any missing attribute** = test failure
 - **Any value mismatch** = test failure
 - **Any unmarshaling error** = test failure
+- **Automatic test discovery** = comprehensive coverage without manual maintenance
 
 This ensures the library meets the exacting standards required for music industry metadata exchange, where data accuracy is critical for rights management, royalty distribution, and content delivery.
+
+## New Test Architecture Benefits
+
+### Automatic Message Type Discovery
+The test framework now automatically discovers all supported message types and versions by scanning the `testdata/ddex/` directory structure. This means:
+- New DDEX versions can be added simply by adding test files
+- No manual test registration required
+- Comprehensive validation across all supported specifications
+
+### Registry-Based Parsing
+The new auto-generated registry (`gen/registry.go`) provides:
+- Type-safe parsing for all DDEX message types
+- Automatic message type detection from XML content
+- Unified parsing interface across ERN, MEAD, and PIE specifications
+
+### Unified Test Framework
+A single `TestDDEX` function now validates all message types and versions:
+- Consistent test methodology across all DDEX specifications
+- Automatic test file discovery and filtering
+- Simplified maintenance and extension
+
+## Adding New Types and Tests
+
+### Adding New DDEX Versions
+1. **Add XSD schemas** to `xsd/` directory (e.g., `xsd/ernv44/`)
+2. **Add test files** to `testdata/ddex/{type}/{version}/` (e.g., `testdata/ddex/ern/v44/sample.xml`)
+3. **Update specs array** in `tools/xsd2proto/main.go`
+4. **Run generation**: `make generate`
+
+### Adding New Test Files
+Simply drop XML files into the appropriate `testdata/ddex/{type}/{version}/` directory. The test framework automatically discovers and validates them.
+
+### What You Get Automatically
+- Conformance testing against real XML files
+- XML roundtrip validation (XML → Proto → XML)
+- Field completeness validation
+- Performance benchmarking
+- Registry-based type-safe parsing

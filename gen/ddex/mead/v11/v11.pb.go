@@ -40,14 +40,10 @@ type MeadMessage struct {
 	AvsVersionId string `protobuf:"bytes,7,opt,name=avs_version_id,json=avsVersionId,proto3" json:"avs_version_id,omitempty" xml:"AvsVersionId,attr"`
 	// @gotags: xml:"LanguageAndScriptCode,attr"
 	LanguageAndScriptCode string `protobuf:"bytes,8,opt,name=language_and_script_code,json=languageAndScriptCode,proto3" json:"language_and_script_code,omitempty" xml:"LanguageAndScriptCode,attr"`
-	// @gotags: xml:"xmlns:mead,attr"
-	XmlnsMead string `protobuf:"bytes,9,opt,name=xmlns_mead,json=xmlnsMead,proto3" json:"xmlns_mead,omitempty" xml:"xmlns:mead,attr"`
-	// @gotags: xml:"xmlns:xsi,attr"
-	XmlnsXsi string `protobuf:"bytes,10,opt,name=xmlns_xsi,json=xmlnsXsi,proto3" json:"xmlns_xsi,omitempty" xml:"xmlns:xsi,attr"`
-	// @gotags: xml:"xsi:schemaLocation,attr"
-	XsiSchemaLocation string `protobuf:"bytes,11,opt,name=xsi_schema_location,json=xsiSchemaLocation,proto3" json:"xsi_schema_location,omitempty" xml:"xsi:schemaLocation,attr"`
-	unknownFields     protoimpl.UnknownFields
-	sizeCache         protoimpl.SizeCache
+	// @gotags: xml:"-"
+	NamespaceAttrs map[string]string `protobuf:"bytes,9,rep,name=namespace_attrs,json=namespaceAttrs,proto3" json:"namespace_attrs,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value" xml:"-"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
 }
 
 func (x *MeadMessage) Reset() {
@@ -136,25 +132,11 @@ func (x *MeadMessage) GetLanguageAndScriptCode() string {
 	return ""
 }
 
-func (x *MeadMessage) GetXmlnsMead() string {
+func (x *MeadMessage) GetNamespaceAttrs() map[string]string {
 	if x != nil {
-		return x.XmlnsMead
+		return x.NamespaceAttrs
 	}
-	return ""
-}
-
-func (x *MeadMessage) GetXmlnsXsi() string {
-	if x != nil {
-		return x.XmlnsXsi
-	}
-	return ""
-}
-
-func (x *MeadMessage) GetXsiSchemaLocation() string {
-	if x != nil {
-		return x.XsiSchemaLocation
-	}
-	return ""
+	return nil
 }
 
 type Feed struct {
@@ -185,14 +167,10 @@ type Feed struct {
 	Updated *DateTime `protobuf:"bytes,12,opt,name=updated,proto3" json:"updated,omitempty" xml:"updated"`
 	// @gotags: xml:"entry"
 	Entry []*Entry `protobuf:"bytes,13,rep,name=entry,proto3" json:"entry,omitempty" xml:"entry"`
-	// @gotags: xml:"xmlns:mead,attr"
-	XmlnsMead string `protobuf:"bytes,14,opt,name=xmlns_mead,json=xmlnsMead,proto3" json:"xmlns_mead,omitempty" xml:"xmlns:mead,attr"`
-	// @gotags: xml:"xmlns:xsi,attr"
-	XmlnsXsi string `protobuf:"bytes,15,opt,name=xmlns_xsi,json=xmlnsXsi,proto3" json:"xmlns_xsi,omitempty" xml:"xmlns:xsi,attr"`
-	// @gotags: xml:"xsi:schemaLocation,attr"
-	XsiSchemaLocation string `protobuf:"bytes,16,opt,name=xsi_schema_location,json=xsiSchemaLocation,proto3" json:"xsi_schema_location,omitempty" xml:"xsi:schemaLocation,attr"`
-	unknownFields     protoimpl.UnknownFields
-	sizeCache         protoimpl.SizeCache
+	// @gotags: xml:"-"
+	NamespaceAttrs map[string]string `protobuf:"bytes,14,rep,name=namespace_attrs,json=namespaceAttrs,proto3" json:"namespace_attrs,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value" xml:"-"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
 }
 
 func (x *Feed) Reset() {
@@ -316,25 +294,11 @@ func (x *Feed) GetEntry() []*Entry {
 	return nil
 }
 
-func (x *Feed) GetXmlnsMead() string {
+func (x *Feed) GetNamespaceAttrs() map[string]string {
 	if x != nil {
-		return x.XmlnsMead
+		return x.NamespaceAttrs
 	}
-	return ""
-}
-
-func (x *Feed) GetXmlnsXsi() string {
-	if x != nil {
-		return x.XmlnsXsi
-	}
-	return ""
-}
-
-func (x *Feed) GetXsiSchemaLocation() string {
-	if x != nil {
-		return x.XsiSchemaLocation
-	}
-	return ""
+	return nil
 }
 
 type AbsolutePitch struct {
@@ -11915,7 +11879,7 @@ var File_ddex_mead_v11_v11_proto protoreflect.FileDescriptor
 
 const file_ddex_mead_v11_v11_proto_rawDesc = "" +
 	"\n" +
-	"\x17ddex/mead/v11/v11.proto\x12\rddex.mead.v11\x1a\x1eddex/avs/vlatest/vlatest.proto\"\xb8\x05\n" +
+	"\x17ddex/mead/v11/v11.proto\x12\rddex.mead.v11\x1a\x1eddex/avs/vlatest/vlatest.proto\"\xe8\x05\n" +
 	"\vMeadMessage\x12C\n" +
 	"\x0emessage_header\x18\x01 \x01(\v2\x1c.ddex.mead.v11.MessageHeaderR\rmessageHeader\x12'\n" +
 	"\x0fsubscription_id\x18\x02 \x01(\tR\x0esubscriptionId\x12S\n" +
@@ -11924,12 +11888,11 @@ const file_ddex_mead_v11_v11_proto_rawDesc = "" +
 	"\x19resource_information_list\x18\x05 \x01(\v2&.ddex.mead.v11.ResourceInformationListR\x17resourceInformationList\x12_\n" +
 	"\x18release_information_list\x18\x06 \x01(\v2%.ddex.mead.v11.ReleaseInformationListR\x16releaseInformationList\x12$\n" +
 	"\x0eavs_version_id\x18\a \x01(\tR\favsVersionId\x127\n" +
-	"\x18language_and_script_code\x18\b \x01(\tR\x15languageAndScriptCode\x12\x1d\n" +
-	"\n" +
-	"xmlns_mead\x18\t \x01(\tR\txmlnsMead\x12\x1b\n" +
-	"\txmlns_xsi\x18\n" +
-	" \x01(\tR\bxmlnsXsi\x12.\n" +
-	"\x13xsi_schema_location\x18\v \x01(\tR\x11xsiSchemaLocation\"\xcd\x05\n" +
+	"\x18language_and_script_code\x18\b \x01(\tR\x15languageAndScriptCode\x12W\n" +
+	"\x0fnamespace_attrs\x18\t \x03(\v2..ddex.mead.v11.MeadMessage.NamespaceAttrsEntryR\x0enamespaceAttrs\x1aA\n" +
+	"\x13NamespaceAttrsEntry\x12\x10\n" +
+	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
+	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\"\xf6\x05\n" +
 	"\x04Feed\x12-\n" +
 	"\x06author\x18\x01 \x03(\v2\x15.ddex.mead.v11.PersonR\x06author\x123\n" +
 	"\bcategory\x18\x02 \x03(\v2\x17.ddex.mead.v11.CategoryR\bcategory\x127\n" +
@@ -11944,11 +11907,11 @@ const file_ddex_mead_v11_v11_proto_rawDesc = "" +
 	" \x01(\v2\x13.ddex.mead.v11.TextR\bsubtitle\x12)\n" +
 	"\x05title\x18\v \x01(\v2\x13.ddex.mead.v11.TextR\x05title\x121\n" +
 	"\aupdated\x18\f \x01(\v2\x17.ddex.mead.v11.DateTimeR\aupdated\x12*\n" +
-	"\x05entry\x18\r \x03(\v2\x14.ddex.mead.v11.EntryR\x05entry\x12\x1d\n" +
-	"\n" +
-	"xmlns_mead\x18\x0e \x01(\tR\txmlnsMead\x12\x1b\n" +
-	"\txmlns_xsi\x18\x0f \x01(\tR\bxmlnsXsi\x12.\n" +
-	"\x13xsi_schema_location\x18\x10 \x01(\tR\x11xsiSchemaLocation\"\xc4\x01\n" +
+	"\x05entry\x18\r \x03(\v2\x14.ddex.mead.v11.EntryR\x05entry\x12P\n" +
+	"\x0fnamespace_attrs\x18\x0e \x03(\v2'.ddex.mead.v11.Feed.NamespaceAttrsEntryR\x0enamespaceAttrs\x1aA\n" +
+	"\x13NamespaceAttrsEntry\x12\x10\n" +
+	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
+	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\"\xc4\x01\n" +
 	"\rAbsolutePitch\x12b\n" +
 	"\x19metadata_source_reference\x18\x01 \x03(\v2&.ddex.mead.v11.MetadataSourceReferenceR\x17metadataSourceReference\x12\x14\n" +
 	"\x05value\x18\x02 \x01(\tR\x05value\x129\n" +
@@ -12882,7 +12845,7 @@ func file_ddex_mead_v11_v11_proto_rawDescGZIP() []byte {
 	return file_ddex_mead_v11_v11_proto_rawDescData
 }
 
-var file_ddex_mead_v11_v11_proto_msgTypes = make([]protoimpl.MessageInfo, 152)
+var file_ddex_mead_v11_v11_proto_msgTypes = make([]protoimpl.MessageInfo, 154)
 var file_ddex_mead_v11_v11_proto_goTypes = []any{
 	(*MeadMessage)(nil),                        // 0: ddex.mead.v11.MeadMessage
 	(*Feed)(nil),                               // 1: ddex.mead.v11.Feed
@@ -13036,6 +12999,8 @@ var file_ddex_mead_v11_v11_proto_goTypes = []any{
 	(*WorkTitle)(nil),                          // 149: ddex.mead.v11.WorkTitle
 	(*EventDateWithoutFlags)(nil),              // 150: ddex.mead.v11.EventDateWithoutFlags
 	(*Timing)(nil),                             // 151: ddex.mead.v11.Timing
+	nil,                                        // 152: ddex.mead.v11.MeadMessage.NamespaceAttrsEntry
+	nil,                                        // 153: ddex.mead.v11.Feed.NamespaceAttrsEntry
 }
 var file_ddex_mead_v11_v11_proto_depIdxs = []int32{
 	110, // 0: ddex.mead.v11.MeadMessage.message_header:type_name -> ddex.mead.v11.MessageHeader
@@ -13043,363 +13008,365 @@ var file_ddex_mead_v11_v11_proto_depIdxs = []int32{
 	68,  // 2: ddex.mead.v11.MeadMessage.work_information_list:type_name -> ddex.mead.v11.WorkInformationList
 	45,  // 3: ddex.mead.v11.MeadMessage.resource_information_list:type_name -> ddex.mead.v11.ResourceInformationList
 	41,  // 4: ddex.mead.v11.MeadMessage.release_information_list:type_name -> ddex.mead.v11.ReleaseInformationList
-	78,  // 5: ddex.mead.v11.Feed.author:type_name -> ddex.mead.v11.Person
-	70,  // 6: ddex.mead.v11.Feed.category:type_name -> ddex.mead.v11.Category
-	78,  // 7: ddex.mead.v11.Feed.contributor:type_name -> ddex.mead.v11.Person
-	73,  // 8: ddex.mead.v11.Feed.generator:type_name -> ddex.mead.v11.Generator
-	74,  // 9: ddex.mead.v11.Feed.icon:type_name -> ddex.mead.v11.Icon
-	75,  // 10: ddex.mead.v11.Feed.id:type_name -> ddex.mead.v11.Id
-	76,  // 11: ddex.mead.v11.Feed.link:type_name -> ddex.mead.v11.Link
-	77,  // 12: ddex.mead.v11.Feed.logo:type_name -> ddex.mead.v11.Logo
-	80,  // 13: ddex.mead.v11.Feed.rights:type_name -> ddex.mead.v11.Text
-	80,  // 14: ddex.mead.v11.Feed.subtitle:type_name -> ddex.mead.v11.Text
-	80,  // 15: ddex.mead.v11.Feed.title:type_name -> ddex.mead.v11.Text
-	72,  // 16: ddex.mead.v11.Feed.updated:type_name -> ddex.mead.v11.DateTime
-	16,  // 17: ddex.mead.v11.Feed.entry:type_name -> ddex.mead.v11.Entry
-	114, // 18: ddex.mead.v11.AbsolutePitch.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
-	34,  // 19: ddex.mead.v11.AbsolutePitch.modulation:type_name -> ddex.mead.v11.Modulation
-	114, // 20: ddex.mead.v11.Activity.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
-	4,   // 21: ddex.mead.v11.Activity.value:type_name -> ddex.mead.v11.ActivityValue
-	141, // 22: ddex.mead.v11.Activity.description:type_name -> ddex.mead.v11.TextWithoutTerritory
-	114, // 23: ddex.mead.v11.AlternativeTitle.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
-	142, // 24: ddex.mead.v11.AlternativeTitle.title_text:type_name -> ddex.mead.v11.TitleText
-	142, // 25: ddex.mead.v11.AlternativeTitle.sub_title:type_name -> ddex.mead.v11.TitleText
-	114, // 26: ddex.mead.v11.Annotation.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
-	140, // 27: ddex.mead.v11.Annotation.text:type_name -> ddex.mead.v11.TextWithFormat
-	114, // 28: ddex.mead.v11.ArtisticStyle.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
-	83,  // 29: ddex.mead.v11.ArtisticStyle.value:type_name -> ddex.mead.v11.ArtistTypeValue
-	114, // 30: ddex.mead.v11.BeatsPerMinute.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
-	34,  // 31: ddex.mead.v11.BeatsPerMinute.modulation:type_name -> ddex.mead.v11.Modulation
-	116, // 32: ddex.mead.v11.ChildWorkHierarchy.work_id:type_name -> ddex.mead.v11.MusicalWorkIdWithoutFlag
-	149, // 33: ddex.mead.v11.ChildWorkHierarchy.work_title:type_name -> ddex.mead.v11.WorkTitle
-	9,   // 34: ddex.mead.v11.ChildWorkHierarchy.child:type_name -> ddex.mead.v11.ChildWorkHierarchy
-	18,  // 35: ddex.mead.v11.ChildWorkHierarchy.form:type_name -> ddex.mead.v11.Form
-	94,  // 36: ddex.mead.v11.Contributor.identifier:type_name -> ddex.mead.v11.DetailedPartyId
-	120, // 37: ddex.mead.v11.Contributor.name:type_name -> ddex.mead.v11.PartyNameWithPronunciation
-	134, // 38: ddex.mead.v11.Contributor.role:type_name -> ddex.mead.v11.ResourceContributorRole
-	114, // 39: ddex.mead.v11.DanceStyle.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
-	12,  // 40: ddex.mead.v11.DanceStyle.value:type_name -> ddex.mead.v11.DanceStyleValue
-	141, // 41: ddex.mead.v11.DanceStyle.description:type_name -> ddex.mead.v11.TextWithoutTerritory
-	114, // 42: ddex.mead.v11.DerivedRecording.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
-	135, // 43: ddex.mead.v11.DerivedRecording.resource_id:type_name -> ddex.mead.v11.ResourceIdWithoutFlag
-	129, // 44: ddex.mead.v11.DerivedRecording.related_resource_type:type_name -> ddex.mead.v11.RelatedResourceType
-	143, // 45: ddex.mead.v11.DerivedRecording.title:type_name -> ddex.mead.v11.TitleWithPronunciation
-	96,  // 46: ddex.mead.v11.DerivedRecording.display_artist_name:type_name -> ddex.mead.v11.DisplayArtistNameWithPronunciation
-	119, // 47: ddex.mead.v11.DerivedRecording.display_artist:type_name -> ddex.mead.v11.PartyDescriptorWithPronunciation
-	125, // 48: ddex.mead.v11.DisplaySubTitle.pronunciation:type_name -> ddex.mead.v11.Pronunciation
-	142, // 49: ddex.mead.v11.DisplayTitle.title_text:type_name -> ddex.mead.v11.TitleText
-	14,  // 50: ddex.mead.v11.DisplayTitle.sub_title:type_name -> ddex.mead.v11.DisplaySubTitle
-	78,  // 51: ddex.mead.v11.Entry.author:type_name -> ddex.mead.v11.Person
-	70,  // 52: ddex.mead.v11.Entry.category:type_name -> ddex.mead.v11.Category
-	71,  // 53: ddex.mead.v11.Entry.content:type_name -> ddex.mead.v11.Content
-	78,  // 54: ddex.mead.v11.Entry.contributor:type_name -> ddex.mead.v11.Person
-	75,  // 55: ddex.mead.v11.Entry.id:type_name -> ddex.mead.v11.Id
-	76,  // 56: ddex.mead.v11.Entry.link:type_name -> ddex.mead.v11.Link
-	72,  // 57: ddex.mead.v11.Entry.published:type_name -> ddex.mead.v11.DateTime
-	80,  // 58: ddex.mead.v11.Entry.rights:type_name -> ddex.mead.v11.Text
-	79,  // 59: ddex.mead.v11.Entry.source:type_name -> ddex.mead.v11.Source
-	80,  // 60: ddex.mead.v11.Entry.summary:type_name -> ddex.mead.v11.Text
-	80,  // 61: ddex.mead.v11.Entry.title:type_name -> ddex.mead.v11.Text
-	72,  // 62: ddex.mead.v11.Entry.updated:type_name -> ddex.mead.v11.DateTime
-	114, // 63: ddex.mead.v11.Flag.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
-	114, // 64: ddex.mead.v11.Form.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
-	19,  // 65: ddex.mead.v11.Form.value:type_name -> ddex.mead.v11.FormValue
-	114, // 66: ddex.mead.v11.GenreCategory.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
-	103, // 67: ddex.mead.v11.GenreCategory.value:type_name -> ddex.mead.v11.GenreCategoryValue
-	141, // 68: ddex.mead.v11.GenreCategory.description:type_name -> ddex.mead.v11.TextWithoutTerritory
-	114, // 69: ddex.mead.v11.Harmony.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
-	50,  // 70: ddex.mead.v11.Harmony.root_chord_note:type_name -> ddex.mead.v11.RootChordNote
-	51,  // 71: ddex.mead.v11.Harmony.root_chord_quality:type_name -> ddex.mead.v11.RootChordQuality
-	33,  // 72: ddex.mead.v11.Harmony.mode:type_name -> ddex.mead.v11.Mode
-	22,  // 73: ddex.mead.v11.Harmony.modulation:type_name -> ddex.mead.v11.HarmonyModulation
-	50,  // 74: ddex.mead.v11.HarmonyModulation.root_chord_note:type_name -> ddex.mead.v11.RootChordNote
-	51,  // 75: ddex.mead.v11.HarmonyModulation.root_chord_quality:type_name -> ddex.mead.v11.RootChordQuality
-	33,  // 76: ddex.mead.v11.HarmonyModulation.mode:type_name -> ddex.mead.v11.Mode
-	91,  // 77: ddex.mead.v11.ImpactDate.territory_code:type_name -> ddex.mead.v11.CurrentTerritoryCode
-	114, // 78: ddex.mead.v11.Instrument.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
-	26,  // 79: ddex.mead.v11.Instrument.value:type_name -> ddex.mead.v11.InstrumentValue
-	114, // 80: ddex.mead.v11.InstrumentUsed.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
-	26,  // 81: ddex.mead.v11.InstrumentUsed.value:type_name -> ddex.mead.v11.InstrumentValue
-	114, // 82: ddex.mead.v11.Intensity.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
-	28,  // 83: ddex.mead.v11.Intensity.value:type_name -> ddex.mead.v11.IntensityValue
-	114, // 84: ddex.mead.v11.LocationAndDateOfSession.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
-	138, // 85: ddex.mead.v11.LocationAndDateOfSession.session_type:type_name -> ddex.mead.v11.SessionType
-	122, // 86: ddex.mead.v11.LocationAndDateOfSession.period:type_name -> ddex.mead.v11.Period
-	144, // 87: ddex.mead.v11.LocationAndDateOfSession.venue:type_name -> ddex.mead.v11.Venue
-	140, // 88: ddex.mead.v11.LocationAndDateOfSession.comment:type_name -> ddex.mead.v11.TextWithFormat
-	10,  // 89: ddex.mead.v11.LocationAndDateOfSession.contributor:type_name -> ddex.mead.v11.Contributor
-	114, // 90: ddex.mead.v11.Lyrics.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
-	31,  // 91: ddex.mead.v11.Lyrics.text:type_name -> ddex.mead.v11.LyricsText
-	125, // 92: ddex.mead.v11.Lyrics.pronunciation:type_name -> ddex.mead.v11.Pronunciation
-	114, // 93: ddex.mead.v11.Mood.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
-	36,  // 94: ddex.mead.v11.Mood.value:type_name -> ddex.mead.v11.MoodValue
-	141, // 95: ddex.mead.v11.Mood.description:type_name -> ddex.mead.v11.TextWithoutTerritory
-	126, // 96: ddex.mead.v11.Party.proprietary_id:type_name -> ddex.mead.v11.ProprietaryId
-	114, // 97: ddex.mead.v11.RecordingPart.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
-	127, // 98: ddex.mead.v11.RecordingPart.recording_part_type:type_name -> ddex.mead.v11.RecordingPartType
-	6,   // 99: ddex.mead.v11.RecordingPart.comment:type_name -> ddex.mead.v11.Annotation
-	140, // 100: ddex.mead.v11.RecordingPart.usage_information:type_name -> ddex.mead.v11.TextWithFormat
-	114, // 101: ddex.mead.v11.RelatedWork.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
-	116, // 102: ddex.mead.v11.RelatedWork.work_id:type_name -> ddex.mead.v11.MusicalWorkIdWithoutFlag
-	149, // 103: ddex.mead.v11.RelatedWork.work_title:type_name -> ddex.mead.v11.WorkTitle
-	148, // 104: ddex.mead.v11.RelatedWork.work_relationship_type:type_name -> ddex.mead.v11.WorkRelationshipType
-	119, // 105: ddex.mead.v11.RelatedWork.writer:type_name -> ddex.mead.v11.PartyDescriptorWithPronunciation
-	42,  // 106: ddex.mead.v11.ReleaseInformation.release_summary:type_name -> ddex.mead.v11.ReleaseSummary
-	20,  // 107: ddex.mead.v11.ReleaseInformation.genre_category:type_name -> ddex.mead.v11.GenreCategory
-	57,  // 108: ddex.mead.v11.ReleaseInformation.sub_genre_category:type_name -> ddex.mead.v11.SubGenreCategory
-	102, // 109: ddex.mead.v11.ReleaseInformation.focus:type_name -> ddex.mead.v11.Focus
-	35,  // 110: ddex.mead.v11.ReleaseInformation.mood:type_name -> ddex.mead.v11.Mood
-	7,   // 111: ddex.mead.v11.ReleaseInformation.artistic_style:type_name -> ddex.mead.v11.ArtisticStyle
-	59,  // 112: ddex.mead.v11.ReleaseInformation.theme:type_name -> ddex.mead.v11.Theme
-	3,   // 113: ddex.mead.v11.ReleaseInformation.activity:type_name -> ddex.mead.v11.Activity
-	89,  // 114: ddex.mead.v11.ReleaseInformation.commentary_note:type_name -> ddex.mead.v11.CommentaryNote
-	98,  // 115: ddex.mead.v11.ReleaseInformation.epoch:type_name -> ddex.mead.v11.Epoch
-	84,  // 116: ddex.mead.v11.ReleaseInformation.artistic_influence:type_name -> ddex.mead.v11.ArtisticInfluence
-	54,  // 117: ddex.mead.v11.ReleaseInformation.is_similar:type_name -> ddex.mead.v11.SimilarRelease
-	105, // 118: ddex.mead.v11.ReleaseInformation.historic_charting_information:type_name -> ddex.mead.v11.HistoricChartingInformation
-	85,  // 119: ddex.mead.v11.ReleaseInformation.award:type_name -> ddex.mead.v11.Award
-	5,   // 120: ddex.mead.v11.ReleaseInformation.alternative_title:type_name -> ddex.mead.v11.AlternativeTitle
-	106, // 121: ddex.mead.v11.ReleaseInformation.image:type_name -> ddex.mead.v11.Image
-	40,  // 122: ddex.mead.v11.ReleaseInformationList.release_information:type_name -> ddex.mead.v11.ReleaseInformation
-	131, // 123: ddex.mead.v11.ReleaseSummary.release_id:type_name -> ddex.mead.v11.ReleaseId
-	15,  // 124: ddex.mead.v11.ReleaseSummary.display_title:type_name -> ddex.mead.v11.DisplayTitle
-	96,  // 125: ddex.mead.v11.ReleaseSummary.display_artist_name:type_name -> ddex.mead.v11.DisplayArtistNameWithPronunciation
-	119, // 126: ddex.mead.v11.ReleaseSummary.display_artist:type_name -> ddex.mead.v11.PartyDescriptorWithPronunciation
-	135, // 127: ddex.mead.v11.RelevantResource.resource_id:type_name -> ddex.mead.v11.ResourceIdWithoutFlag
-	136, // 128: ddex.mead.v11.RelevantResource.resource_relationship_type:type_name -> ddex.mead.v11.ResourceRelationshipType
-	47,  // 129: ddex.mead.v11.ResourceInformation.resource_summary:type_name -> ddex.mead.v11.ResourceSummary
-	20,  // 130: ddex.mead.v11.ResourceInformation.genre_category:type_name -> ddex.mead.v11.GenreCategory
-	57,  // 131: ddex.mead.v11.ResourceInformation.sub_genre_category:type_name -> ddex.mead.v11.SubGenreCategory
-	18,  // 132: ddex.mead.v11.ResourceInformation.form:type_name -> ddex.mead.v11.Form
-	145, // 133: ddex.mead.v11.ResourceInformation.vocal_register:type_name -> ddex.mead.v11.VocalRegister
-	102, // 134: ddex.mead.v11.ResourceInformation.focus:type_name -> ddex.mead.v11.Focus
-	2,   // 135: ddex.mead.v11.ResourceInformation.absolute_pitch:type_name -> ddex.mead.v11.AbsolutePitch
-	61,  // 136: ddex.mead.v11.ResourceInformation.time_signature:type_name -> ddex.mead.v11.TimeSignature
-	58,  // 137: ddex.mead.v11.ResourceInformation.tempo:type_name -> ddex.mead.v11.TempoValue
-	8,   // 138: ddex.mead.v11.ResourceInformation.beats_per_minute:type_name -> ddex.mead.v11.BeatsPerMinute
-	27,  // 139: ddex.mead.v11.ResourceInformation.intensity:type_name -> ddex.mead.v11.Intensity
-	25,  // 140: ddex.mead.v11.ResourceInformation.instrument_used:type_name -> ddex.mead.v11.InstrumentUsed
-	21,  // 141: ddex.mead.v11.ResourceInformation.harmony:type_name -> ddex.mead.v11.Harmony
-	35,  // 142: ddex.mead.v11.ResourceInformation.mood:type_name -> ddex.mead.v11.Mood
-	11,  // 143: ddex.mead.v11.ResourceInformation.dance_style:type_name -> ddex.mead.v11.DanceStyle
-	48,  // 144: ddex.mead.v11.ResourceInformation.rhythm_style:type_name -> ddex.mead.v11.RhythmStyle
-	7,   // 145: ddex.mead.v11.ResourceInformation.artistic_style:type_name -> ddex.mead.v11.ArtisticStyle
-	59,  // 146: ddex.mead.v11.ResourceInformation.theme:type_name -> ddex.mead.v11.Theme
-	3,   // 147: ddex.mead.v11.ResourceInformation.activity:type_name -> ddex.mead.v11.Activity
-	65,  // 148: ddex.mead.v11.ResourceInformation.used_musical_work:type_name -> ddex.mead.v11.UsedMusicalWork
-	46,  // 149: ddex.mead.v11.ResourceInformation.related_resource:type_name -> ddex.mead.v11.ResourceRelationship
-	30,  // 150: ddex.mead.v11.ResourceInformation.lyrics:type_name -> ddex.mead.v11.Lyrics
-	89,  // 151: ddex.mead.v11.ResourceInformation.commentary_note:type_name -> ddex.mead.v11.CommentaryNote
-	52,  // 152: ddex.mead.v11.ResourceInformation.sample:type_name -> ddex.mead.v11.Sample
-	38,  // 153: ddex.mead.v11.ResourceInformation.recording_part:type_name -> ddex.mead.v11.RecordingPart
-	63,  // 154: ddex.mead.v11.ResourceInformation.usage:type_name -> ddex.mead.v11.Usage
-	23,  // 155: ddex.mead.v11.ResourceInformation.impact_date:type_name -> ddex.mead.v11.ImpactDate
-	88,  // 156: ddex.mead.v11.ResourceInformation.classical_period:type_name -> ddex.mead.v11.ClassicalPeriod
-	98,  // 157: ddex.mead.v11.ResourceInformation.epoch:type_name -> ddex.mead.v11.Epoch
-	84,  // 158: ddex.mead.v11.ResourceInformation.artistic_influence:type_name -> ddex.mead.v11.ArtisticInfluence
-	55,  // 159: ddex.mead.v11.ResourceInformation.is_similar:type_name -> ddex.mead.v11.SimilarResource
-	105, // 160: ddex.mead.v11.ResourceInformation.historic_charting_information:type_name -> ddex.mead.v11.HistoricChartingInformation
-	85,  // 161: ddex.mead.v11.ResourceInformation.award:type_name -> ddex.mead.v11.Award
-	29,  // 162: ddex.mead.v11.ResourceInformation.location_and_date_of_session:type_name -> ddex.mead.v11.LocationAndDateOfSession
-	5,   // 163: ddex.mead.v11.ResourceInformation.alternative_title:type_name -> ddex.mead.v11.AlternativeTitle
-	106, // 164: ddex.mead.v11.ResourceInformation.image:type_name -> ddex.mead.v11.Image
-	17,  // 165: ddex.mead.v11.ResourceInformation.is_original:type_name -> ddex.mead.v11.Flag
-	17,  // 166: ddex.mead.v11.ResourceInformation.is_cover:type_name -> ddex.mead.v11.Flag
-	44,  // 167: ddex.mead.v11.ResourceInformationList.resource_information:type_name -> ddex.mead.v11.ResourceInformation
-	114, // 168: ddex.mead.v11.ResourceRelationship.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
-	135, // 169: ddex.mead.v11.ResourceRelationship.resource_id:type_name -> ddex.mead.v11.ResourceIdWithoutFlag
-	129, // 170: ddex.mead.v11.ResourceRelationship.related_resource_type:type_name -> ddex.mead.v11.RelatedResourceType
-	143, // 171: ddex.mead.v11.ResourceRelationship.title:type_name -> ddex.mead.v11.TitleWithPronunciation
-	96,  // 172: ddex.mead.v11.ResourceRelationship.display_artist_name:type_name -> ddex.mead.v11.DisplayArtistNameWithPronunciation
-	119, // 173: ddex.mead.v11.ResourceRelationship.display_artist:type_name -> ddex.mead.v11.PartyDescriptorWithPronunciation
-	135, // 174: ddex.mead.v11.ResourceSummary.resource_id:type_name -> ddex.mead.v11.ResourceIdWithoutFlag
-	15,  // 175: ddex.mead.v11.ResourceSummary.display_title:type_name -> ddex.mead.v11.DisplayTitle
-	96,  // 176: ddex.mead.v11.ResourceSummary.display_artist_name:type_name -> ddex.mead.v11.DisplayArtistNameWithPronunciation
-	119, // 177: ddex.mead.v11.ResourceSummary.display_artist:type_name -> ddex.mead.v11.PartyDescriptorWithPronunciation
-	114, // 178: ddex.mead.v11.RhythmStyle.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
-	49,  // 179: ddex.mead.v11.RhythmStyle.value:type_name -> ddex.mead.v11.RhythmStyleValue
-	141, // 180: ddex.mead.v11.RhythmStyle.description:type_name -> ddex.mead.v11.TextWithoutTerritory
-	114, // 181: ddex.mead.v11.Sample.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
-	47,  // 182: ddex.mead.v11.Sample.related_resource:type_name -> ddex.mead.v11.ResourceSummary
-	53,  // 183: ddex.mead.v11.Sample.sample_feature:type_name -> ddex.mead.v11.SampleFeature
-	140, // 184: ddex.mead.v11.Sample.description:type_name -> ddex.mead.v11.TextWithFormat
-	151, // 185: ddex.mead.v11.Sample.host_timing:type_name -> ddex.mead.v11.Timing
-	151, // 186: ddex.mead.v11.Sample.sample_timing:type_name -> ddex.mead.v11.Timing
-	114, // 187: ddex.mead.v11.SimilarRelease.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
-	130, // 188: ddex.mead.v11.SimilarRelease.release:type_name -> ddex.mead.v11.Release
-	6,   // 189: ddex.mead.v11.SimilarRelease.description:type_name -> ddex.mead.v11.Annotation
-	114, // 190: ddex.mead.v11.SimilarResource.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
-	133, // 191: ddex.mead.v11.SimilarResource.resource:type_name -> ddex.mead.v11.Resource
-	6,   // 192: ddex.mead.v11.SimilarResource.description:type_name -> ddex.mead.v11.Annotation
-	114, // 193: ddex.mead.v11.SimilarWork.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
-	147, // 194: ddex.mead.v11.SimilarWork.work:type_name -> ddex.mead.v11.Work
-	6,   // 195: ddex.mead.v11.SimilarWork.description:type_name -> ddex.mead.v11.Annotation
-	114, // 196: ddex.mead.v11.SubGenreCategory.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
-	139, // 197: ddex.mead.v11.SubGenreCategory.value:type_name -> ddex.mead.v11.SubGenreCategoryValue
-	114, // 198: ddex.mead.v11.Theme.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
-	60,  // 199: ddex.mead.v11.Theme.value:type_name -> ddex.mead.v11.ThemeValue
-	141, // 200: ddex.mead.v11.Theme.description:type_name -> ddex.mead.v11.TextWithoutTerritory
-	114, // 201: ddex.mead.v11.TimeSignature.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
-	62,  // 202: ddex.mead.v11.TimeSignature.modulation:type_name -> ddex.mead.v11.TimeSignatureModulation
-	32,  // 203: ddex.mead.v11.TimeSignature.meter:type_name -> ddex.mead.v11.Meter
-	32,  // 204: ddex.mead.v11.TimeSignatureModulation.meter:type_name -> ddex.mead.v11.Meter
-	114, // 205: ddex.mead.v11.Usage.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
-	140, // 206: ddex.mead.v11.Usage.description:type_name -> ddex.mead.v11.TextWithFormat
-	43,  // 207: ddex.mead.v11.Usage.relevant_resource:type_name -> ddex.mead.v11.RelevantResource
-	99,  // 208: ddex.mead.v11.Usage.usage_date:type_name -> ddex.mead.v11.EventDate
-	64,  // 209: ddex.mead.v11.Usage.usage_period:type_name -> ddex.mead.v11.UsagePeriod
-	150, // 210: ddex.mead.v11.UsagePeriod.start_date:type_name -> ddex.mead.v11.EventDateWithoutFlags
-	150, // 211: ddex.mead.v11.UsagePeriod.end_date:type_name -> ddex.mead.v11.EventDateWithoutFlags
-	114, // 212: ddex.mead.v11.UsedMusicalWork.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
-	114, // 213: ddex.mead.v11.WorkHierarchy.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
-	116, // 214: ddex.mead.v11.WorkHierarchy.work_id:type_name -> ddex.mead.v11.MusicalWorkIdWithoutFlag
-	149, // 215: ddex.mead.v11.WorkHierarchy.work_title:type_name -> ddex.mead.v11.WorkTitle
-	9,   // 216: ddex.mead.v11.WorkHierarchy.child:type_name -> ddex.mead.v11.ChildWorkHierarchy
-	18,  // 217: ddex.mead.v11.WorkHierarchy.form:type_name -> ddex.mead.v11.Form
-	69,  // 218: ddex.mead.v11.WorkInformation.work_summary:type_name -> ddex.mead.v11.WorkSummary
-	20,  // 219: ddex.mead.v11.WorkInformation.genre_category:type_name -> ddex.mead.v11.GenreCategory
-	57,  // 220: ddex.mead.v11.WorkInformation.sub_genre_category:type_name -> ddex.mead.v11.SubGenreCategory
-	18,  // 221: ddex.mead.v11.WorkInformation.form:type_name -> ddex.mead.v11.Form
-	145, // 222: ddex.mead.v11.WorkInformation.vocal_register:type_name -> ddex.mead.v11.VocalRegister
-	102, // 223: ddex.mead.v11.WorkInformation.focus:type_name -> ddex.mead.v11.Focus
-	61,  // 224: ddex.mead.v11.WorkInformation.time_signature:type_name -> ddex.mead.v11.TimeSignature
-	58,  // 225: ddex.mead.v11.WorkInformation.tempo:type_name -> ddex.mead.v11.TempoValue
-	24,  // 226: ddex.mead.v11.WorkInformation.target_instrument:type_name -> ddex.mead.v11.Instrument
-	21,  // 227: ddex.mead.v11.WorkInformation.harmony:type_name -> ddex.mead.v11.Harmony
-	35,  // 228: ddex.mead.v11.WorkInformation.mood:type_name -> ddex.mead.v11.Mood
-	11,  // 229: ddex.mead.v11.WorkInformation.dance_style:type_name -> ddex.mead.v11.DanceStyle
-	48,  // 230: ddex.mead.v11.WorkInformation.rhythm_style:type_name -> ddex.mead.v11.RhythmStyle
-	59,  // 231: ddex.mead.v11.WorkInformation.theme:type_name -> ddex.mead.v11.Theme
-	3,   // 232: ddex.mead.v11.WorkInformation.activity:type_name -> ddex.mead.v11.Activity
-	66,  // 233: ddex.mead.v11.WorkInformation.work_hierarchy:type_name -> ddex.mead.v11.WorkHierarchy
-	39,  // 234: ddex.mead.v11.WorkInformation.related_work:type_name -> ddex.mead.v11.RelatedWork
-	13,  // 235: ddex.mead.v11.WorkInformation.derived_recording:type_name -> ddex.mead.v11.DerivedRecording
-	30,  // 236: ddex.mead.v11.WorkInformation.lyrics:type_name -> ddex.mead.v11.Lyrics
-	89,  // 237: ddex.mead.v11.WorkInformation.commentary_note:type_name -> ddex.mead.v11.CommentaryNote
-	88,  // 238: ddex.mead.v11.WorkInformation.classical_period:type_name -> ddex.mead.v11.ClassicalPeriod
-	98,  // 239: ddex.mead.v11.WorkInformation.epoch:type_name -> ddex.mead.v11.Epoch
-	84,  // 240: ddex.mead.v11.WorkInformation.artistic_influence:type_name -> ddex.mead.v11.ArtisticInfluence
-	56,  // 241: ddex.mead.v11.WorkInformation.is_similar:type_name -> ddex.mead.v11.SimilarWork
-	85,  // 242: ddex.mead.v11.WorkInformation.award:type_name -> ddex.mead.v11.Award
-	5,   // 243: ddex.mead.v11.WorkInformation.alternative_title:type_name -> ddex.mead.v11.AlternativeTitle
-	67,  // 244: ddex.mead.v11.WorkInformationList.work_information:type_name -> ddex.mead.v11.WorkInformation
-	116, // 245: ddex.mead.v11.WorkSummary.musical_work_id:type_name -> ddex.mead.v11.MusicalWorkIdWithoutFlag
-	143, // 246: ddex.mead.v11.WorkSummary.work_title:type_name -> ddex.mead.v11.TitleWithPronunciation
-	119, // 247: ddex.mead.v11.WorkSummary.writer:type_name -> ddex.mead.v11.PartyDescriptorWithPronunciation
-	81,  // 248: ddex.mead.v11.Person.uri:type_name -> ddex.mead.v11.URI
-	78,  // 249: ddex.mead.v11.Source.author:type_name -> ddex.mead.v11.Person
-	70,  // 250: ddex.mead.v11.Source.category:type_name -> ddex.mead.v11.Category
-	78,  // 251: ddex.mead.v11.Source.contributor:type_name -> ddex.mead.v11.Person
-	73,  // 252: ddex.mead.v11.Source.generator:type_name -> ddex.mead.v11.Generator
-	74,  // 253: ddex.mead.v11.Source.icon:type_name -> ddex.mead.v11.Icon
-	75,  // 254: ddex.mead.v11.Source.id:type_name -> ddex.mead.v11.Id
-	76,  // 255: ddex.mead.v11.Source.link:type_name -> ddex.mead.v11.Link
-	77,  // 256: ddex.mead.v11.Source.logo:type_name -> ddex.mead.v11.Logo
-	80,  // 257: ddex.mead.v11.Source.rights:type_name -> ddex.mead.v11.Text
-	80,  // 258: ddex.mead.v11.Source.subtitle:type_name -> ddex.mead.v11.Text
-	80,  // 259: ddex.mead.v11.Source.title:type_name -> ddex.mead.v11.Text
-	72,  // 260: ddex.mead.v11.Source.updated:type_name -> ddex.mead.v11.DateTime
-	114, // 261: ddex.mead.v11.ArtisticInfluence.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
-	119, // 262: ddex.mead.v11.ArtisticInfluence.party:type_name -> ddex.mead.v11.PartyDescriptorWithPronunciation
-	147, // 263: ddex.mead.v11.ArtisticInfluence.work:type_name -> ddex.mead.v11.Work
-	133, // 264: ddex.mead.v11.ArtisticInfluence.resource:type_name -> ddex.mead.v11.Resource
-	130, // 265: ddex.mead.v11.ArtisticInfluence.release:type_name -> ddex.mead.v11.Release
-	140, // 266: ddex.mead.v11.ArtisticInfluence.description:type_name -> ddex.mead.v11.TextWithFormat
-	114, // 267: ddex.mead.v11.Award.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
-	119, // 268: ddex.mead.v11.Award.awarding_body:type_name -> ddex.mead.v11.PartyDescriptorWithPronunciation
-	119, // 269: ddex.mead.v11.Award.awarded_party:type_name -> ddex.mead.v11.PartyDescriptorWithPronunciation
-	118, // 270: ddex.mead.v11.Award.award_name:type_name -> ddex.mead.v11.NameWithPronunciationAndScriptCode
-	99,  // 271: ddex.mead.v11.Award.date:type_name -> ddex.mead.v11.EventDate
-	140, // 272: ddex.mead.v11.Award.comment:type_name -> ddex.mead.v11.TextWithFormat
-	97,  // 273: ddex.mead.v11.ChartEntry.duration:type_name -> ddex.mead.v11.Duration
-	140, // 274: ddex.mead.v11.ChartEntry.comment:type_name -> ddex.mead.v11.TextWithFormat
-	114, // 275: ddex.mead.v11.ClassicalPeriod.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
-	123, // 276: ddex.mead.v11.ClassicalPeriod.name:type_name -> ddex.mead.v11.PeriodValue
-	114, // 277: ddex.mead.v11.CommentaryNote.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
-	141, // 278: ddex.mead.v11.CommentaryNote.text:type_name -> ddex.mead.v11.TextWithoutTerritory
-	90,  // 279: ddex.mead.v11.CommentaryNote.commentary_note_type:type_name -> ddex.mead.v11.CommentaryNoteType
-	119, // 280: ddex.mead.v11.CommentaryNote.author:type_name -> ddex.mead.v11.PartyDescriptorWithPronunciation
-	104, // 281: ddex.mead.v11.DetailedHashSum.algorithm:type_name -> ddex.mead.v11.HashSumAlgorithmType
-	126, // 282: ddex.mead.v11.DetailedPartyId.proprietary_id:type_name -> ddex.mead.v11.ProprietaryId
-	95,  // 283: ddex.mead.v11.DisplayArtistNameWithPronunciation.name:type_name -> ddex.mead.v11.DisplayArtistNameWithDefault
-	125, // 284: ddex.mead.v11.DisplayArtistNameWithPronunciation.pronunciation:type_name -> ddex.mead.v11.Pronunciation
-	114, // 285: ddex.mead.v11.Epoch.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
-	117, // 286: ddex.mead.v11.Epoch.value:type_name -> ddex.mead.v11.Name
-	119, // 287: ddex.mead.v11.Epoch.related_artist:type_name -> ddex.mead.v11.PartyDescriptorWithPronunciation
-	128, // 288: ddex.mead.v11.Epoch.related_creation:type_name -> ddex.mead.v11.RelatedCreation
-	92,  // 289: ddex.mead.v11.Epoch.start_date:type_name -> ddex.mead.v11.Date
-	92,  // 290: ddex.mead.v11.Epoch.end_date:type_name -> ddex.mead.v11.Date
-	93,  // 291: ddex.mead.v11.File.hash_sum:type_name -> ddex.mead.v11.DetailedHashSum
-	114, // 292: ddex.mead.v11.Focus.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
-	119, // 293: ddex.mead.v11.Focus.party:type_name -> ddex.mead.v11.PartyDescriptorWithPronunciation
-	96,  // 294: ddex.mead.v11.Focus.display_artist_name:type_name -> ddex.mead.v11.DisplayArtistNameWithPronunciation
-	119, // 295: ddex.mead.v11.Focus.display_artist:type_name -> ddex.mead.v11.PartyDescriptorWithPronunciation
-	119, // 296: ddex.mead.v11.Focus.writer:type_name -> ddex.mead.v11.PartyDescriptorWithPronunciation
-	124, // 297: ddex.mead.v11.Focus.period_of_being_focus:type_name -> ddex.mead.v11.PeriodWithTime
-	141, // 298: ddex.mead.v11.Focus.comment:type_name -> ddex.mead.v11.TextWithoutTerritory
-	114, // 299: ddex.mead.v11.HistoricChartingInformation.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
-	91,  // 300: ddex.mead.v11.HistoricChartingInformation.territory_code:type_name -> ddex.mead.v11.CurrentTerritoryCode
-	118, // 301: ddex.mead.v11.HistoricChartingInformation.chart_name:type_name -> ddex.mead.v11.NameWithPronunciationAndScriptCode
-	97,  // 302: ddex.mead.v11.HistoricChartingInformation.duration_in_charts:type_name -> ddex.mead.v11.Duration
-	87,  // 303: ddex.mead.v11.HistoricChartingInformation.chart_entry:type_name -> ddex.mead.v11.ChartEntry
-	140, // 304: ddex.mead.v11.HistoricChartingInformation.comment:type_name -> ddex.mead.v11.TextWithFormat
-	114, // 305: ddex.mead.v11.Image.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
-	101, // 306: ddex.mead.v11.Image.file:type_name -> ddex.mead.v11.File
-	107, // 307: ddex.mead.v11.Image.image_type:type_name -> ddex.mead.v11.ImageType
-	109, // 308: ddex.mead.v11.MessageAuditTrail.message_audit_trail_event:type_name -> ddex.mead.v11.MessageAuditTrailEvent
-	111, // 309: ddex.mead.v11.MessageAuditTrailEvent.messaging_party_descriptor:type_name -> ddex.mead.v11.MessagingPartyWithoutCode
-	111, // 310: ddex.mead.v11.MessageHeader.message_sender:type_name -> ddex.mead.v11.MessagingPartyWithoutCode
-	111, // 311: ddex.mead.v11.MessageHeader.sent_on_behalf_of:type_name -> ddex.mead.v11.MessagingPartyWithoutCode
-	111, // 312: ddex.mead.v11.MessageHeader.message_recipient:type_name -> ddex.mead.v11.MessagingPartyWithoutCode
-	108, // 313: ddex.mead.v11.MessageHeader.message_audit_trail:type_name -> ddex.mead.v11.MessageAuditTrail
-	121, // 314: ddex.mead.v11.MessagingPartyWithoutCode.party_name:type_name -> ddex.mead.v11.PartyNameWithoutCode
-	115, // 315: ddex.mead.v11.MetadataSource.metadata_source_type:type_name -> ddex.mead.v11.MetadataSourceType
-	94,  // 316: ddex.mead.v11.MetadataSource.party_id:type_name -> ddex.mead.v11.DetailedPartyId
-	120, // 317: ddex.mead.v11.MetadataSource.party_name:type_name -> ddex.mead.v11.PartyNameWithPronunciation
-	112, // 318: ddex.mead.v11.MetadataSourceList.metadata_source:type_name -> ddex.mead.v11.MetadataSource
-	126, // 319: ddex.mead.v11.MusicalWorkIdWithoutFlag.proprietary_id:type_name -> ddex.mead.v11.ProprietaryId
-	117, // 320: ddex.mead.v11.NameWithPronunciationAndScriptCode.name:type_name -> ddex.mead.v11.Name
-	125, // 321: ddex.mead.v11.NameWithPronunciationAndScriptCode.pronunciation:type_name -> ddex.mead.v11.Pronunciation
-	94,  // 322: ddex.mead.v11.PartyDescriptorWithPronunciation.party_id:type_name -> ddex.mead.v11.DetailedPartyId
-	120, // 323: ddex.mead.v11.PartyDescriptorWithPronunciation.party_name:type_name -> ddex.mead.v11.PartyNameWithPronunciation
-	118, // 324: ddex.mead.v11.PartyNameWithPronunciation.full_name:type_name -> ddex.mead.v11.NameWithPronunciationAndScriptCode
-	118, // 325: ddex.mead.v11.PartyNameWithPronunciation.full_name_ascii_transcribed:type_name -> ddex.mead.v11.NameWithPronunciationAndScriptCode
-	118, // 326: ddex.mead.v11.PartyNameWithPronunciation.full_name_indexed:type_name -> ddex.mead.v11.NameWithPronunciationAndScriptCode
-	118, // 327: ddex.mead.v11.PartyNameWithPronunciation.names_before_key_name:type_name -> ddex.mead.v11.NameWithPronunciationAndScriptCode
-	118, // 328: ddex.mead.v11.PartyNameWithPronunciation.key_name:type_name -> ddex.mead.v11.NameWithPronunciationAndScriptCode
-	118, // 329: ddex.mead.v11.PartyNameWithPronunciation.names_after_key_name:type_name -> ddex.mead.v11.NameWithPronunciationAndScriptCode
-	118, // 330: ddex.mead.v11.PartyNameWithPronunciation.abbreviated_name:type_name -> ddex.mead.v11.NameWithPronunciationAndScriptCode
-	99,  // 331: ddex.mead.v11.Period.start_date:type_name -> ddex.mead.v11.EventDate
-	99,  // 332: ddex.mead.v11.Period.end_date:type_name -> ddex.mead.v11.EventDate
-	100, // 333: ddex.mead.v11.Period.start_date_time:type_name -> ddex.mead.v11.EventDateTime
-	100, // 334: ddex.mead.v11.Period.end_date_time:type_name -> ddex.mead.v11.EventDateTime
-	143, // 335: ddex.mead.v11.RelatedCreation.title:type_name -> ddex.mead.v11.TitleWithPronunciation
-	131, // 336: ddex.mead.v11.RelatedCreation.release_id:type_name -> ddex.mead.v11.ReleaseId
-	135, // 337: ddex.mead.v11.RelatedCreation.resource_id:type_name -> ddex.mead.v11.ResourceIdWithoutFlag
-	116, // 338: ddex.mead.v11.RelatedCreation.musical_work_id:type_name -> ddex.mead.v11.MusicalWorkIdWithoutFlag
-	132, // 339: ddex.mead.v11.Release.release_title:type_name -> ddex.mead.v11.ReleaseTitle
-	96,  // 340: ddex.mead.v11.Release.display_artist_name:type_name -> ddex.mead.v11.DisplayArtistNameWithPronunciation
-	119, // 341: ddex.mead.v11.Release.display_artist:type_name -> ddex.mead.v11.PartyDescriptorWithPronunciation
-	86,  // 342: ddex.mead.v11.ReleaseId.catalog_number:type_name -> ddex.mead.v11.CatalogNumber
-	126, // 343: ddex.mead.v11.ReleaseId.proprietary_id:type_name -> ddex.mead.v11.ProprietaryId
-	137, // 344: ddex.mead.v11.Resource.resource_title:type_name -> ddex.mead.v11.ResourceTitle
-	96,  // 345: ddex.mead.v11.Resource.display_artist_name:type_name -> ddex.mead.v11.DisplayArtistNameWithPronunciation
-	119, // 346: ddex.mead.v11.Resource.display_artist:type_name -> ddex.mead.v11.PartyDescriptorWithPronunciation
-	86,  // 347: ddex.mead.v11.ResourceIdWithoutFlag.catalog_number:type_name -> ddex.mead.v11.CatalogNumber
-	126, // 348: ddex.mead.v11.ResourceIdWithoutFlag.proprietary_id:type_name -> ddex.mead.v11.ProprietaryId
-	125, // 349: ddex.mead.v11.TitleText.pronunciation:type_name -> ddex.mead.v11.Pronunciation
-	142, // 350: ddex.mead.v11.TitleWithPronunciation.title_text:type_name -> ddex.mead.v11.TitleText
-	142, // 351: ddex.mead.v11.TitleWithPronunciation.sub_title:type_name -> ddex.mead.v11.TitleText
-	82,  // 352: ddex.mead.v11.Venue.territory_code:type_name -> ddex.mead.v11.AllTerritoryCode
-	114, // 353: ddex.mead.v11.VocalRegister.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
-	146, // 354: ddex.mead.v11.VocalRegister.value:type_name -> ddex.mead.v11.VocalRegisterValue
-	149, // 355: ddex.mead.v11.Work.work_title:type_name -> ddex.mead.v11.WorkTitle
-	119, // 356: ddex.mead.v11.Work.writer:type_name -> ddex.mead.v11.PartyDescriptorWithPronunciation
-	357, // [357:357] is the sub-list for method output_type
-	357, // [357:357] is the sub-list for method input_type
-	357, // [357:357] is the sub-list for extension type_name
-	357, // [357:357] is the sub-list for extension extendee
-	0,   // [0:357] is the sub-list for field type_name
+	152, // 5: ddex.mead.v11.MeadMessage.namespace_attrs:type_name -> ddex.mead.v11.MeadMessage.NamespaceAttrsEntry
+	78,  // 6: ddex.mead.v11.Feed.author:type_name -> ddex.mead.v11.Person
+	70,  // 7: ddex.mead.v11.Feed.category:type_name -> ddex.mead.v11.Category
+	78,  // 8: ddex.mead.v11.Feed.contributor:type_name -> ddex.mead.v11.Person
+	73,  // 9: ddex.mead.v11.Feed.generator:type_name -> ddex.mead.v11.Generator
+	74,  // 10: ddex.mead.v11.Feed.icon:type_name -> ddex.mead.v11.Icon
+	75,  // 11: ddex.mead.v11.Feed.id:type_name -> ddex.mead.v11.Id
+	76,  // 12: ddex.mead.v11.Feed.link:type_name -> ddex.mead.v11.Link
+	77,  // 13: ddex.mead.v11.Feed.logo:type_name -> ddex.mead.v11.Logo
+	80,  // 14: ddex.mead.v11.Feed.rights:type_name -> ddex.mead.v11.Text
+	80,  // 15: ddex.mead.v11.Feed.subtitle:type_name -> ddex.mead.v11.Text
+	80,  // 16: ddex.mead.v11.Feed.title:type_name -> ddex.mead.v11.Text
+	72,  // 17: ddex.mead.v11.Feed.updated:type_name -> ddex.mead.v11.DateTime
+	16,  // 18: ddex.mead.v11.Feed.entry:type_name -> ddex.mead.v11.Entry
+	153, // 19: ddex.mead.v11.Feed.namespace_attrs:type_name -> ddex.mead.v11.Feed.NamespaceAttrsEntry
+	114, // 20: ddex.mead.v11.AbsolutePitch.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
+	34,  // 21: ddex.mead.v11.AbsolutePitch.modulation:type_name -> ddex.mead.v11.Modulation
+	114, // 22: ddex.mead.v11.Activity.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
+	4,   // 23: ddex.mead.v11.Activity.value:type_name -> ddex.mead.v11.ActivityValue
+	141, // 24: ddex.mead.v11.Activity.description:type_name -> ddex.mead.v11.TextWithoutTerritory
+	114, // 25: ddex.mead.v11.AlternativeTitle.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
+	142, // 26: ddex.mead.v11.AlternativeTitle.title_text:type_name -> ddex.mead.v11.TitleText
+	142, // 27: ddex.mead.v11.AlternativeTitle.sub_title:type_name -> ddex.mead.v11.TitleText
+	114, // 28: ddex.mead.v11.Annotation.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
+	140, // 29: ddex.mead.v11.Annotation.text:type_name -> ddex.mead.v11.TextWithFormat
+	114, // 30: ddex.mead.v11.ArtisticStyle.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
+	83,  // 31: ddex.mead.v11.ArtisticStyle.value:type_name -> ddex.mead.v11.ArtistTypeValue
+	114, // 32: ddex.mead.v11.BeatsPerMinute.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
+	34,  // 33: ddex.mead.v11.BeatsPerMinute.modulation:type_name -> ddex.mead.v11.Modulation
+	116, // 34: ddex.mead.v11.ChildWorkHierarchy.work_id:type_name -> ddex.mead.v11.MusicalWorkIdWithoutFlag
+	149, // 35: ddex.mead.v11.ChildWorkHierarchy.work_title:type_name -> ddex.mead.v11.WorkTitle
+	9,   // 36: ddex.mead.v11.ChildWorkHierarchy.child:type_name -> ddex.mead.v11.ChildWorkHierarchy
+	18,  // 37: ddex.mead.v11.ChildWorkHierarchy.form:type_name -> ddex.mead.v11.Form
+	94,  // 38: ddex.mead.v11.Contributor.identifier:type_name -> ddex.mead.v11.DetailedPartyId
+	120, // 39: ddex.mead.v11.Contributor.name:type_name -> ddex.mead.v11.PartyNameWithPronunciation
+	134, // 40: ddex.mead.v11.Contributor.role:type_name -> ddex.mead.v11.ResourceContributorRole
+	114, // 41: ddex.mead.v11.DanceStyle.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
+	12,  // 42: ddex.mead.v11.DanceStyle.value:type_name -> ddex.mead.v11.DanceStyleValue
+	141, // 43: ddex.mead.v11.DanceStyle.description:type_name -> ddex.mead.v11.TextWithoutTerritory
+	114, // 44: ddex.mead.v11.DerivedRecording.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
+	135, // 45: ddex.mead.v11.DerivedRecording.resource_id:type_name -> ddex.mead.v11.ResourceIdWithoutFlag
+	129, // 46: ddex.mead.v11.DerivedRecording.related_resource_type:type_name -> ddex.mead.v11.RelatedResourceType
+	143, // 47: ddex.mead.v11.DerivedRecording.title:type_name -> ddex.mead.v11.TitleWithPronunciation
+	96,  // 48: ddex.mead.v11.DerivedRecording.display_artist_name:type_name -> ddex.mead.v11.DisplayArtistNameWithPronunciation
+	119, // 49: ddex.mead.v11.DerivedRecording.display_artist:type_name -> ddex.mead.v11.PartyDescriptorWithPronunciation
+	125, // 50: ddex.mead.v11.DisplaySubTitle.pronunciation:type_name -> ddex.mead.v11.Pronunciation
+	142, // 51: ddex.mead.v11.DisplayTitle.title_text:type_name -> ddex.mead.v11.TitleText
+	14,  // 52: ddex.mead.v11.DisplayTitle.sub_title:type_name -> ddex.mead.v11.DisplaySubTitle
+	78,  // 53: ddex.mead.v11.Entry.author:type_name -> ddex.mead.v11.Person
+	70,  // 54: ddex.mead.v11.Entry.category:type_name -> ddex.mead.v11.Category
+	71,  // 55: ddex.mead.v11.Entry.content:type_name -> ddex.mead.v11.Content
+	78,  // 56: ddex.mead.v11.Entry.contributor:type_name -> ddex.mead.v11.Person
+	75,  // 57: ddex.mead.v11.Entry.id:type_name -> ddex.mead.v11.Id
+	76,  // 58: ddex.mead.v11.Entry.link:type_name -> ddex.mead.v11.Link
+	72,  // 59: ddex.mead.v11.Entry.published:type_name -> ddex.mead.v11.DateTime
+	80,  // 60: ddex.mead.v11.Entry.rights:type_name -> ddex.mead.v11.Text
+	79,  // 61: ddex.mead.v11.Entry.source:type_name -> ddex.mead.v11.Source
+	80,  // 62: ddex.mead.v11.Entry.summary:type_name -> ddex.mead.v11.Text
+	80,  // 63: ddex.mead.v11.Entry.title:type_name -> ddex.mead.v11.Text
+	72,  // 64: ddex.mead.v11.Entry.updated:type_name -> ddex.mead.v11.DateTime
+	114, // 65: ddex.mead.v11.Flag.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
+	114, // 66: ddex.mead.v11.Form.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
+	19,  // 67: ddex.mead.v11.Form.value:type_name -> ddex.mead.v11.FormValue
+	114, // 68: ddex.mead.v11.GenreCategory.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
+	103, // 69: ddex.mead.v11.GenreCategory.value:type_name -> ddex.mead.v11.GenreCategoryValue
+	141, // 70: ddex.mead.v11.GenreCategory.description:type_name -> ddex.mead.v11.TextWithoutTerritory
+	114, // 71: ddex.mead.v11.Harmony.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
+	50,  // 72: ddex.mead.v11.Harmony.root_chord_note:type_name -> ddex.mead.v11.RootChordNote
+	51,  // 73: ddex.mead.v11.Harmony.root_chord_quality:type_name -> ddex.mead.v11.RootChordQuality
+	33,  // 74: ddex.mead.v11.Harmony.mode:type_name -> ddex.mead.v11.Mode
+	22,  // 75: ddex.mead.v11.Harmony.modulation:type_name -> ddex.mead.v11.HarmonyModulation
+	50,  // 76: ddex.mead.v11.HarmonyModulation.root_chord_note:type_name -> ddex.mead.v11.RootChordNote
+	51,  // 77: ddex.mead.v11.HarmonyModulation.root_chord_quality:type_name -> ddex.mead.v11.RootChordQuality
+	33,  // 78: ddex.mead.v11.HarmonyModulation.mode:type_name -> ddex.mead.v11.Mode
+	91,  // 79: ddex.mead.v11.ImpactDate.territory_code:type_name -> ddex.mead.v11.CurrentTerritoryCode
+	114, // 80: ddex.mead.v11.Instrument.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
+	26,  // 81: ddex.mead.v11.Instrument.value:type_name -> ddex.mead.v11.InstrumentValue
+	114, // 82: ddex.mead.v11.InstrumentUsed.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
+	26,  // 83: ddex.mead.v11.InstrumentUsed.value:type_name -> ddex.mead.v11.InstrumentValue
+	114, // 84: ddex.mead.v11.Intensity.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
+	28,  // 85: ddex.mead.v11.Intensity.value:type_name -> ddex.mead.v11.IntensityValue
+	114, // 86: ddex.mead.v11.LocationAndDateOfSession.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
+	138, // 87: ddex.mead.v11.LocationAndDateOfSession.session_type:type_name -> ddex.mead.v11.SessionType
+	122, // 88: ddex.mead.v11.LocationAndDateOfSession.period:type_name -> ddex.mead.v11.Period
+	144, // 89: ddex.mead.v11.LocationAndDateOfSession.venue:type_name -> ddex.mead.v11.Venue
+	140, // 90: ddex.mead.v11.LocationAndDateOfSession.comment:type_name -> ddex.mead.v11.TextWithFormat
+	10,  // 91: ddex.mead.v11.LocationAndDateOfSession.contributor:type_name -> ddex.mead.v11.Contributor
+	114, // 92: ddex.mead.v11.Lyrics.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
+	31,  // 93: ddex.mead.v11.Lyrics.text:type_name -> ddex.mead.v11.LyricsText
+	125, // 94: ddex.mead.v11.Lyrics.pronunciation:type_name -> ddex.mead.v11.Pronunciation
+	114, // 95: ddex.mead.v11.Mood.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
+	36,  // 96: ddex.mead.v11.Mood.value:type_name -> ddex.mead.v11.MoodValue
+	141, // 97: ddex.mead.v11.Mood.description:type_name -> ddex.mead.v11.TextWithoutTerritory
+	126, // 98: ddex.mead.v11.Party.proprietary_id:type_name -> ddex.mead.v11.ProprietaryId
+	114, // 99: ddex.mead.v11.RecordingPart.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
+	127, // 100: ddex.mead.v11.RecordingPart.recording_part_type:type_name -> ddex.mead.v11.RecordingPartType
+	6,   // 101: ddex.mead.v11.RecordingPart.comment:type_name -> ddex.mead.v11.Annotation
+	140, // 102: ddex.mead.v11.RecordingPart.usage_information:type_name -> ddex.mead.v11.TextWithFormat
+	114, // 103: ddex.mead.v11.RelatedWork.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
+	116, // 104: ddex.mead.v11.RelatedWork.work_id:type_name -> ddex.mead.v11.MusicalWorkIdWithoutFlag
+	149, // 105: ddex.mead.v11.RelatedWork.work_title:type_name -> ddex.mead.v11.WorkTitle
+	148, // 106: ddex.mead.v11.RelatedWork.work_relationship_type:type_name -> ddex.mead.v11.WorkRelationshipType
+	119, // 107: ddex.mead.v11.RelatedWork.writer:type_name -> ddex.mead.v11.PartyDescriptorWithPronunciation
+	42,  // 108: ddex.mead.v11.ReleaseInformation.release_summary:type_name -> ddex.mead.v11.ReleaseSummary
+	20,  // 109: ddex.mead.v11.ReleaseInformation.genre_category:type_name -> ddex.mead.v11.GenreCategory
+	57,  // 110: ddex.mead.v11.ReleaseInformation.sub_genre_category:type_name -> ddex.mead.v11.SubGenreCategory
+	102, // 111: ddex.mead.v11.ReleaseInformation.focus:type_name -> ddex.mead.v11.Focus
+	35,  // 112: ddex.mead.v11.ReleaseInformation.mood:type_name -> ddex.mead.v11.Mood
+	7,   // 113: ddex.mead.v11.ReleaseInformation.artistic_style:type_name -> ddex.mead.v11.ArtisticStyle
+	59,  // 114: ddex.mead.v11.ReleaseInformation.theme:type_name -> ddex.mead.v11.Theme
+	3,   // 115: ddex.mead.v11.ReleaseInformation.activity:type_name -> ddex.mead.v11.Activity
+	89,  // 116: ddex.mead.v11.ReleaseInformation.commentary_note:type_name -> ddex.mead.v11.CommentaryNote
+	98,  // 117: ddex.mead.v11.ReleaseInformation.epoch:type_name -> ddex.mead.v11.Epoch
+	84,  // 118: ddex.mead.v11.ReleaseInformation.artistic_influence:type_name -> ddex.mead.v11.ArtisticInfluence
+	54,  // 119: ddex.mead.v11.ReleaseInformation.is_similar:type_name -> ddex.mead.v11.SimilarRelease
+	105, // 120: ddex.mead.v11.ReleaseInformation.historic_charting_information:type_name -> ddex.mead.v11.HistoricChartingInformation
+	85,  // 121: ddex.mead.v11.ReleaseInformation.award:type_name -> ddex.mead.v11.Award
+	5,   // 122: ddex.mead.v11.ReleaseInformation.alternative_title:type_name -> ddex.mead.v11.AlternativeTitle
+	106, // 123: ddex.mead.v11.ReleaseInformation.image:type_name -> ddex.mead.v11.Image
+	40,  // 124: ddex.mead.v11.ReleaseInformationList.release_information:type_name -> ddex.mead.v11.ReleaseInformation
+	131, // 125: ddex.mead.v11.ReleaseSummary.release_id:type_name -> ddex.mead.v11.ReleaseId
+	15,  // 126: ddex.mead.v11.ReleaseSummary.display_title:type_name -> ddex.mead.v11.DisplayTitle
+	96,  // 127: ddex.mead.v11.ReleaseSummary.display_artist_name:type_name -> ddex.mead.v11.DisplayArtistNameWithPronunciation
+	119, // 128: ddex.mead.v11.ReleaseSummary.display_artist:type_name -> ddex.mead.v11.PartyDescriptorWithPronunciation
+	135, // 129: ddex.mead.v11.RelevantResource.resource_id:type_name -> ddex.mead.v11.ResourceIdWithoutFlag
+	136, // 130: ddex.mead.v11.RelevantResource.resource_relationship_type:type_name -> ddex.mead.v11.ResourceRelationshipType
+	47,  // 131: ddex.mead.v11.ResourceInformation.resource_summary:type_name -> ddex.mead.v11.ResourceSummary
+	20,  // 132: ddex.mead.v11.ResourceInformation.genre_category:type_name -> ddex.mead.v11.GenreCategory
+	57,  // 133: ddex.mead.v11.ResourceInformation.sub_genre_category:type_name -> ddex.mead.v11.SubGenreCategory
+	18,  // 134: ddex.mead.v11.ResourceInformation.form:type_name -> ddex.mead.v11.Form
+	145, // 135: ddex.mead.v11.ResourceInformation.vocal_register:type_name -> ddex.mead.v11.VocalRegister
+	102, // 136: ddex.mead.v11.ResourceInformation.focus:type_name -> ddex.mead.v11.Focus
+	2,   // 137: ddex.mead.v11.ResourceInformation.absolute_pitch:type_name -> ddex.mead.v11.AbsolutePitch
+	61,  // 138: ddex.mead.v11.ResourceInformation.time_signature:type_name -> ddex.mead.v11.TimeSignature
+	58,  // 139: ddex.mead.v11.ResourceInformation.tempo:type_name -> ddex.mead.v11.TempoValue
+	8,   // 140: ddex.mead.v11.ResourceInformation.beats_per_minute:type_name -> ddex.mead.v11.BeatsPerMinute
+	27,  // 141: ddex.mead.v11.ResourceInformation.intensity:type_name -> ddex.mead.v11.Intensity
+	25,  // 142: ddex.mead.v11.ResourceInformation.instrument_used:type_name -> ddex.mead.v11.InstrumentUsed
+	21,  // 143: ddex.mead.v11.ResourceInformation.harmony:type_name -> ddex.mead.v11.Harmony
+	35,  // 144: ddex.mead.v11.ResourceInformation.mood:type_name -> ddex.mead.v11.Mood
+	11,  // 145: ddex.mead.v11.ResourceInformation.dance_style:type_name -> ddex.mead.v11.DanceStyle
+	48,  // 146: ddex.mead.v11.ResourceInformation.rhythm_style:type_name -> ddex.mead.v11.RhythmStyle
+	7,   // 147: ddex.mead.v11.ResourceInformation.artistic_style:type_name -> ddex.mead.v11.ArtisticStyle
+	59,  // 148: ddex.mead.v11.ResourceInformation.theme:type_name -> ddex.mead.v11.Theme
+	3,   // 149: ddex.mead.v11.ResourceInformation.activity:type_name -> ddex.mead.v11.Activity
+	65,  // 150: ddex.mead.v11.ResourceInformation.used_musical_work:type_name -> ddex.mead.v11.UsedMusicalWork
+	46,  // 151: ddex.mead.v11.ResourceInformation.related_resource:type_name -> ddex.mead.v11.ResourceRelationship
+	30,  // 152: ddex.mead.v11.ResourceInformation.lyrics:type_name -> ddex.mead.v11.Lyrics
+	89,  // 153: ddex.mead.v11.ResourceInformation.commentary_note:type_name -> ddex.mead.v11.CommentaryNote
+	52,  // 154: ddex.mead.v11.ResourceInformation.sample:type_name -> ddex.mead.v11.Sample
+	38,  // 155: ddex.mead.v11.ResourceInformation.recording_part:type_name -> ddex.mead.v11.RecordingPart
+	63,  // 156: ddex.mead.v11.ResourceInformation.usage:type_name -> ddex.mead.v11.Usage
+	23,  // 157: ddex.mead.v11.ResourceInformation.impact_date:type_name -> ddex.mead.v11.ImpactDate
+	88,  // 158: ddex.mead.v11.ResourceInformation.classical_period:type_name -> ddex.mead.v11.ClassicalPeriod
+	98,  // 159: ddex.mead.v11.ResourceInformation.epoch:type_name -> ddex.mead.v11.Epoch
+	84,  // 160: ddex.mead.v11.ResourceInformation.artistic_influence:type_name -> ddex.mead.v11.ArtisticInfluence
+	55,  // 161: ddex.mead.v11.ResourceInformation.is_similar:type_name -> ddex.mead.v11.SimilarResource
+	105, // 162: ddex.mead.v11.ResourceInformation.historic_charting_information:type_name -> ddex.mead.v11.HistoricChartingInformation
+	85,  // 163: ddex.mead.v11.ResourceInformation.award:type_name -> ddex.mead.v11.Award
+	29,  // 164: ddex.mead.v11.ResourceInformation.location_and_date_of_session:type_name -> ddex.mead.v11.LocationAndDateOfSession
+	5,   // 165: ddex.mead.v11.ResourceInformation.alternative_title:type_name -> ddex.mead.v11.AlternativeTitle
+	106, // 166: ddex.mead.v11.ResourceInformation.image:type_name -> ddex.mead.v11.Image
+	17,  // 167: ddex.mead.v11.ResourceInformation.is_original:type_name -> ddex.mead.v11.Flag
+	17,  // 168: ddex.mead.v11.ResourceInformation.is_cover:type_name -> ddex.mead.v11.Flag
+	44,  // 169: ddex.mead.v11.ResourceInformationList.resource_information:type_name -> ddex.mead.v11.ResourceInformation
+	114, // 170: ddex.mead.v11.ResourceRelationship.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
+	135, // 171: ddex.mead.v11.ResourceRelationship.resource_id:type_name -> ddex.mead.v11.ResourceIdWithoutFlag
+	129, // 172: ddex.mead.v11.ResourceRelationship.related_resource_type:type_name -> ddex.mead.v11.RelatedResourceType
+	143, // 173: ddex.mead.v11.ResourceRelationship.title:type_name -> ddex.mead.v11.TitleWithPronunciation
+	96,  // 174: ddex.mead.v11.ResourceRelationship.display_artist_name:type_name -> ddex.mead.v11.DisplayArtistNameWithPronunciation
+	119, // 175: ddex.mead.v11.ResourceRelationship.display_artist:type_name -> ddex.mead.v11.PartyDescriptorWithPronunciation
+	135, // 176: ddex.mead.v11.ResourceSummary.resource_id:type_name -> ddex.mead.v11.ResourceIdWithoutFlag
+	15,  // 177: ddex.mead.v11.ResourceSummary.display_title:type_name -> ddex.mead.v11.DisplayTitle
+	96,  // 178: ddex.mead.v11.ResourceSummary.display_artist_name:type_name -> ddex.mead.v11.DisplayArtistNameWithPronunciation
+	119, // 179: ddex.mead.v11.ResourceSummary.display_artist:type_name -> ddex.mead.v11.PartyDescriptorWithPronunciation
+	114, // 180: ddex.mead.v11.RhythmStyle.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
+	49,  // 181: ddex.mead.v11.RhythmStyle.value:type_name -> ddex.mead.v11.RhythmStyleValue
+	141, // 182: ddex.mead.v11.RhythmStyle.description:type_name -> ddex.mead.v11.TextWithoutTerritory
+	114, // 183: ddex.mead.v11.Sample.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
+	47,  // 184: ddex.mead.v11.Sample.related_resource:type_name -> ddex.mead.v11.ResourceSummary
+	53,  // 185: ddex.mead.v11.Sample.sample_feature:type_name -> ddex.mead.v11.SampleFeature
+	140, // 186: ddex.mead.v11.Sample.description:type_name -> ddex.mead.v11.TextWithFormat
+	151, // 187: ddex.mead.v11.Sample.host_timing:type_name -> ddex.mead.v11.Timing
+	151, // 188: ddex.mead.v11.Sample.sample_timing:type_name -> ddex.mead.v11.Timing
+	114, // 189: ddex.mead.v11.SimilarRelease.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
+	130, // 190: ddex.mead.v11.SimilarRelease.release:type_name -> ddex.mead.v11.Release
+	6,   // 191: ddex.mead.v11.SimilarRelease.description:type_name -> ddex.mead.v11.Annotation
+	114, // 192: ddex.mead.v11.SimilarResource.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
+	133, // 193: ddex.mead.v11.SimilarResource.resource:type_name -> ddex.mead.v11.Resource
+	6,   // 194: ddex.mead.v11.SimilarResource.description:type_name -> ddex.mead.v11.Annotation
+	114, // 195: ddex.mead.v11.SimilarWork.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
+	147, // 196: ddex.mead.v11.SimilarWork.work:type_name -> ddex.mead.v11.Work
+	6,   // 197: ddex.mead.v11.SimilarWork.description:type_name -> ddex.mead.v11.Annotation
+	114, // 198: ddex.mead.v11.SubGenreCategory.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
+	139, // 199: ddex.mead.v11.SubGenreCategory.value:type_name -> ddex.mead.v11.SubGenreCategoryValue
+	114, // 200: ddex.mead.v11.Theme.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
+	60,  // 201: ddex.mead.v11.Theme.value:type_name -> ddex.mead.v11.ThemeValue
+	141, // 202: ddex.mead.v11.Theme.description:type_name -> ddex.mead.v11.TextWithoutTerritory
+	114, // 203: ddex.mead.v11.TimeSignature.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
+	62,  // 204: ddex.mead.v11.TimeSignature.modulation:type_name -> ddex.mead.v11.TimeSignatureModulation
+	32,  // 205: ddex.mead.v11.TimeSignature.meter:type_name -> ddex.mead.v11.Meter
+	32,  // 206: ddex.mead.v11.TimeSignatureModulation.meter:type_name -> ddex.mead.v11.Meter
+	114, // 207: ddex.mead.v11.Usage.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
+	140, // 208: ddex.mead.v11.Usage.description:type_name -> ddex.mead.v11.TextWithFormat
+	43,  // 209: ddex.mead.v11.Usage.relevant_resource:type_name -> ddex.mead.v11.RelevantResource
+	99,  // 210: ddex.mead.v11.Usage.usage_date:type_name -> ddex.mead.v11.EventDate
+	64,  // 211: ddex.mead.v11.Usage.usage_period:type_name -> ddex.mead.v11.UsagePeriod
+	150, // 212: ddex.mead.v11.UsagePeriod.start_date:type_name -> ddex.mead.v11.EventDateWithoutFlags
+	150, // 213: ddex.mead.v11.UsagePeriod.end_date:type_name -> ddex.mead.v11.EventDateWithoutFlags
+	114, // 214: ddex.mead.v11.UsedMusicalWork.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
+	114, // 215: ddex.mead.v11.WorkHierarchy.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
+	116, // 216: ddex.mead.v11.WorkHierarchy.work_id:type_name -> ddex.mead.v11.MusicalWorkIdWithoutFlag
+	149, // 217: ddex.mead.v11.WorkHierarchy.work_title:type_name -> ddex.mead.v11.WorkTitle
+	9,   // 218: ddex.mead.v11.WorkHierarchy.child:type_name -> ddex.mead.v11.ChildWorkHierarchy
+	18,  // 219: ddex.mead.v11.WorkHierarchy.form:type_name -> ddex.mead.v11.Form
+	69,  // 220: ddex.mead.v11.WorkInformation.work_summary:type_name -> ddex.mead.v11.WorkSummary
+	20,  // 221: ddex.mead.v11.WorkInformation.genre_category:type_name -> ddex.mead.v11.GenreCategory
+	57,  // 222: ddex.mead.v11.WorkInformation.sub_genre_category:type_name -> ddex.mead.v11.SubGenreCategory
+	18,  // 223: ddex.mead.v11.WorkInformation.form:type_name -> ddex.mead.v11.Form
+	145, // 224: ddex.mead.v11.WorkInformation.vocal_register:type_name -> ddex.mead.v11.VocalRegister
+	102, // 225: ddex.mead.v11.WorkInformation.focus:type_name -> ddex.mead.v11.Focus
+	61,  // 226: ddex.mead.v11.WorkInformation.time_signature:type_name -> ddex.mead.v11.TimeSignature
+	58,  // 227: ddex.mead.v11.WorkInformation.tempo:type_name -> ddex.mead.v11.TempoValue
+	24,  // 228: ddex.mead.v11.WorkInformation.target_instrument:type_name -> ddex.mead.v11.Instrument
+	21,  // 229: ddex.mead.v11.WorkInformation.harmony:type_name -> ddex.mead.v11.Harmony
+	35,  // 230: ddex.mead.v11.WorkInformation.mood:type_name -> ddex.mead.v11.Mood
+	11,  // 231: ddex.mead.v11.WorkInformation.dance_style:type_name -> ddex.mead.v11.DanceStyle
+	48,  // 232: ddex.mead.v11.WorkInformation.rhythm_style:type_name -> ddex.mead.v11.RhythmStyle
+	59,  // 233: ddex.mead.v11.WorkInformation.theme:type_name -> ddex.mead.v11.Theme
+	3,   // 234: ddex.mead.v11.WorkInformation.activity:type_name -> ddex.mead.v11.Activity
+	66,  // 235: ddex.mead.v11.WorkInformation.work_hierarchy:type_name -> ddex.mead.v11.WorkHierarchy
+	39,  // 236: ddex.mead.v11.WorkInformation.related_work:type_name -> ddex.mead.v11.RelatedWork
+	13,  // 237: ddex.mead.v11.WorkInformation.derived_recording:type_name -> ddex.mead.v11.DerivedRecording
+	30,  // 238: ddex.mead.v11.WorkInformation.lyrics:type_name -> ddex.mead.v11.Lyrics
+	89,  // 239: ddex.mead.v11.WorkInformation.commentary_note:type_name -> ddex.mead.v11.CommentaryNote
+	88,  // 240: ddex.mead.v11.WorkInformation.classical_period:type_name -> ddex.mead.v11.ClassicalPeriod
+	98,  // 241: ddex.mead.v11.WorkInformation.epoch:type_name -> ddex.mead.v11.Epoch
+	84,  // 242: ddex.mead.v11.WorkInformation.artistic_influence:type_name -> ddex.mead.v11.ArtisticInfluence
+	56,  // 243: ddex.mead.v11.WorkInformation.is_similar:type_name -> ddex.mead.v11.SimilarWork
+	85,  // 244: ddex.mead.v11.WorkInformation.award:type_name -> ddex.mead.v11.Award
+	5,   // 245: ddex.mead.v11.WorkInformation.alternative_title:type_name -> ddex.mead.v11.AlternativeTitle
+	67,  // 246: ddex.mead.v11.WorkInformationList.work_information:type_name -> ddex.mead.v11.WorkInformation
+	116, // 247: ddex.mead.v11.WorkSummary.musical_work_id:type_name -> ddex.mead.v11.MusicalWorkIdWithoutFlag
+	143, // 248: ddex.mead.v11.WorkSummary.work_title:type_name -> ddex.mead.v11.TitleWithPronunciation
+	119, // 249: ddex.mead.v11.WorkSummary.writer:type_name -> ddex.mead.v11.PartyDescriptorWithPronunciation
+	81,  // 250: ddex.mead.v11.Person.uri:type_name -> ddex.mead.v11.URI
+	78,  // 251: ddex.mead.v11.Source.author:type_name -> ddex.mead.v11.Person
+	70,  // 252: ddex.mead.v11.Source.category:type_name -> ddex.mead.v11.Category
+	78,  // 253: ddex.mead.v11.Source.contributor:type_name -> ddex.mead.v11.Person
+	73,  // 254: ddex.mead.v11.Source.generator:type_name -> ddex.mead.v11.Generator
+	74,  // 255: ddex.mead.v11.Source.icon:type_name -> ddex.mead.v11.Icon
+	75,  // 256: ddex.mead.v11.Source.id:type_name -> ddex.mead.v11.Id
+	76,  // 257: ddex.mead.v11.Source.link:type_name -> ddex.mead.v11.Link
+	77,  // 258: ddex.mead.v11.Source.logo:type_name -> ddex.mead.v11.Logo
+	80,  // 259: ddex.mead.v11.Source.rights:type_name -> ddex.mead.v11.Text
+	80,  // 260: ddex.mead.v11.Source.subtitle:type_name -> ddex.mead.v11.Text
+	80,  // 261: ddex.mead.v11.Source.title:type_name -> ddex.mead.v11.Text
+	72,  // 262: ddex.mead.v11.Source.updated:type_name -> ddex.mead.v11.DateTime
+	114, // 263: ddex.mead.v11.ArtisticInfluence.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
+	119, // 264: ddex.mead.v11.ArtisticInfluence.party:type_name -> ddex.mead.v11.PartyDescriptorWithPronunciation
+	147, // 265: ddex.mead.v11.ArtisticInfluence.work:type_name -> ddex.mead.v11.Work
+	133, // 266: ddex.mead.v11.ArtisticInfluence.resource:type_name -> ddex.mead.v11.Resource
+	130, // 267: ddex.mead.v11.ArtisticInfluence.release:type_name -> ddex.mead.v11.Release
+	140, // 268: ddex.mead.v11.ArtisticInfluence.description:type_name -> ddex.mead.v11.TextWithFormat
+	114, // 269: ddex.mead.v11.Award.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
+	119, // 270: ddex.mead.v11.Award.awarding_body:type_name -> ddex.mead.v11.PartyDescriptorWithPronunciation
+	119, // 271: ddex.mead.v11.Award.awarded_party:type_name -> ddex.mead.v11.PartyDescriptorWithPronunciation
+	118, // 272: ddex.mead.v11.Award.award_name:type_name -> ddex.mead.v11.NameWithPronunciationAndScriptCode
+	99,  // 273: ddex.mead.v11.Award.date:type_name -> ddex.mead.v11.EventDate
+	140, // 274: ddex.mead.v11.Award.comment:type_name -> ddex.mead.v11.TextWithFormat
+	97,  // 275: ddex.mead.v11.ChartEntry.duration:type_name -> ddex.mead.v11.Duration
+	140, // 276: ddex.mead.v11.ChartEntry.comment:type_name -> ddex.mead.v11.TextWithFormat
+	114, // 277: ddex.mead.v11.ClassicalPeriod.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
+	123, // 278: ddex.mead.v11.ClassicalPeriod.name:type_name -> ddex.mead.v11.PeriodValue
+	114, // 279: ddex.mead.v11.CommentaryNote.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
+	141, // 280: ddex.mead.v11.CommentaryNote.text:type_name -> ddex.mead.v11.TextWithoutTerritory
+	90,  // 281: ddex.mead.v11.CommentaryNote.commentary_note_type:type_name -> ddex.mead.v11.CommentaryNoteType
+	119, // 282: ddex.mead.v11.CommentaryNote.author:type_name -> ddex.mead.v11.PartyDescriptorWithPronunciation
+	104, // 283: ddex.mead.v11.DetailedHashSum.algorithm:type_name -> ddex.mead.v11.HashSumAlgorithmType
+	126, // 284: ddex.mead.v11.DetailedPartyId.proprietary_id:type_name -> ddex.mead.v11.ProprietaryId
+	95,  // 285: ddex.mead.v11.DisplayArtistNameWithPronunciation.name:type_name -> ddex.mead.v11.DisplayArtistNameWithDefault
+	125, // 286: ddex.mead.v11.DisplayArtistNameWithPronunciation.pronunciation:type_name -> ddex.mead.v11.Pronunciation
+	114, // 287: ddex.mead.v11.Epoch.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
+	117, // 288: ddex.mead.v11.Epoch.value:type_name -> ddex.mead.v11.Name
+	119, // 289: ddex.mead.v11.Epoch.related_artist:type_name -> ddex.mead.v11.PartyDescriptorWithPronunciation
+	128, // 290: ddex.mead.v11.Epoch.related_creation:type_name -> ddex.mead.v11.RelatedCreation
+	92,  // 291: ddex.mead.v11.Epoch.start_date:type_name -> ddex.mead.v11.Date
+	92,  // 292: ddex.mead.v11.Epoch.end_date:type_name -> ddex.mead.v11.Date
+	93,  // 293: ddex.mead.v11.File.hash_sum:type_name -> ddex.mead.v11.DetailedHashSum
+	114, // 294: ddex.mead.v11.Focus.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
+	119, // 295: ddex.mead.v11.Focus.party:type_name -> ddex.mead.v11.PartyDescriptorWithPronunciation
+	96,  // 296: ddex.mead.v11.Focus.display_artist_name:type_name -> ddex.mead.v11.DisplayArtistNameWithPronunciation
+	119, // 297: ddex.mead.v11.Focus.display_artist:type_name -> ddex.mead.v11.PartyDescriptorWithPronunciation
+	119, // 298: ddex.mead.v11.Focus.writer:type_name -> ddex.mead.v11.PartyDescriptorWithPronunciation
+	124, // 299: ddex.mead.v11.Focus.period_of_being_focus:type_name -> ddex.mead.v11.PeriodWithTime
+	141, // 300: ddex.mead.v11.Focus.comment:type_name -> ddex.mead.v11.TextWithoutTerritory
+	114, // 301: ddex.mead.v11.HistoricChartingInformation.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
+	91,  // 302: ddex.mead.v11.HistoricChartingInformation.territory_code:type_name -> ddex.mead.v11.CurrentTerritoryCode
+	118, // 303: ddex.mead.v11.HistoricChartingInformation.chart_name:type_name -> ddex.mead.v11.NameWithPronunciationAndScriptCode
+	97,  // 304: ddex.mead.v11.HistoricChartingInformation.duration_in_charts:type_name -> ddex.mead.v11.Duration
+	87,  // 305: ddex.mead.v11.HistoricChartingInformation.chart_entry:type_name -> ddex.mead.v11.ChartEntry
+	140, // 306: ddex.mead.v11.HistoricChartingInformation.comment:type_name -> ddex.mead.v11.TextWithFormat
+	114, // 307: ddex.mead.v11.Image.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
+	101, // 308: ddex.mead.v11.Image.file:type_name -> ddex.mead.v11.File
+	107, // 309: ddex.mead.v11.Image.image_type:type_name -> ddex.mead.v11.ImageType
+	109, // 310: ddex.mead.v11.MessageAuditTrail.message_audit_trail_event:type_name -> ddex.mead.v11.MessageAuditTrailEvent
+	111, // 311: ddex.mead.v11.MessageAuditTrailEvent.messaging_party_descriptor:type_name -> ddex.mead.v11.MessagingPartyWithoutCode
+	111, // 312: ddex.mead.v11.MessageHeader.message_sender:type_name -> ddex.mead.v11.MessagingPartyWithoutCode
+	111, // 313: ddex.mead.v11.MessageHeader.sent_on_behalf_of:type_name -> ddex.mead.v11.MessagingPartyWithoutCode
+	111, // 314: ddex.mead.v11.MessageHeader.message_recipient:type_name -> ddex.mead.v11.MessagingPartyWithoutCode
+	108, // 315: ddex.mead.v11.MessageHeader.message_audit_trail:type_name -> ddex.mead.v11.MessageAuditTrail
+	121, // 316: ddex.mead.v11.MessagingPartyWithoutCode.party_name:type_name -> ddex.mead.v11.PartyNameWithoutCode
+	115, // 317: ddex.mead.v11.MetadataSource.metadata_source_type:type_name -> ddex.mead.v11.MetadataSourceType
+	94,  // 318: ddex.mead.v11.MetadataSource.party_id:type_name -> ddex.mead.v11.DetailedPartyId
+	120, // 319: ddex.mead.v11.MetadataSource.party_name:type_name -> ddex.mead.v11.PartyNameWithPronunciation
+	112, // 320: ddex.mead.v11.MetadataSourceList.metadata_source:type_name -> ddex.mead.v11.MetadataSource
+	126, // 321: ddex.mead.v11.MusicalWorkIdWithoutFlag.proprietary_id:type_name -> ddex.mead.v11.ProprietaryId
+	117, // 322: ddex.mead.v11.NameWithPronunciationAndScriptCode.name:type_name -> ddex.mead.v11.Name
+	125, // 323: ddex.mead.v11.NameWithPronunciationAndScriptCode.pronunciation:type_name -> ddex.mead.v11.Pronunciation
+	94,  // 324: ddex.mead.v11.PartyDescriptorWithPronunciation.party_id:type_name -> ddex.mead.v11.DetailedPartyId
+	120, // 325: ddex.mead.v11.PartyDescriptorWithPronunciation.party_name:type_name -> ddex.mead.v11.PartyNameWithPronunciation
+	118, // 326: ddex.mead.v11.PartyNameWithPronunciation.full_name:type_name -> ddex.mead.v11.NameWithPronunciationAndScriptCode
+	118, // 327: ddex.mead.v11.PartyNameWithPronunciation.full_name_ascii_transcribed:type_name -> ddex.mead.v11.NameWithPronunciationAndScriptCode
+	118, // 328: ddex.mead.v11.PartyNameWithPronunciation.full_name_indexed:type_name -> ddex.mead.v11.NameWithPronunciationAndScriptCode
+	118, // 329: ddex.mead.v11.PartyNameWithPronunciation.names_before_key_name:type_name -> ddex.mead.v11.NameWithPronunciationAndScriptCode
+	118, // 330: ddex.mead.v11.PartyNameWithPronunciation.key_name:type_name -> ddex.mead.v11.NameWithPronunciationAndScriptCode
+	118, // 331: ddex.mead.v11.PartyNameWithPronunciation.names_after_key_name:type_name -> ddex.mead.v11.NameWithPronunciationAndScriptCode
+	118, // 332: ddex.mead.v11.PartyNameWithPronunciation.abbreviated_name:type_name -> ddex.mead.v11.NameWithPronunciationAndScriptCode
+	99,  // 333: ddex.mead.v11.Period.start_date:type_name -> ddex.mead.v11.EventDate
+	99,  // 334: ddex.mead.v11.Period.end_date:type_name -> ddex.mead.v11.EventDate
+	100, // 335: ddex.mead.v11.Period.start_date_time:type_name -> ddex.mead.v11.EventDateTime
+	100, // 336: ddex.mead.v11.Period.end_date_time:type_name -> ddex.mead.v11.EventDateTime
+	143, // 337: ddex.mead.v11.RelatedCreation.title:type_name -> ddex.mead.v11.TitleWithPronunciation
+	131, // 338: ddex.mead.v11.RelatedCreation.release_id:type_name -> ddex.mead.v11.ReleaseId
+	135, // 339: ddex.mead.v11.RelatedCreation.resource_id:type_name -> ddex.mead.v11.ResourceIdWithoutFlag
+	116, // 340: ddex.mead.v11.RelatedCreation.musical_work_id:type_name -> ddex.mead.v11.MusicalWorkIdWithoutFlag
+	132, // 341: ddex.mead.v11.Release.release_title:type_name -> ddex.mead.v11.ReleaseTitle
+	96,  // 342: ddex.mead.v11.Release.display_artist_name:type_name -> ddex.mead.v11.DisplayArtistNameWithPronunciation
+	119, // 343: ddex.mead.v11.Release.display_artist:type_name -> ddex.mead.v11.PartyDescriptorWithPronunciation
+	86,  // 344: ddex.mead.v11.ReleaseId.catalog_number:type_name -> ddex.mead.v11.CatalogNumber
+	126, // 345: ddex.mead.v11.ReleaseId.proprietary_id:type_name -> ddex.mead.v11.ProprietaryId
+	137, // 346: ddex.mead.v11.Resource.resource_title:type_name -> ddex.mead.v11.ResourceTitle
+	96,  // 347: ddex.mead.v11.Resource.display_artist_name:type_name -> ddex.mead.v11.DisplayArtistNameWithPronunciation
+	119, // 348: ddex.mead.v11.Resource.display_artist:type_name -> ddex.mead.v11.PartyDescriptorWithPronunciation
+	86,  // 349: ddex.mead.v11.ResourceIdWithoutFlag.catalog_number:type_name -> ddex.mead.v11.CatalogNumber
+	126, // 350: ddex.mead.v11.ResourceIdWithoutFlag.proprietary_id:type_name -> ddex.mead.v11.ProprietaryId
+	125, // 351: ddex.mead.v11.TitleText.pronunciation:type_name -> ddex.mead.v11.Pronunciation
+	142, // 352: ddex.mead.v11.TitleWithPronunciation.title_text:type_name -> ddex.mead.v11.TitleText
+	142, // 353: ddex.mead.v11.TitleWithPronunciation.sub_title:type_name -> ddex.mead.v11.TitleText
+	82,  // 354: ddex.mead.v11.Venue.territory_code:type_name -> ddex.mead.v11.AllTerritoryCode
+	114, // 355: ddex.mead.v11.VocalRegister.metadata_source_reference:type_name -> ddex.mead.v11.MetadataSourceReference
+	146, // 356: ddex.mead.v11.VocalRegister.value:type_name -> ddex.mead.v11.VocalRegisterValue
+	149, // 357: ddex.mead.v11.Work.work_title:type_name -> ddex.mead.v11.WorkTitle
+	119, // 358: ddex.mead.v11.Work.writer:type_name -> ddex.mead.v11.PartyDescriptorWithPronunciation
+	359, // [359:359] is the sub-list for method output_type
+	359, // [359:359] is the sub-list for method input_type
+	359, // [359:359] is the sub-list for extension type_name
+	359, // [359:359] is the sub-list for extension extendee
+	0,   // [0:359] is the sub-list for field type_name
 }
 
 func init() { file_ddex_mead_v11_v11_proto_init() }
@@ -13413,7 +13380,7 @@ func file_ddex_mead_v11_v11_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_ddex_mead_v11_v11_proto_rawDesc), len(file_ddex_mead_v11_v11_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   152,
+			NumMessages:   154,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

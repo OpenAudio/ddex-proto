@@ -8,6 +8,7 @@ lint:
     - PACKAGE_DIRECTORY_MATCH # Allow packages like ddex.ern.v432 in proto/ernv432/
     - PACKAGE_VERSION_SUFFIX  # Allow version suffixes in package names
     - ENUM_VALUE_PREFIX       # Allow enum values without strict prefix matching
+    - IMPORT_USED             # Allow unused imports (common in generated code)
 breaking:
   use:
     - FILE
