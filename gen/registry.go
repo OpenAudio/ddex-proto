@@ -10,6 +10,7 @@ import (
 
 	// Auto-generated imports for all DDEX message types
 	v383 "github.com/OpenAudio/ddex-proto/gen/ddex/ern/v383"
+	v42 "github.com/OpenAudio/ddex-proto/gen/ddex/ern/v42"
 	v43 "github.com/OpenAudio/ddex-proto/gen/ddex/ern/v43"
 	v432 "github.com/OpenAudio/ddex-proto/gen/ddex/ern/v432"
 	v11 "github.com/OpenAudio/ddex-proto/gen/ddex/mead/v11"
@@ -33,6 +34,16 @@ var messageRegistry = map[string]MessageTypeInfo{
 	"ern/v383/PurgeReleaseMessage": {
 		Type:        reflect.TypeOf(v383.PurgeReleaseMessage{}),
 		Namespace:   v383.Namespace,
+		RootElement: "PurgeReleaseMessage",
+	},
+	"ern/v42/NewReleaseMessage": {
+		Type:        reflect.TypeOf(v42.NewReleaseMessage{}),
+		Namespace:   v42.Namespace,
+		RootElement: "NewReleaseMessage",
+	},
+	"ern/v42/PurgeReleaseMessage": {
+		Type:        reflect.TypeOf(v42.PurgeReleaseMessage{}),
+		Namespace:   v42.Namespace,
 		RootElement: "PurgeReleaseMessage",
 	},
 	"ern/v43/NewReleaseMessage": {

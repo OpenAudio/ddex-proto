@@ -25,7 +25,9 @@ var specs = []struct {
 	// Process AVS versions first so they're available for imports
 	{"avs", "latest", "allowed-value-sets.xsd"},
 	{"avs", "20200108", "avs_20200108.xsd"},
+	{"avs", "20200518", "avs20200518.xsd"},
 	// Then process the main specs
+	{"ern", "42", "release-notification.xsd"},
 	{"ern", "43", "release-notification.xsd"},
 	{"ern", "432", "release-notification.xsd"},
 	{"mead", "11", "media-enrichment-and-description.xsd"},

@@ -1,0 +1,2789 @@
+syntax = "proto3";
+
+package ddex.ern.v42;
+
+option go_package = "github.com/OpenAudio/ddex-proto/gen/ddex/ern/v42";
+
+// Target namespace: http://ddex.net/xml/ern/42
+
+import "ddex/avs/vlatest/vlatest.proto";
+
+message NewReleaseMessage {
+  // @gotags: xml:"MessageHeader"
+  ddex.ern.v42.MessageHeader message_header = 1;
+  // @gotags: xml:"ReleaseAdmin"
+  repeated ddex.ern.v42.ReleaseAdmin release_admin = 2;
+  // @gotags: xml:"PartyList"
+  ddex.ern.v42.PartyList party_list = 3;
+  // @gotags: xml:"CueSheetList"
+  ddex.ern.v42.DetailedCueSheetList cue_sheet_list = 4;
+  // @gotags: xml:"ResourceList"
+  ddex.ern.v42.ResourceList resource_list = 5;
+  // @gotags: xml:"ChapterList"
+  ddex.ern.v42.ChapterList chapter_list = 6;
+  // @gotags: xml:"ReleaseList"
+  ddex.ern.v42.ReleaseList release_list = 7;
+  // @gotags: xml:"DealList"
+  ddex.ern.v42.DealList deal_list = 8;
+  // @gotags: xml:"SupplementalDocumentList"
+  ddex.ern.v42.SupplementalDocumentList supplemental_document_list = 9;
+  // @gotags: xml:"ReleaseProfileVersionId,attr"
+  string release_profile_version_id = 10;
+  // @gotags: xml:"ReleaseProfileVariantVersionId,attr"
+  string release_profile_variant_version_id = 11;
+  // @gotags: xml:"LanguageAndScriptCode,attr"
+  string language_and_script_code = 12;
+  // @gotags: xml:"xmlns:ern,attr"
+  string xmlns_ern = 13;
+  // @gotags: xml:"xmlns:xsi,attr"
+  string xmlns_xsi = 14;
+  // @gotags: xml:"xsi:schemaLocation,attr"
+  string xsi_schema_location = 15;
+}
+
+message PurgeReleaseMessage {
+  // @gotags: xml:"MessageHeader"
+  ddex.ern.v42.MessageHeader message_header = 1;
+  // @gotags: xml:"PurgedRelease"
+  ddex.ern.v42.PurgedRelease purged_release = 2;
+  // @gotags: xml:"LanguageAndScriptCode,attr"
+  string language_and_script_code = 3;
+  // @gotags: xml:"xmlns:ern,attr"
+  string xmlns_ern = 4;
+  // @gotags: xml:"xmlns:xsi,attr"
+  string xmlns_xsi = 5;
+  // @gotags: xml:"xsi:schemaLocation,attr"
+  string xsi_schema_location = 6;
+}
+
+message AdditionalTitle {
+  // @gotags: xml:"TitleText"
+  string title_text = 1;
+  // @gotags: xml:"SubTitle"
+  repeated ddex.ern.v42.DisplaySubTitle sub_title = 2;
+  // @gotags: xml:"LanguageAndScriptCode,attr"
+  string language_and_script_code = 3;
+  // @gotags: xml:"ApplicableTerritoryCode,attr"
+  string applicable_territory_code = 4;
+  // @gotags: xml:"TitleType,attr"
+  string title_type = 5;
+  // @gotags: xml:"Namespace,attr"
+  string namespace = 6;
+  // @gotags: xml:"UserDefinedValue,attr"
+  string user_defined_value = 7;
+  // @gotags: xml:"IsDefault,attr"
+  bool is_default = 8;
+}
+
+message AdministratingRecordCompanyWithReference {
+  // @gotags: xml:"RecordCompanyPartyReference"
+  string record_company_party_reference = 1;
+  // @gotags: xml:"Role"
+  ddex.ern.v42.AdministratingRecordCompanyRole role = 2;
+}
+
+message AvRating {
+  // @gotags: xml:"Rating"
+  string rating = 1;
+  // @gotags: xml:"Agency"
+  ddex.ern.v42.RatingAgency agency = 2;
+  // @gotags: xml:"Reason"
+  ddex.ern.v42.RatingReason reason = 3;
+  // @gotags: xml:"ApplicableTerritoryCode,attr"
+  string applicable_territory_code = 4;
+  // @gotags: xml:"IsDefault,attr"
+  bool is_default = 5;
+}
+
+message CLineWithDefault {
+  // @gotags: xml:"Year"
+  string year = 1;
+  // @gotags: xml:"CLineCompany"
+  string c_line_company = 2;
+  // @gotags: xml:"CLineText"
+  string c_line_text = 3;
+  // @gotags: xml:"ApplicableTerritoryCode,attr"
+  string applicable_territory_code = 4;
+  // @gotags: xml:"IsDefault,attr"
+  bool is_default = 5;
+  // @gotags: xml:"LanguageAndScriptCode,attr"
+  string language_and_script_code = 6;
+}
+
+message Chapter {
+  // @gotags: xml:"ChapterReference"
+  string chapter_reference = 1;
+  // @gotags: xml:"ChapterId"
+  repeated ddex.ern.v42.ProprietaryId chapter_id = 2;
+  // @gotags: xml:"DisplayTitleText"
+  repeated ddex.ern.v42.DisplayTitleText display_title_text = 3;
+  // @gotags: xml:"DisplayTitle"
+  repeated ddex.ern.v42.DisplayTitle display_title = 4;
+  // @gotags: xml:"AdditionalTitle"
+  repeated ddex.ern.v42.AdditionalTitle additional_title = 5;
+  // @gotags: xml:"SequenceNumber"
+  int32 sequence_number = 6;
+  // @gotags: xml:"Contributor"
+  repeated ddex.ern.v42.Contributor contributor = 7;
+  // @gotags: xml:"Character"
+  repeated ddex.ern.v42.Character character = 8;
+  // @gotags: xml:"RepresentativeImageReference"
+  string representative_image_reference = 9;
+  // @gotags: xml:"StartTime"
+  string start_time = 10;
+  // @gotags: xml:"Duration"
+  string duration = 11;
+  // @gotags: xml:"EndTime"
+  string end_time = 12;
+  // @gotags: xml:"LanguageAndScriptCode,attr"
+  string language_and_script_code = 13;
+}
+
+message ChapterList {
+  // @gotags: xml:"Chapter"
+  repeated ddex.ern.v42.Chapter chapter = 1;
+  // @gotags: xml:"LanguageAndScriptCode,attr"
+  string language_and_script_code = 2;
+}
+
+message Character {
+  // @gotags: xml:"CharacterPartyReference"
+  string character_party_reference = 1;
+  // @gotags: xml:"Performer"
+  ddex.ern.v42.Contributor performer = 2;
+  // @gotags: xml:"SequenceNumber,attr"
+  int32 sequence_number = 3;
+}
+
+message CommercialModelType {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"Namespace,attr"
+  string namespace = 2;
+  // @gotags: xml:"UserDefinedValue,attr"
+  string user_defined_value = 3;
+}
+
+message ConditionForRightsClaimPolicy {
+  // @gotags: xml:"Value"
+  string value = 1;
+  // @gotags: xml:"Unit"
+  string unit = 2;
+  // @gotags: xml:"ReferenceCreation"
+  string reference_creation = 3;
+  // @gotags: xml:"RelationalRelator"
+  string relational_relator = 4;
+  // @gotags: xml:"MeasurementType"
+  string measurement_type = 5;
+}
+
+message Contributor {
+  // @gotags: xml:"ContributorPartyReference"
+  string contributor_party_reference = 1;
+  // @gotags: xml:"Role"
+  repeated ddex.ern.v42.ContributorRole role = 2;
+  // @gotags: xml:"InstrumentType"
+  repeated ddex.ern.v42.InstrumentType instrument_type = 3;
+  // @gotags: xml:"HasMadeFeaturedContribution"
+  bool has_made_featured_contribution = 4;
+  // @gotags: xml:"HasMadeContractedContribution"
+  bool has_made_contracted_contribution = 5;
+  // @gotags: xml:"IsCredited"
+  ddex.ern.v42.IsCredited is_credited = 6;
+  // @gotags: xml:"DisplayCredits"
+  repeated ddex.ern.v42.DisplayCredits display_credits = 7;
+  // @gotags: xml:"SequenceNumber,attr"
+  int32 sequence_number = 8;
+}
+
+message CoreArea {
+  // @gotags: xml:"TopLeftCorner"
+  string top_left_corner = 1;
+  // @gotags: xml:"BottomRightCorner"
+  string bottom_right_corner = 2;
+}
+
+message CourtesyLineWithDefault {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"LanguageAndScriptCode,attr"
+  string language_and_script_code = 2;
+  // @gotags: xml:"ApplicableTerritoryCode,attr"
+  string applicable_territory_code = 3;
+  // @gotags: xml:"IsDefault,attr"
+  bool is_default = 4;
+}
+
+message Deal {
+  // @gotags: xml:"DealReference"
+  repeated string deal_reference = 1;
+  // @gotags: xml:"IsCommunicatedOutOfBand"
+  bool is_communicated_out_of_band = 2;
+  // @gotags: xml:"DealTerms"
+  ddex.ern.v42.DealTerms deal_terms = 3;
+  // @gotags: xml:"DealTechnicalResourceDetailsReferenceList"
+  ddex.ern.v42.DealTechnicalResourceDetailsReferenceList deal_technical_resource_details_reference_list = 4;
+  // @gotags: xml:"DistributionChannelPage"
+  repeated ddex.ern.v42.DistributionChannelPage distribution_channel_page = 5;
+}
+
+message DealList {
+  // @gotags: xml:"ReleaseDeal"
+  repeated ddex.ern.v42.ReleaseDeal release_deal = 1;
+  // @gotags: xml:"ReleaseVisibility"
+  repeated ddex.ern.v42.ReleaseVisibility release_visibility = 2;
+  // @gotags: xml:"TrackReleaseVisibility"
+  repeated ddex.ern.v42.TrackReleaseVisibility track_release_visibility = 3;
+}
+
+message DealResourceReferenceList {
+  // @gotags: xml:"DealResourceReference"
+  repeated string deal_resource_reference = 1;
+}
+
+message DealTechnicalResourceDetailsReferenceList {
+  // @gotags: xml:"DealTechnicalResourceDetailsReference"
+  repeated string deal_technical_resource_details_reference = 1;
+}
+
+message DealTerms {
+  // @gotags: xml:"ValidityPeriod"
+  repeated ddex.ern.v42.PeriodWithStartDate validity_period = 1;
+  // @gotags: xml:"CommercialModelType"
+  repeated ddex.ern.v42.CommercialModelType commercial_model_type = 2;
+  // @gotags: xml:"UseType"
+  repeated ddex.ern.v42.DiscoverableUseType use_type = 3;
+  // @gotags: xml:"UserInterfaceType"
+  repeated ddex.ern.v42.UserInterfaceType user_interface_type = 4;
+  // @gotags: xml:"CarrierType"
+  repeated ddex.ern.v42.CarrierType carrier_type = 5;
+  // @gotags: xml:"TechnicalInstantiation"
+  ddex.ern.v42.DealTermsTechnicalInstantiation technical_instantiation = 6;
+  // @gotags: xml:"NumberOfUsages"
+  int32 number_of_usages = 7;
+  // @gotags: xml:"RightsClaimPolicy"
+  repeated ddex.ern.v42.RightsClaimPolicy rights_claim_policy = 8;
+  // @gotags: xml:"PriceInformation"
+  repeated ddex.ern.v42.PriceInformationWithType price_information = 9;
+  // @gotags: xml:"IsPreOrderDeal"
+  bool is_pre_order_deal = 10;
+  // @gotags: xml:"InstantGratificationResourceList"
+  ddex.ern.v42.DealResourceReferenceList instant_gratification_resource_list = 11;
+  // @gotags: xml:"PhysicalReturns"
+  ddex.ern.v42.PhysicalReturns physical_returns = 12;
+  // @gotags: xml:"NumberOfProductsPerCarton"
+  int32 number_of_products_per_carton = 13;
+  // @gotags: xml:"TerritoryCode"
+  repeated ddex.ern.v42.CurrentTerritoryCode territory_code = 14;
+  // @gotags: xml:"ExcludedTerritoryCode"
+  repeated ddex.ern.v42.CurrentTerritoryCode excluded_territory_code = 15;
+  // @gotags: xml:"DistributionChannel"
+  repeated ddex.ern.v42.DSP distribution_channel = 16;
+  // @gotags: xml:"ExcludedDistributionChannel"
+  repeated ddex.ern.v42.DSP excluded_distribution_channel = 17;
+  // @gotags: xml:"IsPromotional"
+  bool is_promotional = 18;
+  // @gotags: xml:"PromotionalCode"
+  ddex.ern.v42.PromotionalCode promotional_code = 19;
+}
+
+message DealTermsTechnicalInstantiation {
+  // @gotags: xml:"VideoDefinitionType"
+  ddex.ern.v42.VideoDefinitionType video_definition_type = 1;
+  // @gotags: xml:"CodingType"
+  string coding_type = 2;
+  // @gotags: xml:"BitRate"
+  ddex.ern.v42.BitRate bit_rate = 3;
+}
+
+message Deity {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"ApplicableTerritoryCode,attr"
+  string applicable_territory_code = 2;
+  // @gotags: xml:"IsDefault,attr"
+  bool is_default = 3;
+}
+
+message DelegatedUsageRights {
+  // @gotags: xml:"UseType"
+  repeated ddex.ern.v42.UseType use_type = 1;
+  // @gotags: xml:"PeriodOfRightsDelegation"
+  ddex.ern.v42.Period period_of_rights_delegation = 2;
+  // @gotags: xml:"TerritoryOfRightsDelegation"
+  repeated ddex.ern.v42.AllTerritoryCode territory_of_rights_delegation = 3;
+}
+
+message DescriptionWithTerritory {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"LanguageAndScriptCode,attr"
+  string language_and_script_code = 2;
+  // @gotags: xml:"ApplicableTerritoryCode,attr"
+  string applicable_territory_code = 3;
+  // @gotags: xml:"IsDefault,attr"
+  bool is_default = 4;
+}
+
+message DetailedCue {
+  // @gotags: xml:"CueUseType"
+  ddex.ern.v42.CueUseType cue_use_type = 1;
+  // @gotags: xml:"CueThemeType"
+  ddex.ern.v42.CueThemeType cue_theme_type = 2;
+  // @gotags: xml:"CueVocalType"
+  ddex.ern.v42.CueVocalType cue_vocal_type = 3;
+  // @gotags: xml:"CueVisualPerceptionType"
+  ddex.ern.v42.CueVisualPerceptionType cue_visual_perception_type = 4;
+  // @gotags: xml:"CueOrigin"
+  ddex.ern.v42.CueOrigin cue_origin = 5;
+  // @gotags: xml:"DisplayTitleText"
+  repeated ddex.ern.v42.DisplayTitleText display_title_text = 6;
+  // @gotags: xml:"DisplayTitle"
+  repeated ddex.ern.v42.DisplayTitle display_title = 7;
+  // @gotags: xml:"AdditionalTitle"
+  repeated ddex.ern.v42.AdditionalTitle additional_title = 8;
+  // @gotags: xml:"Contributor"
+  repeated ddex.ern.v42.Contributor contributor = 9;
+  // @gotags: xml:"IsDance"
+  bool is_dance = 10;
+  // @gotags: xml:"HasMusicalContent"
+  bool has_musical_content = 11;
+  // @gotags: xml:"PLine"
+  repeated ddex.ern.v42.PLine p_line = 12;
+  // @gotags: xml:"CLine"
+  repeated ddex.ern.v42.CLine c_line = 13;
+  // @gotags: xml:"StartTime"
+  string start_time = 14;
+  // @gotags: xml:"Duration"
+  string duration = 15;
+  // @gotags: xml:"EndTime"
+  string end_time = 16;
+  // @gotags: xml:"ResourceId"
+  ddex.ern.v42.ResourceId resource_id = 17;
+  // @gotags: xml:"WorkId"
+  ddex.ern.v42.MusicalWorkId work_id = 18;
+}
+
+message DetailedCueSheet {
+  // @gotags: xml:"CueSheetId"
+  repeated ddex.ern.v42.ProprietaryId cue_sheet_id = 1;
+  // @gotags: xml:"CueSheetReference"
+  string cue_sheet_reference = 2;
+  // @gotags: xml:"CueSheetType"
+  ddex.ern.v42.CueSheetType cue_sheet_type = 3;
+  // @gotags: xml:"Cue"
+  repeated ddex.ern.v42.DetailedCue cue = 4;
+}
+
+message DetailedCueSheetList {
+  // @gotags: xml:"CueSheet"
+  repeated ddex.ern.v42.DetailedCueSheet cue_sheet = 1;
+}
+
+message DetailedResourceContributor {
+  // @gotags: xml:"Role"
+  repeated ddex.ern.v42.ContributorRole role = 1;
+  // @gotags: xml:"InstrumentType"
+  repeated ddex.ern.v42.InstrumentType instrument_type = 2;
+  // @gotags: xml:"HasMadeFeaturedContribution"
+  bool has_made_featured_contribution = 3;
+  // @gotags: xml:"HasMadeContractedContribution"
+  bool has_made_contracted_contribution = 4;
+  // @gotags: xml:"DisplayCredits"
+  repeated ddex.ern.v42.DisplayCredits display_credits = 5;
+  // @gotags: xml:"PartyId"
+  repeated ddex.ern.v42.DetailedPartyId party_id = 6;
+  // @gotags: xml:"PartyName"
+  repeated ddex.ern.v42.PartyName party_name = 7;
+  // @gotags: xml:"SequenceNumber,attr"
+  int32 sequence_number = 8;
+}
+
+message DiscoverableUseType {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"Namespace,attr"
+  string namespace = 2;
+  // @gotags: xml:"IsDiscoverable,attr"
+  bool is_discoverable = 3;
+  // @gotags: xml:"UserDefinedValue,attr"
+  string user_defined_value = 4;
+}
+
+message DisplayArtist {
+  // @gotags: xml:"ArtistPartyReference"
+  string artist_party_reference = 1;
+  // @gotags: xml:"DisplayArtistRole"
+  ddex.ern.v42.DisplayArtistRole display_artist_role = 2;
+  // @gotags: xml:"ArtisticRole"
+  repeated ddex.ern.v42.ContributorRole artistic_role = 3;
+  // @gotags: xml:"TitleDisplayInformation"
+  repeated ddex.ern.v42.TitleDisplayInformation title_display_information = 4;
+  // @gotags: xml:"SequenceNumber,attr"
+  int32 sequence_number = 5;
+}
+
+message DisplaySubTitle {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"SequenceNumber,attr"
+  int32 sequence_number = 2;
+  // @gotags: xml:"IsDisplayedInTitle,attr"
+  bool is_displayed_in_title = 3;
+  // @gotags: xml:"SubTitleType,attr"
+  string sub_title_type = 4;
+}
+
+message DisplayTitle {
+  // @gotags: xml:"TitleText"
+  string title_text = 1;
+  // @gotags: xml:"SubTitle"
+  repeated ddex.ern.v42.DisplaySubTitle sub_title = 2;
+  // @gotags: xml:"LanguageAndScriptCode,attr"
+  string language_and_script_code = 3;
+  // @gotags: xml:"ApplicableTerritoryCode,attr"
+  string applicable_territory_code = 4;
+  // @gotags: xml:"IsDefault,attr"
+  bool is_default = 5;
+}
+
+message DisplayTitleText {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"LanguageAndScriptCode,attr"
+  string language_and_script_code = 2;
+  // @gotags: xml:"ApplicableTerritoryCode,attr"
+  string applicable_territory_code = 3;
+  // @gotags: xml:"IsDefault,attr"
+  bool is_default = 4;
+}
+
+message DistributionChannelPage {
+  // @gotags: xml:"PartyId"
+  repeated ddex.ern.v42.DetailedPartyId party_id = 1;
+  // @gotags: xml:"PageName"
+  ddex.ern.v42.Name page_name = 2;
+  // @gotags: xml:"URL"
+  string u_r_l = 3;
+  // @gotags: xml:"UserName"
+  string user_name = 4;
+}
+
+message EventDateTimeWithoutFlags {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"IsApproximate,attr"
+  bool is_approximate = 2;
+  // @gotags: xml:"ApplicableTerritoryCode,attr"
+  string applicable_territory_code = 3;
+  // @gotags: xml:"LocationDescription,attr"
+  string location_description = 4;
+  // @gotags: xml:"LanguageAndScriptCode,attr"
+  string language_and_script_code = 5;
+}
+
+message EventDateWithCurrentTerritory {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"IsApproximate,attr"
+  bool is_approximate = 2;
+  // @gotags: xml:"ApplicableTerritoryCode,attr"
+  string applicable_territory_code = 3;
+  // @gotags: xml:"LocationDescription,attr"
+  string location_description = 4;
+  // @gotags: xml:"LanguageAndScriptCode,attr"
+  string language_and_script_code = 5;
+}
+
+message EventDateWithDefault {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"IsApproximate,attr"
+  bool is_approximate = 2;
+  // @gotags: xml:"ApplicableTerritoryCode,attr"
+  string applicable_territory_code = 3;
+  // @gotags: xml:"IsDefault,attr"
+  bool is_default = 4;
+}
+
+message EventDateWithoutFlags {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"IsApproximate,attr"
+  bool is_approximate = 2;
+  // @gotags: xml:"ApplicableTerritoryCode,attr"
+  string applicable_territory_code = 3;
+  // @gotags: xml:"LocationDescription,attr"
+  string location_description = 4;
+  // @gotags: xml:"LanguageAndScriptCode,attr"
+  string language_and_script_code = 5;
+}
+
+message ExternalResourceLink {
+  // @gotags: xml:"URL"
+  repeated string u_r_l = 1;
+  // @gotags: xml:"ValidityPeriod"
+  ddex.ern.v42.PeriodWithoutFlags validity_period = 2;
+  // @gotags: xml:"ExternalLink"
+  string external_link = 3;
+  // @gotags: xml:"ExternallyLinkedResourceType"
+  repeated ddex.ern.v42.ExternallyLinkedResourceType externally_linked_resource_type = 4;
+  // @gotags: xml:"FileFormat"
+  string file_format = 5;
+}
+
+message Fingerprint {
+  // @gotags: xml:"Algorithm"
+  ddex.ern.v42.FingerprintAlgorithmType algorithm = 1;
+  // @gotags: xml:"Version"
+  string version = 2;
+  // @gotags: xml:"Parameter"
+  string parameter = 3;
+  // @gotags: xml:"File"
+  ddex.ern.v42.File file = 4;
+  // @gotags: xml:"DataType"
+  string data_type = 5;
+  // @gotags: xml:"FingerprintValue"
+  string fingerprint_value = 6;
+}
+
+message Image {
+  // @gotags: xml:"ResourceReference"
+  string resource_reference = 1;
+  // @gotags: xml:"Type"
+  ddex.ern.v42.ImageType type = 2;
+  // @gotags: xml:"ResourceId"
+  repeated ddex.ern.v42.ResourceProprietaryId resource_id = 3;
+  // @gotags: xml:"DisplayTitleText"
+  repeated ddex.ern.v42.DisplayTitleText display_title_text = 4;
+  // @gotags: xml:"DisplayTitle"
+  repeated ddex.ern.v42.DisplayTitle display_title = 5;
+  // @gotags: xml:"AdditionalTitle"
+  repeated ddex.ern.v42.AdditionalTitle additional_title = 6;
+  // @gotags: xml:"VersionType"
+  repeated ddex.ern.v42.VersionType version_type = 7;
+  // @gotags: xml:"DisplayArtistName"
+  repeated ddex.ern.v42.DisplayArtistNameWithDefault display_artist_name = 8;
+  // @gotags: xml:"DisplayArtist"
+  repeated ddex.ern.v42.DisplayArtist display_artist = 9;
+  // @gotags: xml:"Contributor"
+  repeated ddex.ern.v42.Contributor contributor = 10;
+  // @gotags: xml:"ResourceRightsController"
+  repeated ddex.ern.v42.ResourceRightsController resource_rights_controller = 11;
+  // @gotags: xml:"WorkRightsController"
+  repeated ddex.ern.v42.WorkRightsController work_rights_controller = 12;
+  // @gotags: xml:"CLine"
+  repeated ddex.ern.v42.CLineWithDefault c_line = 13;
+  // @gotags: xml:"CourtesyLine"
+  repeated ddex.ern.v42.CourtesyLineWithDefault courtesy_line = 14;
+  // @gotags: xml:"CreationDate"
+  ddex.ern.v42.EventDateWithoutFlags creation_date = 15;
+  // @gotags: xml:"FirstPublicationDate"
+  repeated ddex.ern.v42.FulfillmentDateWithTerritory first_publication_date = 16;
+  // @gotags: xml:"ParentalWarningType"
+  repeated ddex.ern.v42.ParentalWarningTypeWithTerritory parental_warning_type = 17;
+  // @gotags: xml:"RelatedRelease"
+  repeated ddex.ern.v42.RelatedRelease related_release = 18;
+  // @gotags: xml:"RelatedResource"
+  repeated ddex.ern.v42.RelatedResource related_resource = 19;
+  // @gotags: xml:"ContainsHiddenContent"
+  bool contains_hidden_content = 20;
+  // @gotags: xml:"Description"
+  repeated ddex.ern.v42.DescriptionWithTerritory description = 21;
+  // @gotags: xml:"TechnicalDetails"
+  repeated ddex.ern.v42.TechnicalImageDetails technical_details = 22;
+  // @gotags: xml:"LanguageAndScriptCode,attr"
+  string language_and_script_code = 23;
+  // @gotags: xml:"IsSupplemental,attr"
+  bool is_supplemental = 24;
+}
+
+message IsCredited {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"MayBeShared,attr"
+  bool may_be_shared = 2;
+}
+
+message LinkedReleaseResourceReference {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"LinkDescription,attr"
+  string link_description = 2;
+  // @gotags: xml:"LanguageAndScriptCode,attr"
+  string language_and_script_code = 3;
+  // @gotags: xml:"Namespace,attr"
+  string namespace = 4;
+  // @gotags: xml:"UserDefinedValue,attr"
+  string user_defined_value = 5;
+}
+
+message LocationAndDateOfSession {
+  // @gotags: xml:"SessionType"
+  repeated ddex.ern.v42.SessionType session_type = 1;
+  // @gotags: xml:"Period"
+  ddex.ern.v42.Period period = 2;
+  // @gotags: xml:"Venue"
+  repeated ddex.ern.v42.Venue venue = 3;
+  // @gotags: xml:"Comment"
+  ddex.ern.v42.TextWithFormat comment = 4;
+  // @gotags: xml:"Contributor"
+  repeated ddex.ern.v42.PartyWithRole contributor = 5;
+}
+
+message Party {
+  // @gotags: xml:"PartyReference"
+  string party_reference = 1;
+  // @gotags: xml:"Affiliation"
+  repeated ddex.ern.v42.Affiliation affiliation = 2;
+  // @gotags: xml:"RelatedParty"
+  repeated ddex.ern.v42.RelatedParty related_party = 3;
+  // @gotags: xml:"ArtistProfilePage"
+  repeated string artist_profile_page = 4;
+  // @gotags: xml:"PartyId"
+  repeated ddex.ern.v42.DetailedPartyId party_id = 5;
+  // @gotags: xml:"PartyName"
+  repeated ddex.ern.v42.PartyNameWithTerritory party_name = 6;
+}
+
+message PartyList {
+  // @gotags: xml:"Party"
+  repeated ddex.ern.v42.Party party = 1;
+}
+
+message PartyNameWithTerritory {
+  // @gotags: xml:"FullName"
+  ddex.ern.v42.Name full_name = 1;
+  // @gotags: xml:"FullNameAsciiTranscribed"
+  string full_name_ascii_transcribed = 2;
+  // @gotags: xml:"FullNameIndexed"
+  ddex.ern.v42.Name full_name_indexed = 3;
+  // @gotags: xml:"NamesBeforeKeyName"
+  ddex.ern.v42.Name names_before_key_name = 4;
+  // @gotags: xml:"KeyName"
+  ddex.ern.v42.Name key_name = 5;
+  // @gotags: xml:"NamesAfterKeyName"
+  ddex.ern.v42.Name names_after_key_name = 6;
+  // @gotags: xml:"AbbreviatedName"
+  ddex.ern.v42.Name abbreviated_name = 7;
+  // @gotags: xml:"LanguageAndScriptCode,attr"
+  string language_and_script_code = 8;
+  // @gotags: xml:"IsNickname,attr"
+  bool is_nickname = 9;
+  // @gotags: xml:"IsStageName,attr"
+  bool is_stage_name = 10;
+  // @gotags: xml:"IsLegalName,attr"
+  bool is_legal_name = 11;
+  // @gotags: xml:"ApplicableTerritoryCode,attr"
+  string applicable_territory_code = 12;
+  // @gotags: xml:"IsDefault,attr"
+  bool is_default = 13;
+}
+
+message PartyWithRole {
+  // @gotags: xml:"ISNI"
+  string i_s_n_i = 1;
+  // @gotags: xml:"DPID"
+  string d_p_i_d = 2;
+  // @gotags: xml:"IpiNameNumber"
+  string ipi_name_number = 3;
+  // @gotags: xml:"IPN"
+  string i_p_n = 4;
+  // @gotags: xml:"ProprietaryId"
+  repeated ddex.ern.v42.ProprietaryId proprietary_id = 5;
+  // @gotags: xml:"PartyName"
+  ddex.ern.v42.PartyNameWithTerritory party_name = 6;
+  // @gotags: xml:"Role"
+  ddex.ern.v42.ResourceContributorRole role = 7;
+}
+
+message PeriodWithStartDate {
+  // @gotags: xml:"StartDate"
+  ddex.ern.v42.EventDateWithCurrentTerritory start_date = 1;
+  // @gotags: xml:"EndDate"
+  ddex.ern.v42.EventDateWithCurrentTerritory end_date = 2;
+  // @gotags: xml:"StartDateTime"
+  ddex.ern.v42.EventDateTimeWithoutFlags start_date_time = 3;
+  // @gotags: xml:"EndDateTime"
+  ddex.ern.v42.EventDateTimeWithoutFlags end_date_time = 4;
+}
+
+message PeriodWithoutFlags {
+  // @gotags: xml:"StartDate"
+  ddex.ern.v42.EventDateWithCurrentTerritory start_date = 1;
+  // @gotags: xml:"EndDate"
+  ddex.ern.v42.EventDateWithCurrentTerritory end_date = 2;
+  // @gotags: xml:"StartDateTime"
+  ddex.ern.v42.EventDateTimeWithoutFlags start_date_time = 3;
+  // @gotags: xml:"EndDateTime"
+  ddex.ern.v42.EventDateTimeWithoutFlags end_date_time = 4;
+}
+
+message PhysicalReturns {
+  // @gotags: xml:"PhysicalReturnsAllowed"
+  bool physical_returns_allowed = 1;
+  // @gotags: xml:"LatestDateForPhysicalReturns"
+  string latest_date_for_physical_returns = 2;
+}
+
+message PreviewDetails {
+  // @gotags: xml:"TopLeftCorner"
+  string top_left_corner = 1;
+  // @gotags: xml:"BottomRightCorner"
+  string bottom_right_corner = 2;
+  // @gotags: xml:"ExpressionType"
+  string expression_type = 3;
+}
+
+message PriceInformationWithType {
+  // @gotags: xml:"PriceCode"
+  ddex.ern.v42.PriceType price_code = 1;
+  // @gotags: xml:"WholesalePricePerUnit"
+  ddex.ern.v42.Price wholesale_price_per_unit = 2;
+  // @gotags: xml:"BulkOrderWholesalePricePerUnit"
+  ddex.ern.v42.Price bulk_order_wholesale_price_per_unit = 3;
+  // @gotags: xml:"SuggestedRetailPrice"
+  ddex.ern.v42.Price suggested_retail_price = 4;
+  // @gotags: xml:"PriceType,attr"
+  string price_type = 5;
+  // @gotags: xml:"Namespace,attr"
+  string namespace = 6;
+  // @gotags: xml:"UserDefinedValue,attr"
+  string user_defined_value = 7;
+}
+
+message PurgedRelease {
+  // @gotags: xml:"ReleaseId"
+  ddex.ern.v42.ReleaseId release_id = 1;
+  // @gotags: xml:"Title"
+  repeated ddex.ern.v42.Title title = 2;
+  // @gotags: xml:"Contributor"
+  repeated ddex.ern.v42.DetailedResourceContributor contributor = 3;
+}
+
+message Raga {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"ApplicableTerritoryCode,attr"
+  string applicable_territory_code = 2;
+  // @gotags: xml:"IsDefault,attr"
+  bool is_default = 3;
+}
+
+message RelatedRelease {
+  // @gotags: xml:"ReleaseRelationshipType"
+  ddex.ern.v42.ReleaseRelationshipType release_relationship_type = 1;
+  // @gotags: xml:"ReleaseId"
+  ddex.ern.v42.ReleaseId release_id = 2;
+  // @gotags: xml:"DisplayTitleText"
+  repeated ddex.ern.v42.DisplayTitleText display_title_text = 3;
+  // @gotags: xml:"DisplayTitle"
+  repeated ddex.ern.v42.DisplayTitle display_title = 4;
+  // @gotags: xml:"AdditionalTitle"
+  repeated ddex.ern.v42.AdditionalTitle additional_title = 5;
+  // @gotags: xml:"DisplayArtistName"
+  repeated ddex.ern.v42.DisplayArtistNameWithDefault display_artist_name = 6;
+  // @gotags: xml:"ReleaseLabelReference"
+  repeated ddex.ern.v42.ReleaseLabelReference release_label_reference = 7;
+  // @gotags: xml:"ReleaseDate"
+  ddex.ern.v42.EventDateWithoutFlags release_date = 8;
+  // @gotags: xml:"OriginalReleaseDate"
+  ddex.ern.v42.EventDateWithoutFlags original_release_date = 9;
+}
+
+message RelatedResource {
+  // @gotags: xml:"ResourceRelationshipType"
+  string resource_relationship_type = 1;
+  // @gotags: xml:"Timing"
+  repeated ddex.ern.v42.Timing timing = 2;
+  // @gotags: xml:"ResourceRelatedResourceReference"
+  string resource_related_resource_reference = 3;
+  // @gotags: xml:"ResourceId"
+  ddex.ern.v42.ResourceId resource_id = 4;
+}
+
+message Release {
+  // @gotags: xml:"ReleaseReference"
+  string release_reference = 1;
+  // @gotags: xml:"ReleaseType"
+  repeated ddex.ern.v42.ReleaseTypeForReleaseNotification release_type = 2;
+  // @gotags: xml:"ReleaseId"
+  ddex.ern.v42.ReleaseId release_id = 3;
+  // @gotags: xml:"DisplayTitleText"
+  repeated ddex.ern.v42.DisplayTitleText display_title_text = 4;
+  // @gotags: xml:"DisplayTitle"
+  repeated ddex.ern.v42.DisplayTitle display_title = 5;
+  // @gotags: xml:"AdditionalTitle"
+  repeated ddex.ern.v42.AdditionalTitle additional_title = 6;
+  // @gotags: xml:"DisplayArtistName"
+  repeated ddex.ern.v42.DisplayArtistNameWithDefault display_artist_name = 7;
+  // @gotags: xml:"DisplayArtist"
+  repeated ddex.ern.v42.DisplayArtist display_artist = 8;
+  // @gotags: xml:"ReleaseLabelReference"
+  repeated ddex.ern.v42.ReleaseLabelReferenceWithParty release_label_reference = 9;
+  // @gotags: xml:"AdministratingRecordCompany"
+  repeated ddex.ern.v42.AdministratingRecordCompanyWithReference administrating_record_company = 10;
+  // @gotags: xml:"PLine"
+  repeated ddex.ern.v42.PLineWithDefault p_line = 11;
+  // @gotags: xml:"CLine"
+  repeated ddex.ern.v42.CLineWithDefault c_line = 12;
+  // @gotags: xml:"CourtesyLine"
+  repeated ddex.ern.v42.CourtesyLineWithDefault courtesy_line = 13;
+  // @gotags: xml:"Duration"
+  string duration = 14;
+  // @gotags: xml:"Genre"
+  repeated ddex.ern.v42.GenreWithTerritory genre = 15;
+  // @gotags: xml:"ReleaseDate"
+  repeated ddex.ern.v42.EventDateWithDefault release_date = 16;
+  // @gotags: xml:"OriginalReleaseDate"
+  repeated ddex.ern.v42.EventDateWithDefault original_release_date = 17;
+  // @gotags: xml:"ReleaseVisibilityReference"
+  string release_visibility_reference = 18;
+  // @gotags: xml:"ParentalWarningType"
+  repeated ddex.ern.v42.ParentalWarningTypeWithTerritory parental_warning_type = 19;
+  // @gotags: xml:"AvRating"
+  repeated ddex.ern.v42.AvRating av_rating = 20;
+  // @gotags: xml:"RelatedRelease"
+  repeated ddex.ern.v42.RelatedRelease related_release = 21;
+  // @gotags: xml:"RelatedResource"
+  repeated ddex.ern.v42.RelatedResource related_resource = 22;
+  // @gotags: xml:"ResourceGroup"
+  ddex.ern.v42.ResourceGroup resource_group = 23;
+  // @gotags: xml:"ExternalResourceLink"
+  repeated ddex.ern.v42.ExternalResourceLink external_resource_link = 24;
+  // @gotags: xml:"TargetURL"
+  string target_u_r_l = 25;
+  // @gotags: xml:"Keywords"
+  repeated ddex.ern.v42.KeywordsWithTerritory keywords = 26;
+  // @gotags: xml:"Synopsis"
+  repeated ddex.ern.v42.SynopsisWithTerritory synopsis = 27;
+  // @gotags: xml:"Raga"
+  repeated ddex.ern.v42.Raga raga = 28;
+  // @gotags: xml:"Tala"
+  repeated ddex.ern.v42.Tala tala = 29;
+  // @gotags: xml:"Deity"
+  repeated ddex.ern.v42.Deity deity = 30;
+  // @gotags: xml:"HiResMusicDescription"
+  string hi_res_music_description = 31;
+  // @gotags: xml:"IsSoundtrack"
+  bool is_soundtrack = 32;
+  // @gotags: xml:"IsHiResMusic"
+  bool is_hi_res_music = 33;
+  // @gotags: xml:"MarketingComment"
+  repeated ddex.ern.v42.MarketingComment marketing_comment = 34;
+  // @gotags: xml:"IsSingleArtistCompilation"
+  bool is_single_artist_compilation = 35;
+  // @gotags: xml:"IsMultiArtistCompilation"
+  bool is_multi_artist_compilation = 36;
+  // @gotags: xml:"LanguageAndScriptCode,attr"
+  string language_and_script_code = 37;
+}
+
+message ReleaseAdmin {
+  // @gotags: xml:"ReleaseAdminId"
+  string release_admin_id = 1;
+  // @gotags: xml:"PersonnelDescription"
+  string personnel_description = 2;
+  // @gotags: xml:"SystemDescription"
+  repeated string system_description = 3;
+}
+
+message ReleaseDeal {
+  // @gotags: xml:"DealReleaseReference"
+  repeated string deal_release_reference = 1;
+  // @gotags: xml:"Deal"
+  repeated ddex.ern.v42.Deal deal = 2;
+}
+
+message ReleaseId {
+  // @gotags: xml:"GRid"
+  string g_rid = 1;
+  // @gotags: xml:"ICPN"
+  string i_c_p_n = 2;
+  // @gotags: xml:"CatalogNumber"
+  ddex.ern.v42.CatalogNumber catalog_number = 3;
+  // @gotags: xml:"ProprietaryId"
+  repeated ddex.ern.v42.ProprietaryId proprietary_id = 4;
+}
+
+message ReleaseLabelReference {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"LanguageAndScriptCode,attr"
+  string language_and_script_code = 2;
+  // @gotags: xml:"IsDefault,attr"
+  bool is_default = 3;
+  // @gotags: xml:"LabelType,attr"
+  string label_type = 4;
+  // @gotags: xml:"Namespace,attr"
+  string namespace = 5;
+  // @gotags: xml:"UserDefinedValue,attr"
+  string user_defined_value = 6;
+  // @gotags: xml:"ApplicableTerritoryCode,attr"
+  string applicable_territory_code = 7;
+}
+
+message ReleaseLabelReferenceWithParty {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"LanguageAndScriptCode,attr"
+  string language_and_script_code = 2;
+  // @gotags: xml:"IsDefault,attr"
+  bool is_default = 3;
+  // @gotags: xml:"LabelType,attr"
+  string label_type = 4;
+  // @gotags: xml:"AccessControlParty,attr"
+  string access_control_party = 5;
+  // @gotags: xml:"Namespace,attr"
+  string namespace = 6;
+  // @gotags: xml:"UserDefinedValue,attr"
+  string user_defined_value = 7;
+  // @gotags: xml:"ApplicableTerritoryCode,attr"
+  string applicable_territory_code = 8;
+}
+
+message ReleaseList {
+  // @gotags: xml:"Release"
+  ddex.ern.v42.Release release = 1;
+  // @gotags: xml:"TrackRelease"
+  repeated ddex.ern.v42.TrackRelease track_release = 2;
+}
+
+message ReleaseVisibility {
+  // @gotags: xml:"VisibilityReference"
+  string visibility_reference = 1;
+  // @gotags: xml:"ReleaseDisplayStartDateTime"
+  string release_display_start_date_time = 2;
+  // @gotags: xml:"CoverArtPreviewStartDateTime"
+  string cover_art_preview_start_date_time = 3;
+  // @gotags: xml:"FullTrackListingPreviewStartDateTime"
+  string full_track_listing_preview_start_date_time = 4;
+}
+
+message ResourceGroup {
+  // @gotags: xml:"DisplayTitleText"
+  repeated ddex.ern.v42.DisplayTitleText display_title_text = 1;
+  // @gotags: xml:"DisplayTitle"
+  repeated ddex.ern.v42.DisplayTitle display_title = 2;
+  // @gotags: xml:"AdditionalTitle"
+  repeated ddex.ern.v42.AdditionalTitle additional_title = 3;
+  // @gotags: xml:"SequenceNumber"
+  int32 sequence_number = 4;
+  // @gotags: xml:"DisplayArtist"
+  repeated ddex.ern.v42.DisplayArtist display_artist = 5;
+  // @gotags: xml:"CarrierType"
+  repeated ddex.ern.v42.CarrierType carrier_type = 6;
+  // @gotags: xml:"Duration"
+  string duration = 7;
+  // @gotags: xml:"ResourceGroup"
+  repeated ddex.ern.v42.ResourceSubGroup resource_group = 8;
+  // @gotags: xml:"ResourceGroupContentItem"
+  repeated ddex.ern.v42.ResourceGroupContentItem resource_group_content_item = 9;
+  // @gotags: xml:"LinkedReleaseResourceReference"
+  repeated ddex.ern.v42.LinkedReleaseResourceReference linked_release_resource_reference = 10;
+  // @gotags: xml:"NoDisplaySequence"
+  bool no_display_sequence = 11;
+  // @gotags: xml:"DisplaySequence"
+  string display_sequence = 12;
+  // @gotags: xml:"ResourceGroupReleaseReference"
+  string resource_group_release_reference = 13;
+  // @gotags: xml:"ReleaseId"
+  ddex.ern.v42.ReleaseId release_id = 14;
+}
+
+message ResourceGroupContentItem {
+  // @gotags: xml:"SequenceNumber"
+  int32 sequence_number = 1;
+  // @gotags: xml:"ReleaseResourceReference"
+  string release_resource_reference = 2;
+  // @gotags: xml:"LinkedReleaseResourceReference"
+  repeated ddex.ern.v42.LinkedReleaseResourceReference linked_release_resource_reference = 3;
+  // @gotags: xml:"IsBonusResource"
+  bool is_bonus_resource = 4;
+  // @gotags: xml:"IsInstantGratificationResource"
+  bool is_instant_gratification_resource = 5;
+  // @gotags: xml:"IsPreOrderIncentiveResource"
+  bool is_pre_order_incentive_resource = 6;
+  // @gotags: xml:"NoDisplaySequence"
+  bool no_display_sequence = 7;
+  // @gotags: xml:"DisplaySequence"
+  string display_sequence = 8;
+}
+
+message ResourceList {
+  // @gotags: xml:"SoundRecording"
+  repeated ddex.ern.v42.SoundRecording sound_recording = 1;
+  // @gotags: xml:"Video"
+  repeated ddex.ern.v42.Video video = 2;
+  // @gotags: xml:"Image"
+  repeated ddex.ern.v42.Image image = 3;
+  // @gotags: xml:"Text"
+  repeated ddex.ern.v42.Text text = 4;
+  // @gotags: xml:"SheetMusic"
+  repeated ddex.ern.v42.SheetMusic sheet_music = 5;
+  // @gotags: xml:"Software"
+  repeated ddex.ern.v42.Software software = 6;
+}
+
+message ResourceRightsController {
+  // @gotags: xml:"RightsControllerPartyReference"
+  string rights_controller_party_reference = 1;
+  // @gotags: xml:"RightsControlType"
+  repeated string rights_control_type = 2;
+  // @gotags: xml:"DelegatedUsageRights"
+  repeated ddex.ern.v42.DelegatedUsageRights delegated_usage_rights = 3;
+  // @gotags: xml:"RightShareUnknown"
+  bool right_share_unknown = 4;
+  // @gotags: xml:"RightSharePercentage"
+  ddex.ern.v42.Percentage right_share_percentage = 5;
+  // @gotags: xml:"SequenceNumber,attr"
+  int32 sequence_number = 6;
+}
+
+message ResourceSubGroup {
+  // @gotags: xml:"DisplayTitleText"
+  repeated ddex.ern.v42.DisplayTitleText display_title_text = 1;
+  // @gotags: xml:"DisplayTitle"
+  repeated ddex.ern.v42.DisplayTitle display_title = 2;
+  // @gotags: xml:"AdditionalTitle"
+  repeated ddex.ern.v42.AdditionalTitle additional_title = 3;
+  // @gotags: xml:"SequenceNumber"
+  int32 sequence_number = 4;
+  // @gotags: xml:"DisplayArtist"
+  repeated ddex.ern.v42.DisplayArtist display_artist = 5;
+  // @gotags: xml:"CarrierType"
+  repeated ddex.ern.v42.CarrierType carrier_type = 6;
+  // @gotags: xml:"Duration"
+  string duration = 7;
+  // @gotags: xml:"ResourceGroup"
+  repeated ddex.ern.v42.ResourceSubGroup resource_group = 8;
+  // @gotags: xml:"ResourceGroupContentItem"
+  repeated ddex.ern.v42.ResourceGroupContentItem resource_group_content_item = 9;
+  // @gotags: xml:"LinkedReleaseResourceReference"
+  repeated ddex.ern.v42.LinkedReleaseResourceReference linked_release_resource_reference = 10;
+  // @gotags: xml:"NoDisplaySequence"
+  bool no_display_sequence = 11;
+  // @gotags: xml:"DisplaySequence"
+  string display_sequence = 12;
+  // @gotags: xml:"ResourceGroupReleaseReference"
+  string resource_group_release_reference = 13;
+  // @gotags: xml:"ReleaseId"
+  ddex.ern.v42.ReleaseId release_id = 14;
+  // @gotags: xml:"ResourceGroupType,attr"
+  string resource_group_type = 15;
+}
+
+message RightsClaimPolicy {
+  // @gotags: xml:"Condition"
+  repeated ddex.ern.v42.ConditionForRightsClaimPolicy condition = 1;
+  // @gotags: xml:"RightsClaimPolicyType"
+  string rights_claim_policy_type = 2;
+}
+
+message SheetMusic {
+  // @gotags: xml:"ResourceReference"
+  string resource_reference = 1;
+  // @gotags: xml:"Type"
+  ddex.ern.v42.SheetMusicType type = 2;
+  // @gotags: xml:"ResourceId"
+  repeated ddex.ern.v42.SheetMusicId resource_id = 3;
+  // @gotags: xml:"WorkId"
+  repeated ddex.ern.v42.MusicalWorkId work_id = 4;
+  // @gotags: xml:"DisplayTitleText"
+  repeated ddex.ern.v42.DisplayTitleText display_title_text = 5;
+  // @gotags: xml:"DisplayTitle"
+  repeated ddex.ern.v42.DisplayTitle display_title = 6;
+  // @gotags: xml:"AdditionalTitle"
+  repeated ddex.ern.v42.AdditionalTitle additional_title = 7;
+  // @gotags: xml:"VersionType"
+  repeated ddex.ern.v42.VersionType version_type = 8;
+  // @gotags: xml:"DisplayArtistName"
+  repeated ddex.ern.v42.DisplayArtistNameWithDefault display_artist_name = 9;
+  // @gotags: xml:"DisplayArtist"
+  repeated ddex.ern.v42.DisplayArtist display_artist = 10;
+  // @gotags: xml:"Contributor"
+  repeated ddex.ern.v42.Contributor contributor = 11;
+  // @gotags: xml:"ResourceRightsController"
+  repeated ddex.ern.v42.ResourceRightsController resource_rights_controller = 12;
+  // @gotags: xml:"WorkRightsController"
+  repeated ddex.ern.v42.WorkRightsController work_rights_controller = 13;
+  // @gotags: xml:"CLine"
+  repeated ddex.ern.v42.CLineWithDefault c_line = 14;
+  // @gotags: xml:"CourtesyLine"
+  repeated ddex.ern.v42.CourtesyLineWithDefault courtesy_line = 15;
+  // @gotags: xml:"CreationDate"
+  ddex.ern.v42.EventDateWithoutFlags creation_date = 16;
+  // @gotags: xml:"FirstPublicationDate"
+  repeated ddex.ern.v42.FulfillmentDateWithTerritory first_publication_date = 17;
+  // @gotags: xml:"ParentalWarningType"
+  repeated ddex.ern.v42.ParentalWarningTypeWithTerritory parental_warning_type = 18;
+  // @gotags: xml:"RelatedRelease"
+  repeated ddex.ern.v42.RelatedRelease related_release = 19;
+  // @gotags: xml:"RelatedResource"
+  repeated ddex.ern.v42.RelatedResource related_resource = 20;
+  // @gotags: xml:"ContainsHiddenContent"
+  bool contains_hidden_content = 21;
+  // @gotags: xml:"LanguageOfLyrics"
+  string language_of_lyrics = 22;
+  // @gotags: xml:"ResourceContainedResourceReferenceList"
+  ddex.ern.v42.ResourceContainedResourceReferenceList resource_contained_resource_reference_list = 23;
+  // @gotags: xml:"TechnicalDetails"
+  repeated ddex.ern.v42.TechnicalSheetMusicDetails technical_details = 24;
+  // @gotags: xml:"LanguageAndScriptCode,attr"
+  string language_and_script_code = 25;
+  // @gotags: xml:"IsSupplemental,attr"
+  bool is_supplemental = 26;
+}
+
+message Software {
+  // @gotags: xml:"ResourceReference"
+  string resource_reference = 1;
+  // @gotags: xml:"Type"
+  ddex.ern.v42.SoftwareType type = 2;
+  // @gotags: xml:"ResourceId"
+  repeated ddex.ern.v42.ResourceProprietaryId resource_id = 3;
+  // @gotags: xml:"WorkId"
+  repeated ddex.ern.v42.MusicalWorkId work_id = 4;
+  // @gotags: xml:"DisplayTitleText"
+  repeated ddex.ern.v42.DisplayTitleText display_title_text = 5;
+  // @gotags: xml:"DisplayTitle"
+  repeated ddex.ern.v42.DisplayTitle display_title = 6;
+  // @gotags: xml:"AdditionalTitle"
+  repeated ddex.ern.v42.AdditionalTitle additional_title = 7;
+  // @gotags: xml:"VersionType"
+  repeated ddex.ern.v42.VersionType version_type = 8;
+  // @gotags: xml:"DisplayArtistName"
+  repeated ddex.ern.v42.DisplayArtistNameWithDefault display_artist_name = 9;
+  // @gotags: xml:"DisplayArtist"
+  repeated ddex.ern.v42.DisplayArtist display_artist = 10;
+  // @gotags: xml:"Contributor"
+  repeated ddex.ern.v42.Contributor contributor = 11;
+  // @gotags: xml:"ResourceRightsController"
+  repeated ddex.ern.v42.ResourceRightsController resource_rights_controller = 12;
+  // @gotags: xml:"WorkRightsController"
+  repeated ddex.ern.v42.WorkRightsController work_rights_controller = 13;
+  // @gotags: xml:"PLine"
+  repeated ddex.ern.v42.PLineWithDefault p_line = 14;
+  // @gotags: xml:"CLine"
+  repeated ddex.ern.v42.CLineWithDefault c_line = 15;
+  // @gotags: xml:"CourtesyLine"
+  repeated ddex.ern.v42.CourtesyLineWithDefault courtesy_line = 16;
+  // @gotags: xml:"CreationDate"
+  ddex.ern.v42.EventDateWithoutFlags creation_date = 17;
+  // @gotags: xml:"FirstPublicationDate"
+  repeated ddex.ern.v42.FulfillmentDateWithTerritory first_publication_date = 18;
+  // @gotags: xml:"ParentalWarningType"
+  repeated ddex.ern.v42.ParentalWarningTypeWithTerritory parental_warning_type = 19;
+  // @gotags: xml:"RelatedRelease"
+  repeated ddex.ern.v42.RelatedRelease related_release = 20;
+  // @gotags: xml:"RelatedResource"
+  repeated ddex.ern.v42.RelatedResource related_resource = 21;
+  // @gotags: xml:"ContainsHiddenContent"
+  bool contains_hidden_content = 22;
+  // @gotags: xml:"ResourceContainedResourceReferenceList"
+  ddex.ern.v42.ResourceContainedResourceReferenceList resource_contained_resource_reference_list = 23;
+  // @gotags: xml:"TechnicalDetails"
+  repeated ddex.ern.v42.TechnicalSoftwareDetails technical_details = 24;
+  // @gotags: xml:"LanguageAndScriptCode,attr"
+  string language_and_script_code = 25;
+  // @gotags: xml:"IsSupplemental,attr"
+  bool is_supplemental = 26;
+}
+
+message SoundRecording {
+  // @gotags: xml:"ResourceReference"
+  string resource_reference = 1;
+  // @gotags: xml:"Type"
+  ddex.ern.v42.SoundRecordingType type = 2;
+  // @gotags: xml:"ResourceId"
+  repeated ddex.ern.v42.SoundRecordingId resource_id = 3;
+  // @gotags: xml:"WorkId"
+  repeated ddex.ern.v42.MusicalWorkId work_id = 4;
+  // @gotags: xml:"DisplayTitleText"
+  repeated ddex.ern.v42.DisplayTitleText display_title_text = 5;
+  // @gotags: xml:"DisplayTitle"
+  repeated ddex.ern.v42.DisplayTitle display_title = 6;
+  // @gotags: xml:"AdditionalTitle"
+  repeated ddex.ern.v42.AdditionalTitle additional_title = 7;
+  // @gotags: xml:"VersionType"
+  repeated ddex.ern.v42.VersionType version_type = 8;
+  // @gotags: xml:"DisplayArtistName"
+  repeated ddex.ern.v42.DisplayArtistNameWithDefault display_artist_name = 9;
+  // @gotags: xml:"DisplayArtist"
+  repeated ddex.ern.v42.DisplayArtist display_artist = 10;
+  // @gotags: xml:"Contributor"
+  repeated ddex.ern.v42.Contributor contributor = 11;
+  // @gotags: xml:"Character"
+  repeated ddex.ern.v42.Character character = 12;
+  // @gotags: xml:"ResourceRightsController"
+  repeated ddex.ern.v42.ResourceRightsController resource_rights_controller = 13;
+  // @gotags: xml:"WorkRightsController"
+  repeated ddex.ern.v42.WorkRightsController work_rights_controller = 14;
+  // @gotags: xml:"PLine"
+  repeated ddex.ern.v42.PLineWithDefault p_line = 15;
+  // @gotags: xml:"CourtesyLine"
+  repeated ddex.ern.v42.CourtesyLineWithDefault courtesy_line = 16;
+  // @gotags: xml:"Duration"
+  string duration = 17;
+  // @gotags: xml:"CreationDate"
+  ddex.ern.v42.EventDateWithoutFlags creation_date = 18;
+  // @gotags: xml:"MasteredDate"
+  ddex.ern.v42.EventDateWithoutFlags mastered_date = 19;
+  // @gotags: xml:"RemasteredDate"
+  ddex.ern.v42.EventDateWithoutFlags remastered_date = 20;
+  // @gotags: xml:"FirstPublicationDate"
+  repeated ddex.ern.v42.FirstPublicationDate first_publication_date = 21;
+  // @gotags: xml:"LocationAndDateOfSession"
+  repeated ddex.ern.v42.LocationAndDateOfSession location_and_date_of_session = 22;
+  // @gotags: xml:"ParentalWarningType"
+  repeated ddex.ern.v42.ParentalWarningTypeWithTerritory parental_warning_type = 23;
+  // @gotags: xml:"RelatedRelease"
+  repeated ddex.ern.v42.RelatedRelease related_release = 24;
+  // @gotags: xml:"RelatedResource"
+  repeated ddex.ern.v42.RelatedResource related_resource = 25;
+  // @gotags: xml:"CompositeMusicalWorkType"
+  string composite_musical_work_type = 26;
+  // @gotags: xml:"IsCover"
+  bool is_cover = 27;
+  // @gotags: xml:"IsInstrumental"
+  bool is_instrumental = 28;
+  // @gotags: xml:"ContainsHiddenContent"
+  bool contains_hidden_content = 29;
+  // @gotags: xml:"IsRemastered"
+  bool is_remastered = 30;
+  // @gotags: xml:"IsHiResMusic"
+  bool is_hi_res_music = 31;
+  // @gotags: xml:"DisableCrossfade"
+  bool disable_crossfade = 32;
+  // @gotags: xml:"DisableSearch"
+  bool disable_search = 33;
+  // @gotags: xml:"DisplayCredits"
+  repeated ddex.ern.v42.DisplayCredits display_credits = 34;
+  // @gotags: xml:"LanguageOfPerformance"
+  repeated string language_of_performance = 35;
+  // @gotags: xml:"AudioChannelConfiguration"
+  string audio_channel_configuration = 36;
+  // @gotags: xml:"TechnicalDetails"
+  repeated ddex.ern.v42.TechnicalSoundRecordingDetails technical_details = 37;
+  // @gotags: xml:"Raga"
+  repeated ddex.ern.v42.Raga raga = 38;
+  // @gotags: xml:"Tala"
+  repeated ddex.ern.v42.Tala tala = 39;
+  // @gotags: xml:"Deity"
+  repeated ddex.ern.v42.Deity deity = 40;
+  // @gotags: xml:"AudioChapterReference"
+  repeated string audio_chapter_reference = 41;
+  // @gotags: xml:"LanguageAndScriptCode,attr"
+  string language_and_script_code = 42;
+  // @gotags: xml:"IsSupplemental,attr"
+  bool is_supplemental = 43;
+}
+
+message SoundRecordingPreviewDetails {
+  // @gotags: xml:"StartPoint"
+  string start_point = 1;
+  // @gotags: xml:"EndPoint"
+  string end_point = 2;
+  // @gotags: xml:"Duration"
+  string duration = 3;
+  // @gotags: xml:"TopLeftCorner"
+  string top_left_corner = 4;
+  // @gotags: xml:"BottomRightCorner"
+  string bottom_right_corner = 5;
+  // @gotags: xml:"ExpressionType"
+  string expression_type = 6;
+}
+
+message SupplementalDocumentList {
+  // @gotags: xml:"SupplementalDocument"
+  repeated ddex.ern.v42.File supplemental_document = 1;
+}
+
+message SynopsisWithTerritory {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"LanguageAndScriptCode,attr"
+  string language_and_script_code = 2;
+  // @gotags: xml:"ApplicableTerritoryCode,attr"
+  string applicable_territory_code = 3;
+  // @gotags: xml:"IsDefault,attr"
+  bool is_default = 4;
+  // @gotags: xml:"IsShortSynopsis,attr"
+  bool is_short_synopsis = 5;
+}
+
+message Tala {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"ApplicableTerritoryCode,attr"
+  string applicable_territory_code = 2;
+  // @gotags: xml:"IsDefault,attr"
+  bool is_default = 3;
+}
+
+message TechnicalImageDetails {
+  // @gotags: xml:"TechnicalResourceDetailsReference"
+  string technical_resource_details_reference = 1;
+  // @gotags: xml:"ImageCodecType"
+  ddex.ern.v42.ImageCodecType image_codec_type = 2;
+  // @gotags: xml:"ImageHeight"
+  ddex.ern.v42.Extent image_height = 3;
+  // @gotags: xml:"ImageWidth"
+  ddex.ern.v42.Extent image_width = 4;
+  // @gotags: xml:"AspectRatio"
+  ddex.ern.v42.AspectRatio aspect_ratio = 5;
+  // @gotags: xml:"ColorDepth"
+  int32 color_depth = 6;
+  // @gotags: xml:"ImageResolution"
+  int32 image_resolution = 7;
+  // @gotags: xml:"BitDepth"
+  int32 bit_depth = 8;
+  // @gotags: xml:"IsPreview"
+  bool is_preview = 9;
+  // @gotags: xml:"PreviewDetails"
+  ddex.ern.v42.PreviewDetails preview_details = 10;
+  // @gotags: xml:"File"
+  ddex.ern.v42.File file = 11;
+  // @gotags: xml:"IsProvidedInDelivery"
+  bool is_provided_in_delivery = 12;
+  // @gotags: xml:"Fingerprint"
+  repeated ddex.ern.v42.Fingerprint fingerprint = 13;
+  // @gotags: xml:"LanguageAndScriptCode,attr"
+  string language_and_script_code = 14;
+  // @gotags: xml:"ApplicableTerritoryCode,attr"
+  string applicable_territory_code = 15;
+  // @gotags: xml:"IsDefault,attr"
+  bool is_default = 16;
+}
+
+message TechnicalSheetMusicDetails {
+  // @gotags: xml:"TechnicalResourceDetailsReference"
+  string technical_resource_details_reference = 1;
+  // @gotags: xml:"SheetMusicCodecType"
+  ddex.ern.v42.SheetMusicCodecType sheet_music_codec_type = 2;
+  // @gotags: xml:"BitDepth"
+  int32 bit_depth = 3;
+  // @gotags: xml:"IsPreview"
+  bool is_preview = 4;
+  // @gotags: xml:"PreviewDetails"
+  ddex.ern.v42.PreviewDetails preview_details = 5;
+  // @gotags: xml:"File"
+  ddex.ern.v42.File file = 6;
+  // @gotags: xml:"IsProvidedInDelivery"
+  bool is_provided_in_delivery = 7;
+  // @gotags: xml:"Fingerprint"
+  repeated ddex.ern.v42.Fingerprint fingerprint = 8;
+  // @gotags: xml:"LanguageAndScriptCode,attr"
+  string language_and_script_code = 9;
+  // @gotags: xml:"ApplicableTerritoryCode,attr"
+  string applicable_territory_code = 10;
+  // @gotags: xml:"IsDefault,attr"
+  bool is_default = 11;
+}
+
+message TechnicalSoftwareDetails {
+  // @gotags: xml:"TechnicalResourceDetailsReference"
+  string technical_resource_details_reference = 1;
+  // @gotags: xml:"OperatingSystemType"
+  ddex.ern.v42.OperatingSystemType operating_system_type = 2;
+  // @gotags: xml:"BitDepth"
+  int32 bit_depth = 3;
+  // @gotags: xml:"IsPreview"
+  bool is_preview = 4;
+  // @gotags: xml:"PreviewDetails"
+  ddex.ern.v42.PreviewDetails preview_details = 5;
+  // @gotags: xml:"File"
+  ddex.ern.v42.File file = 6;
+  // @gotags: xml:"IsProvidedInDelivery"
+  bool is_provided_in_delivery = 7;
+  // @gotags: xml:"Fingerprint"
+  repeated ddex.ern.v42.Fingerprint fingerprint = 8;
+  // @gotags: xml:"LanguageAndScriptCode,attr"
+  string language_and_script_code = 9;
+  // @gotags: xml:"ApplicableTerritoryCode,attr"
+  string applicable_territory_code = 10;
+  // @gotags: xml:"IsDefault,attr"
+  bool is_default = 11;
+}
+
+message TechnicalSoundRecordingDetails {
+  // @gotags: xml:"TechnicalResourceDetailsReference"
+  string technical_resource_details_reference = 1;
+  // @gotags: xml:"EncodingId"
+  ddex.ern.v42.SoundRecordingId encoding_id = 2;
+  // @gotags: xml:"AudioCodecType"
+  ddex.ern.v42.AudioCodecType audio_codec_type = 3;
+  // @gotags: xml:"BitRate"
+  ddex.ern.v42.BitRate bit_rate = 4;
+  // @gotags: xml:"OriginalBitRate"
+  ddex.ern.v42.BitRate original_bit_rate = 5;
+  // @gotags: xml:"NumberOfChannels"
+  int32 number_of_channels = 6;
+  // @gotags: xml:"SamplingRate"
+  ddex.ern.v42.SamplingRate sampling_rate = 7;
+  // @gotags: xml:"OriginalSamplingRate"
+  ddex.ern.v42.SamplingRate original_sampling_rate = 8;
+  // @gotags: xml:"BitsPerSample"
+  int32 bits_per_sample = 9;
+  // @gotags: xml:"Duration"
+  string duration = 10;
+  // @gotags: xml:"BitDepth"
+  int32 bit_depth = 11;
+  // @gotags: xml:"IsPreview"
+  bool is_preview = 12;
+  // @gotags: xml:"PreviewDetails"
+  ddex.ern.v42.SoundRecordingPreviewDetails preview_details = 13;
+  // @gotags: xml:"File"
+  ddex.ern.v42.File file = 14;
+  // @gotags: xml:"IsProvidedInDelivery"
+  bool is_provided_in_delivery = 15;
+  // @gotags: xml:"Fingerprint"
+  repeated ddex.ern.v42.Fingerprint fingerprint = 16;
+  // @gotags: xml:"EncodingDescription"
+  string encoding_description = 17;
+  // @gotags: xml:"LanguageAndScriptCode,attr"
+  string language_and_script_code = 18;
+  // @gotags: xml:"ApplicableTerritoryCode,attr"
+  string applicable_territory_code = 19;
+  // @gotags: xml:"IsDefault,attr"
+  bool is_default = 20;
+}
+
+message TechnicalTextDetails {
+  // @gotags: xml:"TechnicalResourceDetailsReference"
+  string technical_resource_details_reference = 1;
+  // @gotags: xml:"TextCodecType"
+  ddex.ern.v42.TextCodecType text_codec_type = 2;
+  // @gotags: xml:"BitDepth"
+  int32 bit_depth = 3;
+  // @gotags: xml:"IsPreview"
+  bool is_preview = 4;
+  // @gotags: xml:"PreviewDetails"
+  ddex.ern.v42.PreviewDetails preview_details = 5;
+  // @gotags: xml:"File"
+  ddex.ern.v42.File file = 6;
+  // @gotags: xml:"IsProvidedInDelivery"
+  bool is_provided_in_delivery = 7;
+  // @gotags: xml:"Fingerprint"
+  repeated ddex.ern.v42.Fingerprint fingerprint = 8;
+  // @gotags: xml:"LanguageAndScriptCode,attr"
+  string language_and_script_code = 9;
+  // @gotags: xml:"ApplicableTerritoryCode,attr"
+  string applicable_territory_code = 10;
+  // @gotags: xml:"IsDefault,attr"
+  bool is_default = 11;
+}
+
+message TechnicalVideoDetails {
+  // @gotags: xml:"TechnicalResourceDetailsReference"
+  string technical_resource_details_reference = 1;
+  // @gotags: xml:"EncodingId"
+  ddex.ern.v42.VideoId encoding_id = 2;
+  // @gotags: xml:"OverallBitRate"
+  ddex.ern.v42.BitRate overall_bit_rate = 3;
+  // @gotags: xml:"ContainerFormat"
+  ddex.ern.v42.ContainerFormat container_format = 4;
+  // @gotags: xml:"VideoCodecType"
+  ddex.ern.v42.VideoCodecType video_codec_type = 5;
+  // @gotags: xml:"VideoBitRate"
+  ddex.ern.v42.BitRate video_bit_rate = 6;
+  // @gotags: xml:"FrameRate"
+  ddex.ern.v42.FrameRate frame_rate = 7;
+  // @gotags: xml:"ImageHeight"
+  ddex.ern.v42.Extent image_height = 8;
+  // @gotags: xml:"ImageWidth"
+  ddex.ern.v42.Extent image_width = 9;
+  // @gotags: xml:"AspectRatio"
+  ddex.ern.v42.AspectRatio aspect_ratio = 10;
+  // @gotags: xml:"CoreArea"
+  ddex.ern.v42.CoreArea core_area = 11;
+  // @gotags: xml:"ColorDepth"
+  int32 color_depth = 12;
+  // @gotags: xml:"VideoDefinitionType"
+  ddex.ern.v42.VideoDefinitionType video_definition_type = 13;
+  // @gotags: xml:"AudioCodecType"
+  ddex.ern.v42.AudioCodecType audio_codec_type = 14;
+  // @gotags: xml:"AudioBitRate"
+  ddex.ern.v42.BitRate audio_bit_rate = 15;
+  // @gotags: xml:"NumberOfAudioChannels"
+  int32 number_of_audio_channels = 16;
+  // @gotags: xml:"AudioSamplingRate"
+  ddex.ern.v42.SamplingRate audio_sampling_rate = 17;
+  // @gotags: xml:"AudioBitsPerSample"
+  int32 audio_bits_per_sample = 18;
+  // @gotags: xml:"Duration"
+  string duration = 19;
+  // @gotags: xml:"BitDepth"
+  int32 bit_depth = 20;
+  // @gotags: xml:"IsPreview"
+  bool is_preview = 21;
+  // @gotags: xml:"PreviewDetails"
+  ddex.ern.v42.SoundRecordingPreviewDetails preview_details = 22;
+  // @gotags: xml:"File"
+  ddex.ern.v42.File file = 23;
+  // @gotags: xml:"IsProvidedInDelivery"
+  bool is_provided_in_delivery = 24;
+  // @gotags: xml:"Fingerprint"
+  repeated ddex.ern.v42.Fingerprint fingerprint = 25;
+  // @gotags: xml:"EncodingDescription"
+  string encoding_description = 26;
+  // @gotags: xml:"LanguageAndScriptCode,attr"
+  string language_and_script_code = 27;
+  // @gotags: xml:"ApplicableTerritoryCode,attr"
+  string applicable_territory_code = 28;
+  // @gotags: xml:"IsDefault,attr"
+  bool is_default = 29;
+}
+
+message Text {
+  // @gotags: xml:"ResourceReference"
+  string resource_reference = 1;
+  // @gotags: xml:"Type"
+  ddex.ern.v42.TextType type = 2;
+  // @gotags: xml:"ResourceId"
+  repeated ddex.ern.v42.TextId resource_id = 3;
+  // @gotags: xml:"WorkId"
+  repeated ddex.ern.v42.MusicalWorkId work_id = 4;
+  // @gotags: xml:"DisplayTitleText"
+  repeated ddex.ern.v42.DisplayTitleText display_title_text = 5;
+  // @gotags: xml:"DisplayTitle"
+  repeated ddex.ern.v42.DisplayTitle display_title = 6;
+  // @gotags: xml:"AdditionalTitle"
+  repeated ddex.ern.v42.AdditionalTitle additional_title = 7;
+  // @gotags: xml:"VersionType"
+  repeated ddex.ern.v42.VersionType version_type = 8;
+  // @gotags: xml:"DisplayArtistName"
+  repeated ddex.ern.v42.DisplayArtistNameWithDefault display_artist_name = 9;
+  // @gotags: xml:"DisplayArtist"
+  repeated ddex.ern.v42.DisplayArtist display_artist = 10;
+  // @gotags: xml:"Contributor"
+  repeated ddex.ern.v42.Contributor contributor = 11;
+  // @gotags: xml:"ResourceRightsController"
+  repeated ddex.ern.v42.ResourceRightsController resource_rights_controller = 12;
+  // @gotags: xml:"WorkRightsController"
+  repeated ddex.ern.v42.WorkRightsController work_rights_controller = 13;
+  // @gotags: xml:"CLine"
+  repeated ddex.ern.v42.CLineWithDefault c_line = 14;
+  // @gotags: xml:"CourtesyLine"
+  repeated ddex.ern.v42.CourtesyLineWithDefault courtesy_line = 15;
+  // @gotags: xml:"CreationDate"
+  ddex.ern.v42.EventDateWithoutFlags creation_date = 16;
+  // @gotags: xml:"FirstPublicationDate"
+  repeated ddex.ern.v42.FulfillmentDateWithTerritory first_publication_date = 17;
+  // @gotags: xml:"ParentalWarningType"
+  repeated ddex.ern.v42.ParentalWarningTypeWithTerritory parental_warning_type = 18;
+  // @gotags: xml:"RelatedRelease"
+  repeated ddex.ern.v42.RelatedRelease related_release = 19;
+  // @gotags: xml:"RelatedResource"
+  repeated ddex.ern.v42.RelatedResource related_resource = 20;
+  // @gotags: xml:"ContainsHiddenContent"
+  bool contains_hidden_content = 21;
+  // @gotags: xml:"ResourceContainedResourceReferenceList"
+  ddex.ern.v42.ResourceContainedResourceReferenceList resource_contained_resource_reference_list = 22;
+  // @gotags: xml:"TechnicalDetails"
+  repeated ddex.ern.v42.TechnicalTextDetails technical_details = 23;
+  // @gotags: xml:"LanguageAndScriptCode,attr"
+  string language_and_script_code = 24;
+  // @gotags: xml:"IsSupplemental,attr"
+  bool is_supplemental = 25;
+}
+
+message TextWithFormat {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"LanguageAndScriptCode,attr"
+  string language_and_script_code = 2;
+  // @gotags: xml:"ApplicableTerritoryCode,attr"
+  string applicable_territory_code = 3;
+  // @gotags: xml:"IsDefault,attr"
+  bool is_default = 4;
+  // @gotags: xml:"Format,attr"
+  string format = 5;
+  // @gotags: xml:"Namespace,attr"
+  string namespace = 6;
+  // @gotags: xml:"UserDefinedValue,attr"
+  string user_defined_value = 7;
+}
+
+message Timing {
+  // @gotags: xml:"StartPoint"
+  string start_point = 1;
+  // @gotags: xml:"DurationUsed"
+  string duration_used = 2;
+}
+
+message Title {
+  // @gotags: xml:"TitleText"
+  string title_text = 1;
+  // @gotags: xml:"SubTitle"
+  string sub_title = 2;
+  // @gotags: xml:"LanguageAndScriptCode,attr"
+  string language_and_script_code = 3;
+  // @gotags: xml:"TitleType,attr"
+  string title_type = 4;
+}
+
+message TrackRelease {
+  // @gotags: xml:"ReleaseReference"
+  string release_reference = 1;
+  // @gotags: xml:"ReleaseId"
+  ddex.ern.v42.ReleaseId release_id = 2;
+  // @gotags: xml:"DisplayTitleText"
+  repeated ddex.ern.v42.DisplayTitleText display_title_text = 3;
+  // @gotags: xml:"DisplayTitle"
+  repeated ddex.ern.v42.DisplayTitle display_title = 4;
+  // @gotags: xml:"AdditionalTitle"
+  repeated ddex.ern.v42.AdditionalTitle additional_title = 5;
+  // @gotags: xml:"ReleaseResourceReference"
+  string release_resource_reference = 6;
+  // @gotags: xml:"LinkedReleaseResourceReference"
+  repeated ddex.ern.v42.LinkedReleaseResourceReference linked_release_resource_reference = 7;
+  // @gotags: xml:"ReleaseLabelReference"
+  repeated ddex.ern.v42.ReleaseLabelReferenceWithParty release_label_reference = 8;
+  // @gotags: xml:"Genre"
+  repeated ddex.ern.v42.GenreWithTerritory genre = 9;
+  // @gotags: xml:"ReleaseVisibilityReference"
+  string release_visibility_reference = 10;
+  // @gotags: xml:"RelatedRelease"
+  repeated ddex.ern.v42.RelatedRelease related_release = 11;
+  // @gotags: xml:"RelatedResource"
+  repeated ddex.ern.v42.RelatedResource related_resource = 12;
+  // @gotags: xml:"TargetURL"
+  string target_u_r_l = 13;
+  // @gotags: xml:"Keywords"
+  repeated ddex.ern.v42.KeywordsWithTerritory keywords = 14;
+  // @gotags: xml:"Synopsis"
+  repeated ddex.ern.v42.SynopsisWithTerritory synopsis = 15;
+  // @gotags: xml:"MarketingComment"
+  repeated ddex.ern.v42.MarketingComment marketing_comment = 16;
+  // @gotags: xml:"IsMainRelease,attr"
+  bool is_main_release = 17;
+}
+
+message TrackReleaseVisibility {
+  // @gotags: xml:"VisibilityReference"
+  string visibility_reference = 1;
+  // @gotags: xml:"TrackListingPreviewStartDateTime"
+  string track_listing_preview_start_date_time = 2;
+  // @gotags: xml:"ClipPreviewStartDateTime"
+  string clip_preview_start_date_time = 3;
+}
+
+message UseType {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"Namespace,attr"
+  string namespace = 2;
+  // @gotags: xml:"UserDefinedValue,attr"
+  string user_defined_value = 3;
+}
+
+message UserInterfaceType {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"Namespace,attr"
+  string namespace = 2;
+  // @gotags: xml:"UserDefinedValue,attr"
+  string user_defined_value = 3;
+}
+
+message Video {
+  // @gotags: xml:"ResourceReference"
+  string resource_reference = 1;
+  // @gotags: xml:"Type"
+  ddex.ern.v42.VideoType type = 2;
+  // @gotags: xml:"ResourceId"
+  repeated ddex.ern.v42.VideoId resource_id = 3;
+  // @gotags: xml:"WorkId"
+  repeated ddex.ern.v42.MusicalWorkId work_id = 4;
+  // @gotags: xml:"DisplayTitleText"
+  repeated ddex.ern.v42.DisplayTitleText display_title_text = 5;
+  // @gotags: xml:"DisplayTitle"
+  repeated ddex.ern.v42.DisplayTitle display_title = 6;
+  // @gotags: xml:"AdditionalTitle"
+  repeated ddex.ern.v42.AdditionalTitle additional_title = 7;
+  // @gotags: xml:"VersionType"
+  repeated ddex.ern.v42.VersionType version_type = 8;
+  // @gotags: xml:"DisplayArtistName"
+  repeated ddex.ern.v42.DisplayArtistNameWithDefault display_artist_name = 9;
+  // @gotags: xml:"DisplayArtist"
+  repeated ddex.ern.v42.DisplayArtist display_artist = 10;
+  // @gotags: xml:"Contributor"
+  repeated ddex.ern.v42.Contributor contributor = 11;
+  // @gotags: xml:"Character"
+  repeated ddex.ern.v42.Character character = 12;
+  // @gotags: xml:"ResourceRightsController"
+  repeated ddex.ern.v42.ResourceRightsController resource_rights_controller = 13;
+  // @gotags: xml:"WorkRightsController"
+  repeated ddex.ern.v42.WorkRightsController work_rights_controller = 14;
+  // @gotags: xml:"PLine"
+  repeated ddex.ern.v42.PLineWithDefault p_line = 15;
+  // @gotags: xml:"CLine"
+  repeated ddex.ern.v42.CLineWithDefault c_line = 16;
+  // @gotags: xml:"CourtesyLine"
+  repeated ddex.ern.v42.CourtesyLineWithDefault courtesy_line = 17;
+  // @gotags: xml:"Duration"
+  string duration = 18;
+  // @gotags: xml:"CreationDate"
+  ddex.ern.v42.EventDateWithoutFlags creation_date = 19;
+  // @gotags: xml:"MasteredDate"
+  ddex.ern.v42.EventDateWithoutFlags mastered_date = 20;
+  // @gotags: xml:"RemasteredDate"
+  repeated ddex.ern.v42.EventDateWithoutFlags remastered_date = 21;
+  // @gotags: xml:"FirstPublicationDate"
+  repeated ddex.ern.v42.FulfillmentDateWithTerritory first_publication_date = 22;
+  // @gotags: xml:"ParentalWarningType"
+  repeated ddex.ern.v42.ParentalWarningTypeWithTerritory parental_warning_type = 23;
+  // @gotags: xml:"AvRating"
+  repeated ddex.ern.v42.AvRating av_rating = 24;
+  // @gotags: xml:"RelatedRelease"
+  repeated ddex.ern.v42.RelatedRelease related_release = 25;
+  // @gotags: xml:"RelatedResource"
+  repeated ddex.ern.v42.RelatedResource related_resource = 26;
+  // @gotags: xml:"CompositeMusicalWorkType"
+  string composite_musical_work_type = 27;
+  // @gotags: xml:"IsCover"
+  bool is_cover = 28;
+  // @gotags: xml:"IsInstrumental"
+  bool is_instrumental = 29;
+  // @gotags: xml:"ContainsHiddenContent"
+  bool contains_hidden_content = 30;
+  // @gotags: xml:"IsRemastered"
+  bool is_remastered = 31;
+  // @gotags: xml:"DisplayCredits"
+  repeated ddex.ern.v42.DisplayCredits display_credits = 32;
+  // @gotags: xml:"LanguageOfPerformance"
+  repeated string language_of_performance = 33;
+  // @gotags: xml:"LanguageOfDubbing"
+  repeated string language_of_dubbing = 34;
+  // @gotags: xml:"SubTitleLanguage"
+  repeated string sub_title_language = 35;
+  // @gotags: xml:"ResourceContainedResourceReferenceList"
+  ddex.ern.v42.ResourceContainedResourceReferenceList resource_contained_resource_reference_list = 36;
+  // @gotags: xml:"TechnicalDetails"
+  repeated ddex.ern.v42.TechnicalVideoDetails technical_details = 37;
+  // @gotags: xml:"Raga"
+  repeated string raga = 38;
+  // @gotags: xml:"Tala"
+  repeated string tala = 39;
+  // @gotags: xml:"Deity"
+  repeated string deity = 40;
+  // @gotags: xml:"VideoChapterReference"
+  repeated string video_chapter_reference = 41;
+  // @gotags: xml:"VideoCueSheetReference"
+  repeated string video_cue_sheet_reference = 42;
+  // @gotags: xml:"ReasonForCueSheetAbsence"
+  ddex.ern.v42.Reason reason_for_cue_sheet_absence = 43;
+  // @gotags: xml:"LanguageAndScriptCode,attr"
+  string language_and_script_code = 44;
+  // @gotags: xml:"IsSupplemental,attr"
+  bool is_supplemental = 45;
+}
+
+message WorkRightsController {
+  // @gotags: xml:"RightsControllerPartyReference"
+  string rights_controller_party_reference = 1;
+  // @gotags: xml:"RightsControlType"
+  repeated string rights_control_type = 2;
+  // @gotags: xml:"RightsControllerType"
+  string rights_controller_type = 3;
+  // @gotags: xml:"Territory"
+  repeated ddex.ern.v42.AllTerritoryCode territory = 4;
+  // @gotags: xml:"StartDate"
+  string start_date = 5;
+  // @gotags: xml:"EndDate"
+  string end_date = 6;
+  // @gotags: xml:"RightShareUnknown"
+  bool right_share_unknown = 7;
+  // @gotags: xml:"RightSharePercentage"
+  string right_share_percentage = 8;
+}
+
+message AdministratingRecordCompanyRole {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"Namespace,attr"
+  string namespace = 2;
+  // @gotags: xml:"UserDefinedValue,attr"
+  string user_defined_value = 3;
+}
+
+message Affiliation {
+  // @gotags: xml:"Type"
+  string type = 1;
+  // @gotags: xml:"ValidityPeriod"
+  ddex.ern.v42.ValidityPeriod validity_period = 2;
+  // @gotags: xml:"RightsType"
+  repeated ddex.ern.v42.SimpleRightsType rights_type = 3;
+  // @gotags: xml:"PercentageOfRightsAssignment"
+  string percentage_of_rights_assignment = 4;
+  // @gotags: xml:"CompanyName"
+  string company_name = 5;
+  // @gotags: xml:"PartyAffiliateReference"
+  string party_affiliate_reference = 6;
+  // @gotags: xml:"TerritoryCode"
+  repeated ddex.ern.v42.CurrentTerritoryCode territory_code = 7;
+  // @gotags: xml:"ExcludedTerritoryCode"
+  repeated ddex.ern.v42.CurrentTerritoryCode excluded_territory_code = 8;
+}
+
+message AllTerritoryCode {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"IdentifierType,attr"
+  string identifier_type = 2;
+}
+
+message AspectRatio {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"AspectRatioType,attr"
+  string aspect_ratio_type = 2;
+}
+
+message AudioCodecType {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"Version,attr"
+  string version = 2;
+  // @gotags: xml:"Namespace,attr"
+  string namespace = 3;
+  // @gotags: xml:"UserDefinedValue,attr"
+  string user_defined_value = 4;
+}
+
+message BitRate {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"UnitOfMeasure,attr"
+  string unit_of_measure = 2;
+}
+
+message CLine {
+  // @gotags: xml:"Year"
+  string year = 1;
+  // @gotags: xml:"CLineCompany"
+  string c_line_company = 2;
+  // @gotags: xml:"CLineText"
+  string c_line_text = 3;
+  // @gotags: xml:"LanguageAndScriptCode,attr"
+  string language_and_script_code = 4;
+}
+
+message CarrierType {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"Namespace,attr"
+  string namespace = 2;
+  // @gotags: xml:"UserDefinedValue,attr"
+  string user_defined_value = 3;
+}
+
+message CatalogNumber {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"Namespace,attr"
+  string namespace = 2;
+}
+
+message ContainerFormat {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"Namespace,attr"
+  string namespace = 2;
+  // @gotags: xml:"UserDefinedValue,attr"
+  string user_defined_value = 3;
+}
+
+message ContributorRole {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"Namespace,attr"
+  string namespace = 2;
+  // @gotags: xml:"UserDefinedValue,attr"
+  string user_defined_value = 3;
+}
+
+message CueOrigin {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"Namespace,attr"
+  string namespace = 2;
+  // @gotags: xml:"UserDefinedValue,attr"
+  string user_defined_value = 3;
+}
+
+message CueSheetType {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"Namespace,attr"
+  string namespace = 2;
+  // @gotags: xml:"UserDefinedValue,attr"
+  string user_defined_value = 3;
+}
+
+message CueThemeType {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"Namespace,attr"
+  string namespace = 2;
+  // @gotags: xml:"UserDefinedValue,attr"
+  string user_defined_value = 3;
+}
+
+message CueUseType {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"Namespace,attr"
+  string namespace = 2;
+  // @gotags: xml:"UserDefinedValue,attr"
+  string user_defined_value = 3;
+}
+
+message CueVisualPerceptionType {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"Namespace,attr"
+  string namespace = 2;
+  // @gotags: xml:"UserDefinedValue,attr"
+  string user_defined_value = 3;
+}
+
+message CueVocalType {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"Namespace,attr"
+  string namespace = 2;
+  // @gotags: xml:"UserDefinedValue,attr"
+  string user_defined_value = 3;
+}
+
+message CurrentTerritoryCode {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"IdentifierType,attr"
+  string identifier_type = 2;
+}
+
+message DSP {
+  // @gotags: xml:"TradingName"
+  ddex.ern.v42.Name trading_name = 1;
+  // @gotags: xml:"URL"
+  repeated string u_r_l = 2;
+  // @gotags: xml:"PartyId"
+  repeated ddex.ern.v42.DetailedPartyId party_id = 3;
+  // @gotags: xml:"PartyName"
+  repeated ddex.ern.v42.PartyName party_name = 4;
+}
+
+message DetailedHashSum {
+  // @gotags: xml:"Algorithm"
+  ddex.ern.v42.HashSumAlgorithmType algorithm = 1;
+  // @gotags: xml:"Version"
+  string version = 2;
+  // @gotags: xml:"Parameter"
+  string parameter = 3;
+  // @gotags: xml:"DataType"
+  string data_type = 4;
+  // @gotags: xml:"HashSumValue"
+  string hash_sum_value = 5;
+}
+
+message DetailedPartyId {
+  // @gotags: xml:"ISNI"
+  string i_s_n_i = 1;
+  // @gotags: xml:"DPID"
+  string d_p_i_d = 2;
+  // @gotags: xml:"IpiNameNumber"
+  string ipi_name_number = 3;
+  // @gotags: xml:"IPN"
+  string i_p_n = 4;
+  // @gotags: xml:"CisacSocietyId"
+  string cisac_society_id = 5;
+  // @gotags: xml:"ProprietaryId"
+  repeated ddex.ern.v42.ProprietaryId proprietary_id = 6;
+}
+
+message DisplayArtistNameWithDefault {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"LanguageAndScriptCode,attr"
+  string language_and_script_code = 2;
+  // @gotags: xml:"ApplicableTerritoryCode,attr"
+  string applicable_territory_code = 3;
+  // @gotags: xml:"IsDefault,attr"
+  bool is_default = 4;
+}
+
+message DisplayArtistRole {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"Namespace,attr"
+  string namespace = 2;
+  // @gotags: xml:"UserDefinedValue,attr"
+  string user_defined_value = 3;
+}
+
+message DisplayCredits {
+  // @gotags: xml:"DisplayCreditText"
+  string display_credit_text = 1;
+  // @gotags: xml:"LanguageAndScriptCode,attr"
+  string language_and_script_code = 2;
+  // @gotags: xml:"ApplicableTerritoryCode,attr"
+  string applicable_territory_code = 3;
+  // @gotags: xml:"IsDefault,attr"
+  bool is_default = 4;
+}
+
+message EventDate {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"IsApproximate,attr"
+  bool is_approximate = 2;
+  // @gotags: xml:"IsBefore,attr"
+  bool is_before = 3;
+  // @gotags: xml:"IsAfter,attr"
+  bool is_after = 4;
+  // @gotags: xml:"ApplicableTerritoryCode,attr"
+  string applicable_territory_code = 5;
+  // @gotags: xml:"LocationDescription,attr"
+  string location_description = 6;
+  // @gotags: xml:"LanguageAndScriptCode,attr"
+  string language_and_script_code = 7;
+}
+
+message EventDateTime {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"IsApproximate,attr"
+  bool is_approximate = 2;
+  // @gotags: xml:"IsBefore,attr"
+  bool is_before = 3;
+  // @gotags: xml:"IsAfter,attr"
+  bool is_after = 4;
+  // @gotags: xml:"TerritoryCode,attr"
+  string territory_code = 5;
+  // @gotags: xml:"LocationDescription,attr"
+  string location_description = 6;
+  // @gotags: xml:"LanguageAndScriptCode,attr"
+  string language_and_script_code = 7;
+}
+
+message Extent {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"UnitOfMeasure,attr"
+  string unit_of_measure = 2;
+}
+
+message ExternallyLinkedResourceType {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"Namespace,attr"
+  string namespace = 2;
+  // @gotags: xml:"UserDefinedValue,attr"
+  string user_defined_value = 3;
+}
+
+message File {
+  // @gotags: xml:"URI"
+  string u_r_i = 1;
+  // @gotags: xml:"HashSum"
+  ddex.ern.v42.DetailedHashSum hash_sum = 2;
+  // @gotags: xml:"FileSize"
+  string file_size = 3;
+}
+
+message FingerprintAlgorithmType {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"Namespace,attr"
+  string namespace = 2;
+  // @gotags: xml:"UserDefinedValue,attr"
+  string user_defined_value = 3;
+}
+
+message FirstPublicationDate {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"ApplicableTerritoryCode,attr"
+  string applicable_territory_code = 2;
+  // @gotags: xml:"IsDefault,attr"
+  bool is_default = 3;
+}
+
+message FrameRate {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"UnitOfMeasure,attr"
+  string unit_of_measure = 2;
+}
+
+message FulfillmentDateWithTerritory {
+  // @gotags: xml:"FulfillmentDate"
+  string fulfillment_date = 1;
+  // @gotags: xml:"ResourceReleaseReference"
+  repeated string resource_release_reference = 2;
+  // @gotags: xml:"ApplicableTerritoryCode,attr"
+  string applicable_territory_code = 3;
+  // @gotags: xml:"IsDefault,attr"
+  bool is_default = 4;
+}
+
+message GenreCategory {
+  // @gotags: xml:"Value"
+  ddex.ern.v42.GenreCategoryValue value = 1;
+  // @gotags: xml:"Description"
+  repeated ddex.ern.v42.TextWithoutTerritory description = 2;
+  // @gotags: xml:"ApplicableTerritoryCode,attr"
+  string applicable_territory_code = 3;
+}
+
+message GenreCategoryValue {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"LanguageAndScriptCode,attr"
+  string language_and_script_code = 2;
+  // @gotags: xml:"Namespace,attr"
+  string namespace = 3;
+  // @gotags: xml:"UserDefinedValue,attr"
+  string user_defined_value = 4;
+}
+
+message GenreWithTerritory {
+  // @gotags: xml:"GenreText"
+  string genre_text = 1;
+  // @gotags: xml:"SubGenre"
+  string sub_genre = 2;
+  // @gotags: xml:"GenreCategory"
+  repeated ddex.ern.v42.GenreCategory genre_category = 3;
+  // @gotags: xml:"SubGenreCategory"
+  repeated ddex.ern.v42.SubGenreCategory sub_genre_category = 4;
+  // @gotags: xml:"LanguageAndScriptCode,attr"
+  string language_and_script_code = 5;
+  // @gotags: xml:"ApplicableTerritoryCode,attr"
+  string applicable_territory_code = 6;
+  // @gotags: xml:"IsDefault,attr"
+  bool is_default = 7;
+}
+
+message HashSumAlgorithmType {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"Namespace,attr"
+  string namespace = 2;
+  // @gotags: xml:"UserDefinedValue,attr"
+  string user_defined_value = 3;
+}
+
+message ImageCodecType {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"Version,attr"
+  string version = 2;
+  // @gotags: xml:"Namespace,attr"
+  string namespace = 3;
+  // @gotags: xml:"UserDefinedValue,attr"
+  string user_defined_value = 4;
+}
+
+message ImageType {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"Namespace,attr"
+  string namespace = 2;
+  // @gotags: xml:"UserDefinedValue,attr"
+  string user_defined_value = 3;
+}
+
+message InstrumentType {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"Namespace,attr"
+  string namespace = 2;
+  // @gotags: xml:"UserDefinedValue,attr"
+  string user_defined_value = 3;
+}
+
+message KeywordsWithTerritory {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"LanguageAndScriptCode,attr"
+  string language_and_script_code = 2;
+  // @gotags: xml:"ApplicableTerritoryCode,attr"
+  string applicable_territory_code = 3;
+  // @gotags: xml:"IsDefault,attr"
+  bool is_default = 4;
+}
+
+message MarketingComment {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"LanguageAndScriptCode,attr"
+  string language_and_script_code = 2;
+  // @gotags: xml:"ApplicableTerritoryCode,attr"
+  string applicable_territory_code = 3;
+  // @gotags: xml:"IsDefault,attr"
+  bool is_default = 4;
+}
+
+message MessageAuditTrail {
+  // @gotags: xml:"MessageAuditTrailEvent"
+  repeated ddex.ern.v42.MessageAuditTrailEvent message_audit_trail_event = 1;
+}
+
+message MessageAuditTrailEvent {
+  // @gotags: xml:"MessagingPartyDescriptor"
+  ddex.ern.v42.MessagingPartyWithoutCode messaging_party_descriptor = 1;
+  // @gotags: xml:"DateTime"
+  string date_time = 2;
+}
+
+message MessageHeader {
+  // @gotags: xml:"MessageThreadId"
+  string message_thread_id = 1;
+  // @gotags: xml:"MessageId"
+  string message_id = 2;
+  // @gotags: xml:"MessageFileName"
+  string message_file_name = 3;
+  // @gotags: xml:"MessageSender"
+  ddex.ern.v42.MessagingPartyWithoutCode message_sender = 4;
+  // @gotags: xml:"SentOnBehalfOf"
+  ddex.ern.v42.MessagingPartyWithoutCode sent_on_behalf_of = 5;
+  // @gotags: xml:"MessageRecipient"
+  repeated ddex.ern.v42.MessagingPartyWithoutCode message_recipient = 6;
+  // @gotags: xml:"MessageCreatedDateTime"
+  string message_created_date_time = 7;
+  // @gotags: xml:"MessageAuditTrail"
+  ddex.ern.v42.MessageAuditTrail message_audit_trail = 8;
+  // @gotags: xml:"MessageControlType"
+  string message_control_type = 9;
+}
+
+message MessagingPartyWithoutCode {
+  // @gotags: xml:"PartyId"
+  string party_id = 1;
+  // @gotags: xml:"PartyName"
+  ddex.ern.v42.PartyNameWithoutCode party_name = 2;
+  // @gotags: xml:"TradingName"
+  string trading_name = 3;
+}
+
+message MusicalWorkId {
+  // @gotags: xml:"ISWC"
+  string i_s_w_c = 1;
+  // @gotags: xml:"OpusNumber"
+  string opus_number = 2;
+  // @gotags: xml:"ComposerCatalogNumber"
+  repeated string composer_catalog_number = 3;
+  // @gotags: xml:"ProprietaryId"
+  repeated ddex.ern.v42.ProprietaryId proprietary_id = 4;
+  // @gotags: xml:"IsReplaced,attr"
+  bool is_replaced = 5;
+}
+
+message Name {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"LanguageAndScriptCode,attr"
+  string language_and_script_code = 2;
+}
+
+message OperatingSystemType {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"Version,attr"
+  string version = 2;
+  // @gotags: xml:"Namespace,attr"
+  string namespace = 3;
+  // @gotags: xml:"UserDefinedValue,attr"
+  string user_defined_value = 4;
+}
+
+message PLine {
+  // @gotags: xml:"Year"
+  string year = 1;
+  // @gotags: xml:"PLineCompany"
+  string p_line_company = 2;
+  // @gotags: xml:"PLineText"
+  string p_line_text = 3;
+  // @gotags: xml:"LanguageAndScriptCode,attr"
+  string language_and_script_code = 4;
+  // @gotags: xml:"PLineType,attr"
+  string p_line_type = 5;
+}
+
+message PLineWithDefault {
+  // @gotags: xml:"Year"
+  string year = 1;
+  // @gotags: xml:"PLineCompany"
+  string p_line_company = 2;
+  // @gotags: xml:"PLineText"
+  string p_line_text = 3;
+  // @gotags: xml:"ApplicableTerritoryCode,attr"
+  string applicable_territory_code = 4;
+  // @gotags: xml:"IsDefault,attr"
+  bool is_default = 5;
+  // @gotags: xml:"LanguageAndScriptCode,attr"
+  string language_and_script_code = 6;
+}
+
+message ParentalWarningTypeWithTerritory {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"Namespace,attr"
+  string namespace = 2;
+  // @gotags: xml:"ApplicableTerritoryCode,attr"
+  string applicable_territory_code = 3;
+  // @gotags: xml:"UserDefinedValue,attr"
+  string user_defined_value = 4;
+  // @gotags: xml:"IsDefault,attr"
+  bool is_default = 5;
+}
+
+message PartyName {
+  // @gotags: xml:"FullName"
+  ddex.ern.v42.Name full_name = 1;
+  // @gotags: xml:"FullNameAsciiTranscribed"
+  string full_name_ascii_transcribed = 2;
+  // @gotags: xml:"FullNameIndexed"
+  ddex.ern.v42.Name full_name_indexed = 3;
+  // @gotags: xml:"NamesBeforeKeyName"
+  ddex.ern.v42.Name names_before_key_name = 4;
+  // @gotags: xml:"KeyName"
+  ddex.ern.v42.Name key_name = 5;
+  // @gotags: xml:"NamesAfterKeyName"
+  ddex.ern.v42.Name names_after_key_name = 6;
+  // @gotags: xml:"AbbreviatedName"
+  ddex.ern.v42.Name abbreviated_name = 7;
+  // @gotags: xml:"LanguageAndScriptCode,attr"
+  string language_and_script_code = 8;
+}
+
+message PartyNameWithoutCode {
+  // @gotags: xml:"FullName"
+  string full_name = 1;
+  // @gotags: xml:"FullNameAsciiTranscribed"
+  string full_name_ascii_transcribed = 2;
+  // @gotags: xml:"FullNameIndexed"
+  string full_name_indexed = 3;
+  // @gotags: xml:"NamesBeforeKeyName"
+  string names_before_key_name = 4;
+  // @gotags: xml:"KeyName"
+  string key_name = 5;
+  // @gotags: xml:"NamesAfterKeyName"
+  string names_after_key_name = 6;
+  // @gotags: xml:"AbbreviatedName"
+  string abbreviated_name = 7;
+}
+
+message PartyRelationshipType {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"Namespace,attr"
+  string namespace = 2;
+  // @gotags: xml:"UserDefinedValue,attr"
+  string user_defined_value = 3;
+  // @gotags: xml:"MayBeShared,attr"
+  bool may_be_shared = 4;
+}
+
+message Percentage {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"HasMaxValueOfOne,attr"
+  bool has_max_value_of_one = 2;
+}
+
+message Period {
+  // @gotags: xml:"StartDate"
+  ddex.ern.v42.EventDate start_date = 1;
+  // @gotags: xml:"EndDate"
+  ddex.ern.v42.EventDate end_date = 2;
+  // @gotags: xml:"StartDateTime"
+  ddex.ern.v42.EventDateTime start_date_time = 3;
+  // @gotags: xml:"EndDateTime"
+  ddex.ern.v42.EventDateTime end_date_time = 4;
+}
+
+message Prefix {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"LanguageAndScriptCode,attr"
+  string language_and_script_code = 2;
+}
+
+message Price {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"CurrencyCode,attr"
+  string currency_code = 2;
+}
+
+message PriceType {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"Namespace,attr"
+  string namespace = 2;
+}
+
+message PromotionalCode {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"Namespace,attr"
+  string namespace = 2;
+}
+
+message ProprietaryId {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"Namespace,attr"
+  string namespace = 2;
+}
+
+message Purpose {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"Namespace,attr"
+  string namespace = 2;
+  // @gotags: xml:"UserDefinedValue,attr"
+  string user_defined_value = 3;
+}
+
+message RatingAgency {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"Namespace,attr"
+  string namespace = 2;
+  // @gotags: xml:"UserDefinedValue,attr"
+  string user_defined_value = 3;
+}
+
+message RatingReason {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"Namespace,attr"
+  string namespace = 2;
+  // @gotags: xml:"UserDefinedValue,attr"
+  string user_defined_value = 3;
+}
+
+message Reason {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"LanguageAndScriptCode,attr"
+  string language_and_script_code = 2;
+}
+
+message RelatedParty {
+  // @gotags: xml:"PartyRelatedPartyReference"
+  string party_related_party_reference = 1;
+  // @gotags: xml:"PartyRelationshipType"
+  ddex.ern.v42.PartyRelationshipType party_relationship_type = 2;
+}
+
+message ReleaseRelationshipType {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"Namespace,attr"
+  string namespace = 2;
+  // @gotags: xml:"UserDefinedValue,attr"
+  string user_defined_value = 3;
+}
+
+message ReleaseTypeForReleaseNotification {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"Namespace,attr"
+  string namespace = 2;
+  // @gotags: xml:"UserDefinedValue,attr"
+  string user_defined_value = 3;
+}
+
+message ResourceContainedResourceReference {
+  // @gotags: xml:"ResourceContainedResourceReference"
+  string resource_contained_resource_reference = 1;
+  // @gotags: xml:"DurationUsed"
+  string duration_used = 2;
+  // @gotags: xml:"StartPoint"
+  string start_point = 3;
+  // @gotags: xml:"Purpose"
+  ddex.ern.v42.Purpose purpose = 4;
+}
+
+message ResourceContainedResourceReferenceList {
+  // @gotags: xml:"ResourceContainedResourceReference"
+  repeated ddex.ern.v42.ResourceContainedResourceReference resource_contained_resource_reference = 1;
+}
+
+message ResourceContributorRole {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"Namespace,attr"
+  string namespace = 2;
+  // @gotags: xml:"UserDefinedValue,attr"
+  string user_defined_value = 3;
+}
+
+message ResourceId {
+  // @gotags: xml:"ISRC"
+  string i_s_r_c = 1;
+  // @gotags: xml:"ISMN"
+  string i_s_m_n = 2;
+  // @gotags: xml:"ISAN"
+  string i_s_a_n = 3;
+  // @gotags: xml:"VISAN"
+  string v_i_s_a_n = 4;
+  // @gotags: xml:"ISBN"
+  string i_s_b_n = 5;
+  // @gotags: xml:"ISSN"
+  string i_s_s_n = 6;
+  // @gotags: xml:"SICI"
+  string s_i_c_i = 7;
+  // @gotags: xml:"CatalogNumber"
+  ddex.ern.v42.CatalogNumber catalog_number = 8;
+  // @gotags: xml:"ProprietaryId"
+  repeated ddex.ern.v42.ProprietaryId proprietary_id = 9;
+  // @gotags: xml:"IsReplaced,attr"
+  bool is_replaced = 10;
+}
+
+message ResourceProprietaryId {
+  // @gotags: xml:"ProprietaryId"
+  repeated ddex.ern.v42.ProprietaryId proprietary_id = 1;
+  // @gotags: xml:"IsReplaced,attr"
+  bool is_replaced = 2;
+}
+
+message SamplingRate {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"UnitOfMeasure,attr"
+  string unit_of_measure = 2;
+}
+
+message SessionType {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"Namespace,attr"
+  string namespace = 2;
+  // @gotags: xml:"UserDefinedValue,attr"
+  string user_defined_value = 3;
+}
+
+message SheetMusicCodecType {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"Version,attr"
+  string version = 2;
+  // @gotags: xml:"Namespace,attr"
+  string namespace = 3;
+  // @gotags: xml:"UserDefinedValue,attr"
+  string user_defined_value = 4;
+}
+
+message SheetMusicId {
+  // @gotags: xml:"ISMN"
+  string i_s_m_n = 1;
+  // @gotags: xml:"ProprietaryId"
+  repeated ddex.ern.v42.ProprietaryId proprietary_id = 2;
+  // @gotags: xml:"IsReplaced,attr"
+  bool is_replaced = 3;
+}
+
+message SheetMusicType {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"Namespace,attr"
+  string namespace = 2;
+  // @gotags: xml:"UserDefinedValue,attr"
+  string user_defined_value = 3;
+}
+
+message SimpleRightsType {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"Namespace,attr"
+  string namespace = 2;
+  // @gotags: xml:"UserDefinedValue,attr"
+  string user_defined_value = 3;
+}
+
+message SoftwareType {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"Namespace,attr"
+  string namespace = 2;
+  // @gotags: xml:"UserDefinedValue,attr"
+  string user_defined_value = 3;
+}
+
+message SoundRecordingId {
+  // @gotags: xml:"ISRC"
+  string i_s_r_c = 1;
+  // @gotags: xml:"CatalogNumber"
+  ddex.ern.v42.CatalogNumber catalog_number = 2;
+  // @gotags: xml:"ProprietaryId"
+  repeated ddex.ern.v42.ProprietaryId proprietary_id = 3;
+  // @gotags: xml:"IsReplaced,attr"
+  bool is_replaced = 4;
+}
+
+message SoundRecordingType {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"Namespace,attr"
+  string namespace = 2;
+  // @gotags: xml:"UserDefinedValue,attr"
+  string user_defined_value = 3;
+}
+
+message SubGenreCategory {
+  // @gotags: xml:"Value"
+  repeated ddex.ern.v42.SubGenreCategoryValue value = 1;
+}
+
+message SubGenreCategoryValue {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"Namespace,attr"
+  string namespace = 2;
+  // @gotags: xml:"UserDefinedValue,attr"
+  string user_defined_value = 3;
+}
+
+message TextCodecType {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"Version,attr"
+  string version = 2;
+  // @gotags: xml:"Namespace,attr"
+  string namespace = 3;
+  // @gotags: xml:"UserDefinedValue,attr"
+  string user_defined_value = 4;
+}
+
+message TextId {
+  // @gotags: xml:"ISBN"
+  string i_s_b_n = 1;
+  // @gotags: xml:"ISSN"
+  string i_s_s_n = 2;
+  // @gotags: xml:"SICI"
+  string s_i_c_i = 3;
+  // @gotags: xml:"ProprietaryId"
+  repeated ddex.ern.v42.ProprietaryId proprietary_id = 4;
+  // @gotags: xml:"IsReplaced,attr"
+  bool is_replaced = 5;
+}
+
+message TextType {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"Namespace,attr"
+  string namespace = 2;
+  // @gotags: xml:"UserDefinedValue,attr"
+  string user_defined_value = 3;
+}
+
+message TextWithoutTerritory {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"LanguageAndScriptCode,attr"
+  string language_and_script_code = 2;
+  // @gotags: xml:"ApplicableTerritoryCode,attr"
+  string applicable_territory_code = 3;
+  // @gotags: xml:"IsDefault,attr"
+  bool is_default = 4;
+  // @gotags: xml:"Format,attr"
+  string format = 5;
+  // @gotags: xml:"Namespace,attr"
+  string namespace = 6;
+  // @gotags: xml:"UserDefinedValue,attr"
+  string user_defined_value = 7;
+}
+
+message TitleDisplayInformation {
+  // @gotags: xml:"IsDisplayedInTitle"
+  bool is_displayed_in_title = 1;
+  // @gotags: xml:"Prefix"
+  repeated ddex.ern.v42.Prefix prefix = 2;
+  // @gotags: xml:"LanguageAndScriptCode,attr"
+  string language_and_script_code = 3;
+  // @gotags: xml:"SequenceNumber,attr"
+  int32 sequence_number = 4;
+}
+
+message ValidityPeriod {
+  // @gotags: xml:"StartDate"
+  ddex.ern.v42.EventDate start_date = 1;
+  // @gotags: xml:"EndDate"
+  ddex.ern.v42.EventDate end_date = 2;
+}
+
+message Venue {
+  // @gotags: xml:"VenueName"
+  string venue_name = 1;
+  // @gotags: xml:"VenueAddress"
+  string venue_address = 2;
+  // @gotags: xml:"TerritoryCode"
+  ddex.ern.v42.AllTerritoryCode territory_code = 3;
+  // @gotags: xml:"LocationCode"
+  string location_code = 4;
+  // @gotags: xml:"VenueRoom"
+  string venue_room = 5;
+}
+
+message VersionType {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"Namespace,attr"
+  string namespace = 2;
+  // @gotags: xml:"UserDefinedValue,attr"
+  string user_defined_value = 3;
+}
+
+message VideoCodecType {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"Version,attr"
+  string version = 2;
+  // @gotags: xml:"Namespace,attr"
+  string namespace = 3;
+  // @gotags: xml:"UserDefinedValue,attr"
+  string user_defined_value = 4;
+}
+
+message VideoDefinitionType {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"Namespace,attr"
+  string namespace = 2;
+  // @gotags: xml:"UserDefinedValue,attr"
+  string user_defined_value = 3;
+}
+
+message VideoId {
+  // @gotags: xml:"ISRC"
+  string i_s_r_c = 1;
+  // @gotags: xml:"ISAN"
+  string i_s_a_n = 2;
+  // @gotags: xml:"VISAN"
+  string v_i_s_a_n = 3;
+  // @gotags: xml:"CatalogNumber"
+  ddex.ern.v42.CatalogNumber catalog_number = 4;
+  // @gotags: xml:"ProprietaryId"
+  repeated ddex.ern.v42.ProprietaryId proprietary_id = 5;
+  // @gotags: xml:"EIDR"
+  repeated string e_i_d_r = 6;
+  // @gotags: xml:"IsReplaced,attr"
+  bool is_replaced = 7;
+}
+
+message VideoType {
+  // @gotags: xml:",chardata"
+  string value = 1;
+  // @gotags: xml:"Namespace,attr"
+  string namespace = 2;
+  // @gotags: xml:"UserDefinedValue,attr"
+  string user_defined_value = 3;
+}
