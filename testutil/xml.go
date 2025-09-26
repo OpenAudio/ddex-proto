@@ -384,20 +384,36 @@ func RunIntegrityTests(t *testing.T, messageType, version string, validator Roun
 		t.Run(testName, func(t *testing.T) {
 			comparison := PerformRoundTripValidationFromData(xmlData, validator)
 
-			// Report statistics
-			t.Logf("Elements: Original=%d, Marshaled=%d",
-				comparison.ElementsOriginal, comparison.ElementsMarshaled)
-			t.Logf("Attributes: Original=%d, Marshaled=%d",
-				comparison.AttributesOriginal, comparison.AttributesMarshaled)
+			// Report statistics with visual indicators
+			elementsGood := comparison.ElementsOriginal == comparison.ElementsMarshaled
+			elementsIndicator := "🟢"
+			if !elementsGood {
+				elementsIndicator = "🔴"
+			}
+			t.Logf("%s Elements: Original=%d, Marshaled=%d",
+				elementsIndicator, comparison.ElementsOriginal, comparison.ElementsMarshaled)
+
+			attributesGood := comparison.AttributesMarshaled >= comparison.AttributesOriginal
+			attributesIndicator := "🟢"
+			attributesNote := ""
+			if !attributesGood {
+				attributesIndicator = "🔴"
+			} else if comparison.AttributesMarshaled > comparison.AttributesOriginal {
+				attributesNote = " (Go adding defaults)"
+			}
+			t.Logf("%s Attributes: Original=%d, Marshaled=%d%s",
+				attributesIndicator, comparison.AttributesOriginal, comparison.AttributesMarshaled, attributesNote)
 
 			// Check if marshaled XML can be parsed back
 			if !comparison.MarshaledParseable {
-				t.Errorf("Marshaled XML cannot be parsed back successfully")
+				t.Errorf("🔴 CRITICAL: Marshaled XML cannot be parsed back (likely namespace issue)")
+			} else {
+				t.Logf("🟢 Round-trip parsing: SUCCESS")
 			}
 
-			// Check for issues
+			// Check for issues with indicators
 			if len(comparison.MissingElements) > 0 {
-				t.Errorf("Missing %d elements after round-trip:", len(comparison.MissingElements))
+				t.Errorf("🔴 Missing %d elements after round-trip:", len(comparison.MissingElements))
 				for i, elem := range comparison.MissingElements {
 					if i >= 10 {
 						t.Errorf("  ... and %d more", len(comparison.MissingElements)-10)
@@ -408,7 +424,7 @@ func RunIntegrityTests(t *testing.T, messageType, version string, validator Roun
 			}
 
 			if len(comparison.MissingAttributes) > 0 {
-				t.Errorf("Missing %d attributes after round-trip:", len(comparison.MissingAttributes))
+				t.Errorf("🔴 Missing %d attributes after round-trip:", len(comparison.MissingAttributes))
 				for i, attr := range comparison.MissingAttributes {
 					if i >= 10 {
 						t.Errorf("  ... and %d more", len(comparison.MissingAttributes)-10)
@@ -419,7 +435,7 @@ func RunIntegrityTests(t *testing.T, messageType, version string, validator Roun
 			}
 
 			if len(comparison.ValueMismatches) > 0 {
-				t.Errorf("Found %d value mismatches:", len(comparison.ValueMismatches))
+				t.Errorf("🔴 Found %d value mismatches:", len(comparison.ValueMismatches))
 				for i, mismatch := range comparison.ValueMismatches {
 					if i >= 10 {
 						t.Errorf("  ... and %d more", len(comparison.ValueMismatches)-10)
@@ -430,7 +446,7 @@ func RunIntegrityTests(t *testing.T, messageType, version string, validator Roun
 			}
 
 			if len(comparison.ExtraElements) > 0 {
-				t.Logf("Note: %d extra elements in marshaled output (could be default values)",
+				t.Logf("🟡 Note: %d extra elements in marshaled output (Go adding defaults)",
 					len(comparison.ExtraElements))
 			}
 
