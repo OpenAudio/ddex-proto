@@ -1,10 +1,13 @@
 # DDEX Go Library Makefile
 
-.PHONY: test testdata clean generate-proto generate-proto-go generate fmt buf-lint buf-generate buf-all help
+.PHONY: all test testdata clean generate-proto generate-proto-go generate fmt buf-lint buf-generate buf-all help
 
 # Default target
 help:
 	@echo "DDEX Go Library - Makefile targets:"
+	@echo ""
+	@echo "Complete workflows:"
+	@echo "  all           - Clean, generate everything, and test (full verification)"
 	@echo ""
 	@echo "Generation:"
 	@echo "  generate-proto - Generate .proto files from XSD (proto/ directory)"
@@ -80,9 +83,13 @@ generate-go-extensions:
 buf-all: generate-proto buf-lint buf-generate
 	@echo "Complete protobuf generation workflow complete!"
 
+# Complete workflow: clean, generate everything, and test
+all: clean generate test
+	@echo "Full clean → generate → test cycle complete!"
+
 # Run all tests including comprehensive validation
 test:
-	go test -v ./...
+	go test -v -count=1 ./...
 
 # Run comprehensive tests against DDEX samples
 test-comprehensive:
@@ -98,9 +105,8 @@ benchmark:
 test-roundtrip:
 	go test -v ./test/roundtrip/...
 
-# Clean up generated files and test data
+# Clean up generated files
 clean:
-	rm -rf gen/ernv* gen/meadv* gen/piev*  
-	rm -rf proto/ernv*/*.proto proto/meadv*/*.proto proto/piev*/*.proto
-	rm -rf testdata/
+	rm -rf gen/*
+	rm -rf proto/*
 	rm -rf tmp/
