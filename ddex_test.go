@@ -25,19 +25,13 @@ func getUnmarshalerForMessageType(messageType, version string) testutil.Unmarsha
 
 // getRoundTripValidatorForMessageType returns the appropriate round-trip validator for a message type
 func getRoundTripValidatorForMessageType(messageType string) testutil.RoundTripValidator {
-	switch messageType {
-	case "ern":
-		return func(xmlData []byte) ([]byte, error) {
-			// Use the generated ParseAny function for auto-detection
-			msg, _, _, err := gen.ParseAny(xmlData)
-			if err != nil {
-				return nil, err
-			}
-			return xml.MarshalIndent(msg, "", "  ")
+	// Use the generated ParseAny function for auto-detection - works for all DDEX message types
+	return func(xmlData []byte) ([]byte, error) {
+		msg, _, _, err := gen.ParseAny(xmlData)
+		if err != nil {
+			return nil, err
 		}
-	default:
-		// For other message types, we could also use ParseAny but skip for now
-		return nil
+		return xml.MarshalIndent(msg, "", "  ")
 	}
 }
 
