@@ -147,13 +147,17 @@ The namespace prefix (`ern:`) is stripped and the type becomes a message referen
 
 The tool processes these DDEX specifications (defined in `specs` array):
 
+**Current Support**: 5 ERN versions, 2 AVS versions, MEAD v1.1, and PIE v1.0
+
 - **AVS (Allowed Value Sets)**
-  - `latest` - Current AVS version (`allowed-value-sets.xsd`)
-  - `20200108` - Specific AVS version (`avs_20200108.xsd`)
+  - `v20200518` - AVS v2020.05.18 (`avs20200518.xsd`)
+  - `v20161006` - AVS v2016.10.06 (`avs_20161006.xsd`)
 - **ERN (Electronic Release Notification)**
-  - `v4.3` - ERN v4.3 (`release-notification.xsd`)
   - `v4.3.2` - ERN v4.3.2 (`release-notification.xsd`)
+  - `v4.3` - ERN v4.3 (`release-notification.xsd`)
+  - `v4.2` - ERN v4.2 (`release-notification.xsd`)
   - `v3.8.3` - ERN v3.8.3 (`release-notification.xsd`)
+  - `v3.8.1` - ERN v3.8.1 (`release-notification.xsd`)
 - **MEAD (Media Enrichment and Description)**
   - `v1.1` - MEAD v1.1 (`media-enrichment-and-description.xsd`)
 - **PIE (Party Identification and Enrichment)**
@@ -180,11 +184,13 @@ Generated `.proto` files are organized by namespace:
 
 ```
 proto/
-├── ddex/avs/vlatest/vlatest.proto       # Current AVS enums
-├── ddex/avs/v20200108/v20200108.proto   # Versioned AVS enums
-├── ddex/ern/v43/v43.proto               # ERN v4.3 messages
+├── ddex/avs/v20200518/v20200518.proto   # AVS v2020.05.18 enums
+├── ddex/avs/v20161006/v20161006.proto   # AVS v2016.10.06 enums
 ├── ddex/ern/v432/v432.proto             # ERN v4.3.2 messages
+├── ddex/ern/v43/v43.proto               # ERN v4.3 messages
+├── ddex/ern/v42/v42.proto               # ERN v4.2 messages
 ├── ddex/ern/v383/v383.proto             # ERN v3.8.3 messages
+├── ddex/ern/v381/v381.proto             # ERN v3.8.1 messages
 ├── ddex/mead/v11/v11.proto              # MEAD v1.1 messages
 └── ddex/pie/v10/v10.proto               # PIE v1.0 messages
 ```

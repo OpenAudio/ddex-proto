@@ -17,7 +17,9 @@ This library provides Go structs with Protocol Buffer, JSON, and XML serializati
 
 - **ERN v4.3.2** (Electronic Release Notification) - For communicating music release information
 - **ERN v4.3** (Electronic Release Notification) - For communicating music release information
+- **ERN v4.2** (Electronic Release Notification) - For communicating music release information
 - **ERN v3.8.3** (Electronic Release Notification) - For communicating music release information
+- **ERN v3.8.1** (Electronic Release Notification) - For communicating music release information
 - **MEAD v1.1** (Media Enrichment and Description) - For enriching media metadata
 - **PIE v1.0** (Party Identification and Enrichment) - For party/artist information and awards
 
@@ -149,7 +151,16 @@ func main() {
 - `NewReleaseMessage` - New music releases
 - `PurgeReleaseMessage` - Release removal notifications
 
+### ERN (Electronic Release Notification) v4.2
+- `NewReleaseMessage` - New music releases
+- `PurgeReleaseMessage` - Release removal notifications
+
 ### ERN (Electronic Release Notification) v3.8.3
+- `NewReleaseMessage` - New music releases
+- `PurgeReleaseMessage` - Release removal notifications
+- `CatalogListMessage` - Catalog list messages
+
+### ERN (Electronic Release Notification) v3.8.1
 - `NewReleaseMessage` - New music releases
 - `PurgeReleaseMessage` - Release removal notifications
 - `CatalogListMessage` - Catalog list messages
@@ -174,10 +185,19 @@ type PurgeReleaseMessageV432 = ernv432.PurgeReleaseMessage
 type NewReleaseMessageV43   = ernv43.NewReleaseMessage
 type PurgeReleaseMessageV43 = ernv43.PurgeReleaseMessage
 
+// ERN v4.2 - Main message types
+type NewReleaseMessageV42   = ernv42.NewReleaseMessage
+type PurgeReleaseMessageV42 = ernv42.PurgeReleaseMessage
+
 // ERN v3.8.3 - Main message types (including CatalogListMessage)
 type NewReleaseMessageV383   = ernv383.NewReleaseMessage
 type PurgeReleaseMessageV383 = ernv383.PurgeReleaseMessage
 type CatalogListMessageV383  = ernv383.CatalogListMessage
+
+// ERN v3.8.1 - Main message types (including CatalogListMessage)
+type NewReleaseMessageV381   = ernv381.NewReleaseMessage
+type PurgeReleaseMessageV381 = ernv381.PurgeReleaseMessage
+type CatalogListMessageV381  = ernv381.CatalogListMessage
 
 // MEAD v1.1 types
 type MeadMessageV11 = meadv11.MeadMessage
@@ -197,13 +217,16 @@ The `examples/proto/` directory contains a comprehensive tool for parsing and va
 # Parse any DDEX file - automatically detects message type and version
 go run examples/proto/main.go -file path/to/your/ddex-file.xml
 
-# Examples with different message types (ERN v4.3)
-go run examples/proto/main.go -file testdata/ernv432/Samples43/1\ Audio.xml
-go run examples/proto/main.go -file testdata/meadv11/mead_award_example.xml
-go run examples/proto/main.go -file testdata/piev10/pie_award_example.xml
+# Examples with different message types
+# ERN v4.3 examples
+go run examples/proto/main.go -file testdata/ddex/ern/v43/1\ Audio.xml
+go run examples/proto/main.go -file testdata/ddex/ern/v42/2\ Video.xml
+# MEAD and PIE examples
+go run examples/proto/main.go -file testdata/ddex/mead/v11/award.xml
+go run examples/proto/main.go -file testdata/ddex/pie/v10/reward.xml
 ```
 
-**Note:** The ERN test files in `testdata/ernv432/Samples43/` are actually ERN v4.3 files (despite the directory name). ERN v3.8.3 and v4.3.2 are supported but test files need to be added.
+**Note:** The repository now includes comprehensive test data for all supported ERN versions (v3.8.1, v3.8.3, v4.2, v4.3, v4.3.2), MEAD v1.1, and PIE v1.0. All test files are automatically discovered and validated.
 
 For safely storing real DDEX files for testing, create a `test-files/` or `ddex-samples/` directory (gitignored):
 
@@ -236,8 +259,9 @@ make benchmark          # Performance benchmarks
 - **Performance benchmarks**: Memory and speed optimization validation
 
 **Test Data:**
-- **ERN test files**: Official DDEX consortium sample files (complete accuracy)
-- **MEAD/PIE test files**: Manually created examples (representative but not exhaustive)
+- **ERN test files**: Official DDEX consortium sample files for all supported versions (complete accuracy)
+- **MEAD/PIE test files**: Comprehensive examples covering core functionality
+- **Automatic discovery**: Test framework automatically discovers all message types and versions
 
 ### Code Generation
 
@@ -284,14 +308,14 @@ ddex-go/
 ├── proto/                   # Protocol Buffer definitions with XML tags
 │   └── ddex/               # Namespace-aware proto organization
 │       ├── avs/            # Allowed Value Sets (enums shared across specs)
-│       ├── ern/v432/       # ERN v4.3.2 .proto files
+│       ├── ern/            # ERN versions: v381, v383, v42, v43, v432
 │       ├── mead/v11/       # MEAD v1.1 .proto files
 │       └── pie/v10/        # PIE v1.0 .proto files
 │
 ├── gen/                     # Generated Go code from proto files
 │   └── ddex/               # Mirrors proto structure
 │       ├── avs/            # Shared enum types with proper XML tags
-│       ├── ern/v432/       # ERN Go code with protobuf + XML support
+│       ├── ern/            # ERN Go code for all supported versions
 │       ├── mead/v11/       # MEAD Go code with protobuf + XML support
 │       └── pie/v10/        # PIE Go code with protobuf + XML support
 │
@@ -303,14 +327,17 @@ ddex-go/
 │   └── proto/              # Comprehensive parsing example (supports all message types)
 │
 ├── testdata/                # Test files for validation
-│   ├── ernv432/           # Official DDEX consortium sample files
-│   ├── meadv11/           # MEAD test examples
-│   └── piev10/            # PIE test examples
+│   └── ddex/               # Organized by message type and version
+│       ├── ern/            # ERN test data (v381, v383, v42, v43, v432)
+│       ├── mead/v11/       # MEAD v1.1 test examples
+│       └── pie/v10/        # PIE v1.0 test examples
 │
 ├── xsd/                     # Original DDEX XSD schema files
-│   ├── ernv432/           # ERN v4.3.2 XSD files
-│   ├── meadv11/           # MEAD v1.1 XSD files
-│   └── piev10/            # PIE v1.0 XSD files
+│   ├── avs20200518.xsd     # AVS v2020.05.18
+│   ├── avs_20161006.xsd    # AVS v2016.10.06
+│   ├── ernv381/           # ERN v3.8.1 XSD files
+│   ├── ernv42/            # ERN v4.2 XSD files
+│   └── ... (other ERN versions, MEAD, PIE)
 │
 ├── buf.yaml                 # Protocol Buffer configuration
 ├── buf.gen.yaml            # Code generation configuration
