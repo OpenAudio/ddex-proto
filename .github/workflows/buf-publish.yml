@@ -31,7 +31,14 @@ jobs:
       run: buf breaking --against 'https://github.com/${{ github.repository }}.git#branch=main'
       if: github.ref != 'refs/heads/main'
 
-    - name: Buf push to BSR
-      run: buf push
+    - name: Buf push to BSR (with git hash)
+      run: buf push --tag ${{ github.sha }}
       env:
         BUF_TOKEN: ${{ secrets.BUF_TOKEN }}
+      if: github.event_name != 'pull_request' && !startsWith(github.ref, 'refs/tags/v')
+
+    - name: Buf push to BSR (with version tag)
+      run: buf push --tag ${GITHUB_REF#refs/tags/}
+      env:
+        BUF_TOKEN: ${{ secrets.BUF_TOKEN }}
+      if: startsWith(github.ref, 'refs/tags/v')
