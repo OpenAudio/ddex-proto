@@ -38,6 +38,53 @@ This library provides Go structs with Protocol Buffer, JSON, and XML serializati
 go get github.com/OpenAudio/ddex-proto@latest
 ```
 
+## Buf Schema Registry
+
+The Protocol Buffer schemas for this project are available on the Buf Schema Registry:
+
+```
+buf.build/openaudio/ddex
+```
+
+### Using Buf Schemas
+
+To use these schemas in your own project with Buf:
+
+```yaml
+# buf.yaml
+version: v2
+deps:
+  - buf.build/openaudio/ddex
+breaking:
+  use:
+    - FILE
+lint:
+  use:
+    - DEFAULT
+```
+
+Then in your `.proto` files:
+
+```protobuf
+syntax = "proto3";
+
+package myservice;
+
+import "ddex/ern/v432/new_release_message.proto";
+import "ddex/avs/avs.proto";
+
+message MyReleaseWrapper {
+  ddex.ern.v432.NewReleaseMessage release = 1;
+  ddex.avs.TerritoryCode territory = 2;
+}
+```
+
+### Important Notes on Generation
+
+- **Custom XML Tags**: The Go structures in this library include custom XML tags that are essential for proper DDEX XML serialization. These tags are injected during the generation process using `protoc-go-inject-tag`.
+- **Generation Binaries**: The generation binaries and toolchain required to reproduce the full XML tag injection process are not yet available through the Buf remote registry. To regenerate the code with XML tags, you'll need to clone the repository and use the local Makefile commands.
+- **Buf Generated Code**: Code generated directly from the Buf registry will have Protocol Buffer support but will lack the XML struct tags needed for DDEX XML compliance. For full XML support, use the pre-generated code from this repository or use the Go module directly.
+
 ## Quick Start
 
 ### Basic XML Parsing
