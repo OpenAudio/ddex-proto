@@ -34,9 +34,9 @@ jobs:
     - name: Buf push to BSR
       run: |
         if [[ "${{ github.ref }}" =~ ^refs/tags/v.* ]]; then
-          buf push --tag "${{ github.ref_name }}"
+          buf push --label "${{ github.ref_name }}"
         else
-          buf push --tag ${{ github.sha }}
+          buf push --label ${{ github.sha }}
         fi
       env:
         BUF_TOKEN: ${{ secrets.BUF_TOKEN }}
