@@ -57,6 +57,10 @@ buf-lint:
 	@echo "Linting protobuf files..."
 	buf lint
 
+buf-breaking:
+	@echo "Checking for breaking changes in protobuf schemas..."
+	buf breaking --against '.git#branch=main'
+
 # Generate Go code from protobuf files
 buf-generate: 
 	@echo "Generating Go code from protobuf files..."
