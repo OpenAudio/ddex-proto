@@ -50,3 +50,10 @@ jobs:
           draft: false
           prerelease: false
           generate_release_notes: true
+
+  publish-to-buf:
+    needs: create-release
+    uses: ./.github/workflows/buf-publish.yml
+    with:
+      label: ${{ inputs.version }}
+    secrets: inherit
