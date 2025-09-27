@@ -19,6 +19,8 @@ jobs:
       uses: bufbuild/buf-setup-action@v1
       with:
         github_token: ${{ github.token }}
+      env:
+        BUF_TOKEN: ${{ secrets.BUF_TOKEN }}
 
     - name: Buf lint
       run: buf lint

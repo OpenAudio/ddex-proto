@@ -1,7 +1,7 @@
 version: v2
-name: buf.build/openaudio/ddex
 modules:
   - path: proto
+    name: buf.build/openaudio/ddex
 lint:
   use:
     - STANDARD
