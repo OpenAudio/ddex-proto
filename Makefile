@@ -36,7 +36,7 @@ help:
 # Generate proto files from XSD
 generate-proto:
 	@echo "Generating proto files from XSD..."
-	go run tools/xsd2proto/main.go
+	go run ./cmd/xsd2proto
 
 # Generate Go structs from proto files
 generate-proto-go:
@@ -117,10 +117,12 @@ test-roundtrip:
 # Install DDEX code generation tools
 install-tools:
 	@echo "Installing DDEX code generation tools..."
+	go install ./cmd/xsd2proto
 	go install ./cmd/protoc-go-inject-tag
 	go install ./cmd/ddex-gen
 	go install ./cmd/protoc-gen-ddex
 	@echo "✓ DDEX tools installed:"
+	@echo "  - xsd2proto (XSD to protobuf converter)"
 	@echo "  - protoc-go-inject-tag (XML tag injector)"
 	@echo "  - ddex-gen (DDEX extensions generator)"
 	@echo "  - protoc-gen-ddex (all-in-one tool)"
