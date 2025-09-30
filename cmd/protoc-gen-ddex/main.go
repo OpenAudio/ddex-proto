@@ -6,16 +6,19 @@
 // 3. Generates XML marshaling methods and namespace handling (*.xml.go, registry.go)
 //
 // Usage:
-//   protoc-gen-ddex [directory]
+//
+//	protoc-gen-ddex [directory]
 //
 // If no directory is specified, it defaults to "./gen"
 //
 // Example:
-//   buf generate  # Generate .pb.go files from buf.build/openaudio/ddex
-//   protoc-gen-ddex  # Post-process to add XML support
+//
+//	buf generate  # Generate .pb.go files from buf.build/openaudio/ddex
+//	protoc-gen-ddex  # Post-process to add XML support
 //
 // Installation:
-//   go install github.com/OpenAudio/ddex-proto/cmd/protoc-gen-ddex@latest
+//
+//	go install github.com/OpenAudio/ddex-proto/cmd/protoc-gen-ddex@latest
 //
 // Future features:
 // - DDEX validation rules (e.g., reference resolution in ERN messages)
@@ -83,7 +86,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error injecting tags: %v\n", err)
 		os.Exit(1)
 	}
-	fmt.Println("✓ XML tags injected\n")
+	fmt.Println("✓ XML tags injected")
 
 	// Step 2: Generate Go extensions (enum_strings.go, *.xml.go, registry.go)
 	fmt.Println("Step 2: Generating Go extensions...")
@@ -91,7 +94,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error generating extensions: %v\n", err)
 		os.Exit(1)
 	}
-	fmt.Println("✓ Go extensions generated\n")
+	fmt.Println("✓ Go extensions generated")
 
 	fmt.Println("✓ Post-processing complete!")
 	fmt.Println("\nGenerated files:")

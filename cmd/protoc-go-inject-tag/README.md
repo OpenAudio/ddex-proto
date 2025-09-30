@@ -1,44 +1,85 @@
 # protoc-go-inject-tag
 
-Forked from [github.com/favadi/protoc-go-inject-tag](https://github.com/favadi/protoc-go-inject-tag) (MIT License)
+Inject custom struct tags into protobuf-generated Go files.
 
-This fork is maintained as part of the [ddex-proto](https://github.com/OpenAudio/ddex-proto) project.
+Forked from [github.com/favadi/protoc-go-inject-tag](https://github.com/favadi/protoc-go-inject-tag) (MIT License) and maintained as part of the [ddex-proto](https://github.com/OpenAudio/ddex-proto) project.
 
-## Changes from Original
+## What It Does
 
-- **Exported API**: All main functions and types are now exported (capitalized) for use as a library
-- **Library-first design**: Can be imported and used programmatically by other tools
-- **Active maintenance**: Kept up-to-date with latest Go versions and protobuf standards
+Reads `// @gotags:` comments in `.proto` files and injects them as struct tags in the generated `.pb.go` files.
 
-## Usage
+**Example:**
 
-### As a CLI Tool
+```protobuf
+message Release {
+  // @gotags: xml:"ReleaseId"
+  string release_id = 1;
+
+  // @gotags: xml:"Title"
+  string title = 2;
+}
+```
+
+Generates:
+
+```go
+type Release struct {
+    ReleaseId string `protobuf:"..." json:"..." xml:"ReleaseId"`
+    Title     string `protobuf:"..." json:"..." xml:"Title"`
+}
+```
+
+## Installation
 
 ```bash
 go install github.com/OpenAudio/ddex-proto/cmd/protoc-go-inject-tag@latest
-protoc-go-inject-tag -input="*.pb.go"
+```
+
+## Usage
+
+### CLI
+
+```bash
+# Process all .pb.go files
+protoc-go-inject-tag -input="gen/**/*.pb.go"
+
+# Single file
+protoc-go-inject-tag -input="gen/ddex/ern/v432/v432.pb.go"
+
+# Verbose mode
+protoc-go-inject-tag -input="*.pb.go" -verbose
 ```
 
 ### As a Library
 
 ```go
-import "github.com/OpenAudio/ddex-proto/cmd/protoc-go-inject-tag"
+import "github.com/OpenAudio/ddex-proto/pkg/injecttag"
 
 // Parse file and find injection points
-areas, err := injecttag.ParseFile(filePath, nil, nil)
+src, _ := os.ReadFile("file.pb.go")
+areas, err := injecttag.ParseFile("file.pb.go", src, nil)
 if err != nil {
     return err
 }
 
 // Write modified file
-err = injecttag.WriteFile(filePath, areas, false)
+err = injecttag.WriteFile("file.pb.go", areas, false)
 ```
 
-## Original License
+## Changes from Original
 
-See [LICENSE](./LICENSE) file for MIT License from original project.
+- **Exported API**: Functions and types are now exported for library use
+- **Library-first design**: Can be imported by other tools
+- **Active maintenance**: Updated for latest Go/protobuf versions
+
+## See Also
+
+- **ddex-gen** - Generate DDEX extensions (run this after)
+- **protoc-gen-ddex** - All-in-one tool (does both)
 
 ## Attribution
 
 Original work by [@favadi](https://github.com/favadi) and contributors.
 Maintained fork by the OpenAudio/ddex-proto team.
+
+See [LICENSE](./LICENSE) for MIT License.

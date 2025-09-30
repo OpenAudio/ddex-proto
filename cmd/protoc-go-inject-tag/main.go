@@ -30,11 +30,36 @@ func main() {
 		log.Fatal("input file is mandatory, see: -help")
 	}
 
-	// Note: glob doesn't handle ** (treats as just one *). This will return
-	// files and folders, so we'll have to filter them out.
-	globResults, err := filepath.Glob(inputFiles)
-	if err != nil {
-		log.Fatal(err)
+	// Handle ** recursive glob pattern by walking directories
+	var globResults []string
+	if strings.Contains(inputFiles, "**") {
+		// Recursive glob: split into base path and pattern
+		parts := strings.Split(inputFiles, "**")
+		basePath := parts[0]
+		if basePath == "" {
+			basePath = "."
+		}
+
+		// Walk the directory tree
+		err := filepath.Walk(basePath, func(path string, info os.FileInfo, err error) error {
+			if err != nil {
+				return nil // Skip errors
+			}
+			if !info.IsDir() && strings.HasSuffix(strings.ToLower(info.Name()), ".pb.go") {
+				globResults = append(globResults, path)
+			}
+			return nil
+		})
+		if err != nil {
+			log.Fatal(err)
+		}
+	} else {
+		// Standard glob
+		var err error
+		globResults, err = filepath.Glob(inputFiles)
+		if err != nil {
+			log.Fatal(err)
+		}
 	}
 
 	var matched int

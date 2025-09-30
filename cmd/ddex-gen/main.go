@@ -6,12 +6,14 @@
 // - registry.go: Dynamic message type registry
 //
 // Usage:
-//   ddex-gen [directory]
+//
+//	ddex-gen [directory]
 //
 // If no directory is specified, it defaults to "./gen"
 //
 // Installation:
-//   go install github.com/OpenAudio/ddex-proto/cmd/ddex-gen@latest
+//
+//	go install github.com/OpenAudio/ddex-proto/cmd/ddex-gen@latest
 package main
 
 import (

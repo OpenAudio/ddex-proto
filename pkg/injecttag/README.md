@@ -1,44 +1,58 @@
-# protoc-go-inject-tag
+# pkg/injecttag
 
-Forked from [github.com/favadi/protoc-go-inject-tag](https://github.com/favadi/protoc-go-inject-tag) (MIT License)
+Struct tag injection library for Go source files.
 
-This fork is maintained as part of the [ddex-proto](https://github.com/OpenAudio/ddex-proto) project.
+Forked from [github.com/favadi/protoc-go-inject-tag](https://github.com/favadi/protoc-go-inject-tag) (MIT License) with exported API for library use.
 
-## Changes from Original
+## Purpose
 
-- **Exported API**: All main functions and types are now exported (capitalized) for use as a library
-- **Library-first design**: Can be imported and used programmatically by other tools
-- **Active maintenance**: Kept up-to-date with latest Go versions and protobuf standards
+This package provides programmatic access to struct tag injection. It reads special comments in Go files and injects them as struct tags.
 
 ## Usage
 
-### As a CLI Tool
-
-```bash
-go install github.com/OpenAudio/ddex-proto/cmd/protoc-go-inject-tag@latest
-protoc-go-inject-tag -input="*.pb.go"
-```
-
-### As a Library
-
 ```go
-import "github.com/OpenAudio/ddex-proto/cmd/protoc-go-inject-tag"
+import "github.com/OpenAudio/ddex-proto/pkg/injecttag"
 
-// Parse file and find injection points
-areas, err := injecttag.ParseFile(filePath, nil, nil)
-if err != nil {
-    return err
+func main() {
+    // Read the generated .pb.go file
+    src, err := os.ReadFile("generated.pb.go")
+    if err != nil {
+        log.Fatal(err)
+    }
+
+    // Parse file and find injection points
+    areas, err := injecttag.ParseFile("generated.pb.go", src, nil)
+    if err != nil {
+        log.Fatal(err)
+    }
+
+    // Write modified file with injected tags
+    err = injecttag.WriteFile("generated.pb.go", areas, false)
+    if err != nil {
+        log.Fatal(err)
+    }
 }
-
-// Write modified file
-err = injecttag.WriteFile(filePath, areas, false)
 ```
 
-## Original License
+## API
 
-See [LICENSE](./LICENSE) file for MIT License from original project.
+**Main Functions:**
+- `ParseFile(inputPath string, src interface{}, xxxSkip []string) ([]TextArea, error)`
+- `WriteFile(inputPath string, areas []TextArea, removeTagComment bool) error`
+- `Logf(format string, v ...interface{})`
+
+**Types:**
+- `TextArea` - Represents an injection point
+- `Verbose bool` - Controls verbose logging
+
+## See Also
+
+- **cmd/protoc-go-inject-tag** - CLI wrapper
+- **pkg/ddexgen** - DDEX code generation
 
 ## Attribution
 
-Original work by [@favadi](https://github.com/favadi) and contributors.
+Original work by [@favadi](https://github.com/favadi) and contributors.  
 Maintained fork by the OpenAudio/ddex-proto team.
+
+See [LICENSE](./LICENSE) for MIT License.

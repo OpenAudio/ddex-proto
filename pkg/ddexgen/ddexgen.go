@@ -62,8 +62,12 @@ func Generate(targetDir string, verbose bool) error {
 			if len(messages) > 0 && strings.Contains(packageDir, "ddex") {
 				nsInfo := deriveNamespaceInfo(packageDir)
 				if nsInfo != nil {
-					// Generate import path relative to module root
-					importPath := "github.com/OpenAudio/ddex-proto/" + packageDir
+					// Generate import path relative to target directory
+					relPath, err := filepath.Rel(targetDir, packageDir)
+					if err != nil {
+						return fmt.Errorf("failed to get relative path: %w", err)
+					}
+					importPath := "github.com/OpenAudio/ddex-proto/" + filepath.Join(filepath.Base(targetDir), relPath)
 
 					allPackages = append(allPackages, PackageInfo{
 						Dir:         packageDir,
