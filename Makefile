@@ -13,9 +13,13 @@ help:
 	@echo "  generate-proto - Generate .proto files from XSD (proto/ directory)"
 	@echo "  generate-proto-go - Generate Go structs from .proto files (gen/ directory)"
 	@echo "  generate       - Generate proto files and Go code"
+	@echo "  generate-ddex  - Run protoc-gen-ddex mega tool (inject tags + extensions)"
 	@echo "  buf-lint      - Lint protobuf files with buf"
 	@echo "  buf-generate  - Generate Go code from .proto files with buf"
 	@echo "  buf-all       - Generate protos from XSD, then Go code from protos"
+	@echo ""
+	@echo "Tools:"
+	@echo "  install-tools - Install DDEX code generation tools locally"
 	@echo ""
 	@echo "Testing & Quality:"
 	@echo "  test          - Run all tests (downloads testdata if needed)"
@@ -66,20 +70,23 @@ buf-generate:
 	@echo "Generating Go extensions (enums and XML methods)..."
 	@$(MAKE) generate-go-extensions
 
-# Inject XML tags into generated protobuf structs using protoc-go-inject-tag
+# Inject XML tags into generated protobuf structs using our custom tool
 inject-tags:
 	@echo "Injecting tags into generated Go files..."
-	@for file in $$(find gen -name "*.pb.go" 2>/dev/null); do \
-		echo "  Processing $$file..."; \
-		protoc-go-inject-tag -input=$$file 2>/dev/null || true; \
-	done
+	@go run ./cmd/protoc-go-inject-tag -input="gen/**/*.pb.go"
 	@echo "XML tags injected successfully!"
 
 # Generate Go extensions (enum strings and XML marshaling methods)
 generate-go-extensions:
 	@echo "Generating enum_strings.go and XML files for Go extensions..."
-	go run tools/generate-go-extensions/main.go
+	@go run ./cmd/ddex-gen ./gen
 	@echo "Go extensions generation complete!"
+
+# Alternative: Use the mega tool (does both inject-tags and generate-go-extensions)
+generate-ddex:
+	@echo "Running protoc-gen-ddex (inject tags + generate extensions)..."
+	@go run ./cmd/protoc-gen-ddex ./gen
+	@echo "DDEX generation complete!"
 
 # Complete protobuf workflow: XSD -> proto -> Go with XML tags
 buf-all: generate-proto buf-lint buf-generate
@@ -106,6 +113,17 @@ benchmark:
 # Test roundtrip compatibility between pure Go and proto-generated Go
 test-roundtrip:
 	go test -v ./test/roundtrip/...
+
+# Install DDEX code generation tools
+install-tools:
+	@echo "Installing DDEX code generation tools..."
+	go install ./cmd/protoc-go-inject-tag
+	go install ./cmd/ddex-gen
+	go install ./cmd/protoc-gen-ddex
+	@echo "✓ DDEX tools installed:"
+	@echo "  - protoc-go-inject-tag (XML tag injector)"
+	@echo "  - ddex-gen (DDEX extensions generator)"
+	@echo "  - protoc-gen-ddex (all-in-one tool)"
 
 # Install linting tools used in CI
 lint-install:
