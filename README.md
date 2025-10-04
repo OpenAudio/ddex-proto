@@ -312,10 +312,35 @@ make benchmark          # Performance benchmarks
 
 ### Code Generation
 
+#### Regenerating from Buf Registry
+
+To regenerate the same Go code with full XML support from the Buf Schema Registry:
+
+```bash
+# Install the post-processor
+go install github.com/OpenAudio/ddex-proto/cmd/protoc-gen-ddex@latest
+
+# Generate .pb.go files from buf.build/openaudio/ddex
+buf generate
+
+# Post-process to add XML support (tags, enum strings, namespace handling)
+protoc-gen-ddex          # Processes ./gen by default
+protoc-gen-ddex ./gen/ddex  # Or specify a custom directory
+```
+
+The `protoc-gen-ddex` tool performs three operations:
+1. Injects XML struct tags for DDEX XML compatibility
+2. Generates enum string conversion methods (`enum_strings.go`)
+3. Generates XML marshaling methods and namespace handling (`*.xml.go`, `registry.go`)
+
+**Note:** You can specify a target directory to process only DDEX-generated files, leaving other protobuf files untouched. This is useful if your project uses multiple protobuf schemas.
+
+#### Full Generation Pipeline (For Maintainers)
+
 The library uses a sophisticated generation pipeline:
 
 ```bash
-# Complete generation workflow
+# Complete generation workflow from XSD schemas
 make generate           # XSD → proto → Go with XML tags
 
 # Individual steps
@@ -328,12 +353,11 @@ make buf-lint          # Lint protobuf files
 make help
 ```
 
-### Generation Pipeline Details
-
-1. **XSD → Proto**: `tools/xsd2proto/` converts DDEX XSD schemas to protobuf with XML annotations
+**Pipeline Details:**
+1. **XSD → Proto**: `cmd/xsd2proto` converts DDEX XSD schemas to protobuf with XML annotations
 2. **Proto → Go**: `buf generate` creates Go structs with protobuf support
-3. **XML Tag Injection**: `protoc-go-inject-tag` adds XML struct tags for DDEX compatibility
-4. **Go Extensions**: `tools/generate-go-extensions/` generates enum strings and XML methods
+3. **XML Tag Injection**: `cmd/protoc-go-inject-tag` adds XML struct tags for DDEX compatibility
+4. **Go Extensions**: `cmd/ddex-gen` generates enum strings and XML methods
 
 ### Manual Commands
 
