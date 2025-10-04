@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package ddex.avs.v20161006;
 
-option go_package = "github.com/OpenAudio/ddex-proto/gen/ddex/avs/v20161006";
+option go_package = "github.com/OpenAudio/ddex-proto/gen/ddex/avs/v20161006;avsv20161006";
 
 // Target namespace: http://ddex.net/xml/avs/avs
 

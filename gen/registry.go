@@ -9,13 +9,13 @@ import (
 	"strings"
 
 	// Auto-generated imports for all DDEX message types
-	v381 "github.com/OpenAudio/ddex-proto/gen/ddex/ern/v381"
-	v383 "github.com/OpenAudio/ddex-proto/gen/ddex/ern/v383"
-	v42 "github.com/OpenAudio/ddex-proto/gen/ddex/ern/v42"
-	v43 "github.com/OpenAudio/ddex-proto/gen/ddex/ern/v43"
-	v432 "github.com/OpenAudio/ddex-proto/gen/ddex/ern/v432"
-	v11 "github.com/OpenAudio/ddex-proto/gen/ddex/mead/v11"
-	v10 "github.com/OpenAudio/ddex-proto/gen/ddex/pie/v10"
+	ernv381 "github.com/OpenAudio/ddex-proto/gen/ddex/ern/v381"
+	ernv383 "github.com/OpenAudio/ddex-proto/gen/ddex/ern/v383"
+	ernv42 "github.com/OpenAudio/ddex-proto/gen/ddex/ern/v42"
+	ernv43 "github.com/OpenAudio/ddex-proto/gen/ddex/ern/v43"
+	ernv432 "github.com/OpenAudio/ddex-proto/gen/ddex/ern/v432"
+	meadv11 "github.com/OpenAudio/ddex-proto/gen/ddex/mead/v11"
+	piev10 "github.com/OpenAudio/ddex-proto/gen/ddex/pie/v10"
 )
 
 // MessageTypeInfo holds information about a registered DDEX message type
@@ -28,78 +28,78 @@ type MessageTypeInfo struct {
 // messageRegistry maps "messageType/version" to MessageTypeInfo
 var messageRegistry = map[string]MessageTypeInfo{
 	"ern/v381/NewReleaseMessage": {
-		Type:        reflect.TypeOf(v381.NewReleaseMessage{}),
-		Namespace:   v381.Namespace,
+		Type:        reflect.TypeOf(ernv381.NewReleaseMessage{}),
+		Namespace:   ernv381.Namespace,
 		RootElement: "NewReleaseMessage",
 	},
 	"ern/v381/CatalogListMessage": {
-		Type:        reflect.TypeOf(v381.CatalogListMessage{}),
-		Namespace:   v381.Namespace,
+		Type:        reflect.TypeOf(ernv381.CatalogListMessage{}),
+		Namespace:   ernv381.Namespace,
 		RootElement: "CatalogListMessage",
 	},
 	"ern/v381/PurgeReleaseMessage": {
-		Type:        reflect.TypeOf(v381.PurgeReleaseMessage{}),
-		Namespace:   v381.Namespace,
+		Type:        reflect.TypeOf(ernv381.PurgeReleaseMessage{}),
+		Namespace:   ernv381.Namespace,
 		RootElement: "PurgeReleaseMessage",
 	},
 	"ern/v383/NewReleaseMessage": {
-		Type:        reflect.TypeOf(v383.NewReleaseMessage{}),
-		Namespace:   v383.Namespace,
+		Type:        reflect.TypeOf(ernv383.NewReleaseMessage{}),
+		Namespace:   ernv383.Namespace,
 		RootElement: "NewReleaseMessage",
 	},
 	"ern/v383/CatalogListMessage": {
-		Type:        reflect.TypeOf(v383.CatalogListMessage{}),
-		Namespace:   v383.Namespace,
+		Type:        reflect.TypeOf(ernv383.CatalogListMessage{}),
+		Namespace:   ernv383.Namespace,
 		RootElement: "CatalogListMessage",
 	},
 	"ern/v383/PurgeReleaseMessage": {
-		Type:        reflect.TypeOf(v383.PurgeReleaseMessage{}),
-		Namespace:   v383.Namespace,
+		Type:        reflect.TypeOf(ernv383.PurgeReleaseMessage{}),
+		Namespace:   ernv383.Namespace,
 		RootElement: "PurgeReleaseMessage",
 	},
 	"ern/v42/NewReleaseMessage": {
-		Type:        reflect.TypeOf(v42.NewReleaseMessage{}),
-		Namespace:   v42.Namespace,
+		Type:        reflect.TypeOf(ernv42.NewReleaseMessage{}),
+		Namespace:   ernv42.Namespace,
 		RootElement: "NewReleaseMessage",
 	},
 	"ern/v42/PurgeReleaseMessage": {
-		Type:        reflect.TypeOf(v42.PurgeReleaseMessage{}),
-		Namespace:   v42.Namespace,
+		Type:        reflect.TypeOf(ernv42.PurgeReleaseMessage{}),
+		Namespace:   ernv42.Namespace,
 		RootElement: "PurgeReleaseMessage",
 	},
 	"ern/v43/NewReleaseMessage": {
-		Type:        reflect.TypeOf(v43.NewReleaseMessage{}),
-		Namespace:   v43.Namespace,
+		Type:        reflect.TypeOf(ernv43.NewReleaseMessage{}),
+		Namespace:   ernv43.Namespace,
 		RootElement: "NewReleaseMessage",
 	},
 	"ern/v43/PurgeReleaseMessage": {
-		Type:        reflect.TypeOf(v43.PurgeReleaseMessage{}),
-		Namespace:   v43.Namespace,
+		Type:        reflect.TypeOf(ernv43.PurgeReleaseMessage{}),
+		Namespace:   ernv43.Namespace,
 		RootElement: "PurgeReleaseMessage",
 	},
 	"ern/v432/NewReleaseMessage": {
-		Type:        reflect.TypeOf(v432.NewReleaseMessage{}),
-		Namespace:   v432.Namespace,
+		Type:        reflect.TypeOf(ernv432.NewReleaseMessage{}),
+		Namespace:   ernv432.Namespace,
 		RootElement: "NewReleaseMessage",
 	},
 	"ern/v432/PurgeReleaseMessage": {
-		Type:        reflect.TypeOf(v432.PurgeReleaseMessage{}),
-		Namespace:   v432.Namespace,
+		Type:        reflect.TypeOf(ernv432.PurgeReleaseMessage{}),
+		Namespace:   ernv432.Namespace,
 		RootElement: "PurgeReleaseMessage",
 	},
 	"mead/v11/MeadMessage": {
-		Type:        reflect.TypeOf(v11.MeadMessage{}),
-		Namespace:   v11.Namespace,
+		Type:        reflect.TypeOf(meadv11.MeadMessage{}),
+		Namespace:   meadv11.Namespace,
 		RootElement: "MeadMessage",
 	},
 	"pie/v10/PieMessage": {
-		Type:        reflect.TypeOf(v10.PieMessage{}),
-		Namespace:   v10.Namespace,
+		Type:        reflect.TypeOf(piev10.PieMessage{}),
+		Namespace:   piev10.Namespace,
 		RootElement: "PieMessage",
 	},
 	"pie/v10/PieRequestMessage": {
-		Type:        reflect.TypeOf(v10.PieRequestMessage{}),
-		Namespace:   v10.Namespace,
+		Type:        reflect.TypeOf(piev10.PieRequestMessage{}),
+		Namespace:   piev10.Namespace,
 		RootElement: "PieRequestMessage",
 	},
 }
