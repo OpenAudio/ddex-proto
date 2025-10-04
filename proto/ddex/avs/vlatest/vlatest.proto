@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package ddex.avs.vlatest;
 
-option go_package = "github.com/OpenAudio/ddex-proto/gen/ddex/avs/vlatest;avsvlatest";
+option go_package = "ddex/avs/vlatest;avsvlatest";
 
 // Target namespace: http://ddex.net/xml/allowed-value-sets
 
