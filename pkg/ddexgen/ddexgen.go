@@ -59,7 +59,8 @@ func Generate(targetDir string, verbose bool) error {
 					return fmt.Errorf("generating XML file for package %s: %w", packageDir, err)
 				}
 				if verbose {
-					log.Printf("Generated %s.xml.go for package %s with %d messages", packageName, packageName, len(messages))
+					baseFileName := filepath.Base(packageDir)
+					log.Printf("Generated %s.xml.go for package %s with %d messages", baseFileName, packageName, len(messages))
 				}
 			}
 
@@ -240,7 +241,10 @@ func generateEnumStringsFile(packageDir, packageName string, enums []EnumInfo) e
 func generatePackageXMLFile(packageDir, packageName string, messages []MessageInfo) error {
 	content := generatePackageXMLContent(packageDir, packageName, messages)
 
-	xmlFileName := packageName + ".xml.go"
+	// Use directory name for XML filename (e.g., v432.xml.go from .../v432/ directory)
+	// Package name stays as is (e.g., ernv432)
+	baseFileName := filepath.Base(packageDir)
+	xmlFileName := baseFileName + ".xml.go"
 	xmlPath := filepath.Join(packageDir, xmlFileName)
 	return os.WriteFile(xmlPath, []byte(content), 0644)
 }
