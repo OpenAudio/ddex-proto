@@ -1193,7 +1193,20 @@ func namespaceToGoPackage(ns string, bundle *NamespaceBundle, spec struct{ name,
 	// Put Go package paths under your repo. Mirror the proto package path as directories.
 	pkg := namespaceToProtoPackage(ns, bundle, spec)
 	path := strings.ReplaceAll(pkg, ".", "/")
-	return "github.com/OpenAudio/ddex-proto/gen/" + path
+
+	// Create package alias by removing the first component (e.g., "ddex") and dots
+	// e.g., ddex.ern.v43 -> ernv43, ddex.avs.v20200108 -> avsv20200108
+	parts := strings.Split(pkg, ".")
+	var alias string
+	if len(parts) > 1 {
+		// Join all parts after the first one
+		alias = strings.Join(parts[1:], "")
+	} else {
+		// Fallback if no dots
+		alias = pkg
+	}
+
+	return "github.com/OpenAudio/ddex-proto/gen/" + path + ";" + alias
 }
 
 func packageToPath(pkg string) string {

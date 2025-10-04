@@ -23,7 +23,12 @@ func Generate(targetDir string, verbose bool) error {
 
 		if strings.HasSuffix(path, ".pb.go") {
 			packageDir := filepath.Dir(path)
-			packageName := filepath.Base(packageDir)
+
+			// Extract the actual package name from the .pb.go file
+			packageName, err := extractPackageName(path)
+			if err != nil {
+				return fmt.Errorf("extracting package name from %s: %w", path, err)
+			}
 
 			// Parse the .pb.go file to find enum types and message types
 			enums, err := findEnumTypes(path)
@@ -100,6 +105,16 @@ func Generate(targetDir string, verbose bool) error {
 	}
 
 	return nil
+}
+
+// extractPackageName reads the package declaration from a Go file
+func extractPackageName(filename string) (string, error) {
+	fset := token.NewFileSet()
+	node, err := parser.ParseFile(fset, filename, nil, parser.PackageClauseOnly)
+	if err != nil {
+		return "", err
+	}
+	return node.Name.Name, nil
 }
 
 // findEnumTypes parses a .pb.go file and extracts enum type information
