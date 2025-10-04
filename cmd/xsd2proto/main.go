@@ -1190,7 +1190,8 @@ func looksLikeEntry(ns string, spec struct{ name, version, mainFile string }) bo
 }
 
 func namespaceToGoPackage(ns string, bundle *NamespaceBundle, spec struct{ name, version, mainFile string }) string {
-	// Put Go package paths under your repo. Mirror the proto package path as directories.
+	// Use relative paths for go_package so consumers can override with their own prefix
+	// e.g., ddex.ern.v43 -> ddex/ern/v43;ernv43
 	pkg := namespaceToProtoPackage(ns, bundle, spec)
 	path := strings.ReplaceAll(pkg, ".", "/")
 
@@ -1206,7 +1207,7 @@ func namespaceToGoPackage(ns string, bundle *NamespaceBundle, spec struct{ name,
 		alias = pkg
 	}
 
-	return "github.com/OpenAudio/ddex-proto/gen/" + path + ";" + alias
+	return path + ";" + alias
 }
 
 func packageToPath(pkg string) string {

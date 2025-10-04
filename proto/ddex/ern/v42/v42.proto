@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package ddex.ern.v42;
 
-option go_package = "github.com/OpenAudio/ddex-proto/gen/ddex/ern/v42;ernv42";
+option go_package = "ddex/ern/v42;ernv42";
 
 // Target namespace: http://ddex.net/xml/ern/42
 

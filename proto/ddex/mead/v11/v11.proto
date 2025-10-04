@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package ddex.mead.v11;
 
-option go_package = "github.com/OpenAudio/ddex-proto/gen/ddex/mead/v11;meadv11";
+option go_package = "ddex/mead/v11;meadv11";
 
 // Target namespace: http://ddex.net/xml/mead/11
 
