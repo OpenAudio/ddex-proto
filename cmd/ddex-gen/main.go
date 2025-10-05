@@ -30,9 +30,10 @@ const version = "0.1.0"
 func main() {
 	// Parse command line flags
 	var (
-		showVersion = flag.Bool("version", false, "Show version information")
-		verbose     = flag.Bool("verbose", false, "Enable verbose logging")
-		targetDir   = flag.String("dir", "", "Target directory containing generated .pb.go files (default: ./gen)")
+		showVersion     = flag.Bool("version", false, "Show version information")
+		verbose         = flag.Bool("verbose", false, "Enable verbose logging")
+		targetDir       = flag.String("dir", "", "Target directory containing generated .pb.go files (default: ./gen)")
+		goPackagePrefix = flag.String("go-package-prefix", "", "Go package prefix for import paths (e.g., github.com/user/repo/gen)")
 	)
 	flag.Parse()
 
@@ -73,7 +74,7 @@ func main() {
 	}
 
 	// Generate DDEX extensions
-	if err := ddexgen.Generate(absDir, *verbose); err != nil {
+	if err := ddexgen.Generate(absDir, *verbose, *goPackagePrefix); err != nil {
 		fmt.Fprintf(os.Stderr, "Error: %v\n", err)
 		os.Exit(1)
 	}

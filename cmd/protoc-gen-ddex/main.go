@@ -40,9 +40,10 @@ const version = "0.1.0"
 func main() {
 	// Parse command line flags
 	var (
-		showVersion = flag.Bool("version", false, "Show version information")
-		verbose     = flag.Bool("verbose", false, "Enable verbose logging")
-		targetDir   = flag.String("dir", "", "Target directory containing generated .pb.go files (default: ./gen)")
+		showVersion     = flag.Bool("version", false, "Show version information")
+		verbose         = flag.Bool("verbose", false, "Enable verbose logging")
+		targetDir       = flag.String("dir", "", "Target directory containing generated .pb.go files (default: ./gen)")
+		goPackagePrefix = flag.String("go-package-prefix", "", "Go package prefix for import paths (e.g., github.com/user/repo/gen)")
 	)
 	flag.Parse()
 
@@ -90,7 +91,7 @@ func main() {
 
 	// Step 2: Generate Go extensions (enum_strings.go, *.xml.go, registry.go)
 	fmt.Println("Step 2: Generating Go extensions...")
-	if err := ddexgen.Generate(absDir, *verbose); err != nil {
+	if err := ddexgen.Generate(absDir, *verbose, *goPackagePrefix); err != nil {
 		fmt.Fprintf(os.Stderr, "Error generating extensions: %v\n", err)
 		os.Exit(1)
 	}
@@ -101,7 +102,9 @@ func main() {
 	fmt.Println("  - XML struct tags injected into .pb.go files")
 	fmt.Println("  - enum_strings.go (enum String() methods)")
 	fmt.Println("  - *.xml.go (XML marshaling with namespace support)")
-	fmt.Println("  - registry.go (dynamic message type registry)")
+	if *goPackagePrefix != "" {
+		fmt.Println("  - registry.go (dynamic message type registry)")
+	}
 }
 
 // injectTagsIntoDirectory injects XML struct tags into all .pb.go files in a directory
