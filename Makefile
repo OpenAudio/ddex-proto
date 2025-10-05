@@ -79,13 +79,13 @@ inject-tags:
 # Generate Go extensions (enum strings and XML marshaling methods)
 generate-go-extensions:
 	@echo "Generating enum_strings.go and XML files for Go extensions..."
-	@go run ./cmd/ddex-gen ./gen
+	@go run ./cmd/ddex-gen --go-package-prefix github.com/OpenAudio/ddex-proto/gen ./gen
 	@echo "Go extensions generation complete!"
 
 # Alternative: Use the mega tool (does both inject-tags and generate-go-extensions)
 generate-ddex:
 	@echo "Running protoc-gen-ddex (inject tags + generate extensions)..."
-	@go run ./cmd/protoc-gen-ddex ./gen
+	@go run ./cmd/protoc-gen-ddex --go-package-prefix github.com/OpenAudio/ddex-proto/gen ./gen
 	@echo "DDEX generation complete!"
 
 # Complete protobuf workflow: XSD -> proto -> Go with XML tags

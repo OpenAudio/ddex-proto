@@ -320,20 +320,36 @@ To regenerate the same Go code with full XML support from the Buf Schema Registr
 # Install the post-processor
 go install github.com/OpenAudio/ddex-proto/cmd/protoc-gen-ddex@latest
 
+# In your buf.gen.yaml, set the go_package_prefix for ddex module:
+# managed:
+#   enabled: true
+#   override:
+#     - file_option: go_package_prefix
+#       module: buf.build/openaudio/ddex
+#       value: github.com/OpenAudio/ddex-proto/gen
+
 # Generate .pb.go files from buf.build/openaudio/ddex
 buf generate
 
-# Post-process to add XML support (tags, enum strings, namespace handling)
-protoc-gen-ddex          # Processes ./gen by default
-protoc-gen-ddex ./gen/ddex  # Or specify a custom directory
+# Post-process to add XML support
+protoc-gen-ddex
+
+# Optional: Generate registry.go with custom import path
+protoc-gen-ddex --go-package-prefix github.com/your-org/your-repo/gen
 ```
 
-The `protoc-gen-ddex` tool performs three operations:
+The `protoc-gen-ddex` tool performs these operations:
 1. Injects XML struct tags for DDEX XML compatibility
 2. Generates enum string conversion methods (`enum_strings.go`)
-3. Generates XML marshaling methods and namespace handling (`*.xml.go`, `registry.go`)
+3. Generates XML marshaling methods with namespace handling (`*.xml.go`)
+4. Optionally generates message type registry (`registry.go`) when `--go-package-prefix` is provided
 
-**Note:** You can specify a target directory to process only DDEX-generated files, leaving other protobuf files untouched. This is useful if your project uses multiple protobuf schemas.
+**Options:**
+- `--dir <path>`: Target directory containing .pb.go files (default: `./gen`)
+- `--go-package-prefix <prefix>`: Go package prefix for import paths (generates `registry.go`)
+- `--verbose`: Enable verbose logging
+
+**Note:** The proto files use relative `go_package` paths (e.g., `ddex/ern/v432;ernv432`). Set the `go_package_prefix` override in your `buf.gen.yaml` to specify your full import path.
 
 #### Full Generation Pipeline (For Maintainers)
 

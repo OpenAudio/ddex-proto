@@ -11,8 +11,9 @@ import (
 	"strings"
 )
 
-// generateExtensions generates enum_strings.go, *.xml.go, and registry.go files
-func Generate(targetDir string, verbose bool) error {
+// generateExtensions generates enum_strings.go, *.xml.go, and optionally registry.go files
+// If goPackagePrefix is provided, registry.go will be generated with that import prefix
+func Generate(targetDir string, verbose bool, goPackagePrefix string) error {
 	var allPackages []PackageInfo
 
 	// Find all generated protobuf packages
@@ -65,15 +66,15 @@ func Generate(targetDir string, verbose bool) error {
 			}
 
 			// Collect package info for registry generation (only DDEX packages with messages)
-			if len(messages) > 0 && strings.Contains(packageDir, "ddex") {
+			if goPackagePrefix != "" && len(messages) > 0 && strings.Contains(packageDir, "ddex") {
 				nsInfo := deriveNamespaceInfo(packageDir)
 				if nsInfo != nil {
-					// Generate import path relative to target directory
+					// Construct import path from prefix + relative path
 					relPath, err := filepath.Rel(targetDir, packageDir)
 					if err != nil {
 						return fmt.Errorf("failed to get relative path: %w", err)
 					}
-					importPath := "github.com/OpenAudio/ddex-proto/" + filepath.Join(filepath.Base(targetDir), relPath)
+					importPath := filepath.Join(goPackagePrefix, relPath)
 
 					allPackages = append(allPackages, PackageInfo{
 						Dir:         packageDir,
